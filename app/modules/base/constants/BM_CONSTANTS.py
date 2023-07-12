@@ -9,9 +9,9 @@ scalars_location = 'scalars/'
 
 plot_locations = 'app/static/images/plots/'
 
-plot_zip_locations = 'app/base/static/zip/'
+plot_zip_locations = 'app/modules/base/static/zip/'
 
-plot_zip_download_location = 'base/static/zip/'
+plot_zip_download_location = 'modules/base/static/zip/'
 
 image_short_path = 'static/images/plots/'
 
@@ -39,11 +39,11 @@ classification_root_path = 'app/'
 
 clustering_root_path = 'app/'
 
-output_docs_location = 'app/base/output_docs/'
+output_docs_location = 'app/modules/base/output_docs/'
 
 docs_templates_folder = 'docs_templates/'
 
-output_docs = 'app/base/output_docs/'
+output_docs = 'app/modules/base/output_docs/'
 
 data_files_folder = 'data/'
 
@@ -59,7 +59,7 @@ loading_icon_path = os.path.join('images/', 'loading_icon.gif')
 
 progress_icon_path = os.path.join('images/', 'progress_icon_2.gif')
 
-labeled_data_filename_download_path = 'base/output_docs/'
+labeled_data_filename_download_path = 'modules/base/output_docs/'
 
 labeled_data_filename = 'data.csv'
 

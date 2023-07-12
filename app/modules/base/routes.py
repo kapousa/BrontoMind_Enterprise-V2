@@ -22,9 +22,9 @@ from matplotlib.backends.backend_template import FigureCanvas
 
 from app import login_manager
 from app.modules.base import blueprint
-from app.modules.base.app_routes.directors import BaseDirector
-from app.modules.base.app_routes.directors import ClassificationDirector
-from app.modules.base.app_routes.directors import ClusteringDirector
+from app.modules.base.app_routes.directors.BaseDirector import BaseDirector
+from app.modules.base.app_routes.directors.ClassificationDirector import ClassificationDirector
+from app.modules.base.app_routes.directors.ClusteringDirector import ClusteringDirector
 from app.modules.base.app_routes.directors.DatasetsDirector import DatasetsDirector
 from app.modules.base.app_routes.directors.ForecastingDirector import ForecastingDirector
 from app.modules.base.app_routes.directors.PredictionDirector import PredictionDirector
