@@ -1,0 +1,72 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Applications {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Sample Datasets</h4>
+                    <p class="card-category">Use these dataset to help you to create your own machine learning models.
+                        Also, it can help understanding how BrontoMind works and </p>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <div>
+                            <table class="table align-items-center" style="table-layout:fixed; ">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th scope="col" style="width: 20%;">
+                                        Name
+                                    </th>
+                                    <th scope="col" style="width: 50%;">
+                                        Description
+                                    </th>
+                                    <th scope="col" style="width: 10%;">
+                                        Dataset Type
+                                    </th>
+                                    <th scope="col" style="width: 10%;">
+                                        Number or Rows
+                                    </th>
+                                    <th scope="col" style="width: 10%;"></th>
+                                </tr>
+                                </thead>
+                                <tbody class="list">
+                                {% for model_dataset in model_datasets %}
+                                    <tr>
+                                        <td>{{ model_dataset['name'] }}</td>
+                                        <td style="white-space: -o-pre-wrap; word-wrap: break-word; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: pre-wrap;">{{ model_dataset['desc'] }}</td>
+                                        <td>{{ model_dataset['type'] }}</td>
+                                        <td>{{ model_dataset['no_of_rows'] }}</td>
+                                        <td class="budget">
+                                            <a href="/downlaoddataset/{{ model_dataset['id'] }}"
+                                               title="Download" data-toggle="tooltip"
+                                               data-placement="bottom">
+                                                <button class="btn btn-icon btn-2 btn-danger" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="fa fa-download"></i>
+                                            </span>
+                                                </button>
+                                            </a>
+
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

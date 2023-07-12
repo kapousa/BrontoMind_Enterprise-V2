@@ -1,0 +1,207 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Select Fields {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .dropdown-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .tag {
+            display: flex;
+            align-items: center;
+            background-color: #eee;
+            padding: 3px 8px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        .close {
+            margin-left: 5px;
+            cursor: pointer;
+        }
+    </style>
+{% endblock stylesheets %}
+
+{% block content %}
+    {% if message != 'No' %}
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="material-icons">close</i>
+            </button>
+            <span>{{ message }}</span>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="stats">
+                    <a class="nav-link" href="/showdashboard">
+                        <button class="btn btn-primary btn-lg">Start again</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title"><b>Step 2:</b> Select predictions values</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <li>Select one or more values to be predicted form the columns list</li>
+                                    <li>Click run model button</li>
+                                    <li>All empty columns removed from the
+                                        dataset.
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form action="/creatingthemodel" name="creatingthemodel" method="post" id="creatingthemodel">
+                    <div class="card">
+                        <div class="card-header card-header-info">
+                            Select values to be predicted
+                        </div>
+                        <div class="card-body">
+                                <div class="tag-container"></div>
+                            <div class="dropdown">
+                                <input type="text" placeholder="Search..." id="selected" style="width: 500px;">
+                                <div class="dropdown-list">
+                                    {% for i in range(0, headersArray.size) %}
+                                        <div class="dropdown-item">
+                                            <input type="checkbox" id="{{ headersArray[i] }}"
+                                                   name="{{ headersArray[i] }}" value="{{ headersArray[i] }}" multiple>
+                                            <label for="{{ headersArray[i] }}">{{ headersArray[i] }}</label>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <input type="hidden" name="predcitedvalues" id="predcitedvalues"/>
+                            <button type="submit" class="btn btn-success float-right">Run Model</button>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+    <script>
+        const searchInput = document.querySelector('.dropdown input[type="text"]');
+        const checkboxes = document.querySelectorAll('.dropdown input[type="checkbox"]');
+        const tagContainer = document.querySelector('.tag-container');
+
+        searchInput.addEventListener('keyup', function () {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            checkboxes.forEach(function (checkbox) {
+                const label = checkbox.nextElementSibling.textContent.toLowerCase();
+
+                if (label.indexOf(searchTerm) === -1) {
+                    checkbox.parentElement.style.display = 'none';
+                } else {
+                    checkbox.parentElement.style.display = 'flex';
+                }
+            });
+        });
+
+        const dropdown = document.querySelector('.dropdown-list');
+
+        dropdown.addEventListener('click', function (event) {
+            if (event.target.matches('input[type="checkbox"]')) {
+                const checkbox = event.target;
+                const value = checkbox.value;
+
+                if (checkbox.checked) {
+                    const tag = document.createElement('span');
+                    tag.classList.add('tag');
+                    tag.textContent = value;
+
+                    const closeButton = document.createElement('button');
+                    closeButton.classList.add('close');
+                    closeButton.textContent = 'x';
+                    closeButton.addEventListener('click', function () {
+                        checkbox.checked = false;
+                        tag.remove();
+                    });
+
+                    tag.appendChild(closeButton);
+                    tagContainer.appendChild(tag);
+                } else {
+                    const tag = tagContainer.querySelector(`.tag[data-value="${value}"]`);
+                    if (tag) {
+                        tag.remove();
+                    }
+                }
+
+                const selectedValues = [];
+
+                checkboxes.forEach(function (checkbox) {
+                    if (checkbox.checked) {
+                        selectedValues.push(checkbox.value);
+                    }
+                });
+
+                document.getElementById("predcitedvalues").value = selectedValues.join(',');
+            }
+        });
+
+    </script>
+{% endblock javascripts %}

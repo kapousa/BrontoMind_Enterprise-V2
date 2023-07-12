@@ -1,0 +1,67 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Create Model {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    {% if message != "None" %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-success">
+                    <img src="https://img.icons8.com/material/48/ffffff/csv.png" style="float:right !important;"/>
+                    <h3>Upload data file</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/dataprocessing/builddataset" name="gotobot" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div>
+                                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                        <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
+                                        <div>
+                                           <span class="fileinput-new">Select csv file </span>
+                                           <input type="file" accept=".csv" enabled required name="filename[]" multiple
+                                                  id="filename"/>
+                                                <button type="submit" class="btn btn-primary pull-left"><i
+                                                        class="fa fa-upload"></i> Upload
+                                                </button>
+                                                <a href="javascript:" class="btn btn-danger btn-round fileinput-exists"
+                                                   data-dismiss="fileinput">
+                                                    <i class="fa fa-times"></i> Remove</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <p/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var uploadField = document.getElementById("filename");
+        uploadField.onchange = function () {
+            if (this.files[0].size > 10485760) {
+                //$("#uploadlargefileModal").modal();
+            }
+
+        };
+    </script>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

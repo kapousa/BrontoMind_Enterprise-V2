@@ -1,0 +1,948 @@
+2023-07-11 16:11:06,270 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-11 16:11:06,274 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-11 16:11:06,516 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-11 16:11:10,648 INFO app MainThread : DEBUG       = True
+2023-07-11 16:11:10,648 INFO app MainThread : Environment = Debug
+2023-07-11 16:11:10,648 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-07-11 16:11:10,649 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-07-11 16:11:10,649 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-07-11 16:11:13,142 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "[32mGET / HTTP/1.1[0m" 302 -
+2023-07-11 16:11:13,171 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /login HTTP/1.1" 200 -
+2023-07-11 16:11:13,207 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1" 200 -
+2023-07-11 16:11:13,209 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1" 200 -
+2023-07-11 16:11:13,209 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1" 200 -
+2023-07-11 16:11:13,211 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1" 200 -
+2023-07-11 16:11:13,212 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1" 200 -
+2023-07-11 16:11:13,214 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1" 200 -
+2023-07-11 16:11:13,215 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1" 200 -
+2023-07-11 16:11:13,217 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1" 200 -
+2023-07-11 16:11:13,219 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1" 200 -
+2023-07-11 16:11:13,220 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/assets/img/brand/white.png HTTP/1.1" 200 -
+2023-07-11 16:11:13,220 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1" 200 -
+2023-07-11 16:11:13,220 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/assets/img/brand/blue.png HTTP/1.1" 200 -
+2023-07-11 16:11:13,240 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/images/loading1.gif HTTP/1.1" 200 -
+2023-07-11 16:11:13,274 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/assets/vendor/nucleo/fonts/nucleo-icons.woff2 HTTP/1.1" 200 -
+2023-07-11 16:11:13,274 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:13] "GET /static/assets/vendor/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 -
+2023-07-11 16:11:15,375 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-07-11 16:11:15,396 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /showmodels HTTP/1.1" 200 -
+2023-07-11 16:11:15,413 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-11 16:11:15,413 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-11 16:11:15,414 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-11 16:11:15,415 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1" 200 -
+2023-07-11 16:11:15,417 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1" 200 -
+2023-07-11 16:11:15,417 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1" 200 -
+2023-07-11 16:11:15,423 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:11:15,430 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:11:15,434 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-11 16:11:15,436 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:11:15,437 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:11:15,437 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:11:15,438 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-11 16:11:15,439 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-11 16:11:15,440 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /static/assets/img/theme/team-1.jpg HTTP/1.1" 200 -
+2023-07-11 16:11:15,440 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /static/assets/img/theme/team-3.jpg HTTP/1.1" 200 -
+2023-07-11 16:11:15,441 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /static/assets/img/theme/team-2.jpg HTTP/1.1" 200 -
+2023-07-11 16:11:15,443 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /static/assets/img/theme/team-4.jpg HTTP/1.1" 200 -
+2023-07-11 16:11:15,443 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /static/assets/img/theme/team-5.jpg HTTP/1.1" 200 -
+2023-07-11 16:11:15,444 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /static/assets/img/logos/10.png HTTP/1.1" 200 -
+2023-07-11 16:11:15,448 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /static/assets/img/logos/13.png HTTP/1.1" 200 -
+2023-07-11 16:11:15,449 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /static/assets/img/logos/7.png HTTP/1.1" 200 -
+2023-07-11 16:11:15,450 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /static/assets/img/logos/8.png HTTP/1.1" 200 -
+2023-07-11 16:11:15,452 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /static/images/loading2.gif HTTP/1.1" 200 -
+2023-07-11 16:11:15,477 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:15] "GET /static/assets/vendor/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 -
+2023-07-11 16:11:18,972 ERROR app Thread-45 (process_request_thread) : Exception on /showdashboard [GET]
+Traceback (most recent call last):
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/base/routes.py", line 511, in showdashboard
+    return classification_director.show_text_model_dashboard(model_id)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/base/app_routes/directors/ClassificationDirector.py", line 147, in show_text_model_dashboard
+    return render_template('applications/pages/classification/textdashboard.html',
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/templates/applications/pages/classification/textdashboard.html", line 1, in top-level template code
+    {% extends "layouts/base.html" %}
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/templates/layouts/base.html", line 70, in top-level template code
+    {% block content %}{% endblock content %}
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/templates/applications/pages/classification/textdashboard.html", line 66, in block 'content'
+    {% include plot_image_path %}
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: applications/plots/file_name.html
+2023-07-11 16:11:18,982 INFO werkzeug Thread-45 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:18] "[35m[1mGET /showdashboard?param=79165892196618 HTTP/1.1[0m" 500 -
+2023-07-11 16:11:19,014 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:19] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-11 16:11:19,018 INFO werkzeug Thread-47 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:19] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-11 16:11:19,018 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:19] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-11 16:11:19,021 INFO werkzeug Thread-49 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:19] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:11:19,024 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:19] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:11:19,027 INFO werkzeug Thread-51 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:19] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-11 16:11:19,028 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:19] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:11:19,028 INFO werkzeug Thread-53 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:19] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:11:19,029 INFO werkzeug Thread-54 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:19] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:11:19,031 INFO werkzeug Thread-55 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:19] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-11 16:11:19,033 INFO werkzeug Thread-56 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:19] "[36mGET /static/assets/img/brand/white.png HTTP/1.1[0m" 304 -
+2023-07-11 16:11:19,034 INFO werkzeug Thread-57 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:19] "[36mGET /static/images/loading1.gif HTTP/1.1[0m" 304 -
+2023-07-11 16:11:19,035 INFO werkzeug Thread-58 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:11:19] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-11 16:11:51,412 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-11 16:11:51,414 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-11 16:11:51,897 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-11 16:11:53,697 INFO app MainThread : DEBUG       = True
+2023-07-11 16:11:53,698 INFO app MainThread : Environment = Debug
+2023-07-11 16:11:53,698 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-07-11 16:11:53,698 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-07-11 16:11:53,698 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-07-11 16:12:02,477 ERROR app Thread-5 (process_request_thread) : Exception on /showdashboard [GET]
+Traceback (most recent call last):
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/base/routes.py", line 511, in showdashboard
+    return classification_director.show_text_model_dashboard(model_id)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/base/app_routes/directors/ClassificationDirector.py", line 147, in show_text_model_dashboard
+    return render_template('applications/pages/classification/textdashboard.html',
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/templates/applications/pages/classification/textdashboard.html", line 1, in top-level template code
+    {% extends "layouts/base.html" %}
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/templates/layouts/base.html", line 70, in top-level template code
+    {% block content %}{% endblock content %}
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/templates/applications/pages/classification/textdashboard.html", line 66, in block 'content'
+    {% include plot_image_path %}
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/kapo/PycharmProjects/BrontoMind_Enterprise/venv/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: applications/plots/file_name.html
+2023-07-11 16:12:02,487 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "[35m[1mGET /showdashboard?param=79165892196618 HTTP/1.1[0m" 500 -
+2023-07-11 16:12:02,527 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:02,528 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-11 16:12:02,528 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-11 16:12:02,529 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:02,529 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:02,534 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:02,537 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:02,537 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:02,538 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-11 16:12:02,541 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-11 16:12:02,542 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "[36mGET /static/assets/img/brand/white.png HTTP/1.1[0m" 304 -
+2023-07-11 16:12:02,542 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-11 16:12:02,547 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "[36mGET /static/images/loading1.gif HTTP/1.1[0m" 304 -
+2023-07-11 16:12:02,557 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:02] "GET /static/assets/img/brand/favicon.png HTTP/1.1" 200 -
+2023-07-11 16:12:11,808 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:11] "GET /login HTTP/1.1" 200 -
+2023-07-11 16:12:11,845 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:11] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-11 16:12:11,848 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:11] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-11 16:12:11,849 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:11] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-11 16:12:11,853 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:11] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:11,857 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:11] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:11,859 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:11] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:11,861 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:11] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:11,863 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:11] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:11,864 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:11] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:11,866 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:11] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-11 16:12:11,869 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:11] "[36mGET /static/assets/img/brand/white.png HTTP/1.1[0m" 304 -
+2023-07-11 16:12:11,870 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:11] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-11 16:12:11,873 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:11] "[36mGET /static/images/loading1.gif HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,276 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-07-11 16:12:13,310 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "GET /showmodels HTTP/1.1" 200 -
+2023-07-11 16:12:13,331 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,335 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,336 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,338 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,339 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,340 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,347 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,350 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,356 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,358 INFO werkzeug Thread-45 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,359 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,360 INFO werkzeug Thread-47 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,362 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,364 INFO werkzeug Thread-49 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,366 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,366 INFO werkzeug Thread-51 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,369 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,373 INFO werkzeug Thread-53 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,373 INFO werkzeug Thread-55 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/img/logos/10.png HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,376 INFO werkzeug Thread-54 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,377 INFO werkzeug Thread-56 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/img/logos/7.png HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,379 INFO werkzeug Thread-57 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,383 INFO werkzeug Thread-58 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/img/logos/13.png HTTP/1.1[0m" 304 -
+2023-07-11 16:12:13,384 INFO werkzeug Thread-59 (process_request_thread) : 127.0.0.1 - - [11/Jul/2023 16:12:13] "[36mGET /static/assets/img/logos/8.png HTTP/1.1[0m" 304 -
+2023-07-12 10:15:36,930 INFO werkzeug Thread-61 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:36] "GET /selectmodelgoal HTTP/1.1" 200 -
+2023-07-12 10:15:36,968 INFO werkzeug Thread-62 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:36] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:36,970 INFO werkzeug Thread-64 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:36] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:36,971 INFO werkzeug Thread-63 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:36] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:36,975 INFO werkzeug Thread-65 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:36] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:36,975 INFO werkzeug Thread-66 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:36] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:36,978 INFO werkzeug Thread-67 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:36] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:36,990 INFO werkzeug Thread-68 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:36] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:36,991 INFO werkzeug Thread-69 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:36] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:37,021 INFO werkzeug Thread-70 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:37] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:37,022 INFO werkzeug Thread-71 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:37] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:37,023 INFO werkzeug Thread-72 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:37] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:37,025 INFO werkzeug Thread-73 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:37] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:37,027 INFO werkzeug Thread-74 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:37] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:37,032 INFO werkzeug Thread-75 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:37] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:15:37,034 INFO werkzeug Thread-76 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:37] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:37,035 INFO werkzeug Thread-77 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:37] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:37,038 INFO werkzeug Thread-78 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:37] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:37,040 INFO werkzeug Thread-79 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:37] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:37,043 INFO werkzeug Thread-81 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:37] "[36mGET /static/assets/vendor/nucleo/fonts/nucleo-icons.woff2 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:37,044 INFO werkzeug Thread-80 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:37] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:37,047 INFO werkzeug Thread-82 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:37] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:37,048 INFO werkzeug Thread-83 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:37] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,753 INFO werkzeug Thread-84 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "GET /createmodel?t=7 HTTP/1.1" 200 -
+2023-07-12 10:15:38,789 INFO werkzeug Thread-86 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,790 INFO werkzeug Thread-85 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,795 INFO werkzeug Thread-87 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,799 INFO werkzeug Thread-88 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,803 INFO werkzeug Thread-89 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,804 INFO werkzeug Thread-90 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,822 INFO werkzeug Thread-91 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,825 INFO werkzeug Thread-92 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,828 INFO werkzeug Thread-93 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,832 INFO werkzeug Thread-94 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,836 INFO werkzeug Thread-95 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,837 INFO werkzeug Thread-96 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,841 INFO werkzeug Thread-97 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,844 INFO werkzeug Thread-98 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,847 INFO werkzeug Thread-99 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,850 INFO werkzeug Thread-100 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,851 INFO werkzeug Thread-101 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,855 INFO werkzeug Thread-102 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,858 INFO werkzeug Thread-103 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:38,859 INFO werkzeug Thread-104 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:38] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:39,953 INFO werkzeug Thread-105 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:39] "POST /selectcsvds HTTP/1.1" 200 -
+2023-07-12 10:15:39,980 INFO werkzeug Thread-106 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:39] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:39,986 INFO werkzeug Thread-107 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:39] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:39,988 INFO werkzeug Thread-108 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:39] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:39,989 INFO werkzeug Thread-109 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:39] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:39,992 INFO werkzeug Thread-110 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:39] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:39,993 INFO werkzeug Thread-111 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:39] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:40,007 INFO werkzeug Thread-112 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:40] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:40,009 INFO werkzeug Thread-113 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:40] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:40,010 INFO werkzeug Thread-114 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:40] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:40,013 INFO werkzeug Thread-115 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:40] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:40,017 INFO werkzeug Thread-116 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:40] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:40,020 INFO werkzeug Thread-117 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:40] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:40,021 INFO werkzeug Thread-118 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:40] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:40,027 INFO werkzeug Thread-119 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:40] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:15:40,027 INFO werkzeug Thread-120 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:40] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:40,030 INFO werkzeug Thread-121 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:40] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:15:40,032 INFO werkzeug Thread-122 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:40] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:40,036 INFO werkzeug Thread-123 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:40] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:40,038 INFO werkzeug Thread-124 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:40] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:40,039 INFO werkzeug Thread-125 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:40] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,645 INFO root Thread-126 (process_request_thread) : ------Numric columns
+2023-07-12 10:15:48,656 INFO root Thread-126 (process_request_thread) : ------Object columns
+2023-07-12 10:15:48,783 INFO werkzeug Thread-126 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "POST /previewdata HTTP/1.1" 200 -
+2023-07-12 10:15:48,814 INFO werkzeug Thread-127 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,818 INFO werkzeug Thread-128 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,822 INFO werkzeug Thread-129 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,823 INFO werkzeug Thread-130 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,825 INFO werkzeug Thread-131 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,826 INFO werkzeug Thread-132 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,835 INFO werkzeug Thread-133 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,839 INFO werkzeug Thread-134 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,840 INFO werkzeug Thread-135 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,842 INFO werkzeug Thread-136 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,847 INFO werkzeug Thread-138 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,848 INFO werkzeug Thread-137 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,849 INFO werkzeug Thread-139 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,852 INFO werkzeug Thread-140 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,857 INFO werkzeug Thread-142 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,857 INFO werkzeug Thread-141 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,861 INFO werkzeug Thread-143 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,865 INFO werkzeug Thread-144 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,867 INFO werkzeug Thread-145 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:48,870 INFO werkzeug Thread-146 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:48] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,299 INFO root Thread-147 (process_request_thread) : ------Numric columns
+2023-07-12 10:15:52,309 INFO root Thread-147 (process_request_thread) : ------Object columns
+2023-07-12 10:15:52,351 INFO werkzeug Thread-147 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "POST /uploadcsvds HTTP/1.1" 200 -
+2023-07-12 10:15:52,378 INFO werkzeug Thread-148 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,379 INFO werkzeug Thread-149 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,382 INFO werkzeug Thread-150 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,383 INFO werkzeug Thread-151 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,384 INFO werkzeug Thread-153 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,385 INFO werkzeug Thread-152 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,393 INFO werkzeug Thread-154 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,394 INFO werkzeug Thread-155 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,405 INFO werkzeug Thread-156 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,406 INFO werkzeug Thread-157 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,407 INFO werkzeug Thread-158 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,411 INFO werkzeug Thread-159 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,412 INFO werkzeug Thread-160 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,416 INFO werkzeug Thread-162 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,417 INFO werkzeug Thread-161 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,420 INFO werkzeug Thread-163 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,423 INFO werkzeug Thread-164 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,427 INFO werkzeug Thread-165 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,428 INFO werkzeug Thread-166 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:52,430 INFO werkzeug Thread-167 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:52] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,382 INFO werkzeug Thread-168 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "POST /creatingthemodel HTTP/1.1" 200 -
+2023-07-12 10:15:56,410 INFO werkzeug Thread-169 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,414 INFO werkzeug Thread-170 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,416 INFO werkzeug Thread-171 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,420 INFO werkzeug Thread-172 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,422 INFO werkzeug Thread-173 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,422 INFO werkzeug Thread-174 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,433 INFO werkzeug Thread-175 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,435 INFO werkzeug Thread-176 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,436 INFO werkzeug Thread-177 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,440 INFO werkzeug Thread-178 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,442 INFO werkzeug Thread-179 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,445 INFO werkzeug Thread-180 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,450 INFO werkzeug Thread-181 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,451 INFO werkzeug Thread-182 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,454 INFO werkzeug Thread-184 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,454 INFO werkzeug Thread-183 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "GET /static/images/loading_icon.gif HTTP/1.1" 200 -
+2023-07-12 10:15:56,457 INFO werkzeug Thread-185 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,461 INFO werkzeug Thread-187 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,462 INFO werkzeug Thread-186 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,464 INFO werkzeug Thread-188 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,468 INFO werkzeug Thread-189 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,552 INFO werkzeug Thread-190 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "POST /sendvalues HTTP/1.1" 200 -
+2023-07-12 10:15:56,575 INFO werkzeug Thread-191 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,577 INFO werkzeug Thread-192 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,581 INFO werkzeug Thread-193 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,584 INFO werkzeug Thread-194 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,585 INFO werkzeug Thread-195 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,586 INFO werkzeug Thread-196 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,596 INFO werkzeug Thread-197 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,598 INFO werkzeug Thread-198 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,600 INFO werkzeug Thread-199 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,604 INFO werkzeug Thread-201 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,605 INFO werkzeug Thread-200 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,606 INFO werkzeug Thread-202 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,610 INFO werkzeug Thread-203 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,611 INFO werkzeug Thread-204 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,615 INFO werkzeug Thread-205 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,617 INFO werkzeug Thread-206 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,618 INFO werkzeug Thread-207 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,623 INFO werkzeug Thread-208 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,624 INFO werkzeug Thread-209 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:15:56,625 INFO werkzeug Thread-210 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:15:56] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,881 INFO werkzeug Thread-211 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "GET /showmodels HTTP/1.1" 200 -
+2023-07-12 10:16:40,915 INFO werkzeug Thread-212 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,920 INFO werkzeug Thread-213 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,922 INFO werkzeug Thread-214 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,925 INFO werkzeug Thread-216 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,925 INFO werkzeug Thread-215 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,928 INFO werkzeug Thread-217 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,936 INFO werkzeug Thread-218 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,943 INFO werkzeug Thread-219 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,944 INFO werkzeug Thread-220 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,948 INFO werkzeug Thread-221 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,951 INFO werkzeug Thread-223 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,952 INFO werkzeug Thread-224 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,952 INFO werkzeug Thread-222 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,955 INFO werkzeug Thread-225 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,956 INFO werkzeug Thread-226 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,961 INFO werkzeug Thread-227 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,963 INFO werkzeug Thread-228 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,968 INFO werkzeug Thread-229 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,972 INFO werkzeug Thread-230 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,976 INFO werkzeug Thread-231 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/img/logos/10.png HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,979 INFO werkzeug Thread-232 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/img/logos/13.png HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,983 INFO werkzeug Thread-233 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,987 INFO werkzeug Thread-234 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/img/logos/7.png HTTP/1.1[0m" 304 -
+2023-07-12 10:16:40,989 INFO werkzeug Thread-235 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:40] "[36mGET /static/assets/img/logos/8.png HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,077 INFO werkzeug Thread-236 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "GET /selectmodelgoal HTTP/1.1" 200 -
+2023-07-12 10:16:43,110 INFO werkzeug Thread-237 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,115 INFO werkzeug Thread-238 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,120 INFO werkzeug Thread-239 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,124 INFO werkzeug Thread-240 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,127 INFO werkzeug Thread-241 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,129 INFO werkzeug Thread-242 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,134 INFO werkzeug Thread-243 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,135 INFO werkzeug Thread-244 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,141 INFO werkzeug Thread-246 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,141 INFO werkzeug Thread-247 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,142 INFO werkzeug Thread-245 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,147 INFO werkzeug Thread-248 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,150 INFO werkzeug Thread-249 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,154 INFO werkzeug Thread-250 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,156 INFO werkzeug Thread-251 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,159 INFO werkzeug Thread-252 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,162 INFO werkzeug Thread-253 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,164 INFO werkzeug Thread-254 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,167 INFO werkzeug Thread-256 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:43,169 INFO werkzeug Thread-255 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:43] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,600 INFO werkzeug Thread-257 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "GET /createmodel?t=7 HTTP/1.1" 200 -
+2023-07-12 10:16:44,632 INFO werkzeug Thread-259 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,634 INFO werkzeug Thread-258 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,643 INFO werkzeug Thread-260 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,645 INFO werkzeug Thread-261 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,650 INFO werkzeug Thread-262 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,652 INFO werkzeug Thread-263 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,659 INFO werkzeug Thread-264 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,660 INFO werkzeug Thread-265 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,663 INFO werkzeug Thread-266 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,664 INFO werkzeug Thread-267 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,667 INFO werkzeug Thread-268 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,671 INFO werkzeug Thread-270 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,673 INFO werkzeug Thread-269 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,676 INFO werkzeug Thread-271 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,677 INFO werkzeug Thread-272 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,679 INFO werkzeug Thread-273 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,684 INFO werkzeug Thread-274 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,689 INFO werkzeug Thread-276 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,689 INFO werkzeug Thread-275 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:16:44,691 INFO werkzeug Thread-277 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:44] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,464 INFO werkzeug Thread-278 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "POST /selectcsvds HTTP/1.1" 200 -
+2023-07-12 10:16:45,494 INFO werkzeug Thread-279 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,499 INFO werkzeug Thread-280 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,509 INFO werkzeug Thread-281 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,516 INFO werkzeug Thread-284 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,518 INFO werkzeug Thread-283 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,519 INFO werkzeug Thread-282 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,522 INFO werkzeug Thread-285 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,523 INFO werkzeug Thread-286 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,527 INFO werkzeug Thread-287 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,532 INFO werkzeug Thread-288 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,532 INFO werkzeug Thread-289 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,533 INFO werkzeug Thread-290 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,536 INFO werkzeug Thread-291 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,542 INFO werkzeug Thread-293 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,543 INFO werkzeug Thread-294 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,543 INFO werkzeug Thread-292 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,548 INFO werkzeug Thread-295 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,551 INFO werkzeug Thread-296 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,555 INFO werkzeug Thread-297 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:16:45,555 INFO werkzeug Thread-298 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:45] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,405 INFO root Thread-299 (process_request_thread) : ------Numric columns
+2023-07-12 10:16:55,431 INFO root Thread-299 (process_request_thread) : ------Object columns
+2023-07-12 10:16:55,459 INFO werkzeug Thread-299 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "POST /previewdata HTTP/1.1" 200 -
+2023-07-12 10:16:55,486 INFO werkzeug Thread-300 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,489 INFO werkzeug Thread-301 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,490 INFO werkzeug Thread-302 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,493 INFO werkzeug Thread-303 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,493 INFO werkzeug Thread-304 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,496 INFO werkzeug Thread-305 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,509 INFO werkzeug Thread-307 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,510 INFO werkzeug Thread-306 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,512 INFO werkzeug Thread-308 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,514 INFO werkzeug Thread-309 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,517 INFO werkzeug Thread-311 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,519 INFO werkzeug Thread-310 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,521 INFO werkzeug Thread-312 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,525 INFO werkzeug Thread-313 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,527 INFO werkzeug Thread-314 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,531 INFO werkzeug Thread-315 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,533 INFO werkzeug Thread-316 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,535 INFO werkzeug Thread-318 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,537 INFO werkzeug Thread-317 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:55,539 INFO werkzeug Thread-319 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:55] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,232 INFO root Thread-320 (process_request_thread) : ------Numric columns
+2023-07-12 10:16:57,259 INFO root Thread-320 (process_request_thread) : ------Object columns
+2023-07-12 10:16:57,271 INFO werkzeug Thread-320 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "POST /uploadcsvds HTTP/1.1" 200 -
+2023-07-12 10:16:57,297 INFO werkzeug Thread-321 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,304 INFO werkzeug Thread-322 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,305 INFO werkzeug Thread-323 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,306 INFO werkzeug Thread-324 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,307 INFO werkzeug Thread-326 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,307 INFO werkzeug Thread-325 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,324 INFO werkzeug Thread-327 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,324 INFO werkzeug Thread-328 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,326 INFO werkzeug Thread-329 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,328 INFO werkzeug Thread-330 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,334 INFO werkzeug Thread-331 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,335 INFO werkzeug Thread-332 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,336 INFO werkzeug Thread-333 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,341 INFO werkzeug Thread-334 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,343 INFO werkzeug Thread-335 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,347 INFO werkzeug Thread-338 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,347 INFO werkzeug Thread-337 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,350 INFO werkzeug Thread-336 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,353 INFO werkzeug Thread-339 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:16:57,355 INFO werkzeug Thread-340 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:16:57] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,405 INFO werkzeug Thread-341 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "POST /creatingthemodel HTTP/1.1" 200 -
+2023-07-12 10:17:00,435 INFO werkzeug Thread-342 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,440 INFO werkzeug Thread-343 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,447 INFO werkzeug Thread-344 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,449 INFO werkzeug Thread-345 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,454 INFO werkzeug Thread-346 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,455 INFO werkzeug Thread-347 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,459 INFO werkzeug Thread-348 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,465 INFO werkzeug Thread-349 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,467 INFO werkzeug Thread-350 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,470 INFO werkzeug Thread-351 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,472 INFO werkzeug Thread-352 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,473 INFO werkzeug Thread-353 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,479 INFO werkzeug Thread-355 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,479 INFO werkzeug Thread-354 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,484 INFO werkzeug Thread-357 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,485 INFO werkzeug Thread-356 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,489 INFO werkzeug Thread-359 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,490 INFO werkzeug Thread-358 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,494 INFO werkzeug Thread-360 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,496 INFO werkzeug Thread-361 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/images/loading_icon.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,498 INFO werkzeug Thread-362 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,554 INFO werkzeug Thread-363 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "POST /sendvalues HTTP/1.1" 200 -
+2023-07-12 10:17:00,578 INFO werkzeug Thread-364 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,585 INFO werkzeug Thread-365 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,587 INFO werkzeug Thread-366 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,588 INFO werkzeug Thread-367 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,589 INFO werkzeug Thread-368 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,592 INFO werkzeug Thread-369 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,608 INFO werkzeug Thread-371 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,608 INFO werkzeug Thread-370 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,613 INFO werkzeug Thread-372 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,616 INFO werkzeug Thread-373 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,619 INFO werkzeug Thread-375 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,620 INFO werkzeug Thread-374 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,621 INFO werkzeug Thread-376 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,627 INFO werkzeug Thread-377 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,628 INFO werkzeug Thread-378 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,629 INFO werkzeug Thread-379 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,634 INFO werkzeug Thread-380 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,637 INFO werkzeug Thread-381 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,640 INFO werkzeug Thread-382 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:17:00,641 INFO werkzeug Thread-383 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:17:00] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,415 INFO werkzeug Thread-384 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "GET /showmodels HTTP/1.1" 200 -
+2023-07-12 10:19:03,449 INFO werkzeug Thread-385 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,450 INFO werkzeug Thread-386 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,453 INFO werkzeug Thread-387 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,456 INFO werkzeug Thread-388 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,457 INFO werkzeug Thread-389 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,460 INFO werkzeug Thread-390 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,471 INFO werkzeug Thread-391 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,473 INFO werkzeug Thread-392 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,474 INFO werkzeug Thread-393 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,478 INFO werkzeug Thread-394 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,478 INFO werkzeug Thread-395 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,482 INFO werkzeug Thread-396 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,486 INFO werkzeug Thread-397 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,488 INFO werkzeug Thread-398 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,489 INFO werkzeug Thread-399 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,494 INFO werkzeug Thread-402 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,495 INFO werkzeug Thread-400 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,498 INFO werkzeug Thread-401 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,499 INFO werkzeug Thread-403 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,501 INFO werkzeug Thread-404 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,505 INFO werkzeug Thread-405 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/img/logos/10.png HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,510 INFO werkzeug Thread-406 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/img/logos/13.png HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,511 INFO werkzeug Thread-407 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/img/logos/7.png HTTP/1.1[0m" 304 -
+2023-07-12 10:19:03,515 INFO werkzeug Thread-408 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:03] "[36mGET /static/assets/img/logos/8.png HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,816 INFO werkzeug Thread-409 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "GET /selectmodelgoal HTTP/1.1" 200 -
+2023-07-12 10:19:05,850 INFO werkzeug Thread-410 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,855 INFO werkzeug Thread-411 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,859 INFO werkzeug Thread-412 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,863 INFO werkzeug Thread-413 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,864 INFO werkzeug Thread-414 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,868 INFO werkzeug Thread-415 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,874 INFO werkzeug Thread-416 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,877 INFO werkzeug Thread-417 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,878 INFO werkzeug Thread-418 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,882 INFO werkzeug Thread-419 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,884 INFO werkzeug Thread-420 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,887 INFO werkzeug Thread-421 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,889 INFO werkzeug Thread-422 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,892 INFO werkzeug Thread-423 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,895 INFO werkzeug Thread-424 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,897 INFO werkzeug Thread-425 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,901 INFO werkzeug Thread-426 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,905 INFO werkzeug Thread-427 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,906 INFO werkzeug Thread-428 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:05,906 INFO werkzeug Thread-429 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:05] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,709 INFO werkzeug Thread-430 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "GET /createmodel?t=7 HTTP/1.1" 200 -
+2023-07-12 10:19:08,744 INFO werkzeug Thread-432 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,745 INFO werkzeug Thread-431 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,752 INFO werkzeug Thread-433 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,757 INFO werkzeug Thread-434 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,761 INFO werkzeug Thread-435 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,762 INFO werkzeug Thread-436 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,767 INFO werkzeug Thread-437 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,768 INFO werkzeug Thread-438 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,773 INFO werkzeug Thread-440 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,774 INFO werkzeug Thread-439 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,777 INFO werkzeug Thread-441 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,779 INFO werkzeug Thread-442 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,782 INFO werkzeug Thread-444 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,782 INFO werkzeug Thread-443 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,786 INFO werkzeug Thread-445 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,791 INFO werkzeug Thread-446 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,791 INFO werkzeug Thread-447 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,795 INFO werkzeug Thread-448 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,798 INFO werkzeug Thread-450 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:08,798 INFO werkzeug Thread-449 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:08] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,692 INFO werkzeug Thread-451 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "POST /selectcsvds HTTP/1.1" 200 -
+2023-07-12 10:19:09,721 INFO werkzeug Thread-452 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,728 INFO werkzeug Thread-453 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,733 INFO werkzeug Thread-454 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,741 INFO werkzeug Thread-456 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,742 INFO werkzeug Thread-455 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,744 INFO werkzeug Thread-457 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,746 INFO werkzeug Thread-458 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,750 INFO werkzeug Thread-459 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,754 INFO werkzeug Thread-460 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,755 INFO werkzeug Thread-461 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,758 INFO werkzeug Thread-462 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,761 INFO werkzeug Thread-463 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,765 INFO werkzeug Thread-464 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,766 INFO werkzeug Thread-465 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,768 INFO werkzeug Thread-466 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,774 INFO werkzeug Thread-467 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,775 INFO werkzeug Thread-468 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,776 INFO werkzeug Thread-470 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,779 INFO werkzeug Thread-469 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:19:09,780 INFO werkzeug Thread-471 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:09] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,070 INFO root Thread-472 (process_request_thread) : ------Numric columns
+2023-07-12 10:19:22,096 INFO root Thread-472 (process_request_thread) : ------Object columns
+2023-07-12 10:19:22,124 INFO werkzeug Thread-472 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "POST /previewdata HTTP/1.1" 200 -
+2023-07-12 10:19:22,148 INFO werkzeug Thread-473 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,152 INFO werkzeug Thread-474 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,154 INFO werkzeug Thread-475 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,155 INFO werkzeug Thread-476 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,159 INFO werkzeug Thread-477 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,160 INFO werkzeug Thread-478 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,171 INFO werkzeug Thread-479 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,172 INFO werkzeug Thread-480 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,173 INFO werkzeug Thread-481 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,177 INFO werkzeug Thread-482 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,180 INFO werkzeug Thread-483 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,181 INFO werkzeug Thread-484 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,185 INFO werkzeug Thread-486 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,186 INFO werkzeug Thread-485 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,188 INFO werkzeug Thread-487 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,190 INFO werkzeug Thread-488 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,192 INFO werkzeug Thread-489 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,196 INFO werkzeug Thread-490 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,199 INFO werkzeug Thread-491 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:22,200 INFO werkzeug Thread-492 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:22] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,515 INFO root Thread-493 (process_request_thread) : ------Numric columns
+2023-07-12 10:19:23,543 INFO root Thread-493 (process_request_thread) : ------Object columns
+2023-07-12 10:19:23,555 INFO werkzeug Thread-493 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "POST /uploadcsvds HTTP/1.1" 200 -
+2023-07-12 10:19:23,580 INFO werkzeug Thread-494 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,581 INFO werkzeug Thread-495 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,586 INFO werkzeug Thread-497 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,586 INFO werkzeug Thread-496 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,589 INFO werkzeug Thread-498 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,589 INFO werkzeug Thread-499 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,594 INFO werkzeug Thread-500 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,606 INFO werkzeug Thread-501 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,607 INFO werkzeug Thread-502 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,609 INFO werkzeug Thread-503 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,612 INFO werkzeug Thread-504 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,613 INFO werkzeug Thread-505 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,619 INFO werkzeug Thread-506 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,620 INFO werkzeug Thread-507 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,622 INFO werkzeug Thread-508 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,626 INFO werkzeug Thread-509 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,627 INFO werkzeug Thread-510 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,630 INFO werkzeug Thread-511 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,631 INFO werkzeug Thread-512 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:23,633 INFO werkzeug Thread-513 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:23] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,589 INFO werkzeug Thread-514 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "POST /creatingthemodel HTTP/1.1" 200 -
+2023-07-12 10:19:26,622 INFO werkzeug Thread-516 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,624 INFO werkzeug Thread-515 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,625 INFO werkzeug Thread-517 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,633 INFO werkzeug Thread-518 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,635 INFO werkzeug Thread-519 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,640 INFO werkzeug Thread-520 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,646 INFO werkzeug Thread-521 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,647 INFO werkzeug Thread-522 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,650 INFO werkzeug Thread-523 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,653 INFO werkzeug Thread-524 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,656 INFO werkzeug Thread-525 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,658 INFO werkzeug Thread-526 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,662 INFO werkzeug Thread-527 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,664 INFO werkzeug Thread-528 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,667 INFO werkzeug Thread-529 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,669 INFO werkzeug Thread-530 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,670 INFO werkzeug Thread-531 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/images/loading_icon.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,674 INFO werkzeug Thread-532 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,676 INFO werkzeug Thread-533 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,679 INFO werkzeug Thread-534 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,679 INFO werkzeug Thread-535 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,759 INFO werkzeug Thread-536 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "POST /sendvalues HTTP/1.1" 200 -
+2023-07-12 10:19:26,781 INFO werkzeug Thread-537 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,786 INFO werkzeug Thread-540 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,788 INFO werkzeug Thread-538 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,789 INFO werkzeug Thread-539 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,790 INFO werkzeug Thread-541 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,793 INFO werkzeug Thread-542 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,796 INFO werkzeug Thread-543 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,809 INFO werkzeug Thread-545 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,810 INFO werkzeug Thread-544 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,811 INFO werkzeug Thread-546 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,812 INFO werkzeug Thread-547 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,815 INFO werkzeug Thread-548 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,818 INFO werkzeug Thread-549 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,820 INFO werkzeug Thread-550 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,824 INFO werkzeug Thread-551 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,825 INFO werkzeug Thread-552 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,829 INFO werkzeug Thread-553 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,831 INFO werkzeug Thread-554 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,834 INFO werkzeug Thread-556 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 10:19:26,835 INFO werkzeug Thread-555 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 10:19:26] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 13:18:46,917 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:18:46,919 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:18:47,216 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:25:22,299 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:25:22,301 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:25:22,598 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:27:03,542 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:27:03,544 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:27:03,838 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:27:59,405 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:27:59,406 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:27:59,702 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:30:36,418 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:30:36,420 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:30:36,713 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:32:06,668 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:32:06,670 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:32:06,965 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:32:29,780 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:32:29,782 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:32:30,081 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:32:54,378 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:32:54,380 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:32:54,672 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:34:14,411 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:34:14,413 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:34:14,709 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:36:02,789 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:36:02,791 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:36:03,089 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:36:40,336 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:36:40,338 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:36:40,632 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:37:10,309 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:37:10,310 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:37:10,611 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:38:28,470 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:38:28,472 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:38:28,771 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:38:30,822 INFO app MainThread : DEBUG       = True
+2023-07-12 13:38:30,822 INFO app MainThread : Environment = Debug
+2023-07-12 13:38:30,823 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-07-12 13:38:45,855 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:38:45,857 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:38:46,150 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:38:48,284 INFO app MainThread : DEBUG       = True
+2023-07-12 13:38:48,285 INFO app MainThread : Environment = Debug
+2023-07-12 13:38:48,285 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-07-12 13:38:48,285 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-07-12 13:38:48,285 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-07-12 13:39:01,531 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "[32mGET / HTTP/1.1[0m" 302 -
+2023-07-12 13:39:01,567 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "GET /login HTTP/1.1" 200 -
+2023-07-12 13:39:01,651 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 13:39:01,660 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "GET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1" 200 -
+2023-07-12 13:39:01,660 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "GET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1" 200 -
+2023-07-12 13:39:01,661 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "GET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1" 200 -
+2023-07-12 13:39:01,663 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 13:39:01,664 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 13:39:01,664 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "GET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1" 200 -
+2023-07-12 13:39:01,668 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "GET /static/images/loading1.gif HTTP/1.1" 200 -
+2023-07-12 13:39:01,670 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 13:39:01,672 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "GET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1" 200 -
+2023-07-12 13:39:01,673 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "GET /static/assets/img/brand/white.png HTTP/1.1" 200 -
+2023-07-12 13:39:01,675 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "GET /static/assets/img/brand/blue.png HTTP/1.1" 200 -
+2023-07-12 13:39:01,675 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 13:39:01,779 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "[36mGET /static/assets/vendor/nucleo/fonts/nucleo-icons.woff2 HTTP/1.1[0m" 304 -
+2023-07-12 13:39:01,780 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:01] "GET /static/assets/vendor/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 -
+2023-07-12 13:39:03,553 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[32mPOST /login HTTP/1.1[0m" 302 -
+2023-07-12 13:39:03,588 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "GET /showmodels HTTP/1.1" 200 -
+2023-07-12 13:39:03,616 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,621 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,621 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,625 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "GET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1" 200 -
+2023-07-12 13:39:03,625 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,626 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,632 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,638 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,639 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,652 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,652 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,654 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,655 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,656 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,656 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "GET /static/assets/img/theme/team-1.jpg HTTP/1.1" 200 -
+2023-07-12 13:39:03,659 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "GET /static/assets/img/theme/team-2.jpg HTTP/1.1" 200 -
+2023-07-12 13:39:03,660 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "GET /static/assets/img/theme/team-3.jpg HTTP/1.1" 200 -
+2023-07-12 13:39:03,661 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "GET /static/assets/img/theme/team-5.jpg HTTP/1.1" 200 -
+2023-07-12 13:39:03,662 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "GET /static/assets/img/theme/team-4.jpg HTTP/1.1" 200 -
+2023-07-12 13:39:03,663 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/img/logos/10.png HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,669 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/img/logos/13.png HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,671 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/img/logos/7.png HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,672 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "GET /static/images/loading2.gif HTTP/1.1" 200 -
+2023-07-12 13:39:03,672 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/img/logos/8.png HTTP/1.1[0m" 304 -
+2023-07-12 13:39:03,689 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 13:39:03] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1[0m" 304 -
+2023-07-12 13:52:40,410 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:52:40,413 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:52:40,710 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:53:30,259 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:53:30,260 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:53:30,560 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:54:55,338 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:54:55,340 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:54:55,634 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 13:55:11,857 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 13:55:11,859 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 13:55:12,156 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 14:02:45,458 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 14:02:45,460 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 14:02:45,836 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 14:04:48,421 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 14:04:48,423 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 14:04:48,718 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 14:06:02,469 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 14:06:02,470 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 14:06:02,765 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 14:07:00,716 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 14:07:00,718 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 14:07:01,013 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 14:09:10,218 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 14:09:10,220 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 14:09:10,517 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 14:09:30,674 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 14:09:30,676 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 14:09:30,973 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 14:14:47,817 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 14:14:47,819 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 14:14:48,113 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 14:15:03,997 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 14:15:03,999 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 14:15:04,296 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 14:15:34,948 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 14:15:34,949 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 14:15:35,248 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 14:16:02,131 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-07-12 14:16:02,133 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-07-12 14:16:02,429 DEBUG matplotlib.pyplot MainThread : Loaded backend module://backend_interagg version unknown.
+2023-07-12 14:16:04,692 INFO app MainThread : DEBUG       = True
+2023-07-12 14:16:04,692 INFO app MainThread : Environment = Debug
+2023-07-12 14:16:04,692 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-07-12 14:16:04,693 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-07-12 14:16:04,693 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-07-12 14:16:53,863 INFO werkzeug Thread-1 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:53] "GET /showmodels HTTP/1.1" 200 -
+2023-07-12 14:16:53,963 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:53] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 14:16:53,968 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:53] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 14:16:53,968 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:53] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:53,968 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:53] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 14:16:53,970 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:53] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:53,971 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:53] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 14:16:53,974 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:53] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:53,992 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:53] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:53,993 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:53] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,025 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,028 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,030 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,030 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,032 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,034 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,034 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,035 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,037 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,038 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,039 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/img/logos/10.png HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,041 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/img/logos/13.png HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,042 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/img/logos/7.png HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,043 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/img/logos/8.png HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,044 INFO werkzeug Thread-25 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/vendor/nucleo/fonts/nucleo-icons.woff2 HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,045 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,045 INFO werkzeug Thread-27 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 14:16:54,139 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:54] "GET /static/assets/img/brand/favicon.png HTTP/1.1" 200 -
+2023-07-12 14:16:59,140 INFO werkzeug Thread-29 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[32mGET /deletemodels HTTP/1.1[0m" 302 -
+2023-07-12 14:16:59,145 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "GET /showmodels HTTP/1.1" 200 -
+2023-07-12 14:16:59,169 INFO werkzeug Thread-31 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,173 INFO werkzeug Thread-33 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,174 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,175 INFO werkzeug Thread-35 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,175 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,176 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,183 INFO werkzeug Thread-37 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,183 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,187 INFO werkzeug Thread-39 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,211 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,211 INFO werkzeug Thread-41 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,211 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,212 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,212 INFO werkzeug Thread-43 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,213 INFO werkzeug Thread-45 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,215 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,218 INFO werkzeug Thread-47 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,218 INFO werkzeug Thread-49 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,219 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,221 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,223 INFO werkzeug Thread-51 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/vendor/nucleo/fonts/nucleo-icons.woff2 HTTP/1.1[0m" 304 -
+2023-07-12 14:16:59,223 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:16:59] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,682 INFO werkzeug Thread-53 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "GET /selectmodelgoal HTTP/1.1" 200 -
+2023-07-12 14:17:43,719 INFO werkzeug Thread-54 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,723 INFO werkzeug Thread-56 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,724 INFO werkzeug Thread-55 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,726 INFO werkzeug Thread-57 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,728 INFO werkzeug Thread-58 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,728 INFO werkzeug Thread-59 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,734 INFO werkzeug Thread-60 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,735 INFO werkzeug Thread-61 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,753 INFO werkzeug Thread-62 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,754 INFO werkzeug Thread-63 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,757 INFO werkzeug Thread-64 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,758 INFO werkzeug Thread-66 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,759 INFO werkzeug Thread-65 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,761 INFO werkzeug Thread-67 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,762 INFO werkzeug Thread-68 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,762 INFO werkzeug Thread-69 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,764 INFO werkzeug Thread-70 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,765 INFO werkzeug Thread-71 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,766 INFO werkzeug Thread-72 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,768 INFO werkzeug Thread-74 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,768 INFO werkzeug Thread-73 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/assets/vendor/nucleo/fonts/nucleo-icons.woff2 HTTP/1.1[0m" 304 -
+2023-07-12 14:17:43,768 INFO werkzeug Thread-75 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:43] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,672 INFO werkzeug Thread-76 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "GET /computervision HTTP/1.1" 200 -
+2023-07-12 14:17:45,702 INFO werkzeug Thread-77 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,705 INFO werkzeug Thread-78 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,706 INFO werkzeug Thread-79 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,709 INFO werkzeug Thread-81 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/vendor/chart.js/dist/Chart.extension.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,710 INFO werkzeug Thread-80 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/vendor/chart.js/dist/Chart.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,712 INFO werkzeug Thread-82 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/vendor/select2/dist/css/select2.min.css HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,723 INFO werkzeug Thread-83 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,728 INFO werkzeug Thread-84 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,729 INFO werkzeug Thread-85 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,731 INFO werkzeug Thread-86 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,734 INFO werkzeug Thread-87 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,734 INFO werkzeug Thread-88 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,736 INFO werkzeug Thread-89 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,738 INFO werkzeug Thread-90 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,739 INFO werkzeug Thread-91 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/img/theme/team-1.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,741 INFO werkzeug Thread-92 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,742 INFO werkzeug Thread-93 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/img/theme/team-3.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,744 INFO werkzeug Thread-94 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,746 INFO werkzeug Thread-96 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/assets/img/theme/team-5.jpg HTTP/1.1[0m" 304 -
+2023-07-12 14:17:45,747 INFO werkzeug Thread-95 (process_request_thread) : 127.0.0.1 - - [12/Jul/2023 14:17:45] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -

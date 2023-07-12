@@ -1,0 +1,54 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} What do you want to know from your data? {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="card card-nav-tabs">
+        <div class="card-header">
+            <h2>Computer vision</h2>
+            <p class="lead">Utilize digital images from cameras and videos, deep learning, and reaction time to precisely identify and categorize objects.</p>
+        </div>
+    </div>
+    <!--div class="card card-nav-tabs">
+        <div class="card-header">
+            What do you want to know from your data?
+            <span style="float: right">
+                <button type="button" class="btn btn-outline-default">
+                    <a href="/analysedata">Can't decide</a></button>
+            </span>
+        </div>
+    </div-->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-nav-tabs">
+                <div class="card-header card-header-warning">
+                    Work with objects<!--span class="badge badge-danger">Beta</span-->
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Reduce human work</h4>
+                    <p class="card-text">Build agnet to automate your operations.</p>
+                    <br/><br/>
+                    <a href="/cvision/selectvision?t=9" class="btn btn-info" disabled="">Let's build a robot</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+    </script>
+
+{% endblock javascripts %}
+

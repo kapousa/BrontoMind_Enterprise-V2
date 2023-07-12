@@ -1,0 +1,69 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    {% if required_changes != None %}
+        <form action="/dataprocessing/downloadmodifiedfile" method="post">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary fade show" role="alert">
+                            <strong>We understand that the following actions should be taken in response to your
+                                words:</strong>
+                            <p>
+                            <ol>
+                                {% for k, v in required_changes %}
+                                    <li>
+                                        {{ k }}
+                                        {% for col in  v %}
+                                            {{ col + " - " }}
+                                        {% endfor %}
+                                        column/s.
+                                    </li>
+                                {% endfor %}
+                                </p>
+                            </ol>
+                            Check out the table below to see how your data will look after you make these changes.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-danger">Download Modified Data File</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    Data Preview
+                    <p class="card-category"></p>
+                </div>
+                <div class="card-body">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-success">
+                                <p class="card-category">10 sample rows from your dataset</p>
+                            </div>
+                            <div class="card-body table-responsive">
+                                {% for sample in sample_data %}
+                                    {{ sample|safe }}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

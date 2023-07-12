@@ -1,0 +1,177 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Current Models {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    {% if message != 'No' %}
+
+        <div class="card card-stats mb-4 mb-lg-0">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="stats">
+                            <p class="lead">{{ message }}  </p>
+                            <a class="nav-link" href="/selectmodelgoal">
+                                <button class="btn btn-icon btn-3 btn-primary pull-right" type="button">
+                                    <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                                    <span class="btn-inner--text">New Model</span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% else %}
+        {% if call_message != None %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Message!</strong> {{ call_message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">Current Models</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <div>
+                                <table class="table align-items-center">
+                                    <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col" style="width: 30%;">
+                                            Model
+                                        </th>
+                                        <th scope="col">
+                                            Accuracy
+                                        </th>
+                                        <th scope="col">
+                                            Deployment
+                                        </th>
+                                        <th scope="col">
+                                            Last Modified By
+                                        </th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="list">
+                                    {% for profile in profiles %}
+                                        <tr>
+                                            <td class="name" data-toggle="tooltip" data-placement="right"
+                                                title="{{ "{}".format(profile['model_description']) }}">
+                                                <div class="media align-items-center">
+                                                    <a href="/showdashboard?param={{ profile['model_id'] }}"
+                                                       class="avatar rounded-circle mr-3">
+                                                        <img alt="Image placeholder"
+                                                             src="../static/assets/img/logos/{{ profile['ds_goal'] }}.png">
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <h4>
+                                                        {% if profile.status == 'Active' %}
+                                                            <a href="/showdashboard?param={{ profile['model_id'] }}">
+                                                                <span class="mb-0 text-sm">{{ profile['model_name'] }}</span>
+                                                            </a>
+                                                        {% else %}
+                                                            {{ profile['model_name'] }}
+                                                        {% endif %}
+                                                    </h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        <td><h4>± {{ profile['Accuracy'] }} %</h4></td>
+                                            <td class="status">
+                                            <span class="badge badge-dot mr-4">
+                                              {% if profile.deployed == 'Deployed' %}
+                                                  <i class="bg-green"></i> {% else %}
+                                                  <i class="bg-warning"></i> {% endif %} {{ profile['deployed'] }}
+                                            </span>
+                                            </td>
+                                            <td>
+                                                {{ profile['updated_by'] }}
+                                                <br/>
+                                                {{ profile['updated_on'] }}
+                                            </td>
+                                            <td class="budget">
+                                                <a href="/{{ profile['model_id'] }}/deploymodel"
+                                                   title="Deploy/Un-Deploy the model" data-toggle="tooltip"
+                                                   data-placement="bottom">
+                                                    <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="fa fa-paper-plane"></i>
+                                            </span>
+                                                    </button>
+                                                </a>
+                                                <a href="/updateinfo?param={{ profile['model_id'] }}&n=1"
+                                                   title="Update model info"
+                                                   data-toggle="tooltip" data-placement="bottom">
+                                                    <button class="btn btn-icon btn-2 btn-default" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="fa fa-edit"></i>
+                                            </span>
+                                                    </button>
+                                                </a>
+                                                <a href="/{{ profile['model_id'] }}/deletemodel"
+                                                   title="Delete the model"
+                                                   data-toggle="tooltip" data-placement="bottom">
+                                                    <button class="btn btn-icon btn-2 btn-danger" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="fa fa-minus"></i>
+                                            </span>
+                                                    </button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+
+                        <div class="stats">
+                            <a class="nav-link" href="/selectmodelgoal">
+                                <button class="btn btn-icon btn-3 btn-primary pull-right" type="button">
+                                    <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                                    <span class="btn-inner--text">New Model</span>
+                                </button>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span style="float: right">
+        <a class="nav-link pull-right" href="/deletemodels">
+                                <button class="btn btn-icon btn-3 btn-danger" type="button">
+                                    <span class="btn-inner--icon"><i class="fa fa-minus"></i></span>
+                                    <span class="btn-inner--text">Delete All</span>
+                                </button>
+                            </a>
+        </span>
+    {% endif %}
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+    </script>
+
+{% endblock javascripts %}

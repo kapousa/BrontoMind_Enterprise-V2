@@ -1,0 +1,131 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Select Fields {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    {% if message != 'No' %}
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="material-icons">close</i>
+            </button>
+            <span>{{ message }}</span>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="stats">
+                    <a class="nav-link" href="/showdashboard">
+                        <button class="btn btn-primary btn-lg">Start again</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title"><b>Step 2:</b> Select predictions values</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <li>Select one or more values to be predicted form the columns list</li>
+                                    <li>Click run model button</li>
+                                    <li>All empty columns removed from the
+                                        dataset.
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!--div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Configure the model</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+
+                        <label class="bmd-label-floating">Select columns that you want your machine to
+                            predict its values and which columns should affect the results
+                            (features).</label><br/>
+                        <label class="alert alert-danger">Note: All empty columns removed from the
+                            dataset.</label><br/>
+                    </div>
+                </div>
+            </div-->
+            <div class="col-md-4">
+                <form action="/creatingthemodel" name="creatingthemodel" method="post">
+                    <div class="card">
+                        <div class="card-header card-header-info">
+                            <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                <input class="custom-control-input" id="select-all-features" name="select-all-features"
+                                       type="checkbox">
+                                <label class="custom-control-label text-center text-danger" for="select-all-features">Select
+                                    All</label>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {% for i in range(0, headersArray.size) %}
+                                            <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                                                <input class="custom-control-input" id="{{ headersArray[i] }}"
+                                                       name="predcitedvalues" type="checkbox"
+                                                       value="{{ headersArray[i] }}" onchange="uncheck_checkall(document.getElementById('{{ headersArray[i] }}').value)"></input>
+                                                <label class="custom-control-label text-blue"
+                                                       for="{{ headersArray[i] }}">{{ headersArray[i] }}</label>
+                                            </div>
+                                        {% endfor %}
+                                        <input class="custom-control-input" id="featuresdvalues"
+                                               name="featuresdvalues" type="checkbox" style="display: none"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success float-right">Run Model</button>
+                            <div class="clearfix"></div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    {% endif %}
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+    <script>
+        document.getElementById('select-all-features').onclick = function () {
+            var checkboxes = document.getElementsByName('predcitedvalues');
+            if (document.getElementById('select-all-features').checked) {
+                for (var checkbox of checkboxes) {
+                    checkbox.checked = this.checked;
+                }
+            } else {
+                for (var checkbox of checkboxes) {
+                    checkbox.checked = this.checked;
+                }
+            }
+        }
+
+        function uncheck_checkall(featurename) {
+            var fname = document.getElementById(featurename).id;
+                if (document.getElementById(fname).checked) {
+                    // Do nothing
+                } else {
+                    document.getElementById('select-all-features').checked = false;
+                }
+        }
+
+    </script>
+{% endblock javascripts %}

@@ -1,0 +1,117 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    {% if message != 'No' %}
+        <div class="alert alert-default alert-dismissible fade show col-6 center" role="alert">
+            <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
+            <span class="alert-inner--text">{{ message }}</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="card card-stats mb-4 mb-lg-0">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="stats">
+                            <a class="nav-link" href="/selectmodelgoal">
+                                <button class="btn btn-primary btn-lg">Start Machine Learning Model</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% else %}
+        {% include 'applications/includes/model_controllers.html' %}
+        {% include 'applications/includes/model_integration.html' %}
+        {% if run_history != [] %}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title ">Run History</h4>
+                            <p class="card-category"></p>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table"/>
+                                <table class="table align-items-center">
+                                    <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Run ID</th>
+                                        <th scope="col" style="width: 40%;">Description</th>
+                                        <th scope="col">Sourcce</th>
+                                        <th scope="col">Channel</th>
+                                        <th scope="col">Run on</th>
+                                        <th scope="col">Download</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="list">
+                                    {% for onerun in run_history %}
+                                        <tr>
+                                            <td class="budget">{{ onerun['run_id'] }}</td>
+                                            <td>{{ onerun['description'] }}</td>
+                                            <td>
+                                                {% if onerun['webcam'] == 31 %}
+                                                    FTP
+                                                {% endif %}
+                                                {% if onerun['webcam'] == 32 %}
+                                                    Webcam
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                {% if onerun['channel'] == 27 %}
+                                                    Web
+                                                {% endif %}
+                                                {% if onerun['channel'] == 28 %}
+                                                    API
+                                                {% endif %}
+                                            </td>
+                                            <td>{{ onerun['run_on'] }}
+                                            </td>
+                                            <td class="budget">
+                                                <a href="/cvision/{{ onerun['model_id'] }}/{{ onerun['run_id'] }}/downloadresults""
+                                                title="Downlaod labeld files" data-toggle="tooltip"
+                                                data-placement="right">
+                                                <button class="btn btn-icon btn-2 btn-primary" type="button">
+                                            <span class="btn-inner--icon">
+                                                    <i class="fa fa-download"></i>
+                                            </span>
+                                                </button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        <!-- Specific Page JS goes HERE  -->
+        {% block javascripts %}
+
+            <script>
+                $(document).ready(function () {
+                    // Javascript method's body can be found in assets/js/demos.js
+                    md.initDashboardPageCharts();
+
+                });
+            </script>
+
+        {% endblock javascripts %}
+
+    {% endif %}
+{% endblock content %}
+
+
+

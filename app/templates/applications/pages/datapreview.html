@@ -1,0 +1,103 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    {% if message != 'data_info' %}
+        <div class="alert alert-danger alert-dismissible fade show col-6 center" role="alert">
+            <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
+            <span class="alert-inner--text">{{ message }}</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h2 class="card-title ">Data Preview</h2>
+                        <p class="card-category"></p>
+                        <form action="/uploadcsvds" name="uploadcsvds" method="post">
+                            <input type="hidden" name="filePath" id="filePath" value="{{ filePath }}">
+                            <button type="submit" class="btn btn-primary btn-lg float-right">Proceed building model
+                            </button>
+                        </form>
+                        <p class="card-category"></p>
+                        <form action="/uploadcsvds" name="uploadcsvds" method="post">
+                            <input type="hidden" name="filePath" id="filePath" value="{{ filePath }}">
+                            <button type="button" class="btn btn-success btn-lg">Data preparation bot</button>
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table align-items-center"
+                                   style="align-content: center!important;">
+                                <thead class="thead-light align-content-center"
+                                       style="align-content: center!important;">
+                                <tr>
+                                    {% for ind in dataset_info.columns %}
+                                        <th scope="col"
+                                            style="text-align: center;  width: 100px; align-content: center!important; white-space: normal!important; vertical-align: central">
+                                            <h5 class="card-title text-blue text-center">{{ ind }}</h5>
+                                        </th>
+                                    {% endfor %}
+                                </tr>
+                                </thead>
+                                <thead>
+                                {% for ind in dataset_info.columns %}
+                                    <td>
+                                        <div class="card align-top"
+                                             style="width: 200px; min-width: 200px; max-width: 200px;">
+                                            <div class="card-body"
+                                                 style="word-wrap: break-word!important; word-break: break-all!important; align-content: center!important;">
+                                                <h5 class="text-danger"
+                                                    style="white-space:pre-wrap; text-align: center">{{ dataset_info[ind][0] }}</h5>
+                                            </div>
+                                        </div>
+                                    </td>
+                                {% endfor %}
+                                </thead>
+                                {% for i in range(sample_data.shape[0]) %}
+                                    <tr class="align-content-center"
+                                        style="word-wrap: break-word!important; vertical-align: top;">
+                                        {% for sample in sample_data.columns %}
+                                            <td style="border-width: thin; border-color: #0a0c0d; text-align: center!important;"
+                                                data-toggle="tooltip" data-placement="top"
+                                                title="{{ sample_data[sample].iloc[i] }}">
+                                                {% set cc = sample_data[sample].iloc[i] %}
+                                                {% if cc|string|count > 50 %}
+                                                    <h5 style="color: red">"Content is large, hover to see content"</h5>
+                                                {% else %}
+                                                    <h5>{{ cc|trim }}</h5>
+                                                {% endif %}
+                                            </td>
+                                        {% endfor %}
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+    </script>
+
+{% endblock javascripts %}
+
