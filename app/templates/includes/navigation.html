@@ -1,37 +1,63 @@
-<nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+<nav class="navbar navbar-top navbar-expand navbar-dark bg-white border-bottom">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Search form -->
-            <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
-                <div class="form-group mb-0">
-                    <div class="input-group input-group-alternative input-group-merge">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-search"></i></span>
-                        </div>
-                        <input class="form-control" placeholder="Search" type="text">
-                    </div>
-                </div>
-                <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main"
-                        aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </form>
-            <!-- Navbar links -->
             <ul class="navbar-nav align-items-center  ml-md-auto ">
-                <li class="nav-item d-xl-none">
-                    <!-- Sidenav toggler -->
-                    <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin"
-                         data-target="#sidenav-main">
-                        <div class="sidenav-toggler-inner">
-                            <i class="sidenav-toggler-line"></i>
-                            <i class="sidenav-toggler-line"></i>
-                            <i class="sidenav-toggler-line"></i>
-                        </div>
-                    </div>
+                <!-- Brand -->
+                <li class="nav-item">
+                    <a href="#">
+                        <img src="/static/assets/img/brand/logo.png" class="navbar-brand-img"
+                             alt="Argon Design - Jinja Template Logo." style="height: 50px;">
+                    </a>
                 </li>
-                <li class="nav-item d-sm-none">
-                    <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
-                        <i class="ni ni-zoom-split-in"></i>
+                <li class="nav-item" style="color: white;">
+                    sdssdsds
+                </li>
+                <!-- Navbar links -->
+                <li class="nav-item"
+                    style="color: black; {% if 'showmodels' in segment %} background:gainsboro; {% endif %}">
+                    <a class="nav-link {% if 'showmodels' in segment %} active {% endif %}" style="color: black"
+                       href="{{ url_for('base_blueprint.showmodels') }}">
+                        <i class="ni ni-bullet-list-67 text-primary"></i>
+                        <span class="nav-link-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item"
+                    style="color: black; {% if 'selectmodelgoal' in segment %} background:gainsboro; {% endif %}">
+                    <a class="nav-link {% if 'selectmodelgoal' in segment %} active {% endif %}" style="color: black"
+                       href="{{ url_for('base_blueprint.selectmodelgoal') }}">
+                        <i class="fa fa-plus-circle text-danger"></i>
+                        <span class="nav-link-text">New model</span>
+                    </a>
+                </li>
+                <li class="nav-item"
+                    style="color: black; {% if 'computervision' in segment %} background:gainsboro; {% endif %}">
+                    <a class="nav-link {% if 'computervision' in segment %} active {% endif %}" style="color: black"
+                       href="{{ url_for('base_blueprint.computervision') }}">
+                        <i class="fa fa-eye text-info"></i>
+                        <span class="nav-link-text">Computer vision</span>
+                    </a>
+                </li>
+                <li class="nav-item"
+                    style="color: black; {% if 'preparedata' in segment %} background:gainsboro; {% endif %}">
+                    <a class="nav-link {% if 'preparedata' in segment %} active {% endif %}" style="color: black"
+                       href="{{ url_for('dataprocessing_blueprint.datapreprationbot') }}">
+                        <i class="fa fa-database text-green"></i>
+                        <span class="nav-link-text">Data preparation bot</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="color: black; {% if 'idea' in segment %} background:gainsboro; {% endif %}">
+                    <a class="nav-link {% if 'idea' in segment %} active {% endif %}" style="color: black"
+                       href="{{ url_for('base_blueprint.idea') }}">
+                        <i class="fa fa-lightbulb text-yellow"></i>
+                        <span class="nav-link-text">I only have an idea</span>
+                    </a>
+                </li>
+                <li class="nav-item"
+                    style="color: black; {% if 'datasets' in segment %} background:gainsboro; {% endif %}">
+                    <a class="nav-link {% if 'datasets' in segment %} active {% endif %}" style="color: black;"
+                       href="{{ url_for('base_blueprint.datasets') }}">
+                        <i class="fa fa-table text-blue"></i>
+                        <span class="nav-link-text">Sample Datasets</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">

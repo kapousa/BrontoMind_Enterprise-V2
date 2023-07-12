@@ -25,7 +25,7 @@ from app.modules.base import blueprint
 from app.modules.base.app_routes.directors import BaseDirector
 from app.modules.base.app_routes.directors import ClassificationDirector
 from app.modules.base.app_routes.directors import ClusteringDirector
-from app.modules.base.app_routes.directors import DatasetsDirector
+from app.modules.base.app_routes.directors.DatasetsDirector import DatasetsDirector
 from app.modules.base.app_routes.directors.ForecastingDirector import ForecastingDirector
 from app.modules.base.app_routes.directors.PredictionDirector import PredictionDirector
 from app.modules.base.constants.BM_CONSTANTS import plot_zip_download_location, progress_icon_path, loading_icon_path
