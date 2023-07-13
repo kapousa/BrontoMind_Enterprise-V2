@@ -1,4 +1,4 @@
-from app.modules.base.app_routes.directors import ClassificationDirector
+from app.modules.base.app_routes.directors.ClassificationDirector import ClassificationDirector
 from app.bck.bm.core.engine.BMModelFactory import BMModelFactory
 
 

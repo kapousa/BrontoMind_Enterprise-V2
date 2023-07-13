@@ -1,5 +1,5 @@
-from app.modules.base.app_routes.directors import ClusteringDirector
 from app.bck.bm.core.engine.BMModelFactory import BMModelFactory
+from app.modules.base.app_routes.directors.ClusteringDirector import ClusteringDirector
 
 
 class ClusteringFactory(BMModelFactory):

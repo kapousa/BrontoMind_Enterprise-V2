@@ -1,5 +1,5 @@
-from app.modules.base.app_routes.directors import ForecastingDirector
 from app.bck.bm.core.engine.BMModelFactory import BMModelFactory
+from app.modules.base.app_routes.directors.ForecastingDirector import ForecastingDirector
 
 
 class ForecastingFactory(BMModelFactory):

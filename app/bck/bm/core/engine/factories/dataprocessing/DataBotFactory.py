@@ -1,4 +1,4 @@
-from app.modules.base.app_routes.directors import DataBotDirector
+from app.modules.base.app_routes.directors.dataprocessing.DataBotDirector import DataBotDirector
 
 
 class DataBotFactory:

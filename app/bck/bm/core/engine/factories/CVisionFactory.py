@@ -1,6 +1,6 @@
 from flask import session
 
-from app.modules.base.app_routes.directors import CVisionDirector
+from app.modules.base.app_routes.directors.CVisionDirector import CVisionDirector
 
 
 class CVisionFactory:
