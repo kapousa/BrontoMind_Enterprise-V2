@@ -21,7 +21,7 @@ from sklearn.metrics.pairwise import linear_kernel
 from sklearn.preprocessing import MinMaxScaler
 
 from app import config_parser
-from app.modules.base.constants.BM_CONSTANTS import html_plots_location, html_short_path, df_location, clusters_keywords_file, \
+from app.constants.BM_CONSTANTS import html_plots_location, html_short_path, df_location, clusters_keywords_file, \
     output_docs_location, labeled_data_filename
 from app.bck.bm.utiles.Helper import Helper
 

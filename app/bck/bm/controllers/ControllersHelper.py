@@ -21,7 +21,7 @@ from nltk import word_tokenize, FreqDist
 from nltk.corpus import stopwords
 from sklearn.preprocessing import MinMaxScaler
 
-from app.modules.base.constants.BM_CONSTANTS import html_plots_location, html_short_path, app_root_path, \
+from app.constants.BM_CONSTANTS import html_plots_location, html_short_path, app_root_path, \
     data_files_folder, df_location, scalars_location
 from app.modules.base.db_models.ModelProfile import ModelProfile
 from app.bck.bm.utiles.Helper import Helper

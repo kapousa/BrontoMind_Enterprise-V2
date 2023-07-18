@@ -2,7 +2,7 @@ import pandas as pd
 from flask import render_template
 from markupsafe import Markup
 
-from app.modules.base.constants.BM_CONSTANTS import df_location, docs_templates_folder, \
+from app.constants.BM_CONSTANTS import df_location, docs_templates_folder, \
     output_docs
 from app.modules.base.db_models.ModelAPIDetails import ModelAPIDetails
 

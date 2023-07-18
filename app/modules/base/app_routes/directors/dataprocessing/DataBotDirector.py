@@ -5,10 +5,10 @@ import pandas as pd
 from flask import render_template, abort, session, send_file
 from werkzeug.utils import secure_filename
 
-from app.modules.base.constants.BM_CONSTANTS import tempfiles_loaction
+from app.constants.BM_CONSTANTS import tempfiles_loaction
 from app.bck.bm.controllers.dataprocessing.DataBotController import DataBotController
 from app.bck.bm.utiles.CVSReader import get_file_name_with_ext
-from app.modules.base.constants.DATAPROCESSING_CONSTANTS import modified_files_temp_path
+from app.constants.DATAPROCESSING_CONSTANTS import modified_files_temp_path
 
 
 class DataBotDirector:

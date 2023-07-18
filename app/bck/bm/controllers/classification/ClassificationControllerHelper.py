@@ -22,7 +22,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix, classification_report
 from sklearn.naive_bayes import MultinomialNB
 
-from app.modules.base.constants.BM_CONSTANTS import html_plots_location, html_short_path, app_root_path, \
+from app.constants.BM_CONSTANTS import html_plots_location, html_short_path, app_root_path, \
     pkls_location, \
     data_files_folder, df_location
 from app.bck.bm.utiles.Helper import Helper

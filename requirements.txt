@@ -27,7 +27,7 @@ skforecast
 statsmodels~=0.13.2
 plotly~=5.7.0
 requests
-
+pymysql
 sklearn~=0.0.post1
 tqdm~=4.64.0
 joblib~=1.2.0

@@ -14,7 +14,7 @@ import plotly
 import plotly.express as px
 
 from app import db, config_parser
-from app.modules.base.constants.BM_CONSTANTS import html_plots_location, html_short_path, pkls_location, df_location
+from app.constants.BM_CONSTANTS import html_plots_location, html_short_path, pkls_location, df_location
 from app.modules.base.db_models.ModelProfile import ModelProfile
 from app.bck.bm.controllers.BaseController import BaseController
 from app.bck.bm.datamanipulation.AdjustDataFrame import convert_data_to_sample

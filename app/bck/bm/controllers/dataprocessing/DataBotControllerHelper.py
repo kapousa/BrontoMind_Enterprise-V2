@@ -5,8 +5,8 @@ import spacy
 from flask import abort
 from sklearn.metrics.pairwise import cosine_similarity
 
-from app.modules.base.constants.DATAPROCESSING_CONSTANTS import delete_action, merge_action, sum_action
-from app.modules.base.constants.k import F, S, T
+from app.constants.DATAPROCESSING_CONSTANTS import delete_action, merge_action, sum_action
+from app.constants.k import F, S, T
 
 
 class DataBotControllerHelper:

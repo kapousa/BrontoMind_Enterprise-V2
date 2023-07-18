@@ -20,7 +20,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 from app import db, config_parser
-from app.modules.base.constants.BM_CONSTANTS import plot_zip_locations, pkls_location, scalars_location, plot_locations, \
+from app.constants.BM_CONSTANTS import plot_zip_locations, pkls_location, scalars_location, plot_locations, \
     html_plots_location, html_short_path, df_location
 from app.modules.base.db_models.ModelProfile import ModelProfile
 from app.bck.bm.controllers.BaseController import BaseController

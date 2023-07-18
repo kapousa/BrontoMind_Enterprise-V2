@@ -3,7 +3,7 @@ from os import abort
 
 from flask import render_template
 
-from app.modules.base.constants.BM_CONSTANTS import downlaod_dataset_file_path
+from app.constants.BM_CONSTANTS import downlaod_dataset_file_path
 from app.modules.base.db_models.ModelDatasets import ModelDatasets
 
 

@@ -14,10 +14,10 @@ import numpy as np
 from app import db
 from joblib import dump, load
 
-from app.modules.base.constants.BM_CONSTANTS import df_location
+from app.constants.BM_CONSTANTS import df_location
 from app.modules.base.db_models import ModelEncodedColumns
 from app.modules.base.db_models.ModelFeatures import ModelFeatures
-from app.modules.base.constants.BM_CONSTANTS import api_data_filename, api_data_folder
+from app.constants.BM_CONSTANTS import api_data_filename, api_data_folder
 from app.bck.bm.db_helper.AttributesHelper import add_encoded_column_values
 from app.bck.bm.db_helper.DBConnector import DBConnector
 from app.bck.bm.utiles.CVSReader import get_only_file_name, get_file_path

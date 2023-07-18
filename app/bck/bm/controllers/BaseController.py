@@ -11,7 +11,7 @@ from flask import abort, session
 from nltk.corpus import wordnet
 
 from app import db
-from app.modules.base.constants.BM_CONSTANTS import scalars_location, pkls_location, output_docs_location, df_location, \
+from app.constants.BM_CONSTANTS import scalars_location, pkls_location, output_docs_location, df_location, \
     plot_zip_locations, plot_locations, html_plots_location, prediction_model_keyword, classification_model_keyword, \
     forecasting_model_keyword, clustering_model_keyword, \
     dep_path
@@ -24,7 +24,7 @@ from app.modules.base.db_models.ModelFeatures import ModelFeatures
 from app.modules.base.db_models.ModelForecastingResults import ModelForecastingResults
 from app.modules.base.db_models.ModelLabels import ModelLabels
 from app.modules.base.db_models.ModelProfile import ModelProfile
-from app.modules.base.constants.BM_CONSTANTS import deployment_folder
+from app.constants.BM_CONSTANTS import deployment_folder
 from app.bck.bm.controllers.ControllersHelper import ControllersHelper
 from app.bck.bm.db_helper import AttributesHelper
 from app.bck.bm.utiles.Helper import Helper

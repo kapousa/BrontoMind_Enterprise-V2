@@ -6,7 +6,7 @@ from flask import session
 from sqlalchemy.sql.functions import now
 
 from app import config_parser, db
-from app.modules.base.constants.BM_CONSTANTS import scripts_path
+from app.constants.BM_CONSTANTS import scripts_path
 from app.modules.base.db_models.ModelCvisionRun import ModelCvisionRun
 from app.modules.base.db_models.ModelProfile import ModelProfile
 from app.bck.bm.controllers.BaseController import BaseController

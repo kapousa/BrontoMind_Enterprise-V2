@@ -9,8 +9,8 @@ import flask
 from flask import render_template, session, redirect, url_for, abort
 from werkzeug.utils import secure_filename
 
-from app.modules.base.constants.BM_CONSTANTS import df_location
-from app.modules.base.constants.BM_CONSTANTS import api_data_filename
+from app.constants.BM_CONSTANTS import df_location
+from app.constants.BM_CONSTANTS import api_data_filename
 from app.bck.bm.controllers.BaseController import BaseController
 from app.bck.bm.datamanipulation.AdjustDataFrame import export_mysql_query_to_csv, export_api_respose_to_csv
 from app.bck.bm.utiles.CVSReader import getcvsheader

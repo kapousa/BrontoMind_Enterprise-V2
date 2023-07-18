@@ -5,7 +5,7 @@ import pandas as pd
 from flask import render_template, session
 
 from app.modules.base.app_routes.directors import ClassificationDirector
-from app.modules.base.constants.BM_CONSTANTS import progress_icon_path, loading_icon_path, root_path, df_location, demo_key, \
+from app.constants.BM_CONSTANTS import progress_icon_path, loading_icon_path, root_path, df_location, demo_key, \
     docs_templates_folder, output_docs
 from app.modules.base.db_models.ModelAPIDetails import ModelAPIDetails
 from app.modules.base.db_models.ModelProfile import ModelProfile

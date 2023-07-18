@@ -12,9 +12,9 @@ from sklearn.metrics import silhouette_score
 from sklearn.utils import shuffle
 
 from app import db, config_parser
-from app.modules.base.constants.BM_CONSTANTS import app_root_path
+from app.constants.BM_CONSTANTS import app_root_path
 from app.modules.base.db_models.ModelProfile import ModelProfile
-from app.modules.base.constants.BM_CONSTANTS import pkls_location, data_files_folder, df_location
+from app.constants.BM_CONSTANTS import pkls_location, data_files_folder, df_location
 from app.bck.bm.controllers.BaseController import BaseController
 from app.bck.bm.controllers.ControllersHelper import ControllersHelper
 from app.bck.bm.controllers.clustering.ClusteringControllerHelper import ClusteringControllerHelper

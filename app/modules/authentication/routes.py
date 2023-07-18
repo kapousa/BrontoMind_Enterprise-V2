@@ -12,8 +12,8 @@ from flask_login import (
 
 from app import db, login_manager
 from app.modules.authentication import blueprint
+from app.modules.authentication.ModelUser import ModelUser
 from app.modules.authentication.forms import LoginForm, CreateAccountForm
-from app.modules.base.models import User
 
 from app.modules.authentication.util import verify_pass
 
@@ -35,7 +35,7 @@ def login():
         password = request.form['password']
 
         # Locate user
-        user = User.query.filter_by(username=username).first()
+        user = ModelUser.query.filter_by(username=username).first()
 
         # Check the password
         if user and verify_pass(password, user.password):
@@ -66,7 +66,7 @@ def register():
         email = request.form['email']
 
         # Check usename exists
-        user = User.query.filter_by(username=username).first()
+        user = ModelUser.query.filter_by(username=username).first()
         if user:
             return render_template('accounts/register.html',
                                    msg='Username already registered',
@@ -74,7 +74,7 @@ def register():
                                    form=create_account_form)
 
         # Check email exists
-        user = User.query.filter_by(email=email).first()
+        user = ModelUser.query.filter_by(email=email).first()
         if user:
             return render_template('accounts/register.html',
                                    msg='Email already registered',
@@ -82,7 +82,7 @@ def register():
                                    form=create_account_form)
 
         # else we can create the user
-        user = User(**request.form)
+        user = ModelUser(**request.form)
         db.session.add(user)
         db.session.commit()
 

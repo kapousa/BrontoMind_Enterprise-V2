@@ -15,7 +15,7 @@ import plotly.graph_objs as go
 from werkzeug.utils import secure_filename
 
 from app import config_parser
-from app.modules.base.constants.BM_CONSTANTS import html_plots_location, html_short_path, data_files_folder, \
+from app.constants.BM_CONSTANTS import html_plots_location, html_short_path, data_files_folder, \
     physical_allowed_extensions, results_path, app_results_path
 from app.modules.base.db_models.ModelEncodedColumns import ModelEncodedColumns
 from app.modules.base.db_models.ModelLookupTable import ModelLookupTable

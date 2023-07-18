@@ -11,7 +11,7 @@ from app import db
 from app.modules.base.db_models.ModelLabels import ModelLabels
 import numpy
 
-from app.modules.authentication.models import Users
+from app.modules.authentication.ModelUser import ModelUser
 from app.modules.base.db_models.ModelLookupTable import ModelLookupTable
 
 
@@ -192,6 +192,6 @@ def get_lookup_value(lookup_key):
 
 
 def get_user_fullname(user_id):
-    user_full_name = numpy.array(Users.query.with_entities(Users.first_name, Users.last_name).filter_by(id =user_id).first())
+    user_full_name = numpy.array(ModelUser.query.with_entities(ModelUser.first_name, ModelUser.last_name).filter_by(id =user_id).first())
     full_name = "%s%s%s" % (user_full_name[0]," ",user_full_name[1])
     return full_name

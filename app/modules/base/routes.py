@@ -28,7 +28,7 @@ from app.modules.base.app_routes.directors.ClusteringDirector import ClusteringD
 from app.modules.base.app_routes.directors.DatasetsDirector import DatasetsDirector
 from app.modules.base.app_routes.directors.ForecastingDirector import ForecastingDirector
 from app.modules.base.app_routes.directors.PredictionDirector import PredictionDirector
-from app.modules.base.constants.BM_CONSTANTS import plot_zip_download_location, progress_icon_path, loading_icon_path
+from app.constants.BM_CONSTANTS import plot_zip_download_location, progress_icon_path, loading_icon_path
 from app.modules.base.db_models.ModelProfile import ModelProfile
 from app.bck.bm.controllers.BaseController import BaseController
 from app.bck.bm.core.DocumentProcessor import DocumentProcessor

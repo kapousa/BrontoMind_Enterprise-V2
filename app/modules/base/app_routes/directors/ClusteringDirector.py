@@ -3,12 +3,12 @@ import os
 import numpy
 from flask import render_template, request, current_app, session, send_file
 
-from app.modules.base.constants.BM_CONSTANTS import progress_icon_path, loading_icon_path, docs_templates_folder, output_docs, \
+from app.constants.BM_CONSTANTS import progress_icon_path, loading_icon_path, docs_templates_folder, output_docs, \
     labeled_data_filename, labeled_data_filename_download_path
 from app.modules.base.db_models.ModelAPIDetails import ModelAPIDetails
 from app.modules.base.db_models.ModelProfile import ModelProfile
 
-from app.modules.base.constants.BM_CONSTANTS import html_short_path, output_docs_location
+from app.constants.BM_CONSTANTS import html_short_path, output_docs_location
 from app.bck.bm.apis.v1.APIHelper import APIHelper
 from app.bck.bm.controllers.BaseController import BaseController
 from app.bck.bm.controllers.clustering.ClusteringController import ClusteringController

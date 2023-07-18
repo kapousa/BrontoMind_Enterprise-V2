@@ -11,7 +11,7 @@ from flask import abort
 from nltk import word_tokenize, pos_tag
 from nltk.corpus import wordnet
 
-from app.modules.base.constants.DATAPROCESSING_CONSTANTS import delete_actions, combine_actions, actions_list, ignorance_words, \
+from app.constants.DATAPROCESSING_CONSTANTS import delete_actions, combine_actions, actions_list, ignorance_words, \
     sum_actions
 
 
