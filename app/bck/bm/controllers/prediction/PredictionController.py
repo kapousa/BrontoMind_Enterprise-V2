@@ -20,9 +20,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 from app import db, config_parser
-from app.constants.BM_CONSTANTS import plot_zip_locations, pkls_location, scalars_location, plot_locations, \
-    html_plots_location, html_short_path, df_location
-from app.modules.base.db_models.ModelProfile import ModelProfile
 from app.bck.bm.controllers.BaseController import BaseController
 from app.bck.bm.core.ModelProcessor import ModelProcessor
 from app.bck.bm.datamanipulation.AdjustDataFrame import convert_data_to_sample
@@ -31,9 +28,13 @@ from app.bck.bm.datamanipulation.DataCoderProcessor import DataCoderProcessor
 from app.bck.bm.db_helper.AttributesHelper import add_features, add_labels, delete_encoded_columns, get_features
 from app.bck.bm.db_helper.AttributesHelper import get_labels, add_api_details, \
     update_api_details_id
+from app.bck.bm.models.Prediction import Prediction
 from app.bck.bm.utiles.CVSReader import get_only_file_name
 from app.bck.bm.utiles.CVSReader import getcvsheader, get_new_headers_list, reorder_csv_file
 from app.bck.bm.utiles.Helper import Helper
+from app.constants.BM_CONSTANTS import plot_zip_locations, pkls_location, scalars_location, plot_locations, \
+    html_plots_location, html_short_path, df_location
+from app.modules.base.db_models.ModelProfile import ModelProfile
 
 
 class PredictionController:
@@ -145,7 +146,8 @@ class PredictionController:
 
             # Add standard scalar
             s_c = StandardScaler(with_mean=False)  # test
-            training_x = s_c.fit_transform(training_x)
+            training_x = s_c.fit(training_x)
+            training_x = s_c.transform(training_x)
             test_x = s_c.transform(testing_x)
             file_name = get_only_file_name(csv_file_location)
             scalar_file_name = scalars_location + str(model_id) + '/' + str(model_id) + '_scalear.sav'
@@ -155,13 +157,18 @@ class PredictionController:
             start = time.time()
             logging.info("Start building the model:{}".format(str(start)))
             modelprocessor = ModelProcessor()
-            cls, y_pred, Root_Mean_Square_error, hidden_layer_size = modelprocessor._predictionmodelselector(training_x,
-                                                                                                             training_y,
-                                                                                                             test_x,
-                                                                                                             testing_y,
-                                                                                                             model_features,
-                                                                                                             model_labels,
-                                                                                                             obj_labels_dtypes)
+            # cls, y_pred, Root_Mean_Square_error, hidden_layer_size = modelprocessor._predictionmodelselector(training_x,
+            #                                                                                                  training_y,
+            #                                                                                                  test_x,
+            #                                                                                                  testing_y,
+            #                                                                                                  model_features,
+            #                                                                                                  model_labels,
+            #                                                                                                  obj_labels_dtypes)
+            prediction_model = Prediction()
+            cls, y_pred, Root_Mean_Square_error, hidden_layer_size = prediction_model.createmodel(model_id,
+                                                                                                  encoded_data,
+                                                                                                  model_features,
+                                                                                                  model_labels)
 
             end = time.time()
             logging.info("End building the model:{}".format(str(end)))

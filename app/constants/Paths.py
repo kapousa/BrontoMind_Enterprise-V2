@@ -1,1 +1,1 @@
-SAVE_MODEL = '../savedmodels/'
+SAVE_MODEL = 'savedmodels/'

@@ -19,6 +19,7 @@ from sklearn.svm import SVR, LinearSVC, SVC
 
 from app import config_parser
 from app.bck.bm.controllers.clustering.ClusteringControllerHelper import ClusteringControllerHelper
+from app.bck.bm.models.Prediction import Prediction
 
 
 class ModelProcessor:
@@ -188,34 +189,17 @@ class ModelProcessor:
 
         return cls, y_pred, accuracy, num_layers
 
-    def predictionmodelselector_(self, df: DataFrame, modelfeatures, modellabels):
-        number_of_predictions = len(modellabels.axes[1])
-        number_of_features = len(modelfeatures.axes[1])
-        numberoflabels = modellabels
-        numberofrecords = len(df.axes[0])
-        numberofrecordsedge = 100000
-        if (number_of_predictions == 1):
-            labeldatatype = modellabels.dtypes
-            # Prediction (Regression)
-            if ((labeldatatype[0] == np.int64 or labeldatatype[
-                0] == np.float) and numberofrecords < numberofrecordsedge):
-                cls = SGDRegressor()
-            elif ((labeldatatype[0] == np.int64 or labeldatatype[
-                0] == np.float) and numberofrecords >= numberofrecordsedge):
-                if (number_of_features < 10):
-                    cls = Lasso(alpha=1.0)
-                else:
-                    try:
-                        cls = SVR(kernal='linear')
-                    except:
-                        cls = SVR(kernal='rbf')
-            else:
-                cls = MultiOutputClassifier(KNeighborsClassifier(n_neighbors=5, metric='minkowski', p=2),
-                                            n_jobs=-1)
-        else:
-            cls = MultiOutputClassifier(KNeighborsClassifier(n_neighbors=5, metric='minkowski', p=2),
-                                        n_jobs=-1)
-        return cls
+    def predictionmodelselector_(self, model_id, df: DataFrame, modelfeatures, modellabels):
+        try:
+            prediction_model = Prediction()
+
+            accuracy_score = prediction_model.createmodel(model_id, df, modelfeatures, modellabels)
+
+            return accuracy_score
+        except Exception as e:
+            print(e)
+            logging(e)
+            return None
 
     def clustering_model_selector(self, df_scaled):
         try:

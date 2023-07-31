@@ -18,8 +18,8 @@ class Config(object):
 
     # This will create a file in <app> FOLDER
     #SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3')
-    #SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3' + '?check_same_thread=False')
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://u262389223_brontomind:Summer321@srv865.hstgr.io/u262389223_brontomind'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3' + '?check_same_thread=False')
+    #SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://u262389223_brontomind:Summer321@srv865.hstgr.io/u262389223_brontomind'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Demo configurations
