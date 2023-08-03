@@ -13340,3 +13340,420 @@ FileNotFoundError: [Errno 2] No such file or directory: 'app/tempfiles/diabetes.
 2023-07-27 13:53:29,060 INFO werkzeug Thread-598 (process_request_thread) : 127.0.0.1 - - [27/Jul/2023 13:53:29] "[36mGET /static/assets/img/theme/team-2.jpg HTTP/1.1[0m" 304 -
 2023-07-27 13:53:29,065 INFO werkzeug Thread-600 (process_request_thread) : 127.0.0.1 - - [27/Jul/2023 13:53:29] "[36mGET /static/images/loading2.gif HTTP/1.1[0m" 304 -
 2023-07-27 13:53:29,067 INFO werkzeug Thread-601 (process_request_thread) : 127.0.0.1 - - [27/Jul/2023 13:53:29] "[36mGET /static/assets/img/theme/team-4.jpg HTTP/1.1[0m" 304 -
+2023-08-03 09:47:43,034 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 09:47:43,040 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 09:47:43,041 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 09:47:43,041 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 09:47:43,102 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 09:47:43,105 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 09:49:51,451 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 09:49:51,455 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 09:49:51,456 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 09:49:51,456 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 09:49:51,505 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 09:49:51,507 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 09:52:18,977 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 09:52:18,982 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 09:52:18,983 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 09:52:18,984 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 09:52:19,033 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 09:52:19,035 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 09:52:23,210 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 09:52:23,554 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 09:52:23,554 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 09:52:23,554 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 09:52:23,554 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 09:56:17,912 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 09:56:17,916 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 09:56:17,917 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 09:56:17,917 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 09:56:17,966 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 09:56:17,968 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 09:56:22,264 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 09:56:22,544 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 09:56:22,544 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 09:56:22,544 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 09:56:22,544 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:04:06,855 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:04:06,859 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:04:06,860 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:04:06,860 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:04:06,908 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:04:06,910 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:04:11,190 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 10:04:11,472 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:04:11,473 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:04:11,473 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:04:11,473 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:10:24,901 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:10:24,906 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:10:24,907 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:10:24,907 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:10:24,955 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:10:24,957 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:10:29,208 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 10:10:29,490 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:10:29,490 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:10:29,490 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:10:29,490 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:13:58,037 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:13:58,042 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:13:58,043 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:13:58,043 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:13:58,090 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:13:58,092 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:14:02,377 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 10:14:02,658 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:14:02,658 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:14:02,658 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:14:02,658 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:18:37,870 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:18:37,877 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:18:37,879 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:18:37,879 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:18:37,990 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:18:37,994 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:18:42,922 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 10:18:43,206 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:18:43,206 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:18:43,206 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:18:43,206 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:18:45,023 INFO app MainThread : DEBUG       = True
+2023-08-03 10:18:45,023 INFO app MainThread : Environment = Debug
+2023-08-03 10:18:45,023 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-08-03 10:18:45,028 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-08-03 10:18:45,028 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-08-03 10:18:45,028 INFO werkzeug MainThread :  * Restarting with stat
+2023-08-03 10:18:47,291 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:18:47,298 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:18:47,300 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:18:47,300 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:18:47,350 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:18:47,352 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:18:51,031 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 10:18:51,292 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:18:51,292 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:18:51,292 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:18:51,292 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:18:53,016 INFO app MainThread : DEBUG       = True
+2023-08-03 10:18:53,017 INFO app MainThread : Environment = Debug
+2023-08-03 10:18:53,017 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-08-03 10:18:53,020 WARNING werkzeug MainThread :  * Debugger is active!
+2023-08-03 10:18:53,033 INFO werkzeug MainThread :  * Debugger PIN: 480-791-499
+2023-08-03 10:21:19,139 INFO werkzeug Thread-2 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "[32mGET / HTTP/1.1[0m" 302 -
+2023-08-03 10:21:19,178 INFO werkzeug Thread-3 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "GET /login HTTP/1.1" 200 -
+2023-08-03 10:21:19,247 INFO werkzeug Thread-4 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "GET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1" 200 -
+2023-08-03 10:21:19,251 INFO werkzeug Thread-5 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "GET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1" 200 -
+2023-08-03 10:21:19,253 INFO werkzeug Thread-9 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-08-03 10:21:19,254 INFO werkzeug Thread-6 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-08-03 10:21:19,255 INFO werkzeug Thread-7 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "GET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1" 200 -
+2023-08-03 10:21:19,259 INFO werkzeug Thread-8 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "GET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1" 200 -
+2023-08-03 10:21:19,261 INFO werkzeug Thread-10 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "GET /static/images/loading1.gif HTTP/1.1" 200 -
+2023-08-03 10:21:19,265 INFO werkzeug Thread-11 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:21:19,266 INFO werkzeug Thread-12 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:21:19,271 INFO werkzeug Thread-13 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "GET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1" 200 -
+2023-08-03 10:21:19,272 INFO werkzeug Thread-14 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-08-03 10:21:19,273 INFO werkzeug Thread-15 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "[36mGET /static/assets/img/brand/white.png HTTP/1.1[0m" 304 -
+2023-08-03 10:21:19,275 INFO werkzeug Thread-16 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "GET /static/assets/img/brand/blue.png HTTP/1.1" 200 -
+2023-08-03 10:21:19,344 INFO werkzeug Thread-18 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "[36mGET /static/assets/vendor/nucleo/fonts/nucleo-icons.woff2 HTTP/1.1[0m" 304 -
+2023-08-03 10:21:19,344 INFO werkzeug Thread-17 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "GET /static/assets/vendor/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 -
+2023-08-03 10:21:19,489 INFO werkzeug Thread-19 : 127.0.0.1 - - [03/Aug/2023 10:21:19] "GET /static/assets/img/brand/favicon.png HTTP/1.1" 200 -
+2023-08-03 10:23:27,352 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:23:27,356 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:23:27,357 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:23:27,357 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:23:27,406 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:23:27,408 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:23:31,699 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 10:23:31,988 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:23:31,988 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:23:31,988 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:23:31,988 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:23:33,875 INFO app MainThread : DEBUG       = True
+2023-08-03 10:23:33,875 INFO app MainThread : Environment = Debug
+2023-08-03 10:23:33,875 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-08-03 10:23:33,880 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-08-03 10:23:33,880 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-08-03 10:23:33,881 INFO werkzeug MainThread :  * Restarting with stat
+2023-08-03 10:23:35,729 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:23:35,733 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:23:35,734 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:23:35,735 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:23:35,784 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:23:35,786 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:23:39,443 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 10:23:39,705 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:23:39,705 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:23:39,706 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:23:39,706 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:23:41,321 INFO app MainThread : DEBUG       = True
+2023-08-03 10:23:41,321 INFO app MainThread : Environment = Debug
+2023-08-03 10:23:41,321 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-08-03 10:23:41,324 WARNING werkzeug MainThread :  * Debugger is active!
+2023-08-03 10:23:41,336 INFO werkzeug MainThread :  * Debugger PIN: 480-791-499
+2023-08-03 10:23:44,678 INFO werkzeug Thread-2 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "GET /login HTTP/1.1" 200 -
+2023-08-03 10:23:44,728 INFO werkzeug Thread-3 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,728 INFO werkzeug Thread-7 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,732 INFO werkzeug Thread-4 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,733 INFO werkzeug Thread-6 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,735 INFO werkzeug Thread-9 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,735 INFO werkzeug Thread-8 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,736 INFO werkzeug Thread-5 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,737 INFO werkzeug Thread-10 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,739 INFO werkzeug Thread-11 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,740 INFO werkzeug Thread-12 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,741 INFO werkzeug Thread-13 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/img/brand/white.png HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,742 INFO werkzeug Thread-14 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,751 INFO werkzeug Thread-15 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/images/loading1.gif HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,764 INFO werkzeug Thread-16 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,765 INFO werkzeug Thread-17 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/vendor/nucleo/fonts/nucleo-icons.woff2 HTTP/1.1[0m" 304 -
+2023-08-03 10:23:44,774 INFO werkzeug Thread-18 : 127.0.0.1 - - [03/Aug/2023 10:23:44] "[36mGET /static/assets/img/brand/favicon.png HTTP/1.1[0m" 304 -
+2023-08-03 10:24:30,676 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:24:30,680 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:24:30,681 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:24:30,681 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:24:30,729 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:24:30,731 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:24:34,519 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 10:24:34,802 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:24:34,802 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:24:34,802 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:24:34,802 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:24:36,425 INFO app MainThread : DEBUG       = True
+2023-08-03 10:24:36,425 INFO app MainThread : Environment = Debug
+2023-08-03 10:24:36,425 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-08-03 10:24:36,430 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-08-03 10:24:36,430 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-08-03 10:24:36,431 INFO werkzeug MainThread :  * Restarting with stat
+2023-08-03 10:24:38,349 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:24:38,353 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:24:38,354 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:24:38,354 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:24:38,402 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:24:38,404 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:24:42,270 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 10:24:42,550 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:24:42,550 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:24:42,550 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:24:42,550 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:24:44,385 INFO app MainThread : DEBUG       = True
+2023-08-03 10:24:44,386 INFO app MainThread : Environment = Debug
+2023-08-03 10:24:44,386 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-08-03 10:24:44,389 WARNING werkzeug MainThread :  * Debugger is active!
+2023-08-03 10:24:44,401 INFO werkzeug MainThread :  * Debugger PIN: 480-791-499
+2023-08-03 10:27:45,610 INFO werkzeug Thread-3 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[32mGET / HTTP/1.1[0m" 302 -
+2023-08-03 10:27:45,646 INFO werkzeug Thread-4 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "GET /login HTTP/1.1" 200 -
+2023-08-03 10:27:45,692 INFO werkzeug Thread-7 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-08-03 10:27:45,693 INFO werkzeug Thread-5 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-08-03 10:27:45,694 INFO werkzeug Thread-10 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-08-03 10:27:45,695 INFO werkzeug Thread-6 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-08-03 10:27:45,700 INFO werkzeug Thread-8 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:27:45,701 INFO werkzeug Thread-9 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:27:45,704 INFO werkzeug Thread-11 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:27:45,707 INFO werkzeug Thread-12 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:27:45,709 INFO werkzeug Thread-13 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:27:45,710 INFO werkzeug Thread-14 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-08-03 10:27:45,714 INFO werkzeug Thread-15 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/assets/img/brand/white.png HTTP/1.1[0m" 304 -
+2023-08-03 10:27:45,718 INFO werkzeug Thread-16 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-08-03 10:27:45,728 INFO werkzeug Thread-17 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/images/loading1.gif HTTP/1.1[0m" 304 -
+2023-08-03 10:27:45,788 INFO werkzeug Thread-19 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/assets/vendor/nucleo/fonts/nucleo-icons.woff2 HTTP/1.1[0m" 304 -
+2023-08-03 10:27:45,789 INFO werkzeug Thread-18 : 127.0.0.1 - - [03/Aug/2023 10:27:45] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 HTTP/1.1[0m" 304 -
+2023-08-03 10:27:55,926 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:27:55,930 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:27:55,931 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:27:55,932 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:27:55,980 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:27:55,982 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:28:04,776 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:28:04,780 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:28:04,781 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:28:04,781 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:28:04,832 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:28:04,834 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:28:08,906 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 10:28:09,185 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:28:09,185 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:28:09,185 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:28:09,185 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:28:11,081 INFO app MainThread : DEBUG       = True
+2023-08-03 10:28:11,082 INFO app MainThread : Environment = Debug
+2023-08-03 10:28:11,082 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-08-03 10:28:11,086 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-08-03 10:28:11,086 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-08-03 10:28:11,087 INFO werkzeug MainThread :  * Restarting with stat
+2023-08-03 10:28:12,812 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:28:12,815 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:28:12,817 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:28:12,817 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:28:12,865 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:28:12,868 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:28:16,500 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 10:28:16,750 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:28:16,750 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:28:16,750 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:28:16,750 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:28:18,329 INFO app MainThread : DEBUG       = True
+2023-08-03 10:28:18,329 INFO app MainThread : Environment = Debug
+2023-08-03 10:28:18,329 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-08-03 10:28:18,332 WARNING werkzeug MainThread :  * Debugger is active!
+2023-08-03 10:28:18,344 INFO werkzeug MainThread :  * Debugger PIN: 480-791-499
+2023-08-03 10:30:40,279 INFO werkzeug Thread-7 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /login HTTP/1.1" 200 -
+2023-08-03 10:30:40,316 INFO werkzeug Thread-8 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1" 200 -
+2023-08-03 10:30:40,317 INFO werkzeug Thread-13 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1" 200 -
+2023-08-03 10:30:40,319 INFO werkzeug Thread-10 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1" 200 -
+2023-08-03 10:30:40,319 INFO werkzeug Thread-11 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1" 200 -
+2023-08-03 10:30:40,319 INFO werkzeug Thread-12 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1" 200 -
+2023-08-03 10:30:40,319 INFO werkzeug Thread-9 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1" 200 -
+2023-08-03 10:30:40,329 INFO werkzeug Thread-14 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1" 200 -
+2023-08-03 10:30:40,329 INFO werkzeug Thread-15 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1" 200 -
+2023-08-03 10:30:40,332 INFO werkzeug Thread-16 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1" 200 -
+2023-08-03 10:30:40,334 INFO werkzeug Thread-17 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1" 200 -
+2023-08-03 10:30:40,336 INFO werkzeug Thread-18 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/img/brand/white.png HTTP/1.1" 200 -
+2023-08-03 10:30:40,336 INFO werkzeug Thread-19 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/img/brand/blue.png HTTP/1.1" 200 -
+2023-08-03 10:30:40,613 INFO werkzeug Thread-20 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/images/loading1.gif HTTP/1.1" 200 -
+2023-08-03 10:30:40,668 INFO werkzeug Thread-21 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/vendor/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 -
+2023-08-03 10:30:40,668 INFO werkzeug Thread-22 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/vendor/nucleo/fonts/nucleo-icons.woff2 HTTP/1.1" 200 -
+2023-08-03 10:30:40,815 INFO werkzeug Thread-23 : 127.0.0.1 - - [03/Aug/2023 10:30:40] "GET /static/assets/img/brand/favicon.png HTTP/1.1" 200 -
+2023-08-03 10:57:41,816 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:57:41,820 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:57:41,821 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:57:41,822 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:57:41,871 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:57:41,874 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:57:46,128 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 10:57:46,416 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:57:46,417 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:57:46,417 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:57:46,417 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:57:48,285 INFO app MainThread : DEBUG       = True
+2023-08-03 10:57:48,285 INFO app MainThread : Environment = Debug
+2023-08-03 10:57:48,285 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-08-03 10:57:48,290 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-08-03 10:57:48,290 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-08-03 10:57:48,291 INFO werkzeug MainThread :  * Restarting with stat
+2023-08-03 10:57:50,128 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:57:50,132 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:57:50,133 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:57:50,133 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:57:50,181 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:57:50,183 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:57:53,825 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 10:57:54,081 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:57:54,081 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:57:54,081 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:57:54,081 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:57:55,674 INFO app MainThread : DEBUG       = True
+2023-08-03 10:57:55,674 INFO app MainThread : Environment = Debug
+2023-08-03 10:57:55,674 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-08-03 10:57:55,677 WARNING werkzeug MainThread :  * Debugger is active!
+2023-08-03 10:57:55,689 INFO werkzeug MainThread :  * Debugger PIN: 480-791-499
+2023-08-03 10:58:14,410 INFO werkzeug Thread-2 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[32mGET / HTTP/1.1[0m" 302 -
+2023-08-03 10:58:14,444 INFO werkzeug Thread-3 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "GET /login HTTP/1.1" 200 -
+2023-08-03 10:58:14,475 INFO werkzeug Thread-5 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,476 INFO werkzeug Thread-9 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,476 INFO werkzeug Thread-4 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,476 INFO werkzeug Thread-6 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,486 INFO werkzeug Thread-10 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,487 INFO werkzeug Thread-8 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,489 INFO werkzeug Thread-11 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,489 INFO werkzeug Thread-7 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,490 INFO werkzeug Thread-12 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,493 INFO werkzeug Thread-14 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/img/brand/white.png HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,493 INFO werkzeug Thread-13 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,495 INFO werkzeug Thread-15 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,497 INFO werkzeug Thread-16 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/images/loading1.gif HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,559 INFO werkzeug Thread-18 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/vendor/nucleo/fonts/nucleo-icons.woff2 HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,561 INFO werkzeug Thread-17 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 HTTP/1.1[0m" 304 -
+2023-08-03 10:58:14,583 INFO werkzeug Thread-19 : 127.0.0.1 - - [03/Aug/2023 10:58:14] "[36mGET /static/assets/img/brand/favicon.png HTTP/1.1[0m" 304 -
+2023-08-03 10:58:23,991 INFO werkzeug MainThread :  * Detected change in '/Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/__init__.py', reloading
+2023-08-03 10:58:24,661 INFO werkzeug MainThread :  * Restarting with stat
+2023-08-03 10:58:26,574 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 10:58:26,578 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 10:58:26,579 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 10:58:26,579 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 10:58:26,628 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 10:58:26,630 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 10:58:30,337 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 10:58:30,593 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:58:30,593 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:58:30,593 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 10:58:30,593 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 10:58:32,245 INFO app MainThread : DEBUG       = True
+2023-08-03 10:58:32,245 INFO app MainThread : Environment = Debug
+2023-08-03 10:58:32,245 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-08-03 10:58:32,249 WARNING werkzeug MainThread :  * Debugger is active!
+2023-08-03 10:58:32,263 INFO werkzeug MainThread :  * Debugger PIN: 480-791-499
+2023-08-03 11:00:01,116 INFO werkzeug MainThread :  * Detected change in '/Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/__init__.py', reloading
+2023-08-03 11:00:01,777 INFO werkzeug MainThread :  * Restarting with stat
+2023-08-03 11:00:03,643 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 11:00:03,647 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 11:00:03,648 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 11:00:03,649 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 11:00:03,703 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 11:00:03,705 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 11:00:07,406 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 11:00:07,659 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 11:00:07,659 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 11:00:07,659 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 11:00:07,659 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 11:00:09,255 INFO app MainThread : DEBUG       = True
+2023-08-03 11:00:09,255 INFO app MainThread : Environment = Debug
+2023-08-03 11:00:09,255 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-08-03 11:00:09,258 WARNING werkzeug MainThread :  * Debugger is active!
+2023-08-03 11:00:09,269 INFO werkzeug MainThread :  * Debugger PIN: 480-791-499
+2023-08-03 11:00:56,915 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 11:00:56,920 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 11:00:56,921 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 11:00:56,921 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 11:00:56,970 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 11:00:56,972 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 11:01:01,350 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 11:01:01,633 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 11:01:01,633 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 11:01:01,633 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 11:01:01,633 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 11:01:03,476 INFO app MainThread : DEBUG       = True
+2023-08-03 11:01:03,476 INFO app MainThread : Environment = Debug
+2023-08-03 11:01:03,476 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-08-03 11:01:03,481 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-08-03 11:01:03,481 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m
+2023-08-03 11:01:03,482 INFO werkzeug MainThread :  * Restarting with stat
+2023-08-03 11:01:05,292 DEBUG matplotlib MainThread : matplotlib data path: /Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/venv/lib/python3.9/site-packages/matplotlib/mpl-data
+2023-08-03 11:01:05,295 DEBUG matplotlib MainThread : CONFIGDIR=/Users/kapo/.matplotlib
+2023-08-03 11:01:05,296 DEBUG matplotlib MainThread : interactive is False
+2023-08-03 11:01:05,297 DEBUG matplotlib MainThread : platform is darwin
+2023-08-03 11:01:05,346 DEBUG matplotlib MainThread : CACHEDIR=/Users/kapo/.matplotlib
+2023-08-03 11:01:05,348 DEBUG matplotlib.font_manager MainThread : Using fontManager instance from /Users/kapo/.matplotlib/fontlist-v330.json
+2023-08-03 11:01:09,008 DEBUG tensorflow MainThread : Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2023-08-03 11:01:09,269 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 11:01:09,269 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 11:01:09,269 DEBUG h5py._conv MainThread : Creating converter from 7 to 5
+2023-08-03 11:01:09,269 DEBUG h5py._conv MainThread : Creating converter from 5 to 7
+2023-08-03 11:01:10,863 INFO app MainThread : DEBUG       = True
+2023-08-03 11:01:10,863 INFO app MainThread : Environment = Debug
+2023-08-03 11:01:10,863 INFO app MainThread : DBMS        = sqlite:////Users/kapo/PycharmProjects/BrontoMind_Enterprise-V2/app/db.sqlite3?check_same_thread=False
+2023-08-03 11:01:10,865 WARNING werkzeug MainThread :  * Debugger is active!
+2023-08-03 11:01:10,876 INFO werkzeug MainThread :  * Debugger PIN: 480-791-499
+2023-08-03 11:01:11,046 INFO werkzeug Thread-2 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "GET /login HTTP/1.1" 200 -
+2023-08-03 11:01:11,079 INFO werkzeug Thread-8 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/vendor/js-cookie/js.cookie.js HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,079 INFO werkzeug Thread-4 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,080 INFO werkzeug Thread-5 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/css/argon.css?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,080 INFO werkzeug Thread-3 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/vendor/nucleo/css/nucleo.css HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,085 INFO werkzeug Thread-7 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,085 INFO werkzeug Thread-9 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,086 INFO werkzeug Thread-6 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/vendor/jquery/dist/jquery.min.js HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,090 INFO werkzeug Thread-10 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,091 INFO werkzeug Thread-11 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/vendor/select2/dist/js/select2.min.js HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,092 INFO werkzeug Thread-12 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/js/argon.js?v=1.2.0 HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,093 INFO werkzeug Thread-13 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/img/brand/blue.png HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,095 INFO werkzeug Thread-14 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/img/brand/white.png HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,101 INFO werkzeug Thread-15 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/images/loading1.gif HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,128 INFO werkzeug Thread-16 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/vendor/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2 HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,128 INFO werkzeug Thread-17 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/vendor/nucleo/fonts/nucleo-icons.woff2 HTTP/1.1[0m" 304 -
+2023-08-03 11:01:11,138 INFO werkzeug Thread-18 : 127.0.0.1 - - [03/Aug/2023 11:01:11] "[36mGET /static/assets/img/brand/favicon.png HTTP/1.1[0m" 304 -
