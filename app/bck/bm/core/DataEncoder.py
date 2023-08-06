@@ -20,7 +20,7 @@ class DataEncoder:
         encoded_data = []
         data_types = data_frame.dtypes
         for i in range(len(data_types)):
-            if data_types[i] != np.int64 and data_types[i] != np.float:
+            if data_types[i] != np.int64 and data_types[i] != float:
                 col_name = columns_name[i]
                 dummies = pd.get_dummies(data[[col_name]])
                 dummies_columns = dummies.columns

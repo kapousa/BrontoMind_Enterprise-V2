@@ -126,8 +126,8 @@ class PredictionController:
 
             real_x = data.loc[:, model_features]
             real_y = data.loc[:, model_labels]
-            obj_features_dtypes = real_x.select_dtypes(include=np.object).dtypes
-            obj_labels_dtypes = real_y.select_dtypes(include=np.object).dtypes
+            obj_features_dtypes = real_x.select_dtypes(include=object).dtypes
+            obj_labels_dtypes = real_y.select_dtypes(include=object).dtypes
             # obj_features_dtypes = real_y.dtypes[real_x.dtypes != 'int64'][real_x.dtypes != 'float64']  # check if features has object values
             # obj_labels_dtypes = real_y.dtypes[real_y.dtypes != 'int64'][real_y.dtypes != 'float64'] # check if labels has object values
 
@@ -146,8 +146,7 @@ class PredictionController:
 
             # Add standard scalar
             s_c = StandardScaler(with_mean=False)  # test
-            training_x = s_c.fit(training_x)
-            training_x = s_c.transform(training_x)
+            training_x = s_c.fit_transform(training_x)
             test_x = s_c.transform(testing_x)
             file_name = get_only_file_name(csv_file_location)
             scalar_file_name = scalars_location + str(model_id) + '/' + str(model_id) + '_scalear.sav'
@@ -196,20 +195,22 @@ class PredictionController:
             html_path = html_short_path + str(model_id) + '/' + str(model_id) + ".html"
             plotly.offline.plot(fig, filename=html_file_location, config={'displayModeBar': False}, auto_open=False)
             image_db_path = html_path
-            for i in (0, 1):  # range(len(model_features)):
-                for j in range(len(model_labels)):
-                    img_prefix = '_' + model_features[i] + '_' + model_labels[j]
-                    plot_image_path = os.path.join(plot_locations, str(model_id) + '/' +
-                                                   str(model_id) + img_prefix + '_plot.png')
-                    sns.pairplot(data, x_vars=model_features[i],
-                                 y_vars=model_labels[j], size=4, aspect=1, kind='scatter')
-                    plot_image = plot_image_path  # os.path.join(root_path, 'static/images/plots/', get_only_file_name(csv_file_location) + '_plot.png')
-                    # plt.savefig(plot_image, dpi=300, bbox_inches='tight')
 
-            # Create Zip folder
-            zip_path = plot_zip_locations + str(model_id) + '/'
-            shutil.make_archive(zip_path + str(model_id), 'zip', "{0}{1}{2}".format(plot_locations, model_id, "/"))
-            # plt.show()
+            # Comment creation of all photos zip file
+            # for i in (0, 1):  # range(len(model_features)):
+            #     for j in range(len(model_labels)):
+            #         img_prefix = '_' + model_features[i] + '_' + model_labels[j]
+            #         plot_image_path = os.path.join(plot_locations, str(model_id) + '/' +
+            #                                        str(model_id) + img_prefix + '_plot.png')
+            #         sns.pairplot(data, x_vars=model_features[i],
+            #                      y_vars=model_labels[j], size=4, aspect=1, kind='scatter')
+            #         plot_image = plot_image_path  # os.path.join(root_path, 'static/images/plots/', get_only_file_name(csv_file_location) + '_plot.png')
+            #         # plt.savefig(plot_image, dpi=300, bbox_inches='tight')
+            #
+            # # Create Zip folder
+            # zip_path = plot_zip_locations + str(model_id) + '/'
+            # shutil.make_archive(zip_path + str(model_id), 'zip', "{0}{1}{2}".format(plot_locations, model_id, "/"))
+            # # plt.show()
 
             # ------------------Predict values from the model-------------------------#
             now = datetime.now()

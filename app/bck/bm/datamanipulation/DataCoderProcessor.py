@@ -34,7 +34,7 @@ class DataCoderProcessor:
         encoded_columns = []
         data_types = data.dtypes
         for i in range(len(data_types)):
-            if data_types[i] != np.int64 and data_types[i] != np.float:
+            if data_types[i] != np.int64 and data_types[i] != float:
                 is_date = Helper.validate_timestring(data.iloc[0, data.columns.get_loc(columns_name[i])])
                 data_item = {'model_id': model_id, 'column_name': columns_name[i],
                              'column_type': column_type, 'is_date': is_date}
@@ -62,7 +62,7 @@ class DataCoderProcessor:
         encoded_columns = []
         data_types = data.dtypes
         for i in range(len(data_types)):
-            if data_types[i] != np.int64 and data_types[i] != np.float:
+            if data_types[i] != np.int64 and data_types[i] != float:
                 data_item = {'model_id': model_id, 'column_name': columns_name[i],
                              'column_type': 'F'}
                 encoded_columns.append(data_item)

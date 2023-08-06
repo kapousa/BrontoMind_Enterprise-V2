@@ -450,8 +450,8 @@ class BaseController:
             orginal_datacolumns = data.columns
             report = {}
             logging.info("------Numric columns")
-            if len(data.select_dtypes(include=np.int).dtypes.values) > 0 or len(
-                    data.select_dtypes(include=np.float).dtypes.values) > 0:
+            if len(data.select_dtypes(include=np.int64).dtypes.values) > 0 or len(
+                    data.select_dtypes(include= float).dtypes.values) > 0:
                 numric_cols = pd.DataFrame(data.describe())
                 numric_cols_names = numpy.array(numric_cols.columns)
                 for col in numric_cols_names:
@@ -461,7 +461,7 @@ class BaseController:
                     report[col] = bb
 
             logging.info("------Object columns")
-            if len(data.select_dtypes(include=np.object).dtypes.values) > 0:
+            if len(data.select_dtypes(include=object).dtypes.values) > 0:
                 object_cols = pd.DataFrame(data.describe(include=object))
                 object_cols_names = numpy.array(object_cols.columns)
                 for col in object_cols_names:
