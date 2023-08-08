@@ -1,4 +1,6 @@
+import csv
 import os
+import random
 
 import numpy as np
 import pandas as pd
@@ -95,5 +97,41 @@ def adjust_csv_file(fname, classification_features, classification_label):
     os.rename(new_file_name, file_path)
 
     return 'Success'
+
+def randomize_csv_rows(input_filename):
+    try:
+        # Create a temporary output filename
+        temp_output_filename = "{}temp_".format(input_filename)
+
+        # Read the CSV file and store its content in a list
+        with open(input_filename, 'r') as csv_file:
+            csv_reader = csv.reader(csv_file)
+            data = list(csv_reader)
+
+        # Separate the header row from the data rows
+        header = data[0]
+        data_rows = data[1:]
+
+        # Shuffle the data rows randomly
+        random.shuffle(data_rows)
+
+        # Write the shuffled data rows to the temporary output file
+        with open(temp_output_filename, 'w', newline='') as temp_output_file:
+            csv_writer = csv.writer(temp_output_file)
+            csv_writer.writerow(header)  # Write the header row
+            csv_writer.writerows(data_rows)  # Write the shuffled data rows
+
+        # Replace the original file with the shuffled data
+        os.replace(temp_output_filename, input_filename)
+
+        # Delete the temporary output file
+        # os.remove(temp_output_filename)
+
+        print("Rows shuffled and saved to", input_filename)
+        return 1
+    except Exception as e:
+        print(e)
+        return -1
+
 
 

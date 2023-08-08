@@ -29,7 +29,7 @@ from app.bck.bm.db_helper.AttributesHelper import add_features, add_labels, dele
 from app.bck.bm.db_helper.AttributesHelper import get_labels, add_api_details, \
     update_api_details_id
 from app.bck.bm.models.Prediction import Prediction
-from app.bck.bm.utiles.CVSReader import get_only_file_name
+from app.bck.bm.utiles.CVSReader import get_only_file_name, randomize_csv_rows
 from app.bck.bm.utiles.CVSReader import getcvsheader, get_new_headers_list, reorder_csv_file
 from app.bck.bm.utiles.Helper import Helper
 from app.constants.BM_CONSTANTS import plot_zip_locations, pkls_location, scalars_location, plot_locations, \
@@ -86,6 +86,7 @@ class PredictionController:
                                  ds_goal):
         try:
             # ------------------Preparing data frame-------------------------#
+            shuffle_dataset = randomize_csv_rows(csv_file_location)
             cvs_header = getcvsheader(csv_file_location)
             new_headers_list = get_new_headers_list(cvs_header, predicted_columns)
             reordered_data = reorder_csv_file(csv_file_location, new_headers_list)
