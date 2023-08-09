@@ -55,7 +55,7 @@ class PredictionController:
     def predict_values_from_model(self, model_id, testing_values):
         try:
             # ------------------Predict values from the model-------------------------#
-            model = pickle.load(open(pkls_location + str(model_id) + '/' + str(model_id) + '_model.pkl', 'rb'))
+            #model = pickle.load(open(pkls_location + str(model_id) + '/' + str(model_id) + '_model.pkl', 'rb'))
 
             # Encode the testing values
             features_list = get_features(model_id)
@@ -72,7 +72,9 @@ class PredictionController:
             s_c = pickle.load(open(scalar_file_name, 'rb'))
             test_x = s_c.transform(encode_df_testing_values)
 
-            predicted_values = [model.predict(test_x)]  # ---
+            prediction = Prediction()
+            predicted_values = prediction.predictlabels(model_id, test_x)
+            #predicted_values = [model.predict(test_x)]  # ---
             # predicted_values = predicted_values.flatten()
             decoded_predicted_values = dcp.decode_output_values(model_id, lables_list, predicted_values)
             print(decoded_predicted_values)
