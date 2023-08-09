@@ -36,12 +36,21 @@ class Prediction:
             # Compile the model
             model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-            # Train the model
-            model.fit(x_train, y_train, epochs=200, batch_size=32)
+            # Add an early stopping callback.
+            early_stopping = tf.keras.callbacks.EarlyStopping(patience=10)
 
-            # Evaluate the model
-            accuracy = round(100 * model.evaluate(x_train, y_train)[1],
-                             2)  # model.evaluate(X_train, y_train)[0] is the loss value (same like SME)
+            epochs_value = 200
+            accuracy = 0.00
+
+            while accuracy < 98.00:
+                # Train the model
+                model.fit(x_train, y_train, epochs=epochs_value, batch_size=32, callbacks=[early_stopping])
+    
+                # Evaluate the model
+                accuracy = round(100 * model.evaluate(x_train, y_train)[1],
+                                 2)  # model.evaluate(X_train, y_train)[0] is the loss value (same like SME)
+                
+                epochs_value+= 100
 
             # Saving and reloading
             model.save(save_model_path)
@@ -51,44 +60,6 @@ class Prediction:
 
             return model, y_pred, accuracy, 3
 
-        except Exception as e:
-            print(e)
-            return -1
-
-    def _createmodel(self, model_id, df, features, labels):
-        try:
-            # Create some sample data
-            num_rows = len(df)  # Using len() to get the number of rows
-            input_shape = len(features)
-            output_shape = len(labels)
-            dataset = tf.data.Dataset.from_tensor_slices((df.iloc[:, :input_shape], df.iloc[:, input_shape:]))
-
-            # Split the dataset into a training set and a test set.
-            train_dataset = dataset.take(num_rows)
-            test_dataset = dataset.skip(num_rows)
-
-            # Create a sequential model with one or more Dense layers.
-            model = tf.keras.Sequential([
-                tf.keras.layers.Reshape((input_shape,1)),
-                tf.keras.layers.Dense(10, activation='relu'),
-                tf.keras.layers.Dense(output_shape)
-            ])
-
-            # Compile the model with a loss function and an optimizer.
-            model.compile(loss='mse', optimizer='adam')
-
-            # Train the model on the training set.
-            model.fit(train_dataset, epochs=10)
-
-            # Evaluate the model on the test set.
-            model.evaluate(test_dataset)
-
-            # Make predictions using the trained model
-            predictions = model.predict(test_dataset)
-
-            # Now 'predictions' contains the predicted values for your input data
-            print(predictions)
-            return model, predictions, 1, 3
         except Exception as e:
             print(e)
             return -1
