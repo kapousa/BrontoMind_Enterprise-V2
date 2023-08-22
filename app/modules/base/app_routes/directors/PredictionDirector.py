@@ -168,13 +168,19 @@ class PredictionDirector:
                     predicted_value = modelcontroller.predict_values_from_model(model_id, testing_values)
                     # response = make_response()
 
-                    if (predicted_value[0][0] == 'Entered data is far from any possible prediction, please refine the input data' or predicted_value[0] == 'Entered data is far from any possible prediction, please refine the input data' ):
-                        return render_template('applications/pages/prediction/predictevalues.html',
-                                               features_list=features_list,
-                                               labels_list=labels_list, ds_goal=ds_goal, ds_source= ds_source, mid= model_id,
-                                               predicted_value=predicted_value[0][0], testing_values=testing_values,
-                                               all_gategories_values=all_gategories_values, predicted='NoValue',
-                                               message='No')
+                    #if (predicted_value[0][0] == 'Entered data is far from any possible prediction, please refine the input data' or predicted_value[0] == 'Entered data is far from any possible prediction, please refine the input data' ):
+                    # Iterate over the rows
+                    value_to_check = 'Entered data is far from any possible prediction, please refine the input data'
+                    for row in predicted_value:
+                        # Check if the value exists in the current row
+                        if value_to_check in row:
+
+                            return render_template('applications/pages/prediction/predictevalues.html',
+                                                   features_list=features_list,
+                                                   labels_list=labels_list, ds_goal=ds_goal, ds_source= ds_source, mid= model_id,
+                                                   predicted_value=predicted_value[0][0], testing_values=testing_values,
+                                                   all_gategories_values=all_gategories_values, predicted='NoValue',
+                                                   message='No')
 
                     return render_template('applications/pages/prediction/predictevalues.html',
                                            features_list=features_list,

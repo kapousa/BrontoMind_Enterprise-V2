@@ -6,6 +6,7 @@ from keras.layers import Dense
 from keras.models import load_model, Sequential
 from app.constants.BM_CONSTANTS import pkls_location
 
+
 class Prediction:
 
     def createmodel(self, model_id, df, features, labels):
@@ -34,23 +35,24 @@ class Prediction:
             ])
 
             # Compile the model
-            model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+            optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
+            model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
             # Add an early stopping callback.
             early_stopping = tf.keras.callbacks.EarlyStopping(patience=10)
 
-            epochs_value = 200
-            accuracy = 0.00
+            target_accuracy = 0.95
+            current_accuracy = 0.0
+            retrain_count = 0
 
-            while accuracy < 98.00:
-                # Train the model
-                model.fit(x_train, y_train, epochs=epochs_value, batch_size=32, callbacks=[early_stopping])
-    
-                # Evaluate the model
-                accuracy = round(100 * model.evaluate(x_train, y_train)[1],
-                                 2)  # model.evaluate(X_train, y_train)[0] is the loss value (same like SME)
-                
-                epochs_value+= 100
+
+            # Train the model
+            model.fit(x_train, y_train, epochs=200, batch_size=32, callbacks=[early_stopping])
+
+            # Evaluate the model
+            loss, current_accuracy = model.evaluate(x_train, y_train, verbose=0)
+            print(f"Iteration {retrain_count + 1}: Accuracy = {current_accuracy:.4f}")
+            accuracy = round(100 * current_accuracy, 2)  # model.evaluate(X_train, y_train)[0] is the loss value (same like SME)
 
             # Saving and reloading
             model.save(save_model_path)
@@ -74,5 +76,3 @@ class Prediction:
         except Exception as e:
             print(e)
             return None
-
-
