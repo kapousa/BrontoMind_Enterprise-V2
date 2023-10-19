@@ -1,9 +1,7 @@
-import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import tensorflow as tf
-from keras.layers import Dense
-from keras.models import load_model, Sequential
+from keras.models import load_model
 from app.constants.BM_CONSTANTS import pkls_location
 
 

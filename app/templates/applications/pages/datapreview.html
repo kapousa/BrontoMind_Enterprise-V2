@@ -6,98 +6,271 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-    {% if message != 'data_info' %}
-        <div class="alert alert-danger alert-dismissible fade show col-6 center" role="alert">
-            <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
-            <span class="alert-inner--text">{{ message }}</span>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    {% else %}
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header card-header-primary">
-                        <h2 class="card-title ">Data Preview</h2>
-                        <p class="card-category"></p>
-                        <form action="/uploadcsvds" name="uploadcsvds" method="post">
-                            <input type="hidden" name="filePath" id="filePath" value="{{ filePath }}">
-                            <button type="submit" class="btn btn-primary btn-lg float-right">Proceed building model
-                            </button>
-                        </form>
-                        <p class="card-category"></p>
-                        <form action="/uploadcsvds" name="uploadcsvds" method="post">
-                            <input type="hidden" name="filePath" id="filePath" value="{{ filePath }}">
-                            <button type="button" class="btn btn-success btn-lg">Data preparation bot</button>
-                        </form>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table align-items-center"
-                                   style="align-content: center!important;">
-                                <thead class="thead-light align-content-center"
-                                       style="align-content: center!important;">
-                                <tr>
-                                    {% for ind in dataset_info.columns %}
-                                        <th scope="col"
-                                            style="text-align: center;  width: 100px; align-content: center!important; white-space: normal!important; vertical-align: central">
-                                            <h5 class="card-title text-blue text-center">{{ ind }}</h5>
-                                        </th>
-                                    {% endfor %}
-                                </tr>
-                                </thead>
-                                <thead>
-                                {% for ind in dataset_info.columns %}
-                                    <td>
-                                        <div class="card align-top"
-                                             style="width: 200px; min-width: 200px; max-width: 200px;">
-                                            <div class="card-body"
-                                                 style="word-wrap: break-word!important; word-break: break-all!important; align-content: center!important;">
-                                                <h5 class="text-danger"
-                                                    style="white-space:pre-wrap; text-align: center">{{ dataset_info[ind][0] }}</h5>
-                                            </div>
-                                        </div>
-                                    </td>
-                                {% endfor %}
-                                </thead>
-                                {% for i in range(sample_data.shape[0]) %}
-                                    <tr class="align-content-center"
-                                        style="word-wrap: break-word!important; vertical-align: top;">
-                                        {% for sample in sample_data.columns %}
-                                            <td style="border-width: thin; border-color: #0a0c0d; text-align: center!important;"
-                                                data-toggle="tooltip" data-placement="top"
-                                                title="{{ sample_data[sample].iloc[i] }}">
-                                                {% set cc = sample_data[sample].iloc[i] %}
-                                                {% if cc|string|count > 50 %}
-                                                    <h5 style="color: red">"Content is large, hover to see content"</h5>
-                                                {% else %}
-                                                    <h5>{{ cc|trim }}</h5>
-                                                {% endif %}
-                                            </td>
-                                        {% endfor %}
-                                    </tr>
-                                {% endfor %}
-                            </table>
-                        </div>
-                    </div>
+{% if message != 'data_info' %}
+<div class="alert alert-danger alert-dismissible fade show col-6 center" role="alert">
+    <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
+    <span class="alert-inner--text">{{ message }}</span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% else %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h2 class="card-title ">Data Preparation</h2>
+                <p class="card-category"></p>
+                <!--form action="/uploadcsvds" name="uploadcsvds" method="post">
+                    <input type="hidden" name="filePath" id="filePath" value="{{ filePath }}">
+                    <button type="button" class="btn btn-primary float-right">Start</button>
+                </form-->
+                <p class="card-category"></p>
+                <!--form-- action="/uploadcsvds" name="uploadcsvds" method="post">
+                    <input type="hidden" name="filePath" id="filePath" value="{{ filePath }}">
+                    <button type="button" class="btn btn-success">Chatbot</button>
+                </form-->
+                <a class="nav-link" data-toggle="modal" data-target="#aichatModal" href="#aichatModal"
+                   style="display:inline!important">
+                    <button type="button" class="btn btn-outline-danger">
+                        <span class="btn-inner--icon"><i class="ni ni-chat-round"></i></span>
+                        <span class="btn-inner--text">Chat</span>
+                    </button>
+                </a>
+                <a class="nav-link" data-toggle="modal" data-target="#cleanModal" href="#cleanModal"
+                   style="display:inline!important">
+                    <button type="button" class="btn btn-outline-primary">
+                        <span class="btn-inner--icon"><i class="ni ni-ui-04"></i></span>
+                        <span class="btn-inner--text">Clean</span>
+                    </button>
+                </a>
+                <a class="nav-link" data-toggle="modal" data-target="#mergeModal" href="#mergeModal"
+                   style="display:inline!important">
+                    <button type="button" class="btn btn-outline-success">
+                        <span class="btn-inner--icon"><i class="ni ni-ungroup"></i></span>
+                        <span class="btn-inner--text">Merge</span>
+                    </button>
+                </a>
+                <button type="button" class="btn btn-primary float-right">
+                    <span class="btn-inner--icon"><i class="ni ni-button-play"></i></span>
+                    <span class="btn-inner--text">Continue</span>
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table align-items-center"
+                           style="align-content: center!important;">
+                        <thead class="thead-light align-content-center"
+                               style="align-content: center!important;">
+                        <tr>
+                            {% for ind in dataset_info.columns %}
+                            <th scope="col"
+                                style="text-align: center;  width: 100px; align-content: center!important; white-space: normal!important; vertical-align: central">
+                                <h5 class="card-title text-blue text-center">{{ ind }}</h5>
+                            </th>
+                            {% endfor %}
+                        </tr>
+                        </thead>
+                        <thead>
+                        {% for ind in dataset_info.columns %}
+                        <td>
+                            <div class="card align-top"
+                                 style="width: 200px; min-width: 200px; max-width: 200px;">
+                                <div class="card-body"
+                                     style="word-wrap: break-word!important; word-break: break-all!important; align-content: center!important;">
+                                    <h5 class="text-danger"
+                                        style="white-space:pre-wrap; text-align: center">{{ dataset_info[ind][0] }}</h5>
+                                </div>
+                            </div>
+                        </td>
+                        {% endfor %}
+                        </thead>
+                        {% for i in range(sample_data.shape[0]) %}
+                        <tr class="align-content-center"
+                            style="word-wrap: break-word!important; vertical-align: top;">
+                            {% for sample in sample_data.columns %}
+                            <td style="border-width: thin; border-color: #0a0c0d; text-align: center!important;"
+                                data-toggle="tooltip" data-placement="top"
+                                title="{{ sample_data[sample].iloc[i] }}">
+                                {% set cc = sample_data[sample].iloc[i] %}
+                                {% if cc|string|count > 50 %}
+                                <h5 style="color: red">"Content is large, hover to see content"</h5>
+                                {% else %}
+                                <h5>{{ cc|trim }}</h5>
+                                {% endif %}
+                            </td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </table>
                 </div>
             </div>
         </div>
-    {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Modals -->
+<!-- Chat Modal -->
+<div class="modal fade" id="aichatModal" tabindex="-1" role="dialog"
+     aria-labelledby="aichatModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="aichatModalLabel">Chat with BrontoMind Bot</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/dataprocessing/previewchanges" method="post">
+                    <div class="modal-body">
+                            <textarea class="form-control lead text-primary" name="user_text" rows="5" id="user_text"
+                                      placeholder="Tell me what changes you would make to your data. ..."
+                                      required>{{ user_text }}</textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Preview Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Clean Modal -->
+<div class="modal fade" id="cleanModal" tabindex="-1" role="dialog"
+     aria-labelledby="cleanModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Clean the data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck1" type="checkbox" checked>
+                    <label class="custom-control-label" for="customCheck1">Standardize Date Columns</label>
+                    <h5>Convert all date columns to ISO 8601 standard format.</h5>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck2" type="checkbox" checked>
+                    <label class="custom-control-label" for="customCheck2">Remove Unexpected Nulls</label>
+                    <h5>Remove rows with null values for columns that are at least 99% filled in.</h5>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck3" type="checkbox" checked>
+                    <label class="custom-control-label" for="customCheck3">Replace Excess Categories with
+                        "Other"</label>
+                    <h5>Replace values in categorical columns that are not in the top 32 most common values with
+                        "Other".</h5>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck4" type="checkbox" checked>
+                    <label class="custom-control-label" for="customCheck4">Remove Constant Columns</label>
+                    <h5>Remove columns that have the same value for every row.</h5>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck5" type="checkbox" checked>
+                    <label class="custom-control-label" for="customCheck5">Remove Mostly Unreadable Numerical
+                        Columns</label>
+                    <h5>Remove numerical columns that are at least 99% unreadable values.</h5>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck6" type="checkbox" checked>
+                    <label class="custom-control-label" for="customCheck6">Remove Mostly Unreadable Date Columns</label>
+                    <h5>Remove numerical columns that are at least 99% unreadable values.</h5>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck7" type="checkbox" checked>
+                    <label class="custom-control-label" for="customCheck7">Remove Mostly Blank Columns</label>
+                    <h5>Remove columns that are at least 99% blank or null values.</h5>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck8" type="checkbox">
+                    <label class="custom-control-label" for="customCheck8">Flag Outliers</label>
+                    <h5>For each numerical column, add a column that flags whether numerical values in that row are more
+                        than 3 standard deviations from the mean, higher than the 99th percentile or lower than the 1st
+                        percentile.</h5>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck9" type="checkbox">
+                    <label class="custom-control-label" for="customCheck9">Flag Inliers</label>
+                    <h5>For each numerical column, add a column that flags whether numerical values in that row are
+                        excessively common in the dataset.</h5>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input class="custom-control-input" id="customCheck10" type="checkbox">
+                    <label class="custom-control-label" for="customCheck10">Clamp Outliers</label>
+                    <h5>Replace values in numerical columns that are more than 3 standard deviations from the mean,
+                        higher than the 99th percentile or lower than the 1st percentile with the nearest value that is
+                        in range.</h5>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <form action="/deletemodel" method="post">
+                    <button type="submit" class="btn btn-primary">Preview Results</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Merge Modal -->
+<div class="modal fade" id="mergeModal" tabindex="-1" role="dialog"
+     aria-labelledby="mergeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Upload secondary data file</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/dataprocessing/previewchanges" method="post">
+                    <div class="modal-body">
+                        <form action="/dataprocessing/builddataset" name="gotobot" method="post"
+                              enctype="multipart/form-data">
+                            <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
+                                <div>
+                                    <input type="file" accept=".csv" enabled required name="filename[]" multiple
+                                           id="filename" class="form-control"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary btn-small"><i
+                        class="fa fa-upload"></i> Upload
+                </button>
+                <a href="javascript:" class="btn btn-danger btn-round btn-small fileinput-exists"
+                   data-dismiss="fileinput">
+                    <i class="fa fa-times"></i> Remove</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock content %}
 
 
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
 
-    <script>
-        $(document).ready(function () {
-            // Javascript method's body can be found in assets/js/demos.js
-            md.initDashboardPageCharts();
+<script>
+    $(document).ready(function () {
+        // Javascript method's body can be found in assets/js/demos.js
+        md.initDashboardPageCharts();
 
-        });
-    </script>
+    });
+</script>
 
 {% endblock javascripts %}
 
