@@ -105,3 +105,21 @@ class DataBotDirector:
         except Exception as e:
             logging.exception(e)
             abort(500, description=e)
+
+    def preview_chat_changes(self, request):
+        try:
+            user_text = request.form.get('user_text')
+            session['user_text'] = user_text
+            databotcontroller = DataBotController()
+            required_changes, data_sample = databotcontroller.drafting_bot_request(user_text, session['filepath'])
+            session['required_changes'] = required_changes
+            return render_template('applications/pages/datapreview.html', segment='preparedata',
+                                   user_text=user_text, required_changes=required_changes, request_type="draft",
+                                   response_head="We understand that the following actions should be taken in response to yourn words: ",
+                                   response_footer="Check out the table below to see how your data will look after you make these changes.",
+                                   message='data_info', sample_data=[
+                    data_sample.to_html(border=0, classes='table table-hover', header="false",
+                                        justify="center").replace("<th>", "<th class='text-warning'>")], )
+        except Exception as e:
+            logging.exception(e)
+            abort(500, description=e)

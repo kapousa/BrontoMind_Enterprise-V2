@@ -67,3 +67,12 @@ def cancelmodifications():
     except Exception as e:
         logging.error(e)
         abort(500, e)
+
+@blueprint.route('/previewchatchanges', methods=['GET', 'POST'])
+@login_required
+def previewchatchanges():
+    try:
+        return databotdirector.preview_chat_changes(request)
+    except Exception as e:
+        logging.error(e)
+        abort(500, e)

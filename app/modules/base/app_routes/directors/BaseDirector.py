@@ -237,7 +237,7 @@ class BaseDirector:
                            align='left'))
             ])
             #fig.show()
-
+            session['filepath'] = filePath
             return render_template('applications/pages/datapreview.html',
                                    message='data_info', filePath=filePath, segment="selectmodelgoal",
                                    dataset_info=dataset_info, sample_data=sample_data)

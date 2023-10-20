@@ -30,11 +30,11 @@
                     <input type="hidden" name="filePath" id="filePath" value="{{ filePath }}">
                     <button type="button" class="btn btn-success">Chatbot</button>
                 </form-->
-                <a class="nav-link" data-toggle="modal" data-target="#aichatModal" href="#aichatModal"
+                <a class="nav-link" data-toggle="modal" data-target="#dataprepchatModal" href="#dataprepchatModal"
                    style="display:inline!important">
                     <button type="button" class="btn btn-outline-danger">
                         <span class="btn-inner--icon"><i class="ni ni-chat-round"></i></span>
-                        <span class="btn-inner--text">Chat</span>
+                        <span class="btn-inner--text">Data Prep Chat</span>
                     </button>
                 </a>
                 <a class="nav-link" data-toggle="modal" data-target="#cleanModal" href="#cleanModal"
@@ -57,7 +57,75 @@
                 </button>
             </div>
             <div class="card-body">
+
+
+                {% if required_changes != None %}
+                <form action="/dataprocessing/applychanges" method="post">
+                    <div class="card">
+                        <div class="card-header card-header-primary fade show" role="alert">
+                            <strong>{{ response_head }}</strong>
+                            <p>
+                            <ol>
+                                {% for k, v in required_changes %}
+                                <li>
+                                    {{ k }}
+                                    {% for col in v %}
+                                    {{ col + " - " }}
+                                    {% endfor %}
+                                    column/s.
+                                </li>
+                                {% endfor %}
+                                </p>
+                            </ol>
+                            {{ response_footer }}
+                        </div>
+                        <div class="modal-footer">
+                            {% if request_type == 'draft' %}
+                            <button type="submit" class="btn btn-danger">Apply</button>
+                            <a class="nav-link" href="/dataprocessing/cancelmodifications">
+                                <button type="button" class="btn btn-success">Cancel</button>
+                            </a>
+                            {% endif %}
+                            {% if request_type == 'apply' %}
+                            <a class="nav-link" href="/dataprocessing/downloadmodifiedfile">
+                                <button type="button" class="btn btn-danger">Download Modifications</button>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </form>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-primary">
+                                Data Preview
+                                <p class="card-category"></p>
+                            </div>
+                            <div class="card-body">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="card">
+                                        <div class="card-header card-header-success">
+                                            <p class="card-category">10 sample rows from your dataset</p>
+                                        </div>
+                                        <div class="card-body table-responsive">
+                                            {% for sample in sample_data %}
+                                            {{ sample|safe }}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endif %}
+
+                {% if required_changes == None %}
                 <div class="table-responsive">
+                    Data Preview
                     <table class="table align-items-center"
                            style="align-content: center!important;">
                         <thead class="thead-light align-content-center"
@@ -104,6 +172,7 @@
                         {% endfor %}
                     </table>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -111,9 +180,9 @@
 {% endif %}
 
 <!-- Modals -->
-<!-- Chat Modal -->
-<div class="modal fade" id="aichatModal" tabindex="-1" role="dialog"
-     aria-labelledby="aichatModalLabel"
+<!-- Chat Data Prep Modal -->
+<div class="modal fade" id="dataprepchatModal" tabindex="-1" role="dialog"
+     aria-labelledby="dataprepchatModal"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -123,18 +192,18 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form action="/dataprocessing/previewchanges" method="post">
+            <form action="/dataprocessing/previewchatchanges" method="post" id="dataprepchatForm">
+                <div class="modal-body">
                     <div class="modal-body">
                             <textarea class="form-control lead text-primary" name="user_text" rows="5" id="user_text"
                                       placeholder="Tell me what changes you would make to your data. ..."
                                       required>{{ user_text }}</textarea>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Preview Changes</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Preview Changes</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -211,9 +280,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <form action="/deletemodel" method="post">
-                    <button type="submit" class="btn btn-primary">Preview Results</button>
-                </form>
+                <button type="button" class="btn btn-primary">Preview Results</button>
             </div>
         </div>
     </div>
@@ -230,8 +297,8 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form action="/dataprocessing/previewchanges" method="post">
+            <form action="/dataprocessing/previewchanges" method="post" id="mergeForm">
+                <div class="modal-body">
                     <div class="modal-body">
                         <form action="/dataprocessing/builddataset" name="gotobot" method="post"
                               enctype="multipart/form-data">
@@ -244,16 +311,11 @@
                             </div>
                         </form>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary btn-small"><i
-                        class="fa fa-upload"></i> Upload
-                </button>
-                <a href="javascript:" class="btn btn-danger btn-round btn-small fileinput-exists"
-                   data-dismiss="fileinput">
-                    <i class="fa fa-times"></i> Remove</a>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success btn-small">Upload</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
