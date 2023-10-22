@@ -238,7 +238,7 @@ class BaseDirector:
             ])
             #fig.show()
             session['filepath'] = filePath
-            return render_template('applications/pages/datapreview.html',
+            return render_template('applications/pages/datapreview.html', required_changes='None',
                                    message='data_info', filePath=filePath, segment="selectmodelgoal",
                                    dataset_info=dataset_info, sample_data=sample_data)
         except Exception as e:

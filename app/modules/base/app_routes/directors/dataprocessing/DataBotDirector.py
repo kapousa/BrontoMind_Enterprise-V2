@@ -113,7 +113,7 @@ class DataBotDirector:
             databotcontroller = DataBotController()
             required_changes, data_sample = databotcontroller.drafting_bot_request(user_text, session['filepath'])
             session['required_changes'] = required_changes
-            return render_template('applications/pages/datapreview.html', segment='preparedata',
+            return render_template('applications/pages/datapreview.html', segment='preparedata', process='chat',
                                    user_text=user_text, required_changes=required_changes, request_type="draft",
                                    response_head="We understand that the following actions should be taken in response to yourn words: ",
                                    response_footer="Check out the table below to see how your data will look after you make these changes.",

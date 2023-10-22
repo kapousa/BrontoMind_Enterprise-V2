@@ -1,0 +1,58 @@
+<form action="/dataprocessing/applychanges" method="post">
+    <div class="card">
+        <div class="card-header card-header-primary fade show" role="alert">
+            <strong>{{ response_head }}</strong>
+            <p>
+            <ol>
+                {% for k, v in required_changes %}
+                <li>
+                    {{ k }}
+                    {% for col in v %}
+                    {{ col + " - " }}
+                    {% endfor %}
+                    column/s.
+                </li>
+                {% endfor %}
+                </p>
+            </ol>
+            {{ response_footer }}
+        </div>
+        <div class="modal-footer">
+            {% if request_type == 'draft' %}
+            <button type="submit" class="btn btn-danger">Apply</button>
+            <a class="nav-link" href="/dataprocessing/cancelmodifications">
+                <button type="button" class="btn btn-success">Cancel</button>
+            </a>
+            {% endif %}
+            {% if request_type == 'apply' %}
+            <a class="nav-link" href="/dataprocessing/downloadmodifiedfile">
+                <button type="button" class="btn btn-danger">Download Modifications</button>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</form>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                Data Preview
+                <p class="card-category"></p>
+            </div>
+            <div class="card-body">
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-success">
+                            <p class="card-category">10 sample rows from your dataset</p>
+                        </div>
+                        <div class="card-body table-responsive">
+                            {% for sample in sample_data %}
+                            {{ sample|safe }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
