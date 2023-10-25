@@ -51,7 +51,7 @@ class MLForecastingController:
         # Data download
         # ==============================================================================
         data = pd.read_csv(csv_file_location, usecols=[depended_factor, time_factor], sep=',', header=0)
-        model_id = Helper.generate_model_id()
+        model_id = get_only_file_name(csv_file_location) # Helper.generate_model_id()
         file_extension = pathlib.Path(csv_file_location).suffix
         newfilename = os.path.join(df_location, str(model_id) + file_extension)
         os.rename(csv_file_location, newfilename)

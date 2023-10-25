@@ -72,7 +72,7 @@ class ClassificationController:
         data = reordered_data  # pd.read_csv(csv_file_location)
         new_headers_list = np.append(classification_features, [categories_column])
         data = data[new_headers_list]
-        model_id = Helper.generate_model_id()
+        model_id = get_only_file_name(csv_file_location) # Helper.generate_model_id()
 
         # Determine features and lables
         features_last_index = len(new_headers_list) - (len(categories_column))

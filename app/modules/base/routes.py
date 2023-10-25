@@ -124,7 +124,7 @@ def idea():
 def createmodel():
     ds_goal = request.args.get("t")
     session['ds_goal'] = ds_goal
-    return render_template('applications/pages/selectdssource.html', ds_goal=ds_goal, segment='createmodel')
+    return render_template('applications/pages/selectdssource.html', ds_goal=ds_goal, segment='selectmodelgoal')
 
 @blueprint.route('/updatemodel')
 @login_required
@@ -193,7 +193,7 @@ def uploadcsvds():
         if (session['ds_goal'] == current_app.config['CLASSIFICATION_MODULE']):  # Classification
             session['fname'] = fname
             return render_template('applications/pages/classification/selectfields.html', headersArray=headersArray,
-                                   segment='createmodel', message=message, fname=fname,
+                                   segment='selectmodelgoal', message=message, fname=fname,
                                    ds_source=session['ds_source'], ds_goal=session['ds_goal'])
 
         if (session['ds_goal'] == current_app.config['FORECASTING_MODULE']):  # Forecasting
@@ -203,13 +203,13 @@ def uploadcsvds():
         if (session['ds_goal'] == current_app.config['CLUSTERING_MODULE']):
             session['fname'] = fname
             return render_template('applications/pages/clustering/selectfields.html', headersArray=headersArray,
-                                   segment='createmodel', message=message)
+                                   segment='selectmodelgoal', message=message)
 
         if (session['ds_goal'] == current_app.config['ROBOTIC_MODULE']):  # Robotics
             return render_template('applications/pages/robotics/selectfields.html', headersArray=headersArray,
                                    fname=fname,
                                    ds_source=session['ds_source'], ds_goal=session['ds_goal'],
-                                   segment='createmodel', message=message)
+                                   segment='selectmodelgoal', message=message)
 
         # ds_goal = '' means user can't decide
         document_processor = DocumentProcessor()
@@ -222,7 +222,7 @@ def uploadcsvds():
                                datetime_columns=datetime_columns,
                                fname=fname,
                                ds_source=session['ds_source'], ds_goal=session['ds_goal'],
-                               segment='createmodel', message=message)
+                               segment='selectmodelgoal', message=message)
 
 @blueprint.route('/dffromdb', methods=['GET', 'POST'])
 @login_required
@@ -242,11 +242,11 @@ def dffromdb():
 
             if (session['ds_goal'] == current_app.config['CLASSIFICATION_MODULE']):
                 return render_template('applications/pages/classification/selectfields.html', headersArray=headersArray,
-                                       segment='createmodel', message=message)
+                                       segment='selectmodelgoal', message=message)
 
             if (session['ds_goal'] == current_app.config['CLUSTERING_MODULE']):
                 return render_template('applications/pages/clustering/selectfields.html', headersArray=headersArray,
-                                       segment='createmodel', message=message)
+                                       segment='selectmodelgoal', message=message)
 
             if (session['ds_goal'] == current_app.config['ROBOTIC_MODULE']):
                 return render_template('applications/dashboard.html')
@@ -276,11 +276,11 @@ def dffromapi():
 
             if (session['ds_goal'] == current_app.config['CLASSIFICATION_MODULE']):
                 return render_template('applications/pages/classification/selectfields.html', headersArray=headersArray,
-                                       segment='createmodel', message=message)
+                                       segment='selectmodelgoal', message=message)
 
             if (session['ds_goal'] == current_app.config['CLUSTERING_MODULE']):
                 return render_template('applications/pages/clustering/selectfields.html', headersArray=headersArray,
-                                       segment='createmodel', message=message)
+                                       segment='selectmodelgoal', message=message)
 
             if (session['ds_goal'] == current_app.config['ROBOTIC_MODULE']):
                 return render_template('applications/dashboard.html')
@@ -318,7 +318,7 @@ def creatingthemodel():  # The function of showing the gif page
                                        classification_label=classification_label,
                                        classification_features=classification_features,
                                        ds_source=ds_source, ds_goal=ds_goal,
-                                       segment='createmodel')
+                                       segment='selectmodelgoal')
 
             fname = session['fname']
 
@@ -337,7 +337,7 @@ def creatingthemodel():  # The function of showing the gif page
                                        progress_icon_path=progress_icon_path, fname=fname,
                                        loading_icon_path=loading_icon_path,
                                        ds_source=ds_source, ds_goal=ds_goal,
-                                       segment='createmodel')
+                                       segment='selectmodelgoal')
 
             if (ds_goal == current_app.config['FORECASTING_MODULE']):
                 timefactor = request.form.get('timefactor')
@@ -349,7 +349,7 @@ def creatingthemodel():  # The function of showing the gif page
                                        progress_icon_path=progress_icon_path, fname=fname,
                                        loading_icon_path=loading_icon_path,
                                        ds_source=ds_source, ds_goal=ds_goal,
-                                       segment='createmodel')
+                                       segment='selectmodelgoal')
 
             if (ds_goal == current_app.config['CLUSTERING_MODULE']):
                 clustering_features = numpy.array(request.form.getlist('clustering_features'))
@@ -359,7 +359,7 @@ def creatingthemodel():  # The function of showing the gif page
                                        progress_icon_path=progress_icon_path, fname=fname,
                                        loading_icon_path=loading_icon_path,
                                        ds_source=ds_source, ds_goal=ds_goal,
-                                       segment='createmodel')
+                                       segment='selectmodelgoal')
 
             return 0
         else:
@@ -416,7 +416,7 @@ def sendvalues():  # The main function of creating the model
 def runthemodel():
     try:
         ds_source = request.form.get('ds_source')
-        return redirect('pages/connecttods.html', ds_id=ds_source, segment='createmodel')
+        return redirect('pages/connecttods.html', ds_id=ds_source, segment='selectmodelgoal')
 
     except Exception as e:
         print(e)
@@ -428,7 +428,7 @@ def plot_png():
     fig = create_figure()
     output = io.BytesIO()
     FigureCanvas(fig).print_png(output)
-    return Response(output.getvalue(), mimetype='image/png', segment='createmodel')
+    return Response(output.getvalue(), mimetype='image/png', segment='selectmodelgoal')
 
 @blueprint.route('/predictevalues', methods=['GET', 'POST'])
 def predictevalues():

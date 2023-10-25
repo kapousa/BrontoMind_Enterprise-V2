@@ -1,10 +1,14 @@
 import logging
+import os
+import shutil
 
 import pandas as pd
 from flask import abort
 
 from app.bck.bm.controllers.dataprocessing.DataBotControllerHelper import DataBotControllerHelper
 from app.bck.bm.core.engine.processors.WordProcessor import WordProcessor
+from app.bck.bm.utiles.CVSReader import get_file_name_with_ext
+from app.constants.DATAPROCESSING_CONSTANTS import modified_files_temp_path
 
 
 class DataBotController:
@@ -28,6 +32,14 @@ class DataBotController:
             required_changes = wordprocessor.get_orders_list(user_text, data_columns)
             modified_data = databotcontrollerhelper.apply_bot_changes(required_changes, df)
 
+            # Copy original file to temp folder
+            file_name = get_file_name_with_ext(file_path)
+            destination_path = os.path.join(modified_files_temp_path)
+            shutil.copy(file_path, destination_path)
+
+            # Write the updated DataFrame back to the CSV file
+            modified_data.to_csv(file_path, index=False)
+
             #dataBotcontrollerhelper = DataBotControllerHelper()
             #required_changes, modified_data = dataBotcontrollerhelper.update_csv_with_text(df, user_text)
 
@@ -41,6 +53,8 @@ class DataBotController:
             databotcontrollerhelper = DataBotControllerHelper()
 
             df = pd.read_csv(file_path)
+            df_orginal = df
+            df_orginal.to_csv("{}{}".format(file_path, "orgi"))     # Save original data
             df.columns = df.columns.str.lower()
             modified_data = databotcontrollerhelper.apply_bot_changes(required_changes, df)
             modified_data.to_csv(file_path)

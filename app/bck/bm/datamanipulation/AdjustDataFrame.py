@@ -14,6 +14,7 @@ import numpy as np
 from app import db
 from joblib import dump, load
 
+from app.bck.bm.utiles.Helper import Helper
 from app.constants.BM_CONSTANTS import df_location
 from app.modules.base.db_models import ModelEncodedColumns
 from app.modules.base.db_models.ModelFeatures import ModelFeatures
@@ -396,7 +397,8 @@ def export_mysql_query_to_csv(host_name, username, password, database_name, quer
     df = pd.DataFrame(sql_query)
     conn.close()
 
-    file_location = df_location + "/{}.csv".format(database_name)
+    model_id = Helper.generate_model_id()
+    file_location = df_location + "/{}.csv".format(model_id) #database_name)
     df.to_csv(file_location, index=False)
 
     # Remove empty columns
@@ -422,7 +424,8 @@ def export_api_respose_to_csv(api_url, request_type, root_node: None, request_pa
         json_response = json.loads(api_response.text)
         df =  pd.json_normalize(json_response) if root_node == None else pd.json_normalize(json_response[root_node])
         df = pd.DataFrame(df)
-        data_file_path = api_data_folder + "{}".format(api_data_filename)
+        model_id = Helper.generate_model_id()
+        data_file_path = api_data_folder + "{}.csv".format(model_id)    #api_data_filename)
         df.to_csv(data_file_path, index=False)
         data = pd.read_csv(data_file_path)
 

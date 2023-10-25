@@ -106,4 +106,4 @@ merge_action = 'Merge'
 
 sum_action = 'Sum'
 
-modified_files_temp_path = 'tempfiles/'
+modified_files_temp_path = 'app/tempfiles/'

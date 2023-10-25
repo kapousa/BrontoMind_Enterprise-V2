@@ -1,4 +1,4 @@
-from app.modules.base.app_routes.directors.dataprocessing.DataBotDirector import DataBotDirector
+from app.modules.base.app_routes.directors.dataprocessing.DataProcessingDirector import DataProcessingDirector
 
 
 class DataBotFactory:
@@ -9,7 +9,7 @@ class DataBotFactory:
         self.members = ['Tiger', 'Elephant', 'Wild Cat']
 
     def build_dataset(self, request):
-        databotdirector = DataBotDirector()
+        databotdirector = DataProcessingDirector()
         return databotdirector.build_data_sheet(request)
 
     def process_bot_request(self, request):

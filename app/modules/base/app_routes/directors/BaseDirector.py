@@ -29,22 +29,27 @@ class BaseDirector:
         try:
             # f = request.files['filename']
             f = flask.request.files.getlist('filename[]')
+            model_id = Helper.generate_model_id()
+
+            # file_Path = session['filePath'] if session['filePath'] is not None else f
             file_Path = flask.request.form.get("filePath")
+            # file_Path = session["filePath"]
             filePath = file_Path
             number_of_files = len(f) if f != None else 0
             ds_source = session['ds_source']
             ds_goal = session['ds_goal']
             if number_of_files == 1 or file_Path != None:  # Check if there file sent to upload or already uploaded in data preview step
-                fname = secure_filename(f[0].filename) if number_of_files == 1 else os.path.basename(filePath)
+                # fname = secure_filename(f[0].filename) if number_of_files == 1 else os.path.basename(filePath)
+                fname = "{}.csv".format(model_id) if number_of_files == 1 else os.path.basename(filePath)
                 if number_of_files == 1:  # if the file doesn't upload in data preview step, save the file
-                    file_name = f[0].filename
+                    file_name = "{}.csv".format(model_id)   # f[0].filename
                     filePath = os.path.join(df_location, secure_filename(file_name))
                     f[0].save(filePath)
 
                 # Remove empty columns
                 data = Helper.remove_empty_columns(filePath)
 
-                # Check if the dataset if engough
+                # Check if the dataset is enough
                 count_row = data.shape[0]
                 message = 'No'
 
@@ -239,7 +244,7 @@ class BaseDirector:
             #fig.show()
             session['filepath'] = filePath
             return render_template('applications/pages/datapreview.html', required_changes='None',
-                                   message='data_info', filePath=filePath, segment="selectmodelgoal",
+                                   message='data_info', filePath=filePath, segment="selectmodelgoal", col_width="{}%".format(round(100/len(sample_header),2)),
                                    dataset_info=dataset_info, sample_data=sample_data)
         except Exception as e:
             logging.error(e)

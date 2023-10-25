@@ -7,12 +7,12 @@ import logging
 from flask import abort, request
 from flask_login import login_required
 
-from app.modules.base.app_routes.directors.dataprocessing.DataBotDirector import DataBotDirector
+from app.modules.base.app_routes.directors.dataprocessing.DataProcessingDirector import DataProcessingDirector
 from app.modules.dataprocessing import blueprint
 
 ## Data Processing
 
-databotdirector = DataBotDirector()
+databotdirector = DataProcessingDirector()
 
 @blueprint.route('/datapreprationbot', methods=['GET', 'POST'])
 @login_required
@@ -73,6 +73,15 @@ def cancelmodifications():
 def previewchatchanges():
     try:
         return databotdirector.preview_chat_changes(request)
+    except Exception as e:
+        logging.error(e)
+        abort(500, e)
+
+@blueprint.route('/cancelchanges', methods=['GET', 'POST'])
+@login_required
+def cancelchanges():
+    try:
+        return databotdirector.cancel_changes(request)
     except Exception as e:
         logging.error(e)
         abort(500, e)

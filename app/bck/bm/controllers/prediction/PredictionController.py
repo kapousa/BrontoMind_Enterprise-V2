@@ -95,7 +95,7 @@ class PredictionController:
             data = reordered_data  # pd.read_csv(csv_file_location)
             new_headers_list = np.append(featuresdvalues, predicted_columns.flatten())
             data = data[new_headers_list]
-            model_id = Helper.generate_model_id()
+            model_id = get_only_file_name(csv_file_location) # Helper.generate_model_id()
 
             file_extension = pathlib.Path(csv_file_location).suffix
             newfilename = os.path.join(df_location, str(model_id) + file_extension)
