@@ -77,11 +77,29 @@ def previewchatchanges():
         logging.error(e)
         abort(500, e)
 
+@blueprint.route('/previewcleanchanges', methods=['GET', 'POST'])
+@login_required
+def previewcleanchanges():
+    try:
+        return databotdirector.preview_clean_changes(request)
+    except Exception as e:
+        logging.error(e)
+        abort(500, e)
+
 @blueprint.route('/cancelchanges', methods=['GET', 'POST'])
 @login_required
 def cancelchanges():
     try:
         return databotdirector.cancel_changes(request)
+    except Exception as e:
+        logging.error(e)
+        abort(500, e)
+
+@blueprint.route('/applychatresponse', methods=['GET', 'POST'])
+@login_required
+def applychatresponse():
+    try:
+        return databotdirector.apply_chat_changes(request)
     except Exception as e:
         logging.error(e)
         abort(500, e)

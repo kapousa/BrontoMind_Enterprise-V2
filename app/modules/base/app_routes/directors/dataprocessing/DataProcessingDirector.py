@@ -7,6 +7,8 @@ from flask import render_template, abort, session, send_file
 from werkzeug.utils import secure_filename
 
 from app.bck.bm.controllers.BaseController import BaseController
+from app.bck.bm.controllers.dataprocessing.CleanDataEngine import CleanDataEngine
+from app.bck.bm.controllers.dataprocessing.DataCleanController import DataCleanController
 from app.constants.BM_CONSTANTS import tempfiles_loaction
 from app.bck.bm.controllers.dataprocessing.DataBotController import DataBotController
 from app.bck.bm.utiles.CVSReader import get_file_name_with_ext
@@ -22,7 +24,8 @@ class DataProcessingDirector:
 
     def data_prepration_bot(self, request, message="None"):
         try:
-            return render_template('applications/pages/dataprocessing/databot/uploaddata.html', segment='selectmodelgoal',
+            return render_template('applications/pages/dataprocessing/databot/uploaddata.html',
+                                   segment='selectmodelgoal',
                                    message=message)
         except Exception as e:
             logging.exception(e)
@@ -115,10 +118,53 @@ class DataProcessingDirector:
             databotcontroller = DataBotController()
             required_changes, data_sample = databotcontroller.drafting_bot_request(user_text, session['filepath'])
             session['required_changes'] = required_changes
-            return render_template('applications/pages/dataprocessing/databot/chatprocessingresult.html', segment='selectmodelgoal', process='chat',
+            return render_template('applications/pages/dataprocessing/databot/chatprocessingresult.html',
+                                   segment='selectmodelgoal', process='chat',
                                    user_text=user_text, required_changes=required_changes, request_type="draft",
                                    response_head="We understand that the following actions should be taken in response to yourn words: ",
                                    response_footer="Check out the table below to see how your data will look after you make these changes.",
+                                   message='data_info', sample_data=[
+                    data_sample.to_html(border=0, classes='table table-hover', header="false",
+                                        justify="center").replace("<th>", "<th class='text-warning'>")], )
+        except Exception as e:
+            logging.exception(e)
+            abort(500, description=e)
+
+    def apply_chat_changes(self, request):
+        try:
+            # Copy original file to temp folder
+            filePath = session['filepath']
+            file_name = get_file_name_with_ext(filePath)
+            temp_file = os.path.join("{0}{1}".format(modified_files_temp_path, file_name))
+            shutil.copy(filePath, temp_file)
+
+            dataset_info = BaseController.get_dataset_info(filePath)
+
+            # Sample data
+            data = pd.read_csv(filePath)
+            sample_data = (data.sample(n=10))
+            sample_header = dataset_info.columns.tolist()
+
+            return render_template('applications/pages/datapreview.html', required_changes='None',
+                                   message='data_info', filePath=filePath, segment="selectmodelgoal",
+                                   col_width="{}%".format(round(100 / len(sample_header), 2)),
+                                   dataset_info=dataset_info, sample_data=sample_data)
+        except Exception as e:
+            logging.exception(e)
+            abort(500, description=e)
+
+    def preview_clean_changes(self, request):
+        try:
+            file_path = session['filepath']
+            selected_options = []
+            for i in range(0, 9):
+                if len(request.form.getlist('customCheck{}'.format(i))) != 0:
+                    selected_options.append(int(request.form.getlist('customCheck{}'.format(i))[0]))
+            data_clean_controller = DataCleanController()
+            data_sample = data_clean_controller.drafting_clean_request(selected_options, file_path)
+
+            return render_template('applications/pages/dataprocessing/databot/cleanprocessingresult.html',
+                                   segment='selectmodelgoal', process='chat', request_type="draft",
                                    message='data_info', sample_data=[
                     data_sample.to_html(border=0, classes='table table-hover', header="false",
                                         justify="center").replace("<th>", "<th class='text-warning'>")], )

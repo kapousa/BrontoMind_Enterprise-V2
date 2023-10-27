@@ -40,17 +40,13 @@
                     {{ response_footer }}
                 </div>
                 <div class="modal-footer">
-                    {% if request_type == 'draft' %}
-                    <button type="submit" class="btn btn-danger">Apply</button>
+                    <a class="nav-link" href="/dataprocessing/applychatresponse">
+                        <button type="button" class="btn btn-danger" title="Apply Modifications">Apply</button>
+                    </a>
+                    <button type="button" class="btn btn-success" title="Download Modifications">Download</button>
                     <a class="nav-link" href="/dataprocessing/cancelchanges">
-                        <button type="button" class="btn btn-success">Cancel</button>
+                        <button type="button" class="btn btn-default" title="Cancel Modifications">Cancel</button>
                     </a>
-                    {% endif %}
-                    {% if request_type == 'apply' %}
-                    <a class="nav-link" href="/dataprocessing/downloadmodifiedfile">
-                        <button type="button" class="btn btn-danger">Download Modifications</button>
-                    </a>
-                    {% endif %}
                 </div>
             </div>
         </form>
@@ -67,7 +63,7 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="card">
                         <div class="card-header card-header-success">
-                            <p class="card-category">10 sample rows from your dataset</p>
+                            <p class="card-category">10 sample rows from updated data</p>
                         </div>
                         <div class="card-body table-responsive">
                             {% for sample in sample_data %}

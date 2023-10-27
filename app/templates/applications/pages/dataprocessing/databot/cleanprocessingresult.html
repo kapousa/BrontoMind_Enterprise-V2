@@ -1,0 +1,78 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+{% if message != 'data_info' %}
+<div class="alert alert-danger alert-dismissible fade show col-6 center" role="alert">
+    <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
+    <span class="alert-inner--text">{{ message }}</span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% else %}
+<div class="row">
+    <div class="col-md-12">
+        <form action="/dataprocessing/applychanges" method="post">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h2 class="card-title ">Clear Data Result</h2>
+                </div>
+                <div class="modal-footer">
+                    <a class="nav-link" href="/dataprocessing/applyclearresponse">
+                        <button type="button" class="btn btn-danger" title="Apply Modifications">Apply</button>
+                    </a>
+                    <button type="button" class="btn btn-success" title="Download Modifications">Download</button>
+                    <a class="nav-link" href="/dataprocessing/cancelchanges">
+                        <button type="button" class="btn btn-default" title="Cancel Modifications">Cancel</button>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                Data Preview
+                <p class="card-category"></p>
+            </div>
+            <div class="card-body">
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-success">
+                            <p class="card-category">10 sample rows from updated data</p>
+                        </div>
+                        <div class="card-body table-responsive">
+                            {% for sample in sample_data %}
+                            {{ sample|safe }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+<script>
+    $(document).ready(function () {
+        // Javascript method's body can be found in assets/js/demos.js
+        md.initDashboardPageCharts();
+
+    });
+</script>
+
+{% endblock javascripts %}
