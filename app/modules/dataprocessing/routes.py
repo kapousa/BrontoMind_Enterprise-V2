@@ -86,6 +86,15 @@ def previewcleanchanges():
         logging.error(e)
         abort(500, e)
 
+@blueprint.route('/matchfields', methods=['GET', 'POST'])
+@login_required
+def matchfields():
+    try:
+        return databotdirector.match_fields(request)
+    except Exception as e:
+        logging.error(e)
+        abort(500, e)
+
 @blueprint.route('/cancelchanges', methods=['GET', 'POST'])
 @login_required
 def cancelchanges():

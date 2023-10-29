@@ -155,46 +155,54 @@
             <form action="/dataprocessing/previewcleanchanges" method="post" id="cleanForm">
                 <div class="modal-body">
                     <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" name="customCheck0" id="customCheck0" type="checkbox" value="0" checked>
+                        <input class="custom-control-input" name="customCheck0" id="customCheck0" type="checkbox"
+                               value="0" checked>
                         <label class="custom-control-label" for="customCheck0">Standardize Date Columns</label>
                         <h5>Convert all date columns to ISO 8601 standard format.</h5>
                     </div>
                     <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" name="customCheck1" id="customCheck1" type="checkbox" value="1" checked>
+                        <input class="custom-control-input" name="customCheck1" id="customCheck1" type="checkbox"
+                               value="1" checked>
                         <label class="custom-control-label" for="customCheck1">Remove Unexpected Nulls</label>
                         <h5>Remove rows with null values for columns that are at least 99% filled in.</h5>
                     </div>
                     <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" name="customCheck2" id="customCheck2" type="checkbox" value="2">
+                        <input class="custom-control-input" name="customCheck2" id="customCheck2" type="checkbox"
+                               value="2">
                         <label class="custom-control-label" for="customCheck2">Replace Excess Categories with
                             "Other"</label>
                         <h5>Replace values in categorical columns that are not in the top 32 most common values with
                             "Other".</h5>
                     </div>
                     <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" name="customCheck3" id="customCheck3" type="checkbox" value="3">
+                        <input class="custom-control-input" name="customCheck3" id="customCheck3" type="checkbox"
+                               value="3">
                         <label class="custom-control-label" for="customCheck3">Remove Constant Columns</label>
                         <h5>Remove columns that have the same value for every row.</h5>
                     </div>
                     <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" name="customCheck4" id="customCheck4" type="checkbox" value="4">
+                        <input class="custom-control-input" name="customCheck4" id="customCheck4" type="checkbox"
+                               value="4">
                         <label class="custom-control-label" for="customCheck4">Remove Mostly Unreadable Numerical
                             Columns</label>
                         <h5>Remove numerical columns that are at least 99% unreadable values.</h5>
                     </div>
                     <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" name="customCheck5" id="customCheck5" type="checkbox" value="5">
+                        <input class="custom-control-input" name="customCheck5" id="customCheck5" type="checkbox"
+                               value="5">
                         <label class="custom-control-label" for="customCheck5">Remove Mostly Unreadable Date
                             Columns</label>
                         <h5>Remove numerical columns that are at least 99% unreadable values.</h5>
                     </div>
                     <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" name="customCheck6" id="customCheck6" type="checkbox" value="6">
+                        <input class="custom-control-input" name="customCheck6" id="customCheck6" type="checkbox"
+                               value="6">
                         <label class="custom-control-label" for="customCheck6">Remove Mostly Blank Columns</label>
                         <h5>Remove columns that are at least 99% blank or null values.</h5>
                     </div>
                     <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" name="customCheck7" id="customCheck7" type="checkbox" value="7">
+                        <input class="custom-control-input" name="customCheck7" id="customCheck7" type="checkbox"
+                               value="7">
                         <label class="custom-control-label" for="customCheck7">Flag Outliers</label>
                         <h5>For each numerical column, add a column that flags whether numerical values in that row are
                             more
@@ -203,13 +211,15 @@
                             percentile.</h5>
                     </div>
                     <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" name="customCheck8" id="customCheck8" type="checkbox" value="8">
+                        <input class="custom-control-input" name="customCheck8" id="customCheck8" type="checkbox"
+                               value="8">
                         <label class="custom-control-label" for="customCheck8">Flag Inliers</label>
                         <h5>For each numerical column, add a column that flags whether numerical values in that row are
                             excessively common in the dataset.</h5>
                     </div>
                     <div class="custom-control custom-checkbox mb-3">
-                        <input class="custom-control-input" name="customCheck9" id="customCheck9" type="checkbox" value="9">
+                        <input class="custom-control-input" name="customCheck9" id="customCheck9" type="checkbox"
+                               value="9">
                         <label class="custom-control-label" for="customCheck9">Clamp Outliers</label>
                         <h5>Replace values in numerical columns that are more than 3 standard deviations from the mean,
                             higher than the 99th percentile or lower than the 1st percentile with the nearest value that
@@ -236,19 +246,18 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/dataprocessing/previewchanges" method="post" id="mergeForm">
+            <form action="/dataprocessing/matchfields" method="post" name="mergeForm"
+                  enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="modal-body">
-                        <form action="/dataprocessing/builddataset" name="gotobot" method="post"
-                              enctype="multipart/form-data">
-                            <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                                <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
-                                <div>
-                                    <input type="file" accept=".csv" enabled required name="filename[]" multiple
-                                           id="filename" class="form-control"/>
-                                </div>
+                        <p>Upload an additional dataset to be combined with the given data.</p>
+                        <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                            <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
+                            <div>
+                                <input type="file" accept=".csv" enabled required name="secondarydatafile"
+                                       id="secondarydatafile" class="form-control"/>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">

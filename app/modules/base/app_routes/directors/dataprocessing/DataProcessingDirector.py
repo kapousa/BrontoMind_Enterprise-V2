@@ -2,6 +2,7 @@ import logging
 import os
 import shutil
 
+import flask
 import pandas as pd
 from flask import render_template, abort, session, send_file
 from werkzeug.utils import secure_filename
@@ -9,6 +10,7 @@ from werkzeug.utils import secure_filename
 from app.bck.bm.controllers.BaseController import BaseController
 from app.bck.bm.controllers.dataprocessing.CleanDataEngine import CleanDataEngine
 from app.bck.bm.controllers.dataprocessing.DataCleanController import DataCleanController
+from app.bck.bm.utiles.Helper import Helper
 from app.constants.BM_CONSTANTS import tempfiles_loaction
 from app.bck.bm.controllers.dataprocessing.DataBotController import DataBotController
 from app.bck.bm.utiles.CVSReader import get_file_name_with_ext
@@ -168,6 +170,28 @@ class DataProcessingDirector:
                                    message='data_info', sample_data=[
                     data_sample.to_html(border=0, classes='table table-hover', header="false",
                                         justify="center").replace("<th>", "<th class='text-warning'>")], )
+        except Exception as e:
+            logging.exception(e)
+            abort(500, description=e)
+
+    def match_fields(self, request):
+        """ Match fields from main dataset and secondary dataset """
+        try:
+            secondary_data_file = request.files['secondarydatafile'] # request.form.get('secondarydatafile')
+
+            # Save secondary data file
+            file_name = "{}.csv-s".format(session['filepath'])
+            secondary_file_path = os.path.join(tempfiles_loaction, secure_filename(file_name))
+            secondary_data_file.save(secondary_file_path)
+
+            # Get columns list of each files
+            original_columns = Helper.get_csv_columns(session['filepath'])
+            secondary_columns = Helper.get_csv_columns(secondary_file_path)
+
+            return render_template('applications/pages/dataprocessing/databot/matchfields.html',
+                                   segment='selectmodelgoal', original_columns=original_columns,
+                                   secondary_columns=secondary_columns,
+                                   message='data_info')
         except Exception as e:
             logging.exception(e)
             abort(500, description=e)

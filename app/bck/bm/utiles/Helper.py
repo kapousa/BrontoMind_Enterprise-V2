@@ -1,4 +1,5 @@
 #  Copyright (c) 2022. Slonos Labs. All rights Reserved.
+import csv
 import datetime
 import ftplib
 import itertools
@@ -342,3 +343,15 @@ class Helper:
             if string in text:
                 founded_strings.append(string)
         return founded_strings
+
+    @staticmethod
+    def get_csv_columns(file_path):
+        """ Return list of columns of given csv file """
+        # Open the CSV file
+        with open(file_path, mode='r', newline='') as file:
+            # Create a CSV reader
+            reader = csv.reader(file)
+
+            # Read the header row to get the column names
+            return next(reader)
+
