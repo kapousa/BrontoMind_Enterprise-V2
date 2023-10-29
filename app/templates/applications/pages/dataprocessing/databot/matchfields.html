@@ -7,42 +7,92 @@
 
 
 {% block content %}
-<h1>HTML Element Addition</h1>
 
-<button id="addButton">Add Element</button>
 
 <div id="container">
-    <!-- New elements will be added here -->
-    {{ original_columns }}
-    {{ secondary_columns }}
-</div>
+    <div class="row">
+        <h1>HTML Element Addition</h1>
 
-<script>
-    // Step 1: Select the button and container elements
-            var addButton = document.getElementById('addButton');
-            var container = document.getElementById('container');
+        <button id="addDropdownButton">Add Element</button>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h2 class="card-title ">Data Preparation</h2>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <table id="originalColumnsContainer">
+                            <tr>
+                                <td>
+                                    <select>
+                                        {% for item in original_columns %}
+                                        <option value="{{ item }}">{{ item }}</option>
+                                        <{% endfor %}
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h2 class="card-title ">Data Preparation</h2>
+                </div>
+                <div class="card-body">
+                    <select>
+                        {% for item in secondary_columns %}
+                        <option value="{{ item }}">{{ item }}</option>
+                        <{% endfor %}
+                    </select>
 
-            // Step 2: Create a function to add elements
-            function addElement() {
-                // Step 3: Create a new HTML element (e.g., a paragraph)
-                var newElement = document.createElement('p');
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Step 1: Select the button and container elements
+        var addDropdownButton = document.getElementById('addDropdownButton');
+        var originalColumnsContainer = document.getElementById('originalColumnsContainer');
 
-                // Step 4: Create some content for the new element
-                var text = document.createTextNode('This is a new paragraph element.');
+        // Step 2: Create a function to add a dropdown list
+        function addDropdown() {
+            // Step 3: Create a new select element (dropdown)
+            var newtr = document.createElement('tr');
+            var newtd = document.createElement('td');
+            var newDropdown = document.createElement('select');
 
-                // Step 5: Append the text to the new element
-                newElement.appendChild(text);
+            // Step 4: Create an array of options for the dropdown
+            var options = [
+            {% for item in original_columns %}
+                '{{ item }}',
+                {% endfor %}
+                ];
 
-                // Step 6: Append the new element to the container
-                container.appendChild(newElement);
+            // Step 5: Populate the dropdown with options
+            for (var i = 0; i < options.length; i++) {
+                var option = document.createElement('option');
+                option.text = options[i];
+                newDropdown.add(option);
             }
 
-            // Step 7: Attach an event listener to the button
-            addButton.addEventListener('click', addElement);
-</script>
+            // Step 6: Append the new dropdown to the container
+            newtd.appendChild(newDropdown)
+            newtr.appendChild(newtd)
+            originalColumnsContainer.appendChild(newtr);
+
+        }
+
+        // Step 7: Attach an event listener to the button
+        addDropdownButton.addEventListener('click', addDropdown);
+    </script>
 
 
-{% endblock content %}
+    {% endblock content %}
 
-<!-- Specific Page JS goes HERE  -->
-{% block javascripts %}{% endblock javascripts %}
+    <!-- Specific Page JS goes HERE  -->
+    {% block javascripts %}{% endblock javascripts %}
