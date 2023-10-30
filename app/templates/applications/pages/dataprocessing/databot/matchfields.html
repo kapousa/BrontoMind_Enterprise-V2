@@ -19,6 +19,8 @@
                 <div class="card-body">
                     <div class="col-md-12">
                         <p>To combine the two datasets, select matching columns.</p>
+                        <button id="addDropdownButton" class="btn btn-outline-secondary float-right">+ Add Column
+                        </button>
                         <table id="originalColumnsContainer" class="table align-items-center">
                             <thead class="thead-light">
                             <tr>
@@ -29,7 +31,7 @@
                             </thead>
                             <tr align="center">
                                 <td>
-                                    <select title="original" class="form-control">
+                                    <select title="original" class="form-control" id="original0">
                                         {% for item in original_columns %}
                                         <option value="{{ item }}">{{ item }}</option>
                                         <{% endfor %}
@@ -37,7 +39,7 @@
                                 </td>
                                 <td>With</td>
                                 <td>
-                                    <select title="secondary" class="form-control">
+                                    <select title="secondary" class="form-control" id="secondary0">
                                         {% for item in secondary_columns %}
                                         <option value="{{ item }}">{{ item }}</option>
                                         <{% endfor %}
@@ -45,7 +47,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <button id="addDropdownButton" class="btn btn-outline-secondary float-right">+ Add Column
+                        <button id="applyButton" class="btn btn-success float-right">Apply
                         </button>
                     </div>
                 </div>
@@ -57,6 +59,7 @@
         var addDropdownButton = document.getElementById('addDropdownButton');
         var originalColumnsContainer = document.getElementById('originalColumnsContainer');
         var secondaryColumnsContainer = document.getElementById('secondaryColumnsContainer');
+        var selectindex = 1;
 
         // Step 2: Create a function to add a dropdown list
         function addDropdown() {
@@ -68,6 +71,7 @@
             originaltd.style.textAlign = 'center';
             var originalDropdown = document.createElement('select');
             originalDropdown.classList.add('form-control');
+            originalDropdown.id = "original" + selectindex
 
             var separatortd = document.createElement('td');
             separatortd.style.textAlign = 'center';
@@ -77,6 +81,7 @@
             secondarytd.style.textAlign = 'center';
             var secondaryDropdown = document.createElement('select');
             secondaryDropdown.classList.add('form-control');
+            secondaryDropdown.id = "secondary" + selectindex
 
             // Step 4: Create an array of options for the dropdown
             var original_options = [
@@ -115,6 +120,8 @@
             //secondarytd.appendChild(secondaryDropdown)
             //scondarytr.appendChild(secondarytd)
             //secondaryColumnsContainer.appendChild(scondarytr);
+
+            selectindex++;
 
         }
 
