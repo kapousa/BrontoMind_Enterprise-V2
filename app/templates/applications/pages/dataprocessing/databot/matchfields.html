@@ -11,45 +11,43 @@
 
 <div id="container">
     <div class="row">
-        <h1>HTML Element Addition</h1>
-
-        <button id="addDropdownButton">Add Element</button>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header card-header-primary">
-                    <h2 class="card-title ">Data Preparation</h2>
+                    <h2>Merge</h2>
                 </div>
                 <div class="card-body">
                     <div class="col-md-12">
-                        <table id="originalColumnsContainer">
+                        <p>To combine the two datasets, select matching columns.</p>
+                        <table id="originalColumnsContainer" class="table align-items-center">
+                            <thead class="thead-light">
                             <tr>
+                                <th><h4>Original data Columns</h4></th>
+                                <th></th>
+                                <th><h4>Secondary data Columns</h4></th>
+                            </tr>
+                            </thead>
+                            <tr align="center">
                                 <td>
-                                    <select>
+                                    <select title="original" class="form-control">
                                         {% for item in original_columns %}
+                                        <option value="{{ item }}">{{ item }}</option>
+                                        <{% endfor %}
+                                    </select>
+                                </td>
+                                <td>With</td>
+                                <td>
+                                    <select title="secondary" class="form-control">
+                                        {% for item in secondary_columns %}
                                         <option value="{{ item }}">{{ item }}</option>
                                         <{% endfor %}
                                     </select>
                                 </td>
                             </tr>
                         </table>
+                        <button id="addDropdownButton" class="btn btn-outline-secondary float-right">+ Add Column
+                        </button>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header card-header-primary">
-                    <h2 class="card-title ">Data Preparation</h2>
-                </div>
-                <div class="card-body">
-                    <select>
-                        {% for item in secondary_columns %}
-                        <option value="{{ item }}">{{ item }}</option>
-                        <{% endfor %}
-                    </select>
-
                 </div>
             </div>
         </div>
@@ -58,32 +56,65 @@
         // Step 1: Select the button and container elements
         var addDropdownButton = document.getElementById('addDropdownButton');
         var originalColumnsContainer = document.getElementById('originalColumnsContainer');
+        var secondaryColumnsContainer = document.getElementById('secondaryColumnsContainer');
 
         // Step 2: Create a function to add a dropdown list
         function addDropdown() {
             // Step 3: Create a new select element (dropdown)
-            var newtr = document.createElement('tr');
-            var newtd = document.createElement('td');
-            var newDropdown = document.createElement('select');
+            var originaltr = document.createElement('tr');
+            var scondarytr = document.createElement('tr');
+
+            var originaltd = document.createElement('td');
+            originaltd.style.textAlign = 'center';
+            var originalDropdown = document.createElement('select');
+            originalDropdown.classList.add('form-control');
+
+            var separatortd = document.createElement('td');
+            separatortd.style.textAlign = 'center';
+            separatortd.textContent = 'With';
+
+            var secondarytd = document.createElement('td');
+            secondarytd.style.textAlign = 'center';
+            var secondaryDropdown = document.createElement('select');
+            secondaryDropdown.classList.add('form-control');
 
             // Step 4: Create an array of options for the dropdown
-            var options = [
+            var original_options = [
             {% for item in original_columns %}
                 '{{ item }}',
                 {% endfor %}
                 ];
 
+            var secondary_options = [
+            {% for item in secondary_columns %}
+                '{{ item }}',
+                {% endfor %}
+                ];
+
             // Step 5: Populate the dropdown with options
-            for (var i = 0; i < options.length; i++) {
+            for (var i = 0; i < original_options.length; i++) {
                 var option = document.createElement('option');
-                option.text = options[i];
-                newDropdown.add(option);
+                option.text = original_options[i];
+                originalDropdown.add(option);
+            }
+
+            for (var i = 0; i < secondary_options.length; i++) {
+                var option = document.createElement('option');
+                option.text = secondary_options[i];
+                secondaryDropdown.add(option);
             }
 
             // Step 6: Append the new dropdown to the container
-            newtd.appendChild(newDropdown)
-            newtr.appendChild(newtd)
-            originalColumnsContainer.appendChild(newtr);
+            originaltd.appendChild(originalDropdown)
+            originaltr.appendChild(originaltd)
+            originaltr.appendChild(separatortd)
+            secondarytd.appendChild(secondaryDropdown)
+            originaltr.appendChild(secondarytd)
+            originalColumnsContainer.appendChild(originaltr);
+
+            //secondarytd.appendChild(secondaryDropdown)
+            //scondarytr.appendChild(secondarytd)
+            //secondaryColumnsContainer.appendChild(scondarytr);
 
         }
 
