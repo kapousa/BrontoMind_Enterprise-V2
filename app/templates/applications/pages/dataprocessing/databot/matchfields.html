@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-body">
                     <div class="col-md-12">
-                        <p>To combine the two datasets, select matching columns.</p>
+                        <p>To combine the two datasets, select matching columns. (We a)</p>
                         <button id="addDropdownButton" class="btn btn-outline-secondary float-right">+ Add Column
                         </button>
                         <table id="originalColumnsContainer" class="table align-items-center">
@@ -47,90 +47,134 @@
                                 </td>
                             </tr>
                         </table>
-                        <button id="applyButton" class="btn btn-success float-right">Apply
-                        </button>
                     </div>
+                </div>
+                <div class="card-footer">
+                    <a  class="text-light" href="javascript:showhideadvanceddiv();">
+                        <h3 style="text-decoration:underline">Advanced Settings <small>(Click here)</small></h3>
+                    </a>
+                    <div id="advanceddiv" style="display:none;" >
+                        <div class="col-md-6 form-group">
+                            <label for="matchsensitivity">Match Sensitivity</label>
+                            <small>(Choose how exact to be when merging rows)</small>
+                            <select name="matchsensitivity" id="matchsensitivity" class="form-control">
+                                <option value="exact">Exact Match Only</option>
+                                <option value="fuzzy">Fuzzy Match</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="mergetype">Merge Type</label>
+                            <small>(Choose the rules by which you merge)</small>
+                            <select name="mergetype" id="mergetype" class="form-control">
+                                <option value="left">Keep all rows in primary dataset</option>
+                                <option value="inner">Keep only rows which appear in both datasets</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="mergescore">Merge Score</label>
+                            <small>(Add a merge accuracy score to your fuzzy merge)</small>
+                            <select name="mergescore" id="mergescore" class="form-control">
+                                <option value="true">True</option>
+                                <option value="false">False</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button id="applyButton" class="btn btn-success float-right">Apply
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        // Step 1: Select the button and container elements
-        var addDropdownButton = document.getElementById('addDropdownButton');
-        var originalColumnsContainer = document.getElementById('originalColumnsContainer');
-        var secondaryColumnsContainer = document.getElementById('secondaryColumnsContainer');
-        var selectindex = 1;
+</div>
+</div>
+<script>
+    function showhideadvanceddiv(){
+        var div = document.getElementById('advanceddiv');
+      if (div.style.display === 'none') {
+        div.style.display = 'block';
+      } else {
+        div.style.display = 'none';
+      }
+    }
 
-        // Step 2: Create a function to add a dropdown list
-        function addDropdown() {
-            // Step 3: Create a new select element (dropdown)
-            var originaltr = document.createElement('tr');
-            var scondarytr = document.createElement('tr');
+    // Step 1: Select the button and container elements
+    var addDropdownButton = document.getElementById('addDropdownButton');
+    var originalColumnsContainer = document.getElementById('originalColumnsContainer');
+    var secondaryColumnsContainer = document.getElementById('secondaryColumnsContainer');
+    var selectindex = 1;
 
-            var originaltd = document.createElement('td');
-            originaltd.style.textAlign = 'center';
-            var originalDropdown = document.createElement('select');
-            originalDropdown.classList.add('form-control');
-            originalDropdown.id = "original" + selectindex
+    // Step 2: Create a function to add a dropdown list
+    function addDropdown() {
+        // Step 3: Create a new select element (dropdown)
+        var originaltr = document.createElement('tr');
+        var scondarytr = document.createElement('tr');
 
-            var separatortd = document.createElement('td');
-            separatortd.style.textAlign = 'center';
-            separatortd.textContent = 'With';
+        var originaltd = document.createElement('td');
+        originaltd.style.textAlign = 'center';
+        var originalDropdown = document.createElement('select');
+        originalDropdown.classList.add('form-control');
+        originalDropdown.id = "original" + selectindex
 
-            var secondarytd = document.createElement('td');
-            secondarytd.style.textAlign = 'center';
-            var secondaryDropdown = document.createElement('select');
-            secondaryDropdown.classList.add('form-control');
-            secondaryDropdown.id = "secondary" + selectindex
+        var separatortd = document.createElement('td');
+        separatortd.style.textAlign = 'center';
+        separatortd.textContent = 'With';
 
-            // Step 4: Create an array of options for the dropdown
-            var original_options = [
-            {% for item in original_columns %}
-                '{{ item }}',
-                {% endfor %}
-                ];
+        var secondarytd = document.createElement('td');
+        secondarytd.style.textAlign = 'center';
+        var secondaryDropdown = document.createElement('select');
+        secondaryDropdown.classList.add('form-control');
+        secondaryDropdown.id = "secondary" + selectindex
 
-            var secondary_options = [
-            {% for item in secondary_columns %}
-                '{{ item }}',
-                {% endfor %}
-                ];
+        // Step 4: Create an array of options for the dropdown
+        var original_options = [
+        {% for item in original_columns %}
+            '{{ item }}',
+            {% endfor %}
+            ];
 
-            // Step 5: Populate the dropdown with options
-            for (var i = 0; i < original_options.length; i++) {
-                var option = document.createElement('option');
-                option.text = original_options[i];
-                originalDropdown.add(option);
-            }
+        var secondary_options = [
+        {% for item in secondary_columns %}
+            '{{ item }}',
+            {% endfor %}
+            ];
 
-            for (var i = 0; i < secondary_options.length; i++) {
-                var option = document.createElement('option');
-                option.text = secondary_options[i];
-                secondaryDropdown.add(option);
-            }
-
-            // Step 6: Append the new dropdown to the container
-            originaltd.appendChild(originalDropdown)
-            originaltr.appendChild(originaltd)
-            originaltr.appendChild(separatortd)
-            secondarytd.appendChild(secondaryDropdown)
-            originaltr.appendChild(secondarytd)
-            originalColumnsContainer.appendChild(originaltr);
-
-            //secondarytd.appendChild(secondaryDropdown)
-            //scondarytr.appendChild(secondarytd)
-            //secondaryColumnsContainer.appendChild(scondarytr);
-
-            selectindex++;
-
+        // Step 5: Populate the dropdown with options
+        for (var i = 0; i < original_options.length; i++) {
+            var option = document.createElement('option');
+            option.text = original_options[i];
+            originalDropdown.add(option);
         }
 
-        // Step 7: Attach an event listener to the button
-        addDropdownButton.addEventListener('click', addDropdown);
-    </script>
+        for (var i = 0; i < secondary_options.length; i++) {
+            var option = document.createElement('option');
+            option.text = secondary_options[i];
+            secondaryDropdown.add(option);
+        }
+
+        // Step 6: Append the new dropdown to the container
+        originaltd.appendChild(originalDropdown)
+        originaltr.appendChild(originaltd)
+        originaltr.appendChild(separatortd)
+        secondarytd.appendChild(secondaryDropdown)
+        originaltr.appendChild(secondarytd)
+        originalColumnsContainer.appendChild(originaltr);
+
+        //secondarytd.appendChild(secondaryDropdown)
+        //scondarytr.appendChild(secondarytd)
+        //secondaryColumnsContainer.appendChild(scondarytr);
+
+        selectindex++;
+
+    }
+
+    // Step 7: Attach an event listener to the button
+    addDropdownButton.addEventListener('click', addDropdown);
+</script>
 
 
-    {% endblock content %}
+{% endblock content %}
 
-    <!-- Specific Page JS goes HERE  -->
-    {% block javascripts %}{% endblock javascripts %}
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
