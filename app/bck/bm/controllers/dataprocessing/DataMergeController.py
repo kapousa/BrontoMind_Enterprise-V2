@@ -40,11 +40,11 @@ class DataMergeController:
             merged_df.to_csv(merged_file, index=False)
             sample_data = merged_df.iloc[:10]
 
-            return 0, sample_data
+            return sample_data
 
         except (MergeError, ValueError, KeyError, TypeError, MemoryError) as e:
 
             print(f"An exception occurred: {e}")
 
             # Handle the exception or take appropriate action
-            return 1, "You are attempting to merge columns of different types; if you continue, we will concatenate the matched values."
+            return "You are attempting to merge columns of different types; if you continue, we will concatenate the matched values."

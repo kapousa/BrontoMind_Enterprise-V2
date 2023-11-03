@@ -214,13 +214,13 @@ class DataProcessingDirector:
             secondary_file_path = os.path.join(tempfiles_loaction, secure_filename(file_name))
 
             datamergecontroller = DataMergeController()
-            err, data_sample = datamergecontroller.drafting_merge_request(session['filepath'],
+            data_sample = datamergecontroller.drafting_merge_request(session['filepath'],
                                                                      secondary_file_path,
                                                                      original_matching_columns,
                                                                      secondary_matching_columns,
                                                                      mergetype)
 
-            if err == 0:
+            if not isinstance(data_sample, str):
                 return render_template('applications/pages/dataprocessing/databot/mergeprocessingresult.html',
                                        segment='selectmodelgoal', process='chat', request_type="draft",
                                        message='data_info', sample_data=[
@@ -229,7 +229,7 @@ class DataProcessingDirector:
             else:
                 return render_template('applications/pages/dataprocessing/databot/mergeprocessingresult.html',
                                        segment='selectmodelgoal', process='chat', request_type="draft",
-                                       message='data_info', sample_data=data_sample)
+                                       message='error', sample_data=data_sample)
 
         except Exception as e:
             logging.exception(e)
