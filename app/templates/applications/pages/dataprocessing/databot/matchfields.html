@@ -18,72 +18,79 @@
                 </div>
                 <div class="card-body">
                     <div class="col-md-12">
-                        <p>To combine the two datasets, select matching columns. (We a)</p>
+                        <p>To combine the two datasets, select matching columns.</p>
                         <button id="addDropdownButton" class="btn btn-outline-secondary float-right">+ Add Column
                         </button>
-                        <table id="originalColumnsContainer" class="table align-items-center">
-                            <thead class="thead-light">
-                            <tr>
-                                <th><h4>Original data Columns</h4></th>
-                                <th></th>
-                                <th><h4>Secondary data Columns</h4></th>
-                            </tr>
-                            </thead>
-                            <tr align="center">
-                                <td>
-                                    <select title="original" class="form-control" id="original0">
-                                        {% for item in original_columns %}
-                                        <option value="{{ item }}">{{ item }}</option>
-                                        <{% endfor %}
-                                    </select>
-                                </td>
-                                <td>With</td>
-                                <td>
-                                    <select title="secondary" class="form-control" id="secondary0">
-                                        {% for item in secondary_columns %}
-                                        <option value="{{ item }}">{{ item }}</option>
-                                        <{% endfor %}
-                                    </select>
-                                </td>
-                            </tr>
-                        </table>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <a  class="text-light" href="javascript:showhideadvanceddiv();">
-                        <h3 style="text-decoration:underline">Advanced Settings <small>(Click here)</small></h3>
-                    </a>
-                    <div id="advanceddiv" style="display:none;" >
-                        <div class="col-md-6 form-group">
-                            <label for="matchsensitivity">Match Sensitivity</label>
-                            <small>(Choose how exact to be when merging rows)</small>
-                            <select name="matchsensitivity" id="matchsensitivity" class="form-control">
-                                <option value="exact">Exact Match Only</option>
-                                <option value="fuzzy">Fuzzy Match</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label for="mergetype">Merge Type</label>
-                            <small>(Choose the rules by which you merge)</small>
-                            <select name="mergetype" id="mergetype" class="form-control">
-                                <option value="left">Keep all rows in primary dataset</option>
-                                <option value="inner">Keep only rows which appear in both datasets</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label for="mergescore">Merge Score</label>
-                            <small>(Add a merge accuracy score to your fuzzy merge)</small>
-                            <select name="mergescore" id="mergescore" class="form-control">
-                                <option value="true">True</option>
-                                <option value="false">False</option>
-                            </select>
+                <form action="/dataprocessing/previewmergechanges" method="post">
+                    <div class="card-body">
+                        <div class="col-md-12">
+                            <table id="originalColumnsContainer" class="table align-items-center">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th><h4>Original data Columns</h4></th>
+                                    <th></th>
+                                    <th><h4>Secondary data Columns</h4></th>
+                                </tr>
+                                </thead>
+                                <tr align="center">
+                                    <td>
+                                        <select title="original" class="form-control" id="original0"  name="original0">
+                                            {% for item in original_columns %}
+                                            <option value="{{ item }}">{{ item }}</option>
+                                            <{% endfor %}
+                                        </select>
+                                    </td>
+                                    <td>With</td>
+                                    <td>
+                                        <select title="secondary" class="form-control" id="secondary0" name="secondary0">
+                                            {% for item in secondary_columns %}
+                                            <option value="{{ item }}">{{ item }}</option>
+                                            <{% endfor %}
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <button id="applyButton" class="btn btn-success float-right">Apply
-                    </button>
-                </div>
+                    <div class="card-footer">
+                        <a class="text-light" href="javascript:showhideadvanceddiv();">
+                            <h3 style="text-decoration:underline">Advanced Settings <small>(Click here)</small></h3>
+                        </a>
+                        <div id="advanceddiv" style="display:none;">
+                            <div class="col-md-6 form-group">
+                                <label for="matchsensitivity">Match Sensitivity</label>
+                                <small>(Choose how exact to be when merging rows)</small>
+                                <select name="matchsensitivity" id="matchsensitivity" class="form-control">
+                                    <option value="exact">Exact Match Only</option>
+                                    <option value="fuzzy">Fuzzy Match</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="mergetype">Merge Type</label>
+                                <small>(Choose the rules by which you merge)</small>
+                                <select name="mergetype" id="mergetype" class="form-control">
+                                    <option value="left">Keep all rows in primary dataset</option>
+                                    <option value="inner">Keep only rows which appear in both datasets</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="mergescore">Merge Score</label>
+                                <small>(Add a merge accuracy score to your fuzzy merge)</small>
+                                <select name="mergescore" id="mergescore" class="form-control">
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="cancelButton" class="btn btn-secondary float-right">Cancel</button>
+                        <button type="submit" id="applyButton" class="btn btn-success float-right">Apply</button>
+                    </div>
+                    <input type="hidden" id="fields" name="fields" value="1"/>
+                </form>
             </div>
         </div>
     </div>
@@ -116,6 +123,7 @@
         var originalDropdown = document.createElement('select');
         originalDropdown.classList.add('form-control');
         originalDropdown.id = "original" + selectindex
+        originalDropdown.name = "original" + selectindex
 
         var separatortd = document.createElement('td');
         separatortd.style.textAlign = 'center';
@@ -126,6 +134,7 @@
         var secondaryDropdown = document.createElement('select');
         secondaryDropdown.classList.add('form-control');
         secondaryDropdown.id = "secondary" + selectindex
+        secondaryDropdown.name = "secondary" + selectindex
 
         // Step 4: Create an array of options for the dropdown
         var original_options = [
@@ -166,6 +175,7 @@
         //secondaryColumnsContainer.appendChild(scondarytr);
 
         selectindex++;
+        document.getElementById("fields").value = selectindex;
 
     }
 

@@ -90,7 +90,16 @@ def previewcleanchanges():
 @login_required
 def matchfields():
     try:
-        return databotdirector.match_fields(request)
+        return databotdirector.match_merging_fields(request)
+    except Exception as e:
+        logging.error(e)
+        abort(500, e)
+
+@blueprint.route('/previewmergechanges', methods=['GET', 'POST'])
+@login_required
+def previewmergechanges():
+    try:
+        return databotdirector.preview_merge_changes(request)
     except Exception as e:
         logging.error(e)
         abort(500, e)

@@ -10,6 +10,7 @@ from werkzeug.utils import secure_filename
 from app.bck.bm.controllers.BaseController import BaseController
 from app.bck.bm.controllers.dataprocessing.CleanDataEngine import CleanDataEngine
 from app.bck.bm.controllers.dataprocessing.DataCleanController import DataCleanController
+from app.bck.bm.controllers.dataprocessing.DataMergeController import DataMergeController
 from app.bck.bm.utiles.Helper import Helper
 from app.constants.BM_CONSTANTS import tempfiles_loaction
 from app.bck.bm.controllers.dataprocessing.DataBotController import DataBotController
@@ -174,10 +175,10 @@ class DataProcessingDirector:
             logging.exception(e)
             abort(500, description=e)
 
-    def match_fields(self, request):
+    def match_merging_fields(self, request):
         """ Match fields from main dataset and secondary dataset """
         try:
-            secondary_data_file = request.files['secondarydatafile'] # request.form.get('secondarydatafile')
+            secondary_data_file = request.files['secondarydatafile']  # request.form.get('secondarydatafile')
 
             # Save secondary data file
             file_name = "{}.csv-s".format(session['filepath'])
@@ -192,6 +193,44 @@ class DataProcessingDirector:
                                    segment='selectmodelgoal', original_columns=original_columns,
                                    secondary_columns=secondary_columns,
                                    message='data_info')
+        except Exception as e:
+            logging.exception(e)
+            abort(500, description=e)
+
+    def preview_merge_changes(self, request):
+        try:
+            matchsensitivity = request.form.get("matchsensitivity")
+            mergetype = request.form.get("mergetype")
+            mergescore = request.form.get("mergescore")
+            fields = int(request.form.get("fields"))
+            original_matching_columns = []
+            secondary_matching_columns = []
+
+            for i in range(0, fields):  # Identify selected matching fields
+                original_matching_columns.append(request.form.get("original{}".format(i)))
+                secondary_matching_columns.append(request.form.get("secondary{}".format(i)))
+
+            file_name = "{}.csv-s".format(session['filepath'])
+            secondary_file_path = os.path.join(tempfiles_loaction, secure_filename(file_name))
+
+            datamergecontroller = DataMergeController()
+            err, data_sample = datamergecontroller.drafting_merge_request(session['filepath'],
+                                                                     secondary_file_path,
+                                                                     original_matching_columns,
+                                                                     secondary_matching_columns,
+                                                                     mergetype)
+
+            if err == 0:
+                return render_template('applications/pages/dataprocessing/databot/mergeprocessingresult.html',
+                                       segment='selectmodelgoal', process='chat', request_type="draft",
+                                       message='data_info', sample_data=[
+                        data_sample.to_html(border=0, classes='table table-hover', header="false",
+                                            justify="center").replace("<th>", "<th class='text-warning'>")], )
+            else:
+                return render_template('applications/pages/dataprocessing/databot/mergeprocessingresult.html',
+                                       segment='selectmodelgoal', process='chat', request_type="draft",
+                                       message='data_info', sample_data=data_sample)
+
         except Exception as e:
             logging.exception(e)
             abort(500, description=e)
