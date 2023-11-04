@@ -13,7 +13,7 @@ from app.constants.BM_CONSTANTS import df_location
 from app.constants.BM_CONSTANTS import api_data_filename
 from app.bck.bm.controllers.BaseController import BaseController
 from app.bck.bm.datamanipulation.AdjustDataFrame import export_mysql_query_to_csv, export_api_respose_to_csv
-from app.bck.bm.utiles.CVSReader import getcvsheader
+from app.bck.bm.utiles.CVSReader import getcvsheader, get_file_name_with_ext
 from app.bck.bm.utiles.Helper import Helper
 
 
@@ -28,55 +28,57 @@ class BaseDirector:
     def get_data_details(request):
         try:
             # f = request.files['filename']
-            f = flask.request.files.getlist('filename[]')
-            model_id = Helper.generate_model_id()
-
-            # file_Path = session['filePath'] if session['filePath'] is not None else f
-            file_Path = flask.request.form.get("filePath")
-            # file_Path = session["filePath"]
-            filePath = file_Path
-            number_of_files = len(f) if f != None else 0
             ds_source = session['ds_source']
             ds_goal = session['ds_goal']
-            if number_of_files == 1 or file_Path != None:  # Check if there file sent to upload or already uploaded in data preview step
-                # fname = secure_filename(f[0].filename) if number_of_files == 1 else os.path.basename(filePath)
-                fname = "{}.csv".format(model_id) if number_of_files == 1 else os.path.basename(filePath)
-                if number_of_files == 1:  # if the file doesn't upload in data preview step, save the file
-                    file_name = "{}.csv".format(model_id)   # f[0].filename
-                    filePath = os.path.join(df_location, secure_filename(file_name))
-                    f[0].save(filePath)
 
-                # Remove empty columns
-                data = Helper.remove_empty_columns(filePath)
+            if not 'filepath' in session:
+                f = flask.request.files.getlist('filename[]')
+                model_id = Helper.generate_model_id()
 
-                # Check if the dataset is enough
-                count_row = data.shape[0]
-                message = 'No'
+                # file_Path = session['filePath'] if session['filePath'] is not None else f
+                file_Path = flask.request.form.get("filePath")
+                # file_Path = session["filePath"]
+                filePath = file_Path
+                number_of_files = len(f) if f != None else 0
+                if number_of_files == 1 or file_Path != None:  # Check if there file sent to upload or already uploaded in data preview step
+                    # fname = secure_filename(f[0].filename) if number_of_files == 1 else os.path.basename(filePath)
+                    fname = "{}.csv".format(model_id) if number_of_files == 1 else os.path.basename(filePath)
+                    if number_of_files == 1:  # if the file doesn't upload in data preview step, save the file
+                        file_name = "{}.csv".format(model_id)  # f[0].filename
+                        filePath = os.path.join(df_location, secure_filename(file_name))
+                        f[0].save(filePath)
+            else:   # here in case we came from data processing page
+                filePath = session['filepath']
+                fname = get_file_name_with_ext(session['filepath'])
 
-                if (count_row < 5):
-                    message = 'Uploaded data document does not have enough data, the document must have minimum 50 records of data for accurate processing.'
-                    return render_template('applications/pages/dashboard.html',
-                                           message=message,
-                                           ds_source=ds_source, ds_goal=ds_goal,
-                                           segment='createmodel')
+            # Remove empty columns
+            data = Helper.remove_empty_columns(filePath)
 
-                # Get the DS file header
-                dataset_info = BaseController.get_dataset_info(filePath)
-                headersArray = getcvsheader(filePath)
-                # fname = secure_filename(f[0].filename)
-                session['fname'] = fname
+            # Check if the dataset is enough
+            count_row = data.shape[0]
+            message = 'No'
 
-                return fname, filePath, headersArray, data, dataset_info, message
-            else:
-                print("Hi...")
-                return 0
+            if (count_row < 5):
+                message = 'Uploaded data document does not have enough data, the document must have minimum 50 records of data for accurate processing.'
+                return render_template('applications/pages/dashboard.html',
+                                       message=message,
+                                       ds_source=ds_source, ds_goal=ds_goal,
+                                       segment='createmodel')
+
+            # Get the DS file header
+            dataset_info = BaseController.get_dataset_info(filePath)
+            headersArray = getcvsheader(filePath)
+            # fname = secure_filename(f[0].filename)
+            session['fname'] = fname
+
+            return fname, filePath, headersArray, data, dataset_info, message
 
         except Exception as e:
             logging.error(e)
             abort(500)
 
     @staticmethod
-    def get_remote_data_details(file_path):        #Same as above but it works on db and api connection
+    def get_remote_data_details(file_path):  # Same as above but it works on db and api connection
         try:
             filePath = file_path
             ds_source = session['ds_source']
@@ -236,17 +238,17 @@ class BaseDirector:
                             line_color='darkslategray',
                             fill_color='lightskyblue',
                             align='left'),
-                cells=dict(values= flp,  # 2nd column
+                cells=dict(values=flp,  # 2nd column
                            line_color='darkslategray',
                            fill_color='lightcyan',
                            align='left'))
             ])
-            #fig.show()
+            # fig.show()
             session['filepath'] = filePath
             return render_template('applications/pages/datapreview.html', required_changes='None',
-                                   message='data_info', filePath=filePath, segment="selectmodelgoal", col_width="{}%".format(round(100/len(sample_header),2)),
+                                   message='data_info', filePath=filePath, segment="selectmodelgoal",
+                                   col_width="{}%".format(round(100 / len(sample_header), 2)),
                                    dataset_info=dataset_info, sample_data=sample_data)
         except Exception as e:
             logging.error(e)
             abort(500)
-
