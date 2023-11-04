@@ -181,8 +181,9 @@ class DataProcessingDirector:
             secondary_data_file = request.files['secondarydatafile']  # request.form.get('secondarydatafile')
 
             # Save secondary data file
-            file_name = "{}.csv-s".format(session['filepath'])
-            secondary_file_path = os.path.join(tempfiles_loaction, secure_filename(file_name))
+            file_name = get_file_name_with_ext(session['filepath'])
+            secondary_file_path = os.path.join(tempfiles_loaction, "sec-{}".format(file_name))
+            session['secondaryfilepath'] = secondary_file_path
             secondary_data_file.save(secondary_file_path)
 
             # Get columns list of each files
@@ -210,12 +211,9 @@ class DataProcessingDirector:
                 original_matching_columns.append(request.form.get("original{}".format(i)))
                 secondary_matching_columns.append(request.form.get("secondary{}".format(i)))
 
-            file_name = "{}.csv-s".format(session['filepath'])
-            secondary_file_path = os.path.join(tempfiles_loaction, secure_filename(file_name))
-
             datamergecontroller = DataMergeController()
             data_sample = datamergecontroller.drafting_merge_request(session['filepath'],
-                                                                     secondary_file_path,
+                                                                     session['secondaryfilepath'],
                                                                      original_matching_columns,
                                                                      secondary_matching_columns,
                                                                      mergetype)
@@ -229,7 +227,7 @@ class DataProcessingDirector:
             else:
                 return render_template('applications/pages/dataprocessing/databot/mergeprocessingresult.html',
                                        segment='selectmodelgoal', process='chat', request_type="draft",
-                                       message='error', sample_data=data_sample)
+                                       message=data_sample)
 
         except Exception as e:
             logging.exception(e)
@@ -242,6 +240,9 @@ class DataProcessingDirector:
             file_name = get_file_name_with_ext(filePath)
             temp_file = os.path.join("{0}{1}".format(modified_files_temp_path, file_name))
             shutil.copy(temp_file, filePath)
+            if 'secondaryfilepath' in session:      # Delete merging file
+                os.remove(session['secondaryfilepath'])
+            os.remove(temp_file)
 
             dataset_info = BaseController.get_dataset_info(filePath)
 

@@ -29,6 +29,10 @@ class DataMergeController:
             original_dataset = pd.read_csv(original_file)
             secondary_dataset = pd.read_csv(secondary_file)
 
+            # Copy original file to temp folder
+            destination_path = os.path.join(modified_files_temp_path)
+            shutil.copy(original_file, destination_path)
+
             # Define a dictionary to map old column names to new column names
             column_mapping = {}
             for i in range(len(original_matching_columns)):
@@ -36,8 +40,9 @@ class DataMergeController:
 
             secondary_dataset.rename(columns=column_mapping, inplace=True)
             merged_df = original_dataset.merge(secondary_dataset, on=original_matching_columns, how=merge_type)
+
             merged_file = "{}s".format(secondary_file)
-            merged_df.to_csv(merged_file, index=False)
+            merged_df.to_csv(original_file, index=False)
             sample_data = merged_df.iloc[:10]
 
             return sample_data

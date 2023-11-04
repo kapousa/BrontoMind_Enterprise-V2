@@ -7,12 +7,29 @@
 
 {% block content %}
 {% if message != 'data_info' %}
-<div class="alert alert-danger alert-dismissible fade show col-6 center" role="alert">
-    <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
-    <span class="alert-inner--text">{{ message }}</span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                Merging Error
+                <p class="card-category"></p>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-danger alert-dismissible fade show col-12 center" role="alert">
+                    <span class="alert-inner--icon"><i class="ni ni-fat-remove"></i></span>
+                    <span class="alert-inner--text">{{ message }}</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class="nav-link" href="/dataprocessing/rematch">
+                    <button type="button" class="btn btn-success" title="Apply Modifications">Re-Match</button>
+                </a>
+                <a class="nav-link" href="/dataprocessing/cancelchanges">
+                    <button type="button" class="btn btn-default" title="Cancel Modifications">Cancel</button>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 {% else %}
 <div class="row">
@@ -26,9 +43,11 @@
                     <a class="nav-link" href="/dataprocessing/applyclearresponse">
                         <button type="button" class="btn btn-danger" title="Apply Modifications">Apply</button>
                     </a>
-                    <button type="button" class="btn btn-success" title="Download Modifications">Download</button>
+                    <button type="button" class="btn btn-success" title="Download Modifications">Download
+                    </button>
                     <a class="nav-link" href="/dataprocessing/cancelchanges">
-                        <button type="button" class="btn btn-default" title="Cancel Modifications">Cancel</button>
+                        <button type="button" class="btn btn-default" title="Cancel Modifications">Cancel
+                        </button>
                     </a>
                 </div>
             </div>
