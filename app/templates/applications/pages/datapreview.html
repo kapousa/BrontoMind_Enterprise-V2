@@ -26,7 +26,7 @@
                     <button type="button" class="btn btn-primary float-right">Start</button>
                 </form-->
                 <p class="card-category"></p>
-                <!--form-- action="/uploadcsvds" name="uploadcsvds" method="post">
+                <!--form action="/uploadcsvds" name="uploadcsvds" method="post">
                     <input type="hidden" name="filePath" id="filePath" value="{{ filePath }}">
                     <button type="button" class="btn btn-success">Chatbot</button>
                 </form-->
@@ -39,24 +39,30 @@
                 </a>
                 <a class="nav-link" data-toggle="modal" data-target="#cleanModal" href="#cleanModal"
                    style="display:inline!important">
-                    <button type="button" class="btn btn-outline-primary">
+                    <button type="button" class="btn btn-outline-success">
                         <span class="btn-inner--icon"><i class="ni ni-ui-04"></i></span>
                         <span class="btn-inner--text">Clean</span>
                     </button>
                 </a>
                 <a class="nav-link" data-toggle="modal" data-target="#mergeModal" href="#mergeModal"
                    style="display:inline!important">
-                    <button type="button" class="btn btn-outline-success">
+                    <button type="button" class="btn btn-outline-warning">
                         <span class="btn-inner--icon"><i class="ni ni-ungroup"></i></span>
                         <span class="btn-inner--text">Merge</span>
                     </button>
                 </a>
-                <form name="continueform" id="continueform" method="post" action="/uploadcsvds">
-                    <button type="submit" class="btn btn-primary float-right">
+                <a class="nav-link" href="/downloaddata" style="display:inline!important">
+                    <button type="button" class="btn btn-outline-default">
+                        <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
+                        <span class="btn-inner--text">Download</span>
+                    </button>
+                </a>
+                <a class="nav-link" href="/downloaddata" style="display:inline!important">
+                    <button type="button" class="btn btn-outline-primary float-right">
                         <span class="btn-inner--icon"><i class="ni ni-button-play"></i></span>
                         <span class="btn-inner--text">Continue</span>
                     </button>
-                </form>
+                </a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -230,7 +236,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Preview Results</button>
+                    <button type="submit" class="btn btn-success">Preview Results</button>
                 </div>
             </form>
         </div>
@@ -263,7 +269,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success btn-small">Upload</button>
+                    <button type="submit" class="btn btn-warning btn-small">Upload</button>
                 </div>
             </form>
         </div>

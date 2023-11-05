@@ -175,6 +175,29 @@ class DataProcessingDirector:
             logging.exception(e)
             abort(500, description=e)
 
+    def apply_clean_changes(self, request):
+        try:
+            # Copy original file to temp folder
+            filePath = session['filepath']
+            file_name = get_file_name_with_ext(filePath)
+            temp_file = os.path.join("{0}{1}".format(modified_files_temp_path, file_name))
+            shutil.copy(filePath, temp_file)
+
+            dataset_info = BaseController.get_dataset_info(filePath)
+
+            # Sample data
+            data = pd.read_csv(filePath)
+            sample_data = (data.sample(n=10))
+            sample_header = dataset_info.columns.tolist()
+
+            return render_template('applications/pages/datapreview.html', required_changes='None',
+                                   message='data_info', filePath=filePath, segment="selectmodelgoal",
+                                   col_width="{}%".format(round(100 / len(sample_header), 2)),
+                                   dataset_info=dataset_info, sample_data=sample_data)
+        except Exception as e:
+            logging.exception(e)
+            abort(500, description=e)
+
     def match_merging_fields(self, request):
         """ Match fields from main dataset and secondary dataset """
         try:
@@ -229,6 +252,29 @@ class DataProcessingDirector:
                                        segment='selectmodelgoal', process='chat', request_type="draft",
                                        message=data_sample)
 
+        except Exception as e:
+            logging.exception(e)
+            abort(500, description=e)
+
+    def apply_merge_changes(self, request):
+        try:
+            # Copy original file to temp folder
+            filePath = session['filepath']
+            file_name = get_file_name_with_ext(filePath)
+            temp_file = os.path.join("{0}{1}".format(modified_files_temp_path, file_name))
+            shutil.copy(filePath, temp_file)
+
+            dataset_info = BaseController.get_dataset_info(filePath)
+
+            # Sample data
+            data = pd.read_csv(filePath)
+            sample_data = (data.sample(n=10))
+            sample_header = dataset_info.columns.tolist()
+
+            return render_template('applications/pages/datapreview.html', required_changes='None',
+                                   message='data_info', filePath=filePath, segment="selectmodelgoal",
+                                   col_width="{}%".format(round(100 / len(sample_header), 2)),
+                                   dataset_info=dataset_info, sample_data=sample_data)
         except Exception as e:
             logging.exception(e)
             abort(500, description=e)
