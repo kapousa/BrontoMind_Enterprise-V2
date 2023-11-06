@@ -15,14 +15,14 @@
                 <p class="card-category"></p>
             </div>
             <div class="card-body">
-                <div class="alert alert-danger alert-dismissible fade show col-12 center" role="alert">
+                <div class="alert alert-warning alert-dismissible fade show col-12 center" role="alert">
                     <span class="alert-inner--icon"><i class="ni ni-fat-remove"></i></span>
                     <span class="alert-inner--text">{{ message }}</span>
                 </div>
             </div>
             <div class="modal-footer">
                 <a class="nav-link" href="/dataprocessing/rematch">
-                    <button type="button" class="btn btn-success" title="Apply Modifications">Re-Match</button>
+                    <button type="button" class="btn btn-warning" title="Apply Modifications">Re-Match</button>
                 </a>
                 <a class="nav-link" href="/dataprocessing/cancelchanges">
                     <button type="button" class="btn btn-default" title="Cancel Modifications">Cancel</button>
@@ -37,14 +37,16 @@
         <form action="/dataprocessing/applychanges" method="post">
             <div class="card">
                 <div class="card-header card-header-primary">
-                    <h2 class="card-title ">Clear Data Result</h2>
+                    <h2 class="card-title ">Merge Data Result</h2>
                 </div>
                 <div class="modal-footer">
-                    <a class="nav-link" href="/dataprocessing/applyclearresponse">
+                    <a class="nav-link" href="/dataprocessing/applymergeresponse">
                         <button type="button" class="btn btn-danger" title="Apply Modifications">Apply</button>
                     </a>
-                    <button type="button" class="btn btn-success" title="Download Modifications">Download
-                    </button>
+                    <a class="nav-link" href="/dataprocessing/downloaddata">
+                        <button type="button" class="btn btn-success" title="Download Modifications">Download
+                        </button>
+                    </a>
                     <a class="nav-link" href="/dataprocessing/cancelchanges">
                         <button type="button" class="btn btn-default" title="Cancel Modifications">Cancel
                         </button>

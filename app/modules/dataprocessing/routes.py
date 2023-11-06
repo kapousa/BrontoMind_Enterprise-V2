@@ -3,10 +3,13 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 import logging
+import os
 
-from flask import abort, request
+from flask import abort, request, session, send_file
 from flask_login import login_required
 
+from app.bck.bm.utiles.CVSReader import get_file_name_with_ext
+from app.constants.BM_CONSTANTS import df_location, data_files_folder
 from app.modules.base.app_routes.directors.dataprocessing.DataProcessingDirector import DataProcessingDirector
 from app.modules.dataprocessing import blueprint
 
@@ -77,11 +80,29 @@ def previewchatchanges():
         logging.error(e)
         abort(500, e)
 
+@blueprint.route('/applychatresponse', methods=['GET', 'POST'])
+@login_required
+def applychatresponse():
+    try:
+        return databotdirector.apply_chat_changes(request)
+    except Exception as e:
+        logging.error(e)
+        abort(500, e)
+
 @blueprint.route('/previewcleanchanges', methods=['GET', 'POST'])
 @login_required
 def previewcleanchanges():
     try:
         return databotdirector.preview_clean_changes(request)
+    except Exception as e:
+        logging.error(e)
+        abort(500, e)
+
+@blueprint.route('/applycleanresponse', methods=['GET', 'POST'])
+@login_required
+def applycleanresponse():
+    try:
+        return databotdirector.apply_clean_changes(request)
     except Exception as e:
         logging.error(e)
         abort(500, e)
@@ -104,6 +125,15 @@ def previewmergechanges():
         logging.error(e)
         abort(500, e)
 
+@blueprint.route('/applymergeresponse', methods=['GET', 'POST'])
+@login_required
+def applymergeresponse():
+    try:
+        return databotdirector.apply_merge_changes(request)
+    except Exception as e:
+        logging.error(e)
+        abort(500, e)
+
 @blueprint.route('/cancelchanges', methods=['GET', 'POST'])
 @login_required
 def cancelchanges():
@@ -113,11 +143,9 @@ def cancelchanges():
         logging.error(e)
         abort(500, e)
 
-@blueprint.route('/applychatresponse', methods=['GET', 'POST'])
+@blueprint.route('/downloaddata', methods=['GET', 'POST'])
 @login_required
-def applychatresponse():
-    try:
-        return databotdirector.apply_chat_changes(request)
-    except Exception as e:
-        logging.error(e)
-        abort(500, e)
+def downloaddata():
+    f = get_file_name_with_ext(session['filepath'])
+    path = os.path.join(data_files_folder, f)
+    return send_file(path, as_attachment=True)

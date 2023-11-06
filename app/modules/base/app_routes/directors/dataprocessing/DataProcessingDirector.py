@@ -286,7 +286,7 @@ class DataProcessingDirector:
             file_name = get_file_name_with_ext(filePath)
             temp_file = os.path.join("{0}{1}".format(modified_files_temp_path, file_name))
             shutil.copy(temp_file, filePath)
-            if 'secondaryfilepath' in session:      # Delete merging file
+            if 'secondaryfilepath' in session and os.path.exists(session['secondaryfilepath']):      # Delete merging file
                 os.remove(session['secondaryfilepath'])
             os.remove(temp_file)
 

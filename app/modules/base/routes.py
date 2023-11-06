@@ -28,7 +28,8 @@ from app.modules.base.app_routes.directors.ClusteringDirector import ClusteringD
 from app.modules.base.app_routes.directors.DatasetsDirector import DatasetsDirector
 from app.modules.base.app_routes.directors.ForecastingDirector import ForecastingDirector
 from app.modules.base.app_routes.directors.PredictionDirector import PredictionDirector
-from app.constants.BM_CONSTANTS import plot_zip_download_location, progress_icon_path, loading_icon_path
+from app.constants.BM_CONSTANTS import plot_zip_download_location, progress_icon_path, loading_icon_path, \
+    tempfiles_loaction
 from app.modules.base.db_models.ModelProfile import ModelProfile
 from app.bck.bm.controllers.BaseController import BaseController
 from app.bck.bm.core.DocumentProcessor import DocumentProcessor
@@ -185,6 +186,18 @@ def preview_data():
 def uploadcsvds():
     if request.method == 'POST':
         fname, filePath, headersArray, data, dataset_info, message = BaseDirector.get_data_details(request)
+
+        # remove sessions files path
+        temp_file_location = "{}{}".format(tempfiles_loaction, fname)
+        if 'filepath' in session and os.path.exists(session['filepath']):  # Delete temp file
+            if os.path.exists(temp_file_location):
+                os.remove("{}{}".format(tempfiles_loaction, fname))
+            session.pop('filepath')
+        if 'secondaryfilepath' in session and os.path.exists(session['secondaryfilepath']):  # Delete merging file
+            if os.path.exists(session['secondaryfilepath']):
+                os.remove(session['secondaryfilepath'])
+            session.pop('secondaryfilepath')
+
         cc = session['ds_goal']
         if (session['ds_goal'] == current_app.config['PREDICTION_MODULE']):  # Prediction
             prediction_director = PredictionDirector()
