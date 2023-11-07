@@ -21,7 +21,7 @@ class DataMergeController:
         self.members = ['Tiger', 'Elephant', 'Wild Cat']
 
     def drafting_merge_request(self, original_file_path, secondary_file_path, original_matching_columns,
-                               secondary_matching_columns, merge_type='outer'):
+                               secondary_matching_columns, merge_type='left'):
         """ Merge all rows from the original dataset with mathing rows from the secondary dataset. """
         try:
             original_file = original_file_path

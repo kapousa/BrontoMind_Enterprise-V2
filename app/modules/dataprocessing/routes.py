@@ -125,6 +125,15 @@ def previewmergechanges():
         logging.error(e)
         abort(500, e)
 
+@blueprint.route('/rematch', methods=['GET', 'POST'])
+@login_required
+def rematch():
+    try:
+        return databotdirector.rematch()
+    except Exception as e:
+        logging.error(e)
+        abort(500, e)
+
 @blueprint.route('/applymergeresponse', methods=['GET', 'POST'])
 @login_required
 def applymergeresponse():

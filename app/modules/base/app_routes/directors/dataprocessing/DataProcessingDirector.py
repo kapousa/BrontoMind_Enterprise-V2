@@ -256,6 +256,24 @@ class DataProcessingDirector:
             logging.exception(e)
             abort(500, description=e)
 
+    def rematch(self):
+        """ If the matching failed, re-match fields from main dataset and secondary dataset """
+        try:
+            file_path = session['filepath']
+            secondary_file_path = session['secondaryfilepath']
+
+            # Get columns list of each files
+            original_columns = Helper.get_csv_columns(file_path)
+            secondary_columns = Helper.get_csv_columns(secondary_file_path)
+
+            return render_template('applications/pages/dataprocessing/databot/matchfields.html',
+                                   segment='selectmodelgoal', original_columns=original_columns,
+                                   secondary_columns=secondary_columns,
+                                   message='data_info')
+        except Exception as e:
+            logging.exception(e)
+            abort(500, description=e)
+
     def apply_merge_changes(self, request):
         try:
             # Copy original file to temp folder
