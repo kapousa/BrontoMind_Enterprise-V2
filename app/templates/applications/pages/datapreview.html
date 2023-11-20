@@ -76,35 +76,32 @@
                         </a>
                     </div>
                     <div class="card-body">
-                        <p>Data Preview</p>
+                        <h3>Data Preview (10 Random Samples)</h3>
                         <div class="container overflow-auto scroll">
                             <div class="row border flex-nowrap scroll">
                                 {% for ind in dataset_info.columns %}
-                                    <div class="col-2 border">
-                                        <h5 class="text-blue text-center" style="word-wrap: normal;">{{ ind }}</h5>
+                                    <div class="col-2 border bg-primary">
+                                        <h4 class="text-white text-center text-break">{{ ind }}</h4>
                                     </div>
                                 {% endfor %}
                             </div>
                             <div class="row border flex-nowrap scroll">
                                 {% for ind in dataset_info.columns %}
-                                    <div class="col-2 border">
-                                        <pre><h6 class="text-red text-center">{{ dataset_info[ind][0] }}</h6></pre>
+                                    <div class="col-2 border bg-secondary">
+                                        <pre><h6 class="text-red text-center text-break">{{ dataset_info[ind][0] }}</h6></pre>
                                     </div>
                                 {% endfor %}
                             </div>
                             {% for i in range(sample_data.shape[0]) %}
-                                <div class="row border flex-nowrap scroll"
-                                     style="word-wrap: break-word!important; vertical-align: top;">
+                                <div class="row border flex-nowrap scroll">
                                     {% for sample in sample_data.columns %}
-                                        <div class="col-2 border"
-                                             style="border-width: thin; border-color: #0a0c0d; text-align: center!important;"
-                                             data-toggle="tooltip" data-placement="top"
+                                        <div class="col-2 border" data-toggle="tooltip" data-placement="top"
                                              title="{{ sample_data[sample].iloc[i] }}">
                                             {% set cc = sample_data[sample].iloc[i] %}
                                             {% if cc|string|count > 50 %}
-                                                <h5 style="color: red">"Content is large, hover to see content"</h5>
+                                                <h5 class="text-red">"Content is large, hover to see content"</h5>
                                             {% else %}
-                                                <h5>{{ cc|trim }}</h5>
+                                                <h5 class="text-blue text-center">{{ cc|trim }}</h5>
                                             {% endif %}
                                         </div>
                                     {% endfor %}
