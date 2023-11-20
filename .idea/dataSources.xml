@@ -17,7 +17,7 @@
       </libraries>
     </data-source>
     <data-source source="LOCAL" name="bm_db" uuid="f33b2376-4f2f-42e2-bf9e-cf2ee2ae51c5">
-      <driver-ref>sqlite.xerial</driver-ref>
+      <driver-ref>42af1479-75ee-4a41-b996-983c8596df26</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/app/bm_db.sqlite3</jdbc-url>

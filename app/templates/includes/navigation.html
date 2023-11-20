@@ -9,16 +9,23 @@
                              alt="Argon Design - Jinja Template Logo." style="height: 50px;">
                     </a>
                 </li>
-                <li class="nav-item" style="color: white;">
-                    sdsdsdsdsdsdsdsd
+                <li class="nav-item" style="color: white;">fdfdfdsssdsd
                 </li>
                 <!-- Navbar links -->
+                <li class="nav-item"
+                    style="color: black; {% if 'datasets' in segment %} background:gainsboro; {% endif %}">
+                    <a class="nav-link {% if 'datasets' in segment %} active {% endif %}" style="color: black;"
+                       href="{{ url_for('base_blueprint.datasets') }}">
+                        <i class="fa fa-table text-blue"></i>
+                        <span class="nav-link-text">Datasets</span>
+                    </a>
+                </li>
                 <li class="nav-item"
                     style="color: black; {% if 'showmodels' in segment %} background:gainsboro; {% endif %}">
                     <a class="nav-link {% if 'showmodels' in segment %} active {% endif %}" style="color: black"
                        href="{{ url_for('base_blueprint.showmodels') }}">
                         <i class="ni ni-bullet-list-67 text-primary"></i>
-                        <span class="nav-link-text">Dashboard</span>
+                        <span class="nav-link-text">Models</span>
                     </a>
                 </li>
                 <li class="nav-item"
@@ -50,14 +57,6 @@
                        href="{{ url_for('base_blueprint.idea') }}">
                         <i class="fa fa-lightbulb text-yellow"></i>
                         <span class="nav-link-text">I only have an idea</span>
-                    </a>
-                </li>
-                <li class="nav-item"
-                    style="color: black; {% if 'datasets' in segment %} background:gainsboro; {% endif %}">
-                    <a class="nav-link {% if 'datasets' in segment %} active {% endif %}" style="color: black;"
-                       href="{{ url_for('base_blueprint.datasets') }}">
-                        <i class="fa fa-table text-blue"></i>
-                        <span class="nav-link-text">Sample Datasets</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
@@ -263,5 +262,4 @@
         </div>
     </div>
 </nav>
-
 <div class="divider" style="height: 20px"></div>

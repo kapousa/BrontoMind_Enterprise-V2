@@ -27,22 +27,22 @@ class BaseDirector:
     @staticmethod
     def get_data_details(request):
         try:
-            # f = request.files['filename']
+            f = flask.request.files.getlist('filename[]')
             ds_source = session['ds_source']
             ds_goal = session['ds_goal']
 
-            if not 'filepath' in session:
+            if len(f) > 0: #not 'filepath' in session:
                 f = flask.request.files.getlist('filename[]')
                 model_id = Helper.generate_model_id()
 
                 # file_Path = session['filePath'] if session['filePath'] is not None else f
-                file_Path = flask.request.form.get("filePath")
+                # file_Path = flask.request.form.get("filePath")
                 # file_Path = session["filePath"]
-                filePath = file_Path
+                # filePath = file_Path
                 number_of_files = len(f) if f != None else 0
-                if number_of_files == 1 or file_Path != None:  # Check if there file sent to upload or already uploaded in data preview step
+                if number_of_files == 1: # or file_Path != None:  # Check if there file sent to upload or already uploaded in data preview step
                     # fname = secure_filename(f[0].filename) if number_of_files == 1 else os.path.basename(filePath)
-                    fname = "{}.csv".format(model_id) if number_of_files == 1 else os.path.basename(filePath)
+                    fname = "{}.csv".format(model_id) # if number_of_files == 1 else os.path.basename(filePath)
                     if number_of_files == 1:  # if the file doesn't upload in data preview step, save the file
                         file_name = "{}.csv".format(model_id)  # f[0].filename
                         filePath = os.path.join(df_location, secure_filename(file_name))
