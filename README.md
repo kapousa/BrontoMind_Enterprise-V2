@@ -129,7 +129,7 @@ Within the download you'll find the following directories and files:
    |    |
    |    |-- authentication/                # Handles auth routes (login and register)
    |    |    |-- routes.py                 # Define authentication routes  
-   |    |    |-- ModelUser.py                 # Defines models  
+   |    |    |-- ModelUser.py                 # Defines mlmodels  
    |    |    |-- forms.py                  # Define auth forms (login and register) 
    |    |
    |    |-- static/
