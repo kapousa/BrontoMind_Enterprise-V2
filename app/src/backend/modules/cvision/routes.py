@@ -7,7 +7,7 @@ import os
 from flask import request, send_file
 from flask_login import login_required
 
-from app.src.backend.constants import results_path
+from app.src.backend.constants.BM_CONSTANTS import results_path
 from app.src.backend.modules.cvision import blueprint
 from app.src.backend.controllers.BaseController import BaseController
 from app.src.backend.core.engine.factories.CVisionFactory import CVisionFactory

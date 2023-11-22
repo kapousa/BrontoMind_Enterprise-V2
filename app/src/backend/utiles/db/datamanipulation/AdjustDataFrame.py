@@ -15,10 +15,10 @@ from app import db
 from joblib import dump, load
 
 from app.src.backend.utiles.Helper import Helper
-from app.src.backend.constants import df_location
+from app.src.backend.constants.BM_CONSTANTS import df_location
 from app.src.backend.models.ModelEncodedColumns import ModelEncodedColumns
 from app.src.backend.models.ModelFeatures import ModelFeatures
-from app.src.backend.constants import api_data_folder
+from app.src.backend.constants.BM_CONSTANTS import api_data_folder
 from app.src.backend.utiles.db.db_helper.AttributesHelper import add_encoded_column_values
 from app.src.backend.utiles.db.db_helper.DBConnector import DBConnector
 from app.src.backend.utiles.CVSReader import get_only_file_name, get_file_path

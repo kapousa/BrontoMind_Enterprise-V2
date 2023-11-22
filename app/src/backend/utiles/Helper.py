@@ -17,7 +17,7 @@ from werkzeug.utils import secure_filename
 
 from app import config_parser
 from app.src.backend.models.ModelLookupTable import ModelLookupTable
-from app.src.backend.constants import html_plots_location, html_short_path, data_files_folder, \
+from app.src.backend.constants.BM_CONSTANTS import html_plots_location, html_short_path, data_files_folder, \
     physical_allowed_extensions, app_results_path
 from app.src.backend.models.ModelEncodedColumns import ModelEncodedColumns
 

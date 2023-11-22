@@ -9,7 +9,7 @@ from flask import abort, request, session, send_file
 from flask_login import login_required
 
 from app.src.backend.utiles.CVSReader import get_file_name_with_ext
-from app.src.backend.constants import data_files_folder
+from app.src.backend.constants.BM_CONSTANTS import data_files_folder
 from app.src.backend.directories.dataprocessing.DataProcessingDirector import DataProcessingDirector
 from app.src.backend.modules.dataprocessing import blueprint
 

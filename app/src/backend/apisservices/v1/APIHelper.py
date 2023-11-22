@@ -6,7 +6,7 @@ from flask import session
 from mailmerge import MailMerge
 
 from app import db
-from app.src.backend.constants import output_document_sfx
+from app.src.backend.constants.BM_CONSTANTS import output_document_sfx
 from app.src.backend.models.ModelAPIMethods import ModelAPIMethods
 from app.src.backend.apisservices.v1.APIsPredictionServices import predictvalues, getmodelfeatures, getmodellabels, nomodelfound
 from app.src.backend.utiles.db.db_helper.AttributesHelper import get_model_name, get_features, get_labels

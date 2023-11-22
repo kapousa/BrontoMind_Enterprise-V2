@@ -18,7 +18,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 from app import db, config_parser
-from app.src.backend.constants import plot_zip_locations, pkls_location, df_location, \
+from app.src.backend.constants.BM_CONSTANTS import plot_zip_locations, pkls_location, df_location, \
     plot_locations, scalars_location, image_short_path, data_files_folder, \
     app_root_path
 from app.src.backend.models.ModelProfile import ModelProfile

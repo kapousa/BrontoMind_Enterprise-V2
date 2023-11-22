@@ -29,7 +29,7 @@ from app.src.backend.utiles.db.db_helper.AttributesHelper import get_labels, add
 from app.src.backend.core.engine.mlmodels import Prediction
 from app.src.backend.utiles.CVSReader import get_only_file_name, randomize_csv_rows
 from app.src.backend.utiles.CVSReader import getcvsheader, get_new_headers_list, reorder_csv_file
-from app.src.backend.constants import pkls_location, scalars_location, html_plots_location, html_short_path, df_location
+from app.src.backend.constants.BM_CONSTANTS import pkls_location, scalars_location, html_plots_location, html_short_path, df_location
 from app.src.backend.models.ModelProfile import ModelProfile
 
 

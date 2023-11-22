@@ -13,7 +13,7 @@ from nltk.corpus import wordnet
 from app import db
 from app.src.backend.models.ModelAPIModelMethods import ModelAPIModelMethods
 from app.src.backend.models.ModelBotKeywords import ModelBotKeywords
-from app.src.backend.constants import scalars_location, pkls_location, output_docs_location, df_location, \
+from app.src.backend.constants.BM_CONSTANTS import scalars_location, pkls_location, output_docs_location, df_location, \
     plot_zip_locations, plot_locations, html_plots_location, prediction_model_keyword, classification_model_keyword, \
     forecasting_model_keyword, clustering_model_keyword, \
     dep_path
@@ -24,7 +24,7 @@ from app.src.backend.models.ModelFeatures import ModelFeatures
 from app.src.backend.models.ModelForecastingResults import ModelForecastingResults
 from app.src.backend.models.ModelLabels import ModelLabels
 from app.src.backend.models.ModelProfile import ModelProfile
-from app.src.backend.constants import deployment_folder
+from app.src.backend.constants.BM_CONSTANTS import deployment_folder
 from app.src.backend.controllers.ControllersHelper import ControllersHelper
 from app.src.backend.utiles.db.db_helper import AttributesHelper
 from app.src.backend.utiles.Helper import Helper

@@ -1,6 +1,6 @@
 from flask import render_template, request
 
-from app.src.backend.constants import docs_templates_folder, output_docs
+from app.src.backend.constants.BM_CONSTANTS import docs_templates_folder, output_docs
 from app.src.backend.models.ModelCvisionRun import ModelCvisionRun
 from app.src.backend.models.ModelProfile import ModelProfile
 from app.src.backend.models.ModelAPIDetails import ModelAPIDetails

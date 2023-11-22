@@ -1,10 +1,10 @@
 import numpy
 from flask import render_template, request, session
 
-from app.src.backend.constants import docs_templates_folder, output_docs
+from app.src.backend.constants.BM_CONSTANTS import docs_templates_folder, output_docs
 from app.src.backend.models.ModelAPIDetails import ModelAPIDetails
 from app.src.backend.models.ModelProfile import ModelProfile
-from app.src.backend.constants import html_short_path
+from app.src.backend.constants.BM_CONSTANTS import html_short_path
 from app.src.backend.apisservices.v1.APIHelper import APIHelper
 from app.src.backend.controllers.BaseController import BaseController
 from app.src.backend.controllers.classification.ClassificationController import ClassificationController

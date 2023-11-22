@@ -5,7 +5,6 @@ from ftplib import FTP
 from flask import session
 
 from app import config_parser, db
-from app.src.backend.constants import scripts_path
 from app.src.backend.models.ModelCvisionRun import ModelCvisionRun
 from app.src.backend.models.ModelProfile import ModelProfile
 from app.src.backend.controllers.BaseController import BaseController

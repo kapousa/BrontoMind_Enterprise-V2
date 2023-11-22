@@ -10,7 +10,7 @@ from app.src.backend.controllers.BaseController import BaseController
 from app.src.backend.controllers.dataprocessing.DataCleanController import DataCleanController
 from app.src.backend.controllers.dataprocessing.DataMergeController import DataMergeController
 from app.src.backend.utiles.Helper import Helper
-from app.src.backend.constants import tempfiles_loaction
+from app.src.backend.constants.BM_CONSTANTS import tempfiles_loaction
 from app.src.backend.controllers.dataprocessing.DataBotController import DataBotController
 from app.src.backend.utiles.CVSReader import get_file_name_with_ext
 from app.src.backend.constants.DATAPROCESSING_CONSTANTS import modified_files_temp_path

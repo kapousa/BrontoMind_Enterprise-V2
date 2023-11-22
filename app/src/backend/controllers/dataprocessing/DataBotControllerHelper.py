@@ -6,7 +6,7 @@ from flask import abort
 from sklearn.metrics.pairwise import cosine_similarity
 
 from app.src.backend.constants.DATAPROCESSING_CONSTANTS import delete_action, merge_action, sum_action
-from app.src.backend.constants import F, S, T
+from app.src.backend.constants.k import F, S, T
 
 
 class DataBotControllerHelper:

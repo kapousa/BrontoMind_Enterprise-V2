@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import numpy
 
-from app.src.backend.constants import df_location
+from app.src.backend.constants.BM_CONSTANTS import df_location
 
 
 class CVSReader:
