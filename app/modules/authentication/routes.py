@@ -43,7 +43,7 @@ def login():
             login_user(user)
             session['logged_in'] = True
             session['logger'] = user.id
-            return redirect(url_for('base_blueprint.showmodels'))
+            return redirect(url_for('base_blueprint.home'))
 
         # Something (user or pass) is not ok
         return render_template('accounts/login.html',

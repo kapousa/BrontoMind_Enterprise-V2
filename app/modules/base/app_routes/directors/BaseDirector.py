@@ -24,6 +24,10 @@ class BaseDirector:
         # Create some member animals
         self.members = ['Tiger', 'Elephant', 'Wild Cat']
 
+    def load_home(self, request):
+
+        return 0
+
     @staticmethod
     def get_data_details(request):
         try:

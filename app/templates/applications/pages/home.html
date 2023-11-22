@@ -1,0 +1,70 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Home {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+                    <h2>Projects</h2>
+        </div>
+    </div>
+    <div class="nav-wrapper">
+        <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link mb-sm-3 mb-md-0 active" id="development-tab" data-toggle="tab" href="#development"
+                   role="tab" aria-controls="development" aria-selected="true"><i class="ni ni-laptop mr-2"></i>Development</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mb-sm-3 mb-md-0" id="production-tab" data-toggle="tab" href="#production" role="tab"
+                   aria-controls="production" aria-selected="false"><i
+                        class="ni ni-chart-bar-32 mr-2"></i>Production</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mb-sm-3 mb-md-0" id="archive-tab" data-toggle="tab" href="#archive" role="tab"
+                   aria-controls="archive" aria-selected="false"><i class="ni ni-archive-2 mr-2"></i>Archive</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card shadow">
+        <div class="card-body">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="development" role="tabpanel"
+                     aria-labelledby="development-tab">
+                    <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt
+                        tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles
+                        vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                    <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt
+                        tofu stumptown aliqua, retro synth master cleanse.</p>
+                </div>
+                <div class="tab-pane fade" id="production" role="tabpanel" aria-labelledby="production-tab">
+                    <p class="description">Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
+                        placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate
+                        nisi qui.</p>
+                </div>
+                <div class="tab-pane fade" id="archive" role="tabpanel" aria-labelledby="archive-tab">
+                    <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt
+                        tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles
+                        vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+    </script>
+
+{% endblock javascripts %}
+

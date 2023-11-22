@@ -7,6 +7,8 @@ pkls_location = 'pkls/'
 
 scalars_location = 'scalars/'
 
+datasets_location = 'datasets/'
+
 plot_locations = 'app/static/images/plots/'
 
 plot_zip_locations = 'app/modules/base/static/zip/'
