@@ -57,7 +57,7 @@ root_path = app.root_path
 @blueprint.route('/home')
 @login_required
 def home():
-    return render_template('applications/pages/home.html', segment='index')
+    return BaseDirector.load_home(request)
 
 @blueprint.route('/index')
 @login_required

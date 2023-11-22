@@ -8,7 +8,7 @@
 {% block content %}
     <div class="row">
         <div class="col-md-12">
-                    <h2>Projects</h2>
+            <h2>Projects</h2>
         </div>
     </div>
     <div class="nav-wrapper">
@@ -33,21 +33,49 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="development" role="tabpanel"
                      aria-labelledby="development-tab">
-                    <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt
-                        tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles
-                        vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
-                    <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt
-                        tofu stumptown aliqua, retro synth master cleanse.</p>
+                    {% if development_projects_message != '' %}
+                        <div class="card card-stats mb-4 mb-lg-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="stats">
+                                            <p class="lead">{{ development_projects_message }}  </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="tab-pane fade" id="production" role="tabpanel" aria-labelledby="production-tab">
-                    <p class="description">Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
-                        placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate
-                        nisi qui.</p>
+                    {% if production_projects_message != '' %}
+                        <div class="card card-stats mb-4 mb-lg-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="stats">
+                                            <p class="lead">{{ production_projects_message }}  </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="tab-pane fade" id="archive" role="tabpanel" aria-labelledby="archive-tab">
-                    <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt
-                        tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles
-                        vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                    {% if archive_projects_message != '' %}
+                        <div class="card card-stats mb-4 mb-lg-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="stats">
+                                            <p class="lead">{{ archive_projects_message }}  </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

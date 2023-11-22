@@ -88,3 +88,10 @@ tempfiles_loaction = 'app/tempfiles/'
 datasets_files = 'app/static/datasets'
 
 downlaod_dataset_file_path = 'static/datasets'
+
+DEVELOPMENT_PROJECT = 34
+
+PRODUCTION_PROJECT = 35
+
+ARCHIVE_PROJECT = 36
+

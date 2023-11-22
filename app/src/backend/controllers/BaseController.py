@@ -16,7 +16,7 @@ from app.src.backend.models.ModelBotKeywords import ModelBotKeywords
 from app.src.backend.constants.BM_CONSTANTS import scalars_location, pkls_location, output_docs_location, df_location, \
     plot_zip_locations, plot_locations, html_plots_location, prediction_model_keyword, classification_model_keyword, \
     forecasting_model_keyword, clustering_model_keyword, \
-    dep_path
+    dep_path, DEVELOPMENT_PROJECT, PRODUCTION_PROJECT, ARCHIVE_PROJECT
 from app.src.backend.models.ModelAPIDetails import ModelAPIDetails
 from app.src.backend.models.ModelCvisionRun import ModelCvisionRun
 from app.src.backend.models.ModelEncodedColumns import ModelEncodedColumns
@@ -26,6 +26,7 @@ from app.src.backend.models.ModelLabels import ModelLabels
 from app.src.backend.models.ModelProfile import ModelProfile
 from app.src.backend.constants.BM_CONSTANTS import deployment_folder
 from app.src.backend.controllers.ControllersHelper import ControllersHelper
+from app.src.backend.models.ModelProjects import ModelProjects
 from app.src.backend.utiles.db.db_helper import AttributesHelper
 from app.src.backend.utiles.Helper import Helper
 
@@ -478,6 +479,41 @@ class BaseController:
             new_report_df = new_report_df.reindex(numpy.array(orginal_datacolumns), axis=1)
 
             return new_report_df
+
+        except Exception as e:
+            logging.error(e)
+            abort(500)
+
+    def get_projects(self, user_id):
+        """List all projects of current user"""
+        try:
+            model_projects = ModelProjects.query.filter_by(user_id=user_id).all()
+            development_projects = []
+            production_projects = []
+            archive_projects = []
+
+            if len(model_projects) != 0:
+                for project in model_projects:
+                    project = {'id': project.id,
+                                     'name': project.name,
+                                     'desc': project.desc,
+                                     'status': AttributesHelper.get_lookup_value(project.status),
+                                     'created_on': project.created_on,
+                                     'created_by': AttributesHelper.get_user_fullname(project.user_id),
+                                     'updated_on': project.updated_on,
+                                     'updated_by': AttributesHelper.get_user_fullname(project.user_id),
+                                     'status': project.update
+                                     }
+                    if(project['status'] == DEVELOPMENT_PROJECT):
+                        development_projects.append(model_projects)
+
+                    if (project['status'] == PRODUCTION_PROJECT):
+                        production_projects.append(model_projects)
+
+                    if (project['status'] == ARCHIVE_PROJECT):
+                        archive_projects.append(model_projects)
+
+            return development_projects, production_projects, archive_projects
 
         except Exception as e:
             logging.error(e)

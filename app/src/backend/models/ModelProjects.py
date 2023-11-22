@@ -17,9 +17,10 @@ class ModelProjects(db.Model):
     desc = Column(String)
     created_on = Column(String)
     updated_on = Column(String)
-    created_date = Column(String)
-    updated_date = Column(String)
+    created_by = Column(String)
+    updated_by = Column(String)
     user_id = Column(Integer)
+    status = Column(Integer)
 
     def __init__(self, **kwargs):
         for property, value in kwargs.items():
