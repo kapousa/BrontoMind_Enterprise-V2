@@ -54,9 +54,9 @@ app.config['APP_ROOT'] = '/app'
 root_path = app.root_path
 
 
-@blueprint.route('/home')
+@blueprint.route('/projects')
 @login_required
-def home():
+def projects():
     return BaseDirector.load_home(request)
 
 @blueprint.route('/index')

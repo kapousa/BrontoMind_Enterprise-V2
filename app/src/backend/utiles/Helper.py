@@ -210,7 +210,7 @@ class Helper:
 
 
     @staticmethod
-    def generate_model_id():
+    def generate_id():
         model_id = random.randrange(10000000000000, 99999999999999, 14)
         return model_id
 

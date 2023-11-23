@@ -72,7 +72,7 @@ class ClusteringController:
     def run_clustering_model(self, location_details, ds_goal, ds_source, is_local_data, featuresdvalues=['data']):
         try:
             # ------------------Preparing data frame-------------------------#
-            model_id =  Helper.generate_model_id()
+            model_id =  Helper.generate_id()
             initiate_model = BaseController.initiate_model(model_id)
             helper = Helper()
 

@@ -9,6 +9,12 @@
     <div class="row">
         <div class="col-md-12">
             <h2>Projects</h2>
+            <a class="nav-link" data-toggle="modal" data-target="#createprojectModal"
+               href="#createprojectModal">
+                <button class="btn btn-icon btn-2 btn-outline-primary float-right" type="button">
+                    <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                </button>
+            </a>
         </div>
     </div>
     <div class="nav-wrapper">
@@ -80,12 +86,43 @@
             </div>
         </div>
     </div>
+
+    <!-- Modals -->
+    <!-- Create Project Modal -->
+    <div class="modal fade" id="createprojectModal" tabindex="-1" role="dialog"
+         aria-labelledby="createprojectModal"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aichatModalLabel">Create Project</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/projects/add" method="post" id="dataprepchatForm">
+                    <div class="modal-body">
+                        <div class="modal-body">
+                            <input class="form-control text-primary" type="text" placeholder="Project name"
+                                   id="projectname" name="projectname" required/>
+                            <textarea class="form-control lead text-primary" name="description" rows="5"
+                                      id="description"
+                                      placeholder="Describe your project. ..."
+                                      required>{{ user_text }}</textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-outline-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
 
 
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
-
     <script>
         $(document).ready(function () {
             // Javascript method's body can be found in assets/js/demos.js

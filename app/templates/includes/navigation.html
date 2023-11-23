@@ -1,50 +1,60 @@
 <nav class="navbar navbar-top navbar-expand navbar-dark bg-white border-bottom">
     <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav align-items-center  ml-md-auto ">
-                <!-- Brand -->
-                <li class="nav-item">
-                    <a href="/home">
-                        <img src="/static/assets/img/brand/logo.png" class="navbar-brand-img"
-                             alt="Argon Design - Jinja Template Logo." style="height: 50px;">
-                    </a>
-                </li>
-                <li class="nav-item" style="color: white;">fdfdfdsssdsd
-                </li>
-                <!-- Navbar links -->
-                <li class="nav-item"
-                    style="color: black; {% if 'datasets' in segment %} background:gainsboro; {% endif %}">
-                    <a class="nav-link {% if 'datasets' in segment %} active {% endif %}" style="color: black;"
-                       href="{{ url_for('base_blueprint.datasets') }}">
-                        <i class="fa fa-table text-blue"></i>
-                        <span class="nav-link-text">Datasets</span>
-                    </a>
-                </li>
-                <li class="nav-item"
-                    style="color: black; {% if 'showmodels' in segment %} background:gainsboro; {% endif %}">
-                    <a class="nav-link {% if 'showmodels' in segment %} active {% endif %}" style="color: black"
-                       href="{{ url_for('base_blueprint.showmodels') }}">
-                        <i class="ni ni-bullet-list-67 text-primary"></i>
-                        <span class="nav-link-text">Models</span>
-                    </a>
-                </li>
-                <li class="nav-item"
+    <div class="text-white">fdhfjhjfhjhhjfh</div>
+        <div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav align-items-center  ml-md-auto ">
+                    <!-- Brand -->
+                    <li class="nav-item">
+                        <a href="/home">
+                            <img src="/static/assets/img/brand/logo.png" class="navbar-brand-img"
+                                 alt="Argon Design - Jinja Template Logo." style="height: 50px;">
+                        </a>
+                    </li>
+                    <li class="nav-item" style="color: white;">fdfdfdsssdsd
+                    </li>
+                    <!-- Navbar links -->
+                    <li class="nav-item"
+                        style="color: black; {% if 'projects' in segment %} background:gainsboro; {% endif %}">
+                        <a class="nav-link {% if 'projects' in segment %} active {% endif %}" style="color: black;"
+                           href="{{ url_for('base_blueprint.projects') }}">
+                            <i class="fa fa-folder text-primary"></i>
+                            <span class="nav-link-text">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item"
+                        style="color: black; {% if 'showmodels' in segment %} background:gainsboro; {% endif %}">
+                        <a class="nav-link {% if 'showmodels' in segment %} active {% endif %}" style="color: black"
+                           href="{{ url_for('base_blueprint.showmodels') }}">
+                            <i class="ni ni-bullet-list-67 text-danger"></i>
+                            <span class="nav-link-text">Models</span>
+                        </a>
+                    </li>
+                    <li class="nav-item"
+                        style="color: black; {% if 'datasets' in segment %} background:gainsboro; {% endif %}">
+                        <a class="nav-link {% if 'datasets' in segment %} active {% endif %}" style="color: black;"
+                           href="{{ url_for('base_blueprint.datasets') }}">
+                            <i class="fa fa-table text-info"></i>
+                            <span class="nav-link-text">Datasets</span>
+                        </a>
+                    </li>
+                    <!--li class="nav-item"
                     style="color: black; {% if 'selectmodelgoal' in segment %} background:gainsboro; {% endif %}">
                     <a class="nav-link {% if 'selectmodelgoal' in segment %} active {% endif %}" style="color: black"
                        href="{{ url_for('base_blueprint.selectmodelgoal') }}">
                         <i class="fa fa-plus-circle text-danger"></i>
                         <span class="nav-link-text">New model</span>
                     </a>
-                </li>
-                <li class="nav-item"
+                </li-->
+                    <!--li class="nav-item"
                     style="color: black; {% if 'computervision' in segment %} background:gainsboro; {% endif %}">
                     <a class="nav-link {% if 'computervision' in segment %} active {% endif %}" style="color: black"
                        href="{{ url_for('base_blueprint.computervision') }}">
                         <i class="fa fa-eye text-info"></i>
                         <span class="nav-link-text">Computer vision</span>
                     </a>
-                </li>
-                <!--li class="nav-item"
+                </li-->
+                    <!--li class="nav-item"
                     style="color: black; {% if 'preparedata' in segment %} background:gainsboro; {% endif %}">
                     <a class="nav-link {% if 'preparedata' in segment %} active {% endif %}" style="color: black"
                        href="{{ url_for('dataprocessing_blueprint.datapreprationbot') }}">
@@ -52,13 +62,19 @@
                         <span class="nav-link-text">Data preparation</span>
                     </a>
                 </li-->
-                <li class="nav-item" style="color: black; {% if 'idea' in segment %} background:gainsboro; {% endif %}">
+                    <!--li class="nav-item" style="color: black; {% if 'idea' in segment %}
+                         background:gainsboro; {% endif %}">
                     <a class="nav-link {% if 'idea' in segment %} active {% endif %}" style="color: black"
                        href="{{ url_for('base_blueprint.idea') }}">
                         <i class="fa fa-lightbulb text-yellow"></i>
                         <span class="nav-link-text">I only have an idea</span>
                     </a>
-                </li>
+                </li-->
+                </ul>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav align-items-center  ml-md-auto ">
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">

@@ -237,7 +237,7 @@ class ClassificationController:
     def run_classification_model(self, location_details, ds_goal, ds_source, is_local_data, featuresdvalues=['data'],
                                  classification_label=['category']):
         try:
-            model_id = Helper.generate_model_id()
+            model_id = Helper.generate_id()
             initiate_model = BaseController.initiate_model(model_id)
             helper = Helper()
 

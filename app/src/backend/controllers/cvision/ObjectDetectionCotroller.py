@@ -28,7 +28,7 @@ class ObjectDetectionCotroller:
 
     def _create_object_detecting_model(self, ds_goal, ds_source):
         try:
-            model_id = Helper.generate_model_id()
+            model_id = Helper.generate_id()
             model_name = '{}'.format(model_id)
             now = datetime.now()
             initiate_model = BaseController.initiate_model(model_id)

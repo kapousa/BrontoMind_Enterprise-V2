@@ -502,7 +502,7 @@ class BaseController:
                                      'created_by': AttributesHelper.get_user_fullname(project.user_id),
                                      'updated_on': project.updated_on,
                                      'updated_by': AttributesHelper.get_user_fullname(project.user_id),
-                                     'status': project.update
+                                     'status': project.status
                                      }
                     if(project['status'] == DEVELOPMENT_PROJECT):
                         development_projects.append(model_projects)
