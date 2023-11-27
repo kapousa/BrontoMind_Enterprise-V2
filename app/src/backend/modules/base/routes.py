@@ -25,7 +25,7 @@ from app.src.backend.modules.base import blueprint
 from app.src.backend.directories.BaseDirector import BaseDirector
 from app.src.backend.directories.ClassificationDirector import ClassificationDirector
 from app.src.backend.directories.ClusteringDirector import ClusteringDirector
-from app.src.backend.directories.DatasetsDirector import DatasetsDirector
+from app.src.backend.directories.LocalDatasetsDirector import LocalDatasetsDirector
 from app.src.backend.directories.ForecastingDirector import ForecastingDirector
 from app.src.backend.directories.PredictionDirector import PredictionDirector
 from app.src.backend.constants.BM_CONSTANTS import plot_zip_download_location, progress_icon_path, loading_icon_path, \
@@ -720,12 +720,12 @@ def testyolo():
 @blueprint.route('/datasets', methods=['GET', 'POST'])
 @login_required
 def datasets():
-    return DatasetsDirector.view_all()
+    return LocalDatasetsDirector.view_all()
 
 @blueprint.route('/downlaoddataset/<id>', methods=['GET', 'POST'])
 @login_required
 def downlaoddataset(id):
-    path = DatasetsDirector.downlaod_datasets(id)
+    path = LocalDatasetsDirector.downlaod_datasets(id)
     return send_file(path, as_attachment=True)
 
 ## Errors

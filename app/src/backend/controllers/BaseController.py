@@ -174,7 +174,7 @@ class BaseController:
                                  'most_common': profile.most_common
                                  }
             return model_profile
-        except  Exception as e:
+        except Exception as e:
             print('Ohh -get_model_status...Something went wrong.')
             print(e)
             return 0

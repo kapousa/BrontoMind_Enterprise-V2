@@ -2,6 +2,8 @@
 """
 Copyright (c) 2019 - present AppSeed.us
 """
+import os
+import shutil
 
 from flask import render_template, redirect, request, url_for, session
 from flask_login import (
@@ -11,11 +13,13 @@ from flask_login import (
 )
 
 from app import db, login_manager
+from app.src.backend.constants.BM_CONSTANTS import my_datasets
 from app.src.backend.modules.authentication import blueprint
 from app.src.backend.modules.authentication.ModelUser import ModelUser
 from app.src.backend.modules.authentication.forms import LoginForm, CreateAccountForm
 
 from app.src.backend.modules.authentication.util import verify_pass
+from app.src.backend.utiles.Helper import Helper
 
 
 @blueprint.route('/')
@@ -43,7 +47,7 @@ def login():
             login_user(user)
             session['logged_in'] = True
             session['logger'] = user.id
-            return redirect(url_for('base_blueprint.projects'))
+            return redirect(url_for('datasets_blueprint.view_datasets'))
 
         # Something (user or pass) is not ok
         return render_template('accounts/login.html',
@@ -82,9 +86,23 @@ def register():
                                    form=create_account_form)
 
         # else we can create the user
-        user = ModelUser(**request.form)
+        user ={
+            "id": Helper.generate_id(),
+            "username": username,
+            "email": email,
+            "password": request.form['password'],
+            "account_type": 17,
+            "first_name": "F",
+            "last_name": "L"
+
+        }
+        user = ModelUser(**user)
         db.session.add(user)
         db.session.commit()
+
+        # Create datasets user folder
+        folder_path = f"{my_datasets}/{user.id}"
+        shutil.rmtree(folder_path) if (os.path.isdir(folder_path)) else os.mkdir(folder_path)
 
         return render_template('accounts/register.html',
                                msg='User created please <a href="/login">login</a>',

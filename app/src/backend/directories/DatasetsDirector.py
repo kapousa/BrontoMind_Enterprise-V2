@@ -46,4 +46,3 @@ class DatasetsDirector:
         model_datasets = ModelDatasets.query.filter_by(id=id).first()
         path = "{0}/{1}".format(downlaod_dataset_file_path, model_datasets.file_name)
         return path
-

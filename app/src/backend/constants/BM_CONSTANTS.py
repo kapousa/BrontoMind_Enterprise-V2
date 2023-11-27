@@ -7,7 +7,7 @@ pkls_location = 'pkls/'
 
 scalars_location = 'scalars/'
 
-datasets_location = 'datasets/'
+my_datasets = 'mydatasets/'
 
 plot_locations = 'app/static/images/plots/'
 
