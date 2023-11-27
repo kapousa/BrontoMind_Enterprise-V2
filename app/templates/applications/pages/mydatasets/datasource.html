@@ -6,20 +6,17 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-
-                    <h2 class="card-title">Select data source</h2>
+    <h2 class="card-title">Select data source</h2>
 
     <div class="row">
         <div class="col-md-4">
             <div class="card text-center">
                 <div class="card-header card-header-success">
                     <h3>Tables</h3>
-                    <a href="/datasets/datasource">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-green"></i>
                         <i class="fa fa-file-csv fa-stack-1x fa-inverse"></i>
                         </span>
-                    </a>
                 </div>
                 <div class="card-body">
                     <div class="form-group">CSV, Excel, JSON, PARQUET.</div>
@@ -27,7 +24,7 @@
                         <div class="col-md-12">
                         </div>
                     </div>
-                    <form action="/selectcsvds" name="selectcsvds" id="selectcsvds" method="post">
+                    <form action="/datasets/connecttods" name="connecttods" id="connecttods" method="post">
                         <input type="hidden" id="ds_source" name="ds_source" value="1"/>
                         <button type="submit" class="btn btn-white btn-outline-darker pull-right btn-lg">Upload data file</button>
                     </form>
