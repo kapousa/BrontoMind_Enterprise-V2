@@ -13,7 +13,7 @@ import numpy
 import numpy as np
 import pandas as pd
 import plotly.graph_objs as go
-from werkzeug.utils import secure_filename
+from werkzeug.utils import secure_filename, send_file
 
 from app import config_parser
 from app.src.backend.models.ModelLookupTable import ModelLookupTable
@@ -354,4 +354,8 @@ class Helper:
 
             # Read the header row to get the column names
             return next(reader)
+
+    @staticmethod
+    def download_resource(resource_path):
+        return send_file(resource_path, as_attachment=True)
 

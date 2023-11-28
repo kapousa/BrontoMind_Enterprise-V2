@@ -12,7 +12,7 @@ from werkzeug.utils import secure_filename
 
 import numpy
 import pandas as pd
-from flask import session, g, url_for
+from flask import session, g, url_for, send_from_directory
 from flask import redirect, send_file, Response, Flask, \
     current_app
 from flask import render_template, request
@@ -37,6 +37,7 @@ from app.src.backend.core.engine.factories.ClassificationFactory import Classifi
 from app.src.backend.core.engine.factories.ClusteringFactory import ClusteringFactory
 from app.src.backend.core.engine.factories.ForecastingFactory import ForecastingFactory
 from app.src.backend.core.engine.factories.PredictionFactory import PredictionFactory
+from app.src.backend.utiles.Helper import Helper
 from app.src.backend.utiles.db.datamanipulation.AdjustDataFrame import create_figure
 from app.src.backend.utiles.CVSReader import getcvsheader, adjust_csv_file
 from app.src.backend.utiles.CVSReader import improve_data_file
@@ -47,8 +48,8 @@ app.config['UPLOAD_FOLDER'] = 'app/data/'
 app.config['DOCS_TEMPLATES_FOLDER'] = 'docs_templates/'
 app.config['APPS_DATA_FOLDER'] = 'app/docs_templates/apps_data_sources'
 app.config['DOWNLOAD_APPS_DATA_FOLDER'] = 'docs_templates/apps_data_sources'
-app.config['OUTPUT_DOCS'] = 'app/base/output_docs/'
-app.config['OUTPUT_PDF_DOCS'] = '/output_docs/'
+app.config['OUTPUT_DOCS'] = 'output_docs/'
+app.config['OUTPUT_PDF_DOCS'] = 'output_docs/'
 app.config['DEMO_KEY'] = 'DEMO'
 app.config['APP_ROOT'] = '/app'
 root_path = app.root_path
@@ -685,8 +686,8 @@ def downloaddsfile():
 def downloadapisdocument(model_id):
     # # For windows you need to use drive name [ex: F:/Example.pdf]
     # fname = ModelProfile.query.with_entities(ModelProfile.model_name).first()[0]
-    path = root_path + app.config['OUTPUT_PDF_DOCS'] + str(model_id) + '/' + str(model_id) + '_BrontoMind_APIs_document.docx'
-    return send_file(path, as_attachment=True)
+    path = app.config['OUTPUT_PDF_DOCS'] + str(model_id) + '/' + str(model_id) + '_BrontoMind_APIs_document.docx'
+    return send_from_directory(app.config['OUTPUT_PDF_DOCS'], str(model_id) + '/' + str(model_id) + '_BrontoMind_APIs_document.docx')
 
 @blueprint.route('/<model_id>/downloadplots', methods=['GET', 'POST'])
 @login_required

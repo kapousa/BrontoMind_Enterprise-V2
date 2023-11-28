@@ -15,19 +15,28 @@ class DatasetsDirector:
         # Create some member animals
         self.members = ['Tiger', 'Elephant', 'Wild Cat']
 
+    def view_datasets(self):
+        datasets_controller = DatasetsController()
+        datasets = datasets_controller.get_datasets(session['logger'])
+        return render_template('applications/pages/mydatasets/mydatasets.html', datasets=datasets, segment='datasets')
+
     def create_connection(self, request):
         ds_id = request.form.get('ds_source')
         session['ds_id'] = ds_id
         return render_template('applications/pages/mydatasets/connecttods.html', ds_id=ds_id, segment='datasets')
 
-    def save_data_set(self, request):
+    def save_dataset(self, request):
         try:
             f = request.files.getlist('filename[]')
             datasets_controller = DatasetsController()
             model = datasets_controller.save_tables_dateset(session['logger'], session['ds_id'], f)
             session.pop('ds_id')
 
-            return render_template('applications/pages/mydatasets/mydatasets.html', segment='datasets')
+            datasets_controller = DatasetsController()
+            datasets = datasets_controller.get_datasets(session['logger'])
+
+            return render_template('applications/pages/mydatasets/mydatasets.html', datasets=datasets,
+                                   segment='datasets')
 
         except Exception as e:
             logging.error(e)

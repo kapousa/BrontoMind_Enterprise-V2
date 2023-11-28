@@ -7,6 +7,7 @@ from flask import render_template, request
 from flask_login import login_required
 
 from app import login_manager
+from app.src.backend.controllers.datasets.DatasetsController import DatasetsController
 from app.src.backend.directories.datasets.DatasetsDirector import DatasetsDirector
 from app.src.backend.modules.datasets import blueprint
 
@@ -16,7 +17,8 @@ from app.src.backend.modules.datasets import blueprint
 @blueprint.route('/view')
 @login_required
 def view_datasets():
-    return render_template('applications/pages/mydatasets/mydatasets.html', segment='datasets')
+    datasets_directory = DatasetsDirector()
+    return datasets_directory.view_datasets()
 
 @blueprint.route('/datasource')
 @login_required
@@ -34,7 +36,7 @@ def connectds():
 @login_required
 def save_dataset():
     datssets_director = DatasetsDirector()
-    return datssets_director.save_data_set(request)
+    return datssets_director.save_dataset(request)
 
 
 # Errors

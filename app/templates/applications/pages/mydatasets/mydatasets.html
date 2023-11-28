@@ -21,6 +21,33 @@
             </div>
         </div>
         <!-- list all datasets -->
+        {% for dataset in datasets %}
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="text-center">
+                        <span class="fa-stack text-center fa-3x">
+                            {% if dataset.type == 1 %}
+                                <i class="fa fa-circle fa-file-csv text-green"></i>
+                            {% endif %}
+                        </span>
+                        </div>
+                        <h5 class="text-primary">
+                            {{ dataset.name }}</h5>
+                        <h6>Size:
+                            {{ dataset.size }} MB</h6>
+                        <h6 class="text-danger">Number of cols:
+                            {{ dataset.num_columns }}</h6>
+                        <h6 class="text-green">Number of rows:
+                            {{ dataset.num_rows }}</h6>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button type="button" class="btn btn-secondary btn-sm">Download</button>
+                        <button type="button" class="btn btn-danger btn-sm">+ Model</button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
         <!-- End datasets -->
     </div>
 

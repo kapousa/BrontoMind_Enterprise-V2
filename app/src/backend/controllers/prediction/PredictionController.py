@@ -22,11 +22,11 @@ from app.src.backend.controllers.BaseController import BaseController
 from app.src.backend.core.ModelProcessor import ModelProcessor
 from app.src.backend.utiles.db.datamanipulation.AdjustDataFrame import convert_data_to_sample
 from app.src.backend.utiles.db.datamanipulation.AdjustDataFrame import remove_null_values
-from app.src.backend.utiles.db.datamanipulation import DataCoderProcessor
+from app.src.backend.utiles.db.datamanipulation.DataCoderProcessor import DataCoderProcessor
 from app.src.backend.utiles.db.db_helper.AttributesHelper import add_features, add_labels, delete_encoded_columns, get_features
 from app.src.backend.utiles.db.db_helper.AttributesHelper import get_labels, add_api_details, \
     update_api_details_id
-from app.src.backend.core.engine.mlmodels import Prediction
+from app.src.backend.core.engine.mlmodels.Prediction import Prediction
 from app.src.backend.utiles.CVSReader import get_only_file_name, randomize_csv_rows
 from app.src.backend.utiles.CVSReader import getcvsheader, get_new_headers_list, reorder_csv_file
 from app.src.backend.constants.BM_CONSTANTS import pkls_location, scalars_location, html_plots_location, html_short_path, df_location
@@ -276,7 +276,7 @@ class PredictionController:
             return all_return_values
 
         except  Exception as e:
-            base_controller = BaseController()
-            base_controller.deletemodel(model_id)
+            db.session.rollback()
             print(e)
-            return -1
+            base_controller = BaseController()
+            return base_controller.deletemodel(model_id)

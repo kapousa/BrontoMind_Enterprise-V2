@@ -11,9 +11,9 @@ my_datasets = 'mydatasets/'
 
 plot_locations = 'app/static/images/plots/'
 
-plot_zip_locations = 'app/modules/base/static/zip/'
+plot_zip_locations = 'app/static/zip/'
 
-plot_zip_download_location = 'modules/base/static/zip/'
+plot_zip_download_location = 'static/zip/'
 
 image_short_path = 'static/images/plots/'
 
@@ -41,11 +41,11 @@ classification_root_path = 'app/'
 
 clustering_root_path = 'app/'
 
-output_docs_location = 'app/modules/base/output_docs/'
+output_docs_location = 'app/output_docs/'
 
 docs_templates_folder = 'docs_templates/'
 
-output_docs = 'app/modules/base/output_docs/'
+output_docs = 'app/output_docs/'
 
 data_files_folder = 'data/'
 
