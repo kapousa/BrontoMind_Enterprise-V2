@@ -31,7 +31,7 @@ clustering_root_path = 'app/'
 
 output_docs_location = 'app/base/output_docs/'
 
-docs_templates_folder = 'docs_templates/'
+docs_templates_folder = 'static/docs_templates/'
 
 output_docs = 'app/base/output_docs/'
 

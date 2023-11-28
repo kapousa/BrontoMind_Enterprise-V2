@@ -41,11 +41,11 @@ classification_root_path = 'app/'
 
 clustering_root_path = 'app/'
 
-output_docs_location = 'app/output_docs/'
+output_docs_location = 'app/static/output_docs/'
 
 docs_templates_folder = 'docs_templates/'
 
-output_docs = 'app/output_docs/'
+output_docs = 'app/static/output_docs/'
 
 data_files_folder = 'data/'
 

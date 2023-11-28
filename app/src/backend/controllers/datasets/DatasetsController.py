@@ -11,6 +11,7 @@ from app.src.backend.controllers.BaseController import BaseController
 from app.src.backend.models.ModelDatasets import ModelDatasets
 from app.src.backend.models.ModelMyDatasets import ModelMyDatasets
 from app.src.backend.models.ModelProjects import ModelProjects
+from app.src.backend.modules.base.routes import root_path
 from app.src.backend.utiles.Helper import Helper
 
 from datetime import datetime
@@ -72,6 +73,7 @@ class DatasetsController:
                 file_size_mb = round(file_size_kb / 1024.0, 2)
 
                 dataset_info = {
+                    "id": user_dataset.id,
                     "name": user_dataset.name,
                     "type": user_dataset.type,
                     "num_columns": num_columns,

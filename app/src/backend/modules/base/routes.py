@@ -45,11 +45,11 @@ from app.src.backend.utiles.CVSReader import improve_data_file
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 10 * 1000 * 1000
 app.config['UPLOAD_FOLDER'] = 'app/data/'
-app.config['DOCS_TEMPLATES_FOLDER'] = 'docs_templates/'
-app.config['APPS_DATA_FOLDER'] = 'app/docs_templates/apps_data_sources'
-app.config['DOWNLOAD_APPS_DATA_FOLDER'] = 'docs_templates/apps_data_sources'
-app.config['OUTPUT_DOCS'] = 'output_docs/'
-app.config['OUTPUT_PDF_DOCS'] = 'output_docs/'
+app.config['DOCS_TEMPLATES_FOLDER'] = 'static/docs_templates/'
+app.config['APPS_DATA_FOLDER'] = 'app/static/docs_templates/apps_data_sources'
+app.config['DOWNLOAD_APPS_DATA_FOLDER'] = 'static/docs_templates/apps_data_sources'
+app.config['OUTPUT_DOCS'] = 'static/output_docs/'
+app.config['OUTPUT_PDF_DOCS'] = 'static/output_docs/'
 app.config['DEMO_KEY'] = 'DEMO'
 app.config['APP_ROOT'] = '/app'
 root_path = app.root_path

@@ -28,7 +28,7 @@
                         <div class="text-center">
                         <span class="fa-stack text-center fa-3x">
                             {% if dataset.type == 1 %}
-                                <i class="fa fa-circle fa-file-csv text-green"></i>
+                                <i class="fa fa-circle fa-table text-green"></i>
                             {% endif %}
                         </span>
                         </div>
@@ -42,7 +42,9 @@
                             {{ dataset.num_rows }}</h6>
                     </div>
                     <div class="card-footer text-center">
-                        <button type="button" class="btn btn-secondary btn-sm">Download</button>
+                        <a href="datasets/{{ dataset.id }}/download">
+                            <button type="button" class="btn btn-secondary btn-sm">Download</button>
+                        </a>
                         <button type="button" class="btn btn-danger btn-sm">+ Model</button>
                     </div>
                 </div>
