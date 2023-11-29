@@ -1,11 +1,14 @@
 import logging
+import os.path
 
 import numpy
-from flask import render_template, session, abort
-from app.src.backend.constants.BM_CONSTANTS import progress_icon_path, loading_icon_path
+from flask import render_template, session, abort, send_file
+from app.src.backend.constants.BM_CONSTANTS import progress_icon_path, loading_icon_path, my_datasets, \
+    download_my_datasets
 from app.src.backend.controllers.datasets.DatasetsController import DatasetsController
 from app.src.backend.controllers.projects.ProjectsController import ProjectsController
 from app.src.backend.directories.BaseDirector import BaseDirector
+from app.src.backend.models.ModelMyDatasets import ModelMyDatasets
 
 
 class DatasetsDirector:
@@ -41,3 +44,9 @@ class DatasetsDirector:
         except Exception as e:
             logging.error(e)
             abort(500)
+
+
+    def downlaoddataset(self, dataset_id):
+        user_dataset = ModelMyDatasets.query.with_entities(ModelMyDatasets.name).filter_by(id=dataset_id).first()
+        path = os.path.join(f"{download_my_datasets}{session['logger']}/{user_dataset.name}")
+        return send_file(path, as_attachment=True)

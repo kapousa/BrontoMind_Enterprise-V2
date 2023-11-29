@@ -30,7 +30,12 @@ class DatasetsController:
             # Save the file
             f = data_files
             fname = secure_filename(f[0].filename)
+
+            number_of_exsiting_files = Helper.count_files_with_string(os.path.dirname(f"{my_datasets}{user_id}/"),
+                                                                      secure_filename(fname))
+            fname = fname if number_of_exsiting_files == 0 else f"{number_of_exsiting_files}_{fname}"
             filePath = os.path.join(f"{my_datasets}{user_id}/", secure_filename(fname))
+
             f[0].save(filePath)
 
             # Add file record to the DB

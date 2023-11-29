@@ -38,6 +38,7 @@ class LocalDatasetsDirector:
             return render_template('applications/pages/datasets/viewall.html', model_datasets=model_datasets, segment='datasets')
 
         except Exception as e:
+            print(e)
             logging.exception(e)
             abort(500, description=e)
 
