@@ -45,7 +45,9 @@
                         <a href="{{ dataset.id }}/downloaddataset">
                             <button type="button" class="btn btn-secondary btn-sm">Download</button>
                         </a>
-                        <button type="button" class="btn btn-danger btn-sm">+ Model</button>
+                        <a href="{{ dataset.id }}/{{ dataset.type }}/createmodel">
+                            <button type="button" class="btn btn-danger btn-sm">+ Model</button>
+                        </a>
                     </div>
                 </div>
             </div>

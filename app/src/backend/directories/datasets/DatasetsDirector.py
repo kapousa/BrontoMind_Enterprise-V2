@@ -2,7 +2,7 @@ import logging
 import os.path
 
 import numpy
-from flask import render_template, session, abort, send_file
+from flask import render_template, session, abort, send_file, redirect, url_for
 from app.src.backend.constants.BM_CONSTANTS import progress_icon_path, loading_icon_path, my_datasets, \
     download_my_datasets
 from app.src.backend.controllers.datasets.DatasetsController import DatasetsController
@@ -50,3 +50,8 @@ class DatasetsDirector:
         user_dataset = ModelMyDatasets.query.with_entities(ModelMyDatasets.name).filter_by(id=dataset_id).first()
         path = os.path.join(f"{download_my_datasets}{session['logger']}/{user_dataset.name}")
         return send_file(path, as_attachment=True)
+
+    def set_model_goal(self, dataset_id, type):
+        session['d_id'] = dataset_id
+        session['d_type'] = type
+        return redirect(url_for('base_blueprint.selectmodelgoal'))

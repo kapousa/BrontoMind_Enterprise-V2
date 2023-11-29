@@ -24,6 +24,11 @@ datasets_directory = DatasetsDirector()
 def view_datasets():
     return datasets_directory.view_datasets()
 
+@blueprint.route('/<dataset_id>/<type>/createmodel')
+@login_required
+def create_model_from_datasets(dataset_id, type):
+    return datasets_directory.set_model_goal(dataset_id, type)
+
 @blueprint.route('/datasource')
 @login_required
 def select_datasource():

@@ -1,5 +1,6 @@
 import logging
 import os
+import shutil
 
 import numpy
 import numpy as np
@@ -9,9 +10,10 @@ import flask
 from flask import render_template, session, redirect, url_for, abort
 from werkzeug.utils import secure_filename
 
-from app.src.backend.constants.BM_CONSTANTS import df_location
+from app.src.backend.constants.BM_CONSTANTS import df_location, my_datasets
 from app.src.backend.constants.BM_CONSTANTS import api_data_filename
 from app.src.backend.controllers.BaseController import BaseController
+from app.src.backend.models.ModelMyDatasets import ModelMyDatasets
 from app.src.backend.utiles.db.datamanipulation.AdjustDataFrame import export_mysql_query_to_csv, \
     export_api_respose_to_csv
 from app.src.backend.utiles.CVSReader import getcvsheader, get_file_name_with_ext
@@ -43,7 +45,20 @@ class BaseDirector:
     @staticmethod
     def get_data_details(request):
         try:
-            f = flask.request.files.getlist('filename[]')
+            if session.get('d_id') == None and session.get('d_type') == None:
+                f = flask.request.files.getlist('filename[]')
+            else:
+                # copy dataset from my_datasets to data folder
+                dataset_model = ModelMyDatasets.query.with_entities(ModelMyDatasets.name).filter_by(
+                    id=session['d_id']).first()
+                source_path = f"{my_datasets}{session['logger']}/{dataset_model.name}"
+                shutil.copy2(source_path, df_location)
+                session['ds_source'] = session['d_type']
+                session['filepath'] = f"{df_location}{dataset_model.name}"
+                session.pop('d_id')
+                session.pop('d_type')
+                f = []
+
             ds_source = session['ds_source']
             ds_goal = session['ds_goal']
 

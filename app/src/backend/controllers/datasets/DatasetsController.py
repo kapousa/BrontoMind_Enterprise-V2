@@ -1,6 +1,8 @@
 import logging
 import os
+from pathlib import Path
 
+import chardet
 import pandas as pd
 from flask import abort
 from werkzeug.utils import secure_filename
@@ -70,24 +72,44 @@ class DatasetsController:
                                                                 ModelMyDatasets.type).filter_by(user_id=user_id).all()
             datasets_info = []
             for user_dataset in user_datasets:
-                dataset_file_path = f"{my_datasets}{user_id}/{user_dataset.name}"
-                df = pd.read_csv(dataset_file_path)
-                file_size_bytes = os.path.getsize(dataset_file_path)
-                num_rows, num_columns = df.shape
-                file_size_kb = file_size_bytes / 1024.0
-                file_size_mb = round(file_size_kb / 1024.0, 2)
+                try:
+                    dataset_file_path = f"{my_datasets}{user_id}/{user_dataset.name}"
+                    detected = chardet.detect(Path(dataset_file_path).read_bytes())
+                    encoding = detected.get("encoding")
+                    assert encoding, "Unable to detect encoding, is it a binary file?"
+                    df = pd.read_csv(dataset_file_path, encoding=encoding)
+                    file_size_bytes = os.path.getsize(dataset_file_path)
+                    num_rows, num_columns = df.shape
+                    file_size_kb = round(file_size_bytes / 1024.0, 2)
+                    file_size_mb = round(file_size_kb / 1024.0, 2)
 
-                dataset_info = {
-                    "id": user_dataset.id,
-                    "name": user_dataset.name,
-                    "type": user_dataset.type,
-                    "num_columns": num_columns,
-                    "num_rows": num_rows,
-                    "size": file_size_mb
-                }
-                datasets_info.append(dataset_info)
+                    dataset_info = {
+                        "id": user_dataset.id,
+                        "name": user_dataset.name,
+                        "type": user_dataset.type,
+                        "num_columns": num_columns,
+                        "num_rows": num_rows,
+                        "size": file_size_mb
+                    }
+                    datasets_info.append(dataset_info)
+                except UnicodeDecodeError as ude:
+                    print(f"Unable to detect encoding {user_dataset.name}, is it a binary file?")
+                    logging.error(ude)
+                    file_size_bytes = os.path.getsize(dataset_file_path)
+                    file_size_kb = round(file_size_bytes / 1024.0, 2)
+                    file_size_mb = round(file_size_kb / 1024.0, 2)
+                    dataset_info = {
+                        "id": user_dataset.id,
+                        "name": user_dataset.name,
+                        "type": user_dataset.type,
+                        "num_columns": 'Unable to read',
+                        "num_rows": 'Unable to read',
+                        "size": file_size_mb
+                    }
+                    datasets_info.append(dataset_info)
 
             return datasets_info
+
         except Exception as e:
             logging.error(e)
             abort(500)
