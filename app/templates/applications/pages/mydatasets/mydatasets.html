@@ -43,10 +43,19 @@
                     </div>
                     <div class="card-footer text-center">
                         <a href="{{ dataset.id }}/downloaddataset">
-                            <button type="button" class="btn btn-secondary btn-sm">Download</button>
+                            <button type="button" class="btn btn-warning btn-sm" title="Download dataset">
+                                <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
+                            </button>
+                        </a>
+                        <a href="{{ dataset.id }}/downloaddataset">
+                            <button type="button" class="btn btn-icon btn-sm btn-success" title="Data preparation">
+	                            <span class="btn-inner--icon"><i class="ni ni-map-big"></i></span>
+                            </button>
                         </a>
                         <a href="{{ dataset.id }}/{{ dataset.type }}/createmodel">
-                            <button type="button" class="btn btn-danger btn-sm">+ Model</button>
+                            <button type="button" class="btn btn-icon btn-danger btn-sm" title="Create machine learning model">
+                                <span class="btn-inner--icon"><i class="ni ni-chart-pie-35"></i></span>
+                            </button>
                         </a>
                     </div>
                 </div>

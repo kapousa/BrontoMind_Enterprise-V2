@@ -20,6 +20,9 @@ class ModelMyDatasets(db.Model):
     updated_on = Column(String)
     created_by = Column(String)
     updated_by = Column(String)
+    file_size_mb = Column(String)
+    num_rows = Column(Integer)
+    num_columns = Column(Integer)
 
     def __init__(self, **kwargs):
         for property, value in kwargs.items():
