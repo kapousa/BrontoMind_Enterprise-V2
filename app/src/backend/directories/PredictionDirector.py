@@ -12,7 +12,7 @@ from app.src.backend.models.ModelProfile import ModelProfile
 from app.src.backend.apisservices.v1.APIHelper import APIHelper
 from app.src.backend.controllers.ControllersHelper import ControllersHelper
 from app.src.backend.controllers.prediction.PredictionController import PredictionController
-from app.src.backend.utiles.db.datamanipulation import DataCoderProcessor
+from app.src.backend.utiles.db.datamanipulation.DataCoderProcessor import DataCoderProcessor
 from app.src.backend.utiles.db.db_helper.AttributesHelper import get_labels, get_features
 from app.src.backend.utiles.CVSReader import improve_data_file
 

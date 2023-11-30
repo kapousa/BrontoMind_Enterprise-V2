@@ -8,15 +8,13 @@ from flask import render_template, request, send_file, session
 from flask_login import login_required
 
 from app import login_manager
-from app.src.backend.constants.BM_CONSTANTS import download_my_datasets, my_datasets
-from app.src.backend.controllers.datasets.DatasetsController import DatasetsController
+from app.src.backend.constants.BM_CONSTANTS import download_my_datasets
 from app.src.backend.directories.datasets.DatasetsDirector import DatasetsDirector
 from app.src.backend.models.ModelMyDatasets import ModelMyDatasets
 from app.src.backend.modules.datasets import blueprint
-from run import app
+
 
 ## datasets
-app.config['DOWNLOAD_DATASETS_PATH'] = download_my_datasets
 datasets_directory = DatasetsDirector()
 
 @blueprint.route('/view')

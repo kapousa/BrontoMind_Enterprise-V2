@@ -54,9 +54,6 @@ class BaseDirector:
                 source_path = f"{my_datasets}{session['logger']}/{dataset_model.name}"
                 shutil.copy2(source_path, df_location)
                 session['ds_source'] = session['d_type']
-                session['filepath'] = f"{df_location}{dataset_model.name}"
-                session.pop('d_id')
-                session.pop('d_type')
                 f = []
 
             ds_source = session['ds_source']
@@ -65,19 +62,24 @@ class BaseDirector:
             if len(f) > 0:  # not 'filepath' in session:
                 f = flask.request.files.getlist('filename[]')
                 model_id = Helper.generate_id()
-
-                # file_Path = session['filePath'] if session['filePath'] is not None else f
-                # file_Path = flask.request.form.get("filePath")
-                # file_Path = session["filePath"]
-                # filePath = file_Path
                 number_of_files = len(f) if f != None else 0
-                if number_of_files == 1:  # or file_Path != None:  # Check if there file sent to upload or already uploaded in data preview step
-                    # fname = secure_filename(f[0].filename) if number_of_files == 1 else os.path.basename(filePath)
+                if number_of_files == 1:
                     fname = "{}.csv".format(model_id)  # if number_of_files == 1 else os.path.basename(filePath)
                     if number_of_files == 1:  # if the file doesn't upload in data preview step, save the file
                         file_name = "{}.csv".format(model_id)  # f[0].filename
                         filePath = os.path.join(df_location, secure_filename(file_name))
                         f[0].save(filePath)
+                        session['filepath'] = filePath
+            elif session.get('d_id') != None and session.get(
+                    'd_type') != None:  # here in case we came from datasets page
+                model_id = Helper.generate_id()
+                fname = "{}.csv".format(model_id)
+                old_file_path = f"{df_location}{dataset_model.name}"
+                filePath = f"{df_location}{fname}"
+                os.rename(old_file_path, filePath)
+                session['filepath'] = filePath
+                session.pop('d_id')
+                session.pop('d_type')
             else:  # here in case we came from data processing page
                 filePath = session['filepath']
                 fname = get_file_name_with_ext(session['filepath'])
@@ -105,6 +107,7 @@ class BaseDirector:
             return fname, filePath, headersArray, data, dataset_info, message
 
         except Exception as e:
+            print(e)
             logging.error(e)
             abort(500)
 
