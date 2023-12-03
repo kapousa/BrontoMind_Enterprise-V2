@@ -8,6 +8,7 @@ import os
 from flask import abort, request, session, send_file
 from flask_login import login_required
 
+from app.src.backend.directories.BaseDirector import BaseDirector
 from app.src.backend.utiles.CVSReader import get_file_name_with_ext
 from app.src.backend.constants.BM_CONSTANTS import data_files_folder
 from app.src.backend.directories.dataprocessing.DataProcessingDirector import DataProcessingDirector
@@ -16,6 +17,12 @@ from app.src.backend.modules.dataprocessing import blueprint
 ## Data Processing
 
 databotdirector = DataProcessingDirector()
+
+@blueprint.route('/<dataset_id>/previewmydataset', methods=['GET', 'POST'])
+@login_required
+def previewmydataset(dataset_id):
+    base_director = BaseDirector()
+    return base_director.describe_my_dataset(dataset_id)
 
 @blueprint.route('/datapreprationbot', methods=['GET', 'POST'])
 @login_required

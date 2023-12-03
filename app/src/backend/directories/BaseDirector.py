@@ -290,3 +290,43 @@ class BaseDirector:
         except Exception as e:
             logging.error(e)
             abort(500)
+
+    def describe_my_dataset(self, mydataset_id):
+        try:
+            # copy dataset from my_datasets to data folder
+            dataset_model = ModelMyDatasets.query.with_entities(ModelMyDatasets.user_id, ModelMyDatasets.name).filter_by(
+                id=mydataset_id).first()
+            source_path = f"{my_datasets}{dataset_model.user_id}/{dataset_model.name}"
+            filePath = f"{df_location}{dataset_model.name}"
+            shutil.copy2(source_path, df_location)
+            session['filepath'] = filePath
+            fname = get_file_name_with_ext(filePath)
+
+            # Remove empty columns
+            data = Helper.remove_empty_columns(filePath)
+
+            # Check if the dataset is enough
+            count_row = data.shape[0]
+            message = 'No'
+
+            if (count_row < 5):
+                message = 'Uploaded data document does not have enough data, the document must have minimum 50 records of data for accurate processing.'
+                return render_template('applications/pages/dashboard.html',
+                                       message=message,
+                                       segment='createmodel')
+
+            # Get the DS file header
+            sample_data = (data.sample(n=10))
+            dataset_info = BaseController.get_dataset_info(filePath)
+            sample_header = dataset_info.columns.tolist()
+            sample_header = numpy.array(sample_header)
+            session['fname'] = fname
+
+            return render_template('applications/pages/datapreview.html', required_changes='None',
+                                   message='data_info', filePath=filePath, segment="selectmodelgoal",
+                                   col_width="{}%".format(round(100 / len(sample_header), 2)),
+                                   dataset_info=dataset_info, sample_data=sample_data)
+        except Exception as e:
+            print(e)
+            logging.error(e)
+            abort(500)
