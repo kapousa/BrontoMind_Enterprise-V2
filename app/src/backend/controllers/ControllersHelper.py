@@ -300,5 +300,6 @@ class ControllersHelper:
 
             return csv_file_path
         except  Exception as e:
+            print(e)
             logging.exception("Failed to export data from the files due to: {}".format(e))
             abort(500, description=e)

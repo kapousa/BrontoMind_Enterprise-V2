@@ -73,10 +73,10 @@ class BaseDirector:
             elif session.get('d_id') != None and session.get(
                     'd_type') != None:  # here in case we came from datasets page
                 model_id = Helper.generate_id()
-                fname = "{}.csv".format(model_id)
                 old_file_path = f"{df_location}{dataset_model.name}"
-                filePath = f"{df_location}{fname}"
-                os.rename(old_file_path, filePath)
+                filePath = old_file_path # f"{df_location}{fname}"
+                fname = old_file_path # Redundancy
+                #os.rename(old_file_path, filePath)
                 session['filepath'] = filePath
                 session.pop('d_id')
                 session.pop('d_type')

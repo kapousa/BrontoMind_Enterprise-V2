@@ -3,6 +3,7 @@ import os
 import pathlib
 import pickle
 import random
+import shutil
 import time
 from datetime import datetime
 
@@ -20,6 +21,7 @@ from sklearn.preprocessing import StandardScaler
 from app import db, config_parser
 from app.src.backend.controllers.BaseController import BaseController
 from app.src.backend.core.ModelProcessor import ModelProcessor
+from app.src.backend.utiles.Helper import Helper
 from app.src.backend.utiles.db.datamanipulation.AdjustDataFrame import convert_data_to_sample
 from app.src.backend.utiles.db.datamanipulation.AdjustDataFrame import remove_null_values
 from app.src.backend.utiles.db.datamanipulation.DataCoderProcessor import DataCoderProcessor
@@ -29,9 +31,15 @@ from app.src.backend.utiles.db.db_helper.AttributesHelper import get_labels, add
 from app.src.backend.core.engine.mlmodels.Prediction import Prediction
 from app.src.backend.utiles.CVSReader import get_only_file_name, randomize_csv_rows
 from app.src.backend.utiles.CVSReader import getcvsheader, get_new_headers_list, reorder_csv_file
-from app.src.backend.constants.BM_CONSTANTS import pkls_location, scalars_location, html_plots_location, html_short_path, df_location
+from app.src.backend.constants.BM_CONSTANTS import pkls_location, scalars_location, html_plots_location, \
+    html_short_path, df_location, plot_locations, plot_zip_locations
 from app.src.backend.models.ModelProfile import ModelProfile
 
+
+
+# importing packages
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 class PredictionController:
 
@@ -84,6 +92,19 @@ class PredictionController:
                                  ds_goal):
         try:
             # ------------------Preparing data frame-------------------------#
+
+            model_id = Helper.generate_id() # get_only_file_name(csv_file_location)
+            # Rename the file coming from my dataset to data folder to model_id
+            try:
+                new_path = f"{df_location}{model_id}.csv"
+                os.rename(csv_file_location, new_path)
+                print(f"File {csv_file_location} has been successfully renamed to {model_id}")
+            except FileNotFoundError:
+                print(f"Error: File {csv_file_location} not found in folder {df_location}.")
+            except FileExistsError:
+                print(f"Error: A file with the name {model_id}.csv already exists in folder {df_location}.")
+
+            csv_file_location = new_path
             shuffle_dataset = randomize_csv_rows(csv_file_location)
             cvs_header = getcvsheader(csv_file_location)
             new_headers_list = get_new_headers_list(cvs_header, predicted_columns)
@@ -91,7 +112,6 @@ class PredictionController:
             data = reordered_data  # pd.read_csv(csv_file_location)
             new_headers_list = np.append(featuresdvalues, predicted_columns.flatten())
             data = data[new_headers_list]
-            model_id = get_only_file_name(csv_file_location) # Helper.generate_model_id()
 
             file_extension = pathlib.Path(csv_file_location).suffix
             newfilename = os.path.join(df_location, str(model_id) + file_extension)
@@ -196,20 +216,20 @@ class PredictionController:
             image_db_path = html_path
 
             # Comment creation of all photos zip file
-            # for i in (0, 1):  # range(len(model_features)):
-            #     for j in range(len(model_labels)):
-            #         img_prefix = '_' + model_features[i] + '_' + model_labels[j]
-            #         plot_image_path = os.path.join(plot_locations, str(model_id) + '/' +
-            #                                        str(model_id) + img_prefix + '_plot.png')
-            #         sns.pairplot(data, x_vars=model_features[i],
-            #                      y_vars=model_labels[j], size=4, aspect=1, kind='scatter')
-            #         plot_image = plot_image_path  # os.path.join(root_path, 'static/images/plots/', get_only_file_name(csv_file_location) + '_plot.png')
-            #         # plt.savefig(plot_image, dpi=300, bbox_inches='tight')
-            #
-            # # Create Zip folder
-            # zip_path = plot_zip_locations + str(model_id) + '/'
-            # shutil.make_archive(zip_path + str(model_id), 'zip', "{0}{1}{2}".format(plot_locations, model_id, "/"))
-            # # plt.show()
+            for i in (0, 1):  # range(len(model_features)):
+                for j in range(len(model_labels)):
+                    img_prefix = '_' + model_features[i] + '_' + model_labels[j]
+                    plot_image_path = os.path.join(plot_locations, str(model_id) + '/' +
+                                                   str(model_id) + img_prefix + '_plot.png')
+                    sns.pairplot(data, x_vars=model_features[i],
+                                 y_vars=model_labels[j], size=4, aspect=1, kind='scatter')
+                    plot_image = plot_image_path  # os.path.join(root_path, 'static/images/plots/', get_only_file_name(csv_file_location) + '_plot.png')
+                    plt.savefig(plot_image, dpi=300, bbox_inches='tight')
+
+            # Create Zip folder
+            zip_path = plot_zip_locations + str(model_id) + '/'
+            shutil.make_archive(zip_path + str(model_id), 'zip', "{0}{1}{2}".format(plot_locations, model_id, "/"))
+            #plt.show()
 
             # ------------------Predict values from the model-------------------------#
             now = datetime.now()

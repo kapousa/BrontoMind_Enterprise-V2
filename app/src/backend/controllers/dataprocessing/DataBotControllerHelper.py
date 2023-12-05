@@ -1,7 +1,7 @@
 import logging
 
 import openai
-import spacy
+#import spacy
 from flask import abort
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -91,6 +91,7 @@ class DataBotControllerHelper:
             return df
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def update_csv_with_text(self, df, text):
@@ -144,6 +145,7 @@ class DataBotControllerHelper:
 
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
 
@@ -154,23 +156,25 @@ class DataBotControllerHelper:
         @param text:
         @return: closest word of target word
         '''
-        nlp = spacy.load("en_core_web_md")  # Load spaCy model with word vectors
+        # nlp = spacy.load("en_core_web_md")  # Load spaCy model with word vectors
+        #
+        # # Tokenize the text
+        # doc = nlp(text)
+        #
+        # closest_word = None
+        # max_similarity = 0.0  # Threshold for considering a close match
+        #
+        # # Iterate through each word in the text
+        # for token in doc:
+        #     similarity = cosine_similarity(
+        #         nlp(target_word).vector.reshape(1, -1),
+        #         token.vector.reshape(1, -1)
+        #     )[0][0]
+        #
+        #     if similarity > max_similarity:
+        #         closest_word = token.text
+        #         max_similarity = similarity
+        #
+        # return closest_word
 
-        # Tokenize the text
-        doc = nlp(text)
-
-        closest_word = None
-        max_similarity = 0.0  # Threshold for considering a close match
-
-        # Iterate through each word in the text
-        for token in doc:
-            similarity = cosine_similarity(
-                nlp(target_word).vector.reshape(1, -1),
-                token.vector.reshape(1, -1)
-            )[0][0]
-
-            if similarity > max_similarity:
-                closest_word = token.text
-                max_similarity = similarity
-
-        return closest_word
+        return 0

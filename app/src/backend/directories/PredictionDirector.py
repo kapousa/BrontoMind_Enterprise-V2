@@ -119,6 +119,8 @@ class PredictionDirector:
                                                             str(request.host_url + 'api/' + model_api_details.api_version),
                                                             docs_templates_folder, output_docs)
 
+            session.pop('ds_goal')
+            session.pop('ds_source')
             return render_template('applications/pages/prediction/modelstatus.html',
                                    Accuracy=model_controller['Accuracy'],
                                    confusion_matrix=model_controller['confusion_matrix'],
@@ -136,7 +138,10 @@ class PredictionDirector:
                                    fname=model_controller['file_name'], model_id=model_controller['model_id'])
 
         except Exception as e:
+            session.pop('ds_goal')
+            session.pop('ds_source')
             logging.error(e)
+            print(e)
             return render_template('page-501.html', error=e, segment='error')
 
     def predict_labels(self, request):

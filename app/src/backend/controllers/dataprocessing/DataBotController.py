@@ -46,6 +46,7 @@ class DataBotController:
             return required_changes, modified_data
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def apply_bot_request(self, file_path, required_changes):
@@ -63,4 +64,5 @@ class DataBotController:
             return required_changes, modified_data
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)

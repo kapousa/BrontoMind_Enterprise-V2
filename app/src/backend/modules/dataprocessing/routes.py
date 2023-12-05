@@ -22,6 +22,7 @@ databotdirector = DataProcessingDirector()
 @login_required
 def previewmydataset(dataset_id):
     base_director = BaseDirector()
+    session['ds_source'] = request.args.get('dss')
     return base_director.describe_my_dataset(dataset_id)
 
 @blueprint.route('/datapreprationbot', methods=['GET', 'POST'])

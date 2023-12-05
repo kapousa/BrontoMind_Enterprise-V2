@@ -482,7 +482,8 @@ class BaseController:
 
         except Exception as e:
             logging.error(e)
-            abort(500)
+            print(e)
+            abort(500, description=e)
 
     def get_projects(self, user_id):
         """List all projects of current user"""
@@ -517,4 +518,5 @@ class BaseController:
 
         except Exception as e:
             logging.error(e)
-            abort(500)
+            print(e)
+            abort(500, description=e)

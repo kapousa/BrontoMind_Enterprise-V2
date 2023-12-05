@@ -40,4 +40,5 @@ class DataCleanController:
             return sample_data
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)

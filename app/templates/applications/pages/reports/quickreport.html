@@ -1,0 +1,60 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-blue">Analysis Report: <a class="text-red" href="/dataprocessing/{{ dataset_id }}/previewmydataset?dss=1">{{ dataset }}</a> </h3>
+        </div>
+    </div>
+    <div class="nav-wrapper">
+        <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link mb-sm-3 mb-md-0 active" id="distribution-tab" data-toggle="tab"
+                   href="#distribution"
+                   role="tab" aria-controls="distribution" aria-selected="true"><i class="ni ni-chart-bar-32 mr-2"></i>Data Distribution</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mb-sm-3 mb-md-0" id="production-tab" data-toggle="tab" href="#production"
+                   role="tab"
+                   aria-controls="production" aria-selected="false"><i
+                        class="ni ni-bullet-list-67 mr-2"></i>Statistical Conclusion</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card shadow">
+        <div class="card-body">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade" id="production" role="tabpanel" aria-labelledby="production-tab">
+                    {% if production_projects_message != '' %}
+                        <div class="card card-stats mb-4 mb-lg-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="stats">
+                                            {% include descriptive_report %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="tab-pane fade show active" id="distribution" role="tabpanel"
+                     aria-labelledby="distribution-tab">
+                    {% for html_file_location in html_file_locations %}
+                                    {% include html_file_location %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

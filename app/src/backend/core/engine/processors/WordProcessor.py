@@ -191,6 +191,7 @@ class WordProcessor:
             return actions_flow
 
         except Exception as e:
+            print(e)
             abort(500, description=e)
 
     def _get_orders_list(self, sentence):

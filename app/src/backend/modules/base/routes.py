@@ -132,7 +132,7 @@ def createmodel():
     ds_goal = request.args.get("t")
     session['ds_goal'] = ds_goal
 
-    if session.get('d_id') == None and session.get('d_type'):
+    if session.get('d_id') == None and session.get('d_type') == None:
         return render_template('applications/pages/selectdssource.html', ds_goal=ds_goal, segment='selectmodelgoal')
     else:
         session['ds_source'] = session.get('d_type')

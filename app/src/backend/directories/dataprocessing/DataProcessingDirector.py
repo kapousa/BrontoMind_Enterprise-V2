@@ -30,6 +30,7 @@ class DataProcessingDirector:
                                    message=message)
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def build_data_sheet(self, request):
@@ -48,6 +49,7 @@ class DataProcessingDirector:
                                         justify="center").replace("<th>", "<th class='text-warning'>")], )
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def preview_changes(self, request):
@@ -66,6 +68,7 @@ class DataProcessingDirector:
                                         justify="center").replace("<th>", "<th class='text-warning'>")], )
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def apply_changes(self, request):
@@ -88,6 +91,7 @@ class DataProcessingDirector:
                         "<th>", "<th class='text-warning'>")], )
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def download_modifiedfile(self, request):
@@ -98,6 +102,7 @@ class DataProcessingDirector:
             return send_file(path, as_attachment=True)
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def cancel_modifiedfile(self, request):
@@ -110,6 +115,7 @@ class DataProcessingDirector:
             return self.data_prepration_bot(request, "Changes have been canceled.")
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def preview_chat_changes(self, request):
@@ -129,6 +135,7 @@ class DataProcessingDirector:
                                         justify="center").replace("<th>", "<th class='text-warning'>")], )
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def apply_chat_changes(self, request):
@@ -152,6 +159,7 @@ class DataProcessingDirector:
                                    dataset_info=dataset_info, sample_data=sample_data)
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def preview_clean_changes(self, request):
@@ -171,6 +179,7 @@ class DataProcessingDirector:
                                         justify="center").replace("<th>", "<th class='text-warning'>")], )
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def apply_clean_changes(self, request):
@@ -194,6 +203,7 @@ class DataProcessingDirector:
                                    dataset_info=dataset_info, sample_data=sample_data)
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def match_merging_fields(self, request):
@@ -217,6 +227,7 @@ class DataProcessingDirector:
                                    message='data_info')
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def preview_merge_changes(self, request):
@@ -252,6 +263,7 @@ class DataProcessingDirector:
 
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def rematch(self):
@@ -270,6 +282,7 @@ class DataProcessingDirector:
                                    message='data_info')
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def apply_merge_changes(self, request):
@@ -293,6 +306,7 @@ class DataProcessingDirector:
                                    dataset_info=dataset_info, sample_data=sample_data)
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)
 
     def cancel_changes(self, request):
@@ -319,4 +333,5 @@ class DataProcessingDirector:
                                    dataset_info=dataset_info, sample_data=sample_data)
         except Exception as e:
             logging.exception(e)
+            print(e)
             abort(500, description=e)

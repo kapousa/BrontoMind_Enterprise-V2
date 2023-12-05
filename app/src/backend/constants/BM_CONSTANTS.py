@@ -97,3 +97,8 @@ PRODUCTION_PROJECT = 35
 
 ARCHIVE_PROJECT = 36
 
+html_reports_location = 'app/templates/applications/reports/'
+
+short_html_reports_location = 'applications/reports/'
+
+
