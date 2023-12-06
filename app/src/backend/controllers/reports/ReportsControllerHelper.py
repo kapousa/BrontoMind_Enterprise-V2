@@ -9,9 +9,10 @@ import plotly.express as px
 import plotly.graph_objects as go
 import logging
 from flask import abort
+from pandas_profiling import ProfileReport
 from wordcloud import WordCloud
 
-from app.src.backend.constants.BM_CONSTANTS import html_reports_location, short_html_reports_location
+from app.src.backend.constants.BM_CONSTANTS import html_reports_location, short_html_reports_location, html_reports
 
 
 class ReportsControllerHelper:
@@ -38,9 +39,30 @@ class ReportsControllerHelper:
                     df[col]) and pd.api.types.is_numeric_dtype(df[label]) else px.scatter(x=x_range, y=y_range,
                                                                                           labels={"x": col, "y": label},
                                                                                           opacity=0.65)
+                fig.update_layout(
+                    title=f'{label} vs. {col}',  # Set plot title
+                    showlegend=False,  # Display legend
+                    legend_title='Color Legend',  # Set legend title
+                    legend=dict(
+                        x=0.5,
+                        y=1.0,
+                        xanchor='center',
+                        yanchor='top',
+                        bgcolor='lightgray',
+                        bordercolor='black',
+                        borderwidth=2,
+                        font=dict(
+                            family='Arial',
+                            size=12,
+                            color='black'
+                        )
+                    ),
+                    autosize=True # Set background color
+                )
                 plotly.offline.plot(fig, filename=html_file_location, config={'displayModeBar': False},
                                     auto_open=False)
                 html_file_locations.append(short_html_file_location)
+                break
 
             return html_file_locations
 
@@ -68,37 +90,15 @@ class ReportsControllerHelper:
     def generateinforeport(user_id, dataset_id, df):
         try:
             # Data profiling
-            print("Data types:")
-            print(df.dtypes)
+            # Create a pandas profile report
+            profile = ProfileReport(df, title='Dataset Descriptive Report', explorative=True)
 
-            print("\nMissing values:")
-            print(df.isnull().sum())
-
-            print("\nUnique values:")
-            for col in df.columns:
-                print(col, ":", df[col].unique())
-
-            # Descriptive statistics
-            print("\nDescriptive statistics:")
-            for col in df.columns:
-                if df[col].dtype not in ['object', 'datetime64']:
-                    print(col, df[col].describe())
-
-            # Data visualization
-            import matplotlib.pyplot as plt
-
-            for col in df.columns:
-                if df[col].dtype not in ['object', 'datetime64']:
-                    df[col].hist()
-                    plt.title(col)
-                    plt.show()
-
-            stats = df.describe().to_html()
-
-            # Save the descriptive statistics to an HTML file
-            with open(f"{html_reports_location}{user_id}/{dataset_id}/stats.html", 'w') as f:
-                f.write(stats)
-            report_path = f"{short_html_reports_location}{user_id}/{dataset_id}/stats.html"
+            # Save the report to a file (HTML format)
+            os.makedirs(f"{html_reports_location}{user_id}", exist_ok=True)
+            os.makedirs(f"{html_reports_location}{user_id}/{dataset_id}", exist_ok=True)
+            report_path = f"{html_reports_location}{user_id}/{dataset_id}/stats.html"
+            if not os.path.isfile(report_path):
+                profile.to_file(report_path)
 
             return report_path
 

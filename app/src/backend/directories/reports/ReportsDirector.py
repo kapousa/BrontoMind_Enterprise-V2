@@ -26,3 +26,6 @@ class ReportsDirector:
         return render_template('applications/pages/reports/quickreport.html', dataset_id=dataset_id, dataset=dataset,
                                html_file_locations=html_file_locations, descriptive_report=descriptive_report,
                                segment='reports')
+
+    def show_state_page(self, dataset_id):
+        return render_template(f"applications/reports/{session['logger']}/{dataset_id}/stats.html")

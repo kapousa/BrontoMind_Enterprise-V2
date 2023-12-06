@@ -101,4 +101,6 @@ html_reports_location = 'app/templates/applications/reports/'
 
 short_html_reports_location = 'applications/reports/'
 
+html_reports = 'static/reports/'
+
 

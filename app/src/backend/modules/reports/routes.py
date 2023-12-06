@@ -20,6 +20,12 @@ def full_analyze(dataset_id):
     reports_director = ReportsDirector()
     return reports_director.full_analyze(dataset_id)
 
+@blueprint.route('/<dataset_id>/show_state_page')
+@login_required
+def show_state_page(dataset_id):
+    reports_director = ReportsDirector()
+    return reports_director.show_state_page(dataset_id)
+
 
 # Errors
 
