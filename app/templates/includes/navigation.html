@@ -22,20 +22,28 @@
                             <span class="nav-link-text">Datasets</span>
                         </a>
                     </li>
-                    <!--li class="nav-item"
-                        style="color: black; {% if 'preparedata' in segment %} background:gainsboro; {% endif %}">
-                        <a class="nav-link {% if 'preparedata' in segment %} active {% endif %}" style="color: black"
+                    <li class="nav-item"
+                        style="color: black; {% if 'integrations' in segment %} background:gainsboro; {% endif %}">
+                        <a class="nav-link {% if 'integrations' in segment %} active {% endif %}" style="color: black"
                            href="{{ url_for('dataprocessing_blueprint.datapreprationbot') }}">
-                            <i class="fa fa-database text-green"></i>
-                            <span class="nav-link-text">Data preparation</span>
+                            <i class="fa fa-plug text-orange"></i>
+                            <span class="nav-link-text">Integrations</span>
                         </a>
-                    </li-->
+                    </li>
+                    <li class="nav-item"
+                        style="color: black; {% if 'dashboards' in segment %} background:gainsboro; {% endif %}">
+                        <a class="nav-link {% if 'dashboards' in segment %} active {% endif %}" style="color: black"
+                           href="{{ url_for('dataprocessing_blueprint.datapreprationbot') }}">
+                            <i class="fa fa-chart-pie text-green"></i>
+                            <span class="nav-link-text">Dashboards</span>
+                        </a>
+                    </li>
                     <li class="nav-item"
                         style="color: black; {% if 'showmodels' in segment %} background:gainsboro; {% endif %}">
                         <a class="nav-link {% if 'showmodels' in segment %} active {% endif %}" style="color: black"
                            href="{{ url_for('base_blueprint.showmodels') }}">
                             <i class="ni ni-bullet-list-67 text-danger"></i>
-                            <span class="nav-link-text">Models</span>
+                            <span class="nav-link-text">AI Models</span>
                         </a>
                     </li>
                     <li class="nav-item"

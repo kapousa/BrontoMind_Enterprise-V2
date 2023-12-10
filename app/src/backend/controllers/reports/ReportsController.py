@@ -24,10 +24,10 @@ class ReportsController:
             mydataset = ModelMyDatasets.query.with_entities(ModelMyDatasets.name).filter_by(id=dataset_id, user_id=user_id).first()
             file_path = f"{my_datasets}{user_id}/{mydataset.name}"
             df = pd.read_csv(file_path)
-            html_file_locations = ReportsControllerHelper.generatecharts(user_id, dataset_id, df)
-            descriptive_report = ReportsControllerHelper.generateinforeport(user_id, dataset_id, df)
+            #html_file_locations = ReportsControllerHelper.generatecharts(user_id, dataset_id, df)
+            descriptive_report = ReportsControllerHelper.generateminimalreport(user_id, dataset_id, df)
 
-            return dataset_id, mydataset.name, html_file_locations, descriptive_report
+            return dataset_id, mydataset.name, descriptive_report
 
         except Exception as e:
             print(e)

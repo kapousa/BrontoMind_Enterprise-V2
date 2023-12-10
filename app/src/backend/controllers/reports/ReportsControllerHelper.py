@@ -8,11 +8,16 @@ import plotly
 import plotly.express as px
 import plotly.graph_objects as go
 import logging
+
+import yaml
 from flask import abort
-from pandas_profiling import ProfileReport
+# from pandas_profiling import ProfileReport
+from ydata_profiling import ProfileReport
+
 from wordcloud import WordCloud
 
-from app.src.backend.constants.BM_CONSTANTS import html_reports_location, short_html_reports_location, html_reports
+from app.src.backend.constants.BM_CONSTANTS import html_reports_location, short_html_reports_location, html_reports, \
+    configurations_path, summary_report_name
 
 
 class ReportsControllerHelper:
@@ -57,7 +62,7 @@ class ReportsControllerHelper:
                             color='black'
                         )
                     ),
-                    autosize=True # Set background color
+                    autosize=True  # Set background color
                 )
                 plotly.offline.plot(fig, filename=html_file_location, config={'displayModeBar': False},
                                     auto_open=False)
@@ -87,11 +92,35 @@ class ReportsControllerHelper:
             abort(500)
 
     @staticmethod
-    def generateinforeport(user_id, dataset_id, df):
+    def generateminimalreport(user_id, dataset_id, df, minimal=True):
+        try:
+            # Open the YAML file in read mode
+            with open(f"{configurations_path}{summary_report_name}", "r") as f:
+                # Load the YAML data into a dictionary
+                config = yaml.load(f, Loader=yaml.FullLoader)
+
+            # Create a pandas profile report
+            profile = ProfileReport(df, minimal=minimal, **config)
+
+            # Save the report to a file (HTML format)
+            os.makedirs(f"{html_reports_location}{user_id}", exist_ok=True)
+            os.makedirs(f"{html_reports_location}{user_id}/{dataset_id}", exist_ok=True)
+            report_path = f"{html_reports_location}{user_id}/{dataset_id}/stats.html"
+            # if not os.path.isfile(report_path):
+            profile.to_file(report_path)
+
+            return report_path
+
+        except Exception as e:
+            print(e)
+            logging.error(e)
+            abort(500)
+
+    def _generatetimeseriesreport(user_id, dataset_id, df):
         try:
             # Data profiling
             # Create a pandas profile report
-            profile = ProfileReport(df, title='Dataset Descriptive Report', explorative=True)
+            profile = ProfileReport(df, title='', explorative=True, minimal=True, sample=None)
 
             # Save the report to a file (HTML format)
             os.makedirs(f"{html_reports_location}{user_id}", exist_ok=True)

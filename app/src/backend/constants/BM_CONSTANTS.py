@@ -103,4 +103,6 @@ short_html_reports_location = 'applications/reports/'
 
 html_reports = 'static/reports/'
 
+configurations_path = 'app/configurations/'
 
+summary_report_name = 'summary_report.yml'

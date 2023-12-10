@@ -3,6 +3,7 @@ import csv
 import datetime
 import ftplib
 import itertools
+import logging
 import os
 import random
 from calendar import month_name
@@ -361,15 +362,20 @@ class Helper:
 
     @staticmethod
     def count_files_with_string(folder_path, search_string):
-        count = 0
+        try:
+            count = 0
+    
+            # Iterate through all files in the folder
+            for filename in os.listdir(folder_path):
+                # Check if the search string is present in the file name
+                if search_string in filename:
+                    # Check if the path points to a file (not a subdirectory)
+                    if os.path.isfile(os.path.join(folder_path, filename)):
+                        count += 1
 
-        # Iterate through all files in the folder
-        for filename in os.listdir(folder_path):
-            # Check if the search string is present in the file name
-            if search_string in filename:
-                # Check if the path points to a file (not a subdirectory)
-                if os.path.isfile(os.path.join(folder_path, filename)):
-                    count += 1
-
-        return count
+            return count
+        except FileNotFoundError as fnff:
+            print(fnff)
+            logging.error(fnff)
+            return 0
 

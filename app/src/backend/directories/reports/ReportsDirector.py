@@ -21,11 +21,11 @@ class ReportsDirector:
 
     def full_analyze(self, dataset_id):
         reports_controller = ReportsController()
-        dataset_id, dataset, html_file_locations, descriptive_report = reports_controller.get_full_analysis(
+        dataset_id, dataset, descriptive_report = reports_controller.get_full_analysis(
             session['logger'], dataset_id)
         return render_template('applications/pages/reports/quickreport.html', dataset_id=dataset_id, dataset=dataset,
-                               html_file_locations=html_file_locations, descriptive_report=descriptive_report,
-                               segment='reports')
+                               descriptive_report=descriptive_report,
+                               segment='datasets')
 
     def show_state_page(self, dataset_id):
         return render_template(f"applications/reports/{session['logger']}/{dataset_id}/stats.html")

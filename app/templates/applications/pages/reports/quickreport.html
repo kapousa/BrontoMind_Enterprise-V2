@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Page Blank {% endblock %}
+{% block title %} Dataset Report {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -8,7 +8,42 @@
 {% block content %}
 
     <div class="row">
-        <iframe src="{{ url_for('reports_blueprint.show_state_page', dataset_id=dataset_id) }}" width="100%" height="600px"></iframe>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-primary">Dataset: <a
+                            href="/datasets/{{ dataset_id }}/downloaddataset">{{ dataset }}</a></h2>
+                </div>
+                <div class="card-header card-header-primary text-right">
+                    <a href="/uploadcsvds">
+                        <button type="submit" class="btn btn-sm btn-primary">
+                            <span class="btn-inner--text">Detailed Report</span>
+                        </button>
+                    </a>
+                    </a>
+                    <a href="/createdashboard">
+                        <button type="submit" class="btn btn-sm btn-default">
+                            <span class="btn-inner--text">Time Series</span>
+                        </button>
+                    </a>
+                    </a>
+                    <a href="/createdashboard">
+                        <button type="submit" class="btn btn-sm btn-info">
+                            <span class="btn-inner--text">Compare Datasets</span>
+                        </button>
+                    </a>
+                    <a href="/createdashboard">
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            <span class="btn-inner--text">Export to PDF</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <iframe src="{{ url_for('reports_blueprint.show_state_page', dataset_id=dataset_id) }}" width="100%"
+                            height="600px"></iframe>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock content %}
 

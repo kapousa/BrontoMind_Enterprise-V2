@@ -1,0 +1,10 @@
+"title": 'Summary Report'
+"explorative": False
+"lazy": True
+"type_schema":
+  "Survived": "categorical"
+  "Embarked": "categorical"
+"html":
+  "style":
+    "primary_color": "#f54275"
+    "font_family": "Arial"

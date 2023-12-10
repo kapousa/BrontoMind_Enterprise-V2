@@ -42,6 +42,7 @@ class DatasetsDirector:
                                    segment='datasets')
 
         except Exception as e:
+            print(e)
             logging.error(e)
             abort(500)
 
