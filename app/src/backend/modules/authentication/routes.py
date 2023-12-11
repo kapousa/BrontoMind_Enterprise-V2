@@ -47,7 +47,7 @@ def login():
             login_user(user)
             session['logged_in'] = True
             session['logger'] = user.id
-            return redirect(url_for('datasets_blueprint.view_datasets'))
+            return redirect(url_for('dashboard_blueprint.view'))
 
         # Something (user or pass) is not ok
         return render_template('accounts/login.html',

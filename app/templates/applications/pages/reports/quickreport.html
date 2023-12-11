@@ -15,8 +15,13 @@
                             href="/datasets/{{ dataset_id }}/downloaddataset">{{ dataset }}</a></h2>
                 </div>
                 <div class="card-header card-header-primary text-right">
-                    <a href="/uploadcsvds">
+                    <a href="/reports/{{ dataset_id }}/1/analyze">
                         <button type="submit" class="btn btn-sm btn-primary">
+                            <span class="btn-inner--text">Summary Report</span>
+                        </button>
+                    </a>
+                    <a href="/reports/{{ dataset_id }}/2/analyze">
+                        <button type="submit" class="btn btn-sm btn-success">
                             <span class="btn-inner--text">Detailed Report</span>
                         </button>
                     </a>
@@ -32,7 +37,7 @@
                             <span class="btn-inner--text">Compare Datasets</span>
                         </button>
                     </a>
-                    <a href="/createdashboard">
+                    <a href="/reports/{{ dataset_id }}/5/analyze">
                         <button type="submit" class="btn btn-sm btn-danger">
                             <span class="btn-inner--text">Export to PDF</span>
                         </button>

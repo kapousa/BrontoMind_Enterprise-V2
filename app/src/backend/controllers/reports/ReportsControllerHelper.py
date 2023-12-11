@@ -17,10 +17,16 @@ from ydata_profiling import ProfileReport
 from wordcloud import WordCloud
 
 from app.src.backend.constants.BM_CONSTANTS import html_reports_location, short_html_reports_location, html_reports, \
-    configurations_path, summary_report_name
+    configurations_path, summary_report_name, summary_report, detailed_report
+from app.src.backend.utiles.Helper import Helper
 
 
 class ReportsControllerHelper:
+
+    def __init__(self):
+        ''' Constructor for this class. '''
+        # Create some member animals
+        self.members = ['Tiger', 'Elephant', 'Wild Cat']
 
     @staticmethod
     def generatecharts(user_id, dataset_id, df):
@@ -91,8 +97,22 @@ class ReportsControllerHelper:
             logging.error(e)
             abort(500)
 
-    @staticmethod
-    def generateminimalreport(user_id, dataset_id, df, minimal=True):
+    def generateanalysisreport(self, user_id, dataset_id, df, report_type, minimal=True):
+        try:
+            if report_type == str(summary_report):
+                return self._generateminimalreport(user_id, dataset_id, df)
+
+            if report_type == str(detailed_report):
+                return self._generatefullreport(user_id, dataset_id, df)
+
+            return None
+
+        except Exception as e:
+            print(e)
+            logging.error(e)
+            abort(500)
+
+    def _generateminimalreport(self, user_id, dataset_id, df):
         try:
             # Open the YAML file in read mode
             with open(f"{configurations_path}{summary_report_name}", "r") as f:
@@ -100,7 +120,35 @@ class ReportsControllerHelper:
                 config = yaml.load(f, Loader=yaml.FullLoader)
 
             # Create a pandas profile report
-            profile = ProfileReport(df, minimal=minimal, **config)
+            config['title'] = "Summary Report"
+            profile = ProfileReport(df, minimal=True, **config)
+
+            # Save the report to a file (HTML format)
+            os.makedirs(f"{html_reports_location}{user_id}", exist_ok=True)
+            os.makedirs(f"{html_reports_location}{user_id}/{dataset_id}", exist_ok=True)
+            report_path = f"{html_reports_location}{user_id}/{dataset_id}/stats.html"
+            # if not os.path.isfile(report_path):
+            profile.to_file(report_path)
+
+            #export_to_pdf = Helper.convert_html_to_pdf(report_path, f"{html_reports_location}{user_id}/{dataset_id}/stats.pdf")
+
+            return report_path
+
+        except Exception as e:
+            print(e)
+            logging.error(e)
+            abort(500)
+
+    def _generatefullreport(self, user_id, dataset_id, df):
+        try:
+            # Open the YAML file in read mode
+            with open(f"{configurations_path}{summary_report_name}", "r") as f:
+                # Load the YAML data into a dictionary
+                config = yaml.load(f, Loader=yaml.FullLoader)
+
+            # Create a pandas profile report
+            config['title'] = "Detailed Report"
+            profile = ProfileReport(df, minimal=False, **config)
 
             # Save the report to a file (HTML format)
             os.makedirs(f"{html_reports_location}{user_id}", exist_ok=True)
@@ -116,7 +164,7 @@ class ReportsControllerHelper:
             logging.error(e)
             abort(500)
 
-    def _generatetimeseriesreport(user_id, dataset_id, df):
+    def _generatetimeseriesreport(self, user_id, dataset_id, df):
         try:
             # Data profiling
             # Create a pandas profile report

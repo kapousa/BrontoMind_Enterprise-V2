@@ -8,6 +8,7 @@ import os
 import random
 from calendar import month_name
 from datetime import date
+from subprocess import run
 
 import matplotlib.pyplot as plt
 import numpy
@@ -209,7 +210,6 @@ class Helper:
         split_property = property_key.split('.')
         return config_parser.get(split_property[0], property_key)
 
-
     @staticmethod
     def generate_id():
         model_id = random.randrange(10000000000000, 99999999999999, 14)
@@ -303,7 +303,8 @@ class Helper:
     def deleteobjectdetectionfiles(model_id):
         try:
             files_in_directory = os.listdir(app_results_path)
-            filtered_files = [file for file in files_in_directory if (not (file.endswith(".gitkeep")) and (file.startswith(model_id)))]
+            filtered_files = [file for file in files_in_directory if
+                              (not (file.endswith(".gitkeep")) and (file.startswith(model_id)))]
             if (len(filtered_files) != 0):
                 for f in filtered_files:
                     path_to_file = os.path.join(app_results_path, f)
@@ -337,7 +338,6 @@ class Helper:
         lookup_key = ModelLookupTable.query.with_entities(ModelLookupTable.key).filter_by(value=lookup_key).first()
         return lookup_key['key']
 
-
     def check_arr_strings_in_text(self, strings, text):
         founded_strings = []
         for string in strings:
@@ -364,7 +364,7 @@ class Helper:
     def count_files_with_string(folder_path, search_string):
         try:
             count = 0
-    
+
             # Iterate through all files in the folder
             for filename in os.listdir(folder_path):
                 # Check if the search string is present in the file name
@@ -379,3 +379,16 @@ class Helper:
             logging.error(fnff)
             return 0
 
+    @staticmethod
+    def convert_html_to_pdf(self, html_path, pdf_path):
+        try:
+            # Convert HTML to PDF using wkhtmltopdf
+            run(["wkhtmltopdf", html_path, pdf_path])
+
+            print(f"Converted HTML to PDF: {pdf_path}")
+
+            return True
+        except FileNotFoundError as e:
+            print(e)
+            logging.error(e)
+            return False

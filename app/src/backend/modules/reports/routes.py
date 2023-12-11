@@ -14,11 +14,11 @@ from app.src.backend.modules.reports import blueprint
 
 # Reports
 
-@blueprint.route('/<dataset_id>/analyze')
+@blueprint.route('/<dataset_id>/<report_type>/analyze')
 @login_required
-def full_analyze(dataset_id):
+def full_analyze(dataset_id, report_type):
     reports_director = ReportsDirector()
-    return reports_director.full_analyze(dataset_id)
+    return reports_director.full_analyze(dataset_id, report_type)
 
 @blueprint.route('/<dataset_id>/show_state_page')
 @login_required

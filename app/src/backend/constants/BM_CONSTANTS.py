@@ -106,3 +106,13 @@ html_reports = 'static/reports/'
 configurations_path = 'app/configurations/'
 
 summary_report_name = 'summary_report.yml'
+
+summary_report = 1
+
+detailed_report = 2
+
+time_series_report= 3
+
+compare_dataset_report = 4
+
+export_to_pdf_report = 5

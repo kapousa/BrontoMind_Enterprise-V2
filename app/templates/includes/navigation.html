@@ -15,6 +15,14 @@
                     </li>
                     <!-- Navbar links -->
                     <li class="nav-item"
+                        style="color: black; {% if 'dashboard' in segment %} background:gainsboro; {% endif %}">
+                        <a class="nav-link {% if 'dashboard' in segment %} active {% endif %}" style="color: black"
+                           href="{{ url_for('dashboard_blueprint.view') }}">
+                            <i class="fa fa-chart-pie text-green"></i>
+                            <span class="nav-link-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item"
                         style="color: black; {% if 'datasets' in segment %} background:gainsboro; {% endif %}">
                         <a class="nav-link {% if 'datasets' in segment %} active {% endif %}" style="color: black;"
                            href="{{ url_for('datasets_blueprint.view_datasets') }}">
@@ -28,14 +36,6 @@
                            href="{{ url_for('dataprocessing_blueprint.datapreprationbot') }}">
                             <i class="fa fa-plug text-orange"></i>
                             <span class="nav-link-text">Integrations</span>
-                        </a>
-                    </li>
-                    <li class="nav-item"
-                        style="color: black; {% if 'dashboards' in segment %} background:gainsboro; {% endif %}">
-                        <a class="nav-link {% if 'dashboards' in segment %} active {% endif %}" style="color: black"
-                           href="{{ url_for('dataprocessing_blueprint.datapreprationbot') }}">
-                            <i class="fa fa-chart-pie text-green"></i>
-                            <span class="nav-link-text">Dashboards</span>
                         </a>
                     </li>
                     <li class="nav-item"
@@ -78,14 +78,14 @@
                         <span class="nav-link-text">Data preparation</span>
                     </a>
                 </li-->
-                    <!--li class="nav-item" style="color: black; {% if 'idea' in segment %}
+                    <li class="nav-item" style="color: black; {% if 'idea' in segment %}
                          background:gainsboro; {% endif %}">
                     <a class="nav-link {% if 'idea' in segment %} active {% endif %}" style="color: black"
                        href="{{ url_for('base_blueprint.idea') }}">
                         <i class="fa fa-lightbulb text-yellow"></i>
                         <span class="nav-link-text">I only have an idea</span>
                     </a>
-                </li-->
+                </li>
                 </ul>
             </div>
         </div>
