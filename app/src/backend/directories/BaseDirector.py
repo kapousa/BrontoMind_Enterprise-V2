@@ -151,7 +151,8 @@ class BaseDirector:
         password = request.form.get('password')
         database_name = request.form.get('database_name')
         sql_query = request.form.get('sql_query')
-        data, file_location, count_row = export_mysql_query_to_csv(host_name, username, password, database_name,
+        user_id = session['logger']
+        data, file_location, count_row = export_mysql_query_to_csv(user_id, host_name, username, password, database_name,
                                                                    sql_query)
 
         if (count_row < 50):
@@ -168,11 +169,13 @@ class BaseDirector:
 
     @staticmethod
     def prepare_api_results(request):
+        api_name = request.form.get('api_name')
         api_url = request.form.get('api_url')
         request_type = request.form.get('request_type')
         root_node = request.form.get('root_node')
         request_parameters = request.form.get('request_parameters')
-        file_location, data, count_row = export_api_respose_to_csv(api_url, request_type, root_node,
+        user_id = session['logger']
+        file_location, data, count_row = export_api_respose_to_csv(user_id, api_name, api_url, request_type, root_node,
                                                                    request_parameters)
 
         if (count_row < 50):

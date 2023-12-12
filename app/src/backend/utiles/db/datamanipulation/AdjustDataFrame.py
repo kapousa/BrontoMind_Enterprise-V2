@@ -15,7 +15,7 @@ from app import db
 from joblib import dump, load
 
 from app.src.backend.utiles.Helper import Helper
-from app.src.backend.constants.BM_CONSTANTS import df_location
+from app.src.backend.constants.BM_CONSTANTS import df_location, my_datasets
 from app.src.backend.models.ModelEncodedColumns import ModelEncodedColumns
 from app.src.backend.models.ModelFeatures import ModelFeatures
 from app.src.backend.constants.BM_CONSTANTS import api_data_folder
@@ -287,7 +287,7 @@ def deletemodelsfiles(*argv):
             files_in_directory = os.listdir(arg)
             filtered_files = [file for file in files_in_directory if not file.endswith(".gitkeep")]
             for f in filtered_files:
-                #os.remove(os.path.join(arg, f))
+                # os.remove(os.path.join(arg, f))
                 path_to_file = os.path.join(arg, f)
                 os.remove(path_to_file)
         return 1
@@ -295,7 +295,6 @@ def deletemodelsfiles(*argv):
         print('Ohh -delete_model_files...Something went wrong.')
         print(e)
         return 0
-
 
 
 def encode_one_hot(model_id, data_frame, column_types):
@@ -372,7 +371,7 @@ def get_category_name(index, names, lengths, df_headers):
     raise ValueError('The index is higher than the number of categorical values')
 
 
-def import_mysql_table_csv(host_name, username, password, database_name, table_name):
+def import_mysql_table_csv(user_id, host_name, username, password, database_name, table_name):
     cc = DBConnector()
 
     crsour = cc.create_mysql_connection(host_name, username, password, database_name)
@@ -384,21 +383,30 @@ def import_mysql_table_csv(host_name, username, password, database_name, table_n
     column_names = numpy.array(mycursor.fetchall()).flatten()
     mycursor.execute(table_data)
     df = pd.DataFrame(mycursor.fetchall(), columns=column_names)
-    file_location = df_location + "/{}.csv".format(table_name)
+    # file_location = df_location + "/{}.csv".format(table_name)
+    file_location = f"{my_datasets}{user_id}/{database_name}_{table_name}.csv"
+    number_of_exsiting_files = Helper.count_files_with_string(os.path.dirname(file_location))
+    file_location = file_location if number_of_exsiting_files == 0 else f"{my_datasets}{user_id}/{number_of_exsiting_files}_{database_name}_{table_name}.csv"
+
     df.to_csv(file_location, index=False)
     mycursor.close()
     return file_location
 
-def export_mysql_query_to_csv(host_name, username, password, database_name, query_statement):
+
+def export_mysql_query_to_csv(user_id, host_name, username, password, database_name, query_statement):
     db_connector = DBConnector()
     conn = db_connector.create_mysql_connection(host_name, username, password, database_name)
 
-    sql_query = pd.read_sql_query(query_statement, con=conn)  # here, the 'conn' is the variable that contains your database connection information from step 2
+    sql_query = pd.read_sql_query(query_statement,
+                                  con=conn)  # here, the 'conn' is the variable that contains your database connection information from step 2
     df = pd.DataFrame(sql_query)
     conn.close()
 
     model_id = Helper.generate_id()
-    file_location = df_location + "/{}.csv".format(model_id) #database_name)
+    # file_location = df_location + "/{}.csv".format(model_id) #database_name)
+    file_location = f"{my_datasets}{user_id}/{database_name}.csv"
+    number_of_exsiting_files = Helper.count_files_with_string(os.path.dirname(file_location))
+    file_location = file_location if number_of_exsiting_files == 0 else f"{my_datasets}{user_id}/{number_of_exsiting_files}_{database_name}.csv"
     df.to_csv(file_location, index=False)
 
     # Remove empty columns
@@ -413,19 +421,25 @@ def export_mysql_query_to_csv(host_name, username, password, database_name, quer
 
     return file_location, data, count_row
 
-def export_api_respose_to_csv(api_url, request_type, root_node: None, request_parameters:None):
+
+def export_api_respose_to_csv(user_id, api_name, api_url, request_type, root_node: None, request_parameters: None):
     try:
-        api_response = requests.get(url=api_url, json=request_parameters) if request_type == 'type_get' else requests.post(url=api_url, json=request_parameters)
+        api_response = requests.get(url=api_url,
+                                    json=request_parameters) if request_type == 'type_get' else requests.post(
+            url=api_url, json=request_parameters)
 
         if (api_response.status_code != 200):
             raise Exception("Error calling the API.")
 
         # Create json file
         json_response = json.loads(api_response.text)
-        df =  pd.json_normalize(json_response) if root_node == None else pd.json_normalize(json_response[root_node])
+        df = pd.json_normalize(json_response) if root_node == None else pd.json_normalize(json_response[root_node])
         df = pd.DataFrame(df)
         model_id = Helper.generate_id()
-        data_file_path = api_data_folder + "{}.csv".format(model_id)    #api_data_filename)
+        # data_file_path = api_data_folder + "{}.csv".format(model_id)    #api_data_filename)
+        data_file_path = f"{my_datasets}{user_id}/{api_name}.csv"
+        number_of_exsiting_files = Helper.count_files_with_string(os.path.dirname(data_file_path))
+        data_file_path = data_file_path if number_of_exsiting_files == 0 else f"{my_datasets}{user_id}/{number_of_exsiting_files}_{api_name}.csv"
         df.to_csv(data_file_path, index=False)
         data = pd.read_csv(data_file_path)
 
@@ -439,11 +453,12 @@ def export_api_respose_to_csv(api_url, request_type, root_node: None, request_pa
         print(e)
         return e
 
+
 # Delete the orginal data file and create sample data file with the same name
 def convert_data_to_sample(ds_file_location, no_of_sample=5):
     df = pd.read_csv(ds_file_location, sep=",")
     df.to_pickle('portfolio.pkl')
-    #data_sample = (df.sample(n=no_of_sample, replace=True))
-    #os.remove(ds_file_location)  # Delete original data source file
-    #data_sample.to_csv(ds_file_location, index=False)
+    # data_sample = (df.sample(n=no_of_sample, replace=True))
+    # os.remove(ds_file_location)  # Delete original data source file
+    # data_sample.to_csv(ds_file_location, index=False)
     return 0
