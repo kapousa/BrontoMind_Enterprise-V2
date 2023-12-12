@@ -3,7 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-from flask import render_template, request
+from flask import render_template, request, redirect, url_for
 from flask_login import login_required
 
 from app import login_manager
@@ -20,6 +20,12 @@ from app.src.backend.modules.integrations import blueprint
 def view():
     integrations_director = IntegrationsDirector()
     return integrations_director.view_integrations()
+
+@blueprint.route('/add')
+@login_required
+def add():
+    integrations_director = IntegrationsDirector()
+    return redirect(url_for('datasets_blueprint.select_datasource'))
 
 
 # Errors

@@ -23,3 +23,6 @@ class IntegrationsDirector:
         integration_controller = IntegrationsController()
         integratios = integration_controller.get_integrations(session['logger'])
         return render_template('/applications/pages/integrations/view.html', integratios=integratios, segment='integrations')
+
+    def select_integrator(self):
+        return render_template('/applications/pages/integrations/selectintegrator.html', segment='integrations')
