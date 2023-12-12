@@ -1,0 +1,89 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header text-center">
+                    <a href="/datasets/datasource">
+                    <span class="fa-stack text-center fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-orange"></i>
+                        <i class="fa fa-plus fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h3 class="card-title text-center">Add Connector</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- list all datasets -->
+        {% for dataset in datasets %}
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="text-center">
+                        <span class="fa-stack text-center fa-3x">
+                            {% if dataset.type == 1 %}
+                                <i class="fa fa-circle fa-table text-green"></i>
+                            {% endif %}
+                        </span>
+                        </div>
+                        <h5 class="text-primary">
+                            {{ dataset.name }}</h5>
+                        <h6>Size:
+                            {{ dataset.size }} MB</h6>
+                        <h6 class="text-danger">Number of cols:
+                            {{ dataset.num_columns }}</h6>
+                        <h6 class="text-green">Number of rows:
+                            {{ dataset.num_rows }}</h6>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="/reports/{{ dataset.id }}/1/analyze">
+                            <button type="button" class="btn btn-primary btn-sm" title="Quick analysis">
+                                <span class="btn-inner--icon"><i class="ni ni-chart-bar-32"></i></span>
+                            </button>
+                        </a>
+                        <a href="/dataprocessing/{{ dataset.id }}/previewmydataset?dss={{ dataset.type }}">
+                            <button type="button" class="btn btn-icon btn-sm btn-success"
+                                    title="Data preparation (Model goal issue)">
+                                <span class="btn-inner--icon"><i class="ni ni-map-big"></i></span>
+                            </button>
+                        </a>
+                        <a href="{{ dataset.id }}/{{ dataset.type }}/createmodel">
+                            <button type="button" class="btn btn-icon btn-danger btn-sm"
+                                    title="Create machine learning model">
+                                <span class="btn-inner--icon"><i class="ni ni-chart-pie-35"></i></span>
+                            </button>
+                        </a>
+                        <a href="{{ dataset.id }}/downloaddataset">
+                            <button type="button" class="btn btn-default btn-sm" title="Download dataset">
+                                <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <!-- End datasets -->
+    </div>
+
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+    </script>
+
+{% endblock javascripts %}
+
