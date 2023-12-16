@@ -1,0 +1,43 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Chat {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h3 class="card-title">
+                        <i class="ni ni-chat-round text-default"></i>
+                        Ask your data</h3>
+                    {{ dataset_file }}
+                </div>
+                <div class="card-body">
+                    <form action="/analyserequest" method="post">
+                        <textarea class="form-control lead text-primary" name="text_value" rows="2" id="text_value"
+                                  required></textarea>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-default">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+    <script>
+        $(document).ready(function () {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+    </script>
+{% endblock javascripts %}
+

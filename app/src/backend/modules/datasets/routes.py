@@ -10,6 +10,7 @@ from flask_login import login_required
 from app import login_manager
 from app.src.backend.constants.BM_CONSTANTS import download_my_datasets
 from app.src.backend.directories.datasets.DatasetsDirector import DatasetsDirector
+from app.src.backend.directories.datasets.chat.ChatDirector import ChatDirector
 from app.src.backend.models.ModelMyDatasets import ModelMyDatasets
 from app.src.backend.modules.datasets import blueprint
 
@@ -48,6 +49,13 @@ def download_mydataset(dataset_id):
     user_dataset = ModelMyDatasets.query.with_entities(ModelMyDatasets.name).filter_by(id=dataset_id).first()
     path = os.path.join(f"{download_my_datasets}{session['logger']}/{user_dataset.name}")
     return send_file(path, as_attachment=True)
+
+@blueprint.route('/<dataset_id>/startchat')
+@login_required
+def start_chat(dataset_id):
+    chat_director = ChatDirector()
+    return chat_director.start_chat(dataset_id)
+
 
 
 # Errors
