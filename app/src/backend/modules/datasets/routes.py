@@ -56,6 +56,12 @@ def start_chat(dataset_id):
     chat_director = ChatDirector()
     return chat_director.start_chat(dataset_id)
 
+@blueprint.route('/<dataset_id>/reponsechat', methods=['POST'])
+@login_required
+def response_chat(dataset_id):
+    chat_director = ChatDirector()
+    return chat_director.chat_reponse(dataset_id)
+
 
 
 # Errors

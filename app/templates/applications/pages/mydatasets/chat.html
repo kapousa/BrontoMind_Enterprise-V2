@@ -16,8 +16,10 @@
                     {{ dataset_file }}
                 </div>
                 <div class="card-body">
-                    <form action="/analyserequest" method="post">
-                        <textarea class="form-control lead text-primary" name="text_value" rows="2" id="text_value"
+                        <textarea class="form-control lead text-primary" name="ai_response" rows="8" id="ai_response"
+                                  required readonly>{{ chat_response }}</textarea>
+                    <form id='sendrequest' name='sendrequest' action="/datasets/{{ dataset_id }}/reponsechat" method="post">
+                        <textarea class="form-control lead text-primary" name="user_input" rows="2" id="user_input"
                                   required></textarea>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-default">Send</button>
