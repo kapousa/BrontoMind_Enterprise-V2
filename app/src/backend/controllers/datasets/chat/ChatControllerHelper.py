@@ -93,8 +93,8 @@ class ChatControllerHelper:
         "what": "pivot_table",
         "where": ".isin()",
         "who": ".query()",
-        "describe": ".describe()",
-        "summarize": ".agg()",
+        "describe": "_get_description",
+        "summarize": "_get_description",
         "analyze": ".corr()",
         "compare": ".diff()",
         "contrast": ".boxplot()",
@@ -156,6 +156,14 @@ class ChatControllerHelper:
                     averages.append(f"{col_name} is not a numeric column")
 
             return averages
+
+        except Exception as e:
+            print(e)
+
+    def _get_description(self, df, cols_name):
+        ''' Calculates the average of given columns '''
+        try:
+            return str(df.describe())
 
         except Exception as e:
             print(e)
