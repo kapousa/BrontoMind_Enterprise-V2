@@ -152,10 +152,8 @@ class ChatControllerHelper:
             for col_name in cols_name:
                 if pd.api.types.is_numeric_dtype(df[col_name]):
                     averages.append(f"Average of {col_name} : {df[col_name].mean()}")
-                    print(f"==df[col_name].mean()")
                 else:
                     averages.append(f"{col_name} is not a numeric column")
-                    print(f"{col_name}")
 
             return averages
 
