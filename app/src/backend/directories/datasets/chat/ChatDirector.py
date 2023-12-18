@@ -23,14 +23,19 @@ class ChatDirector:
         chat_controller = ChatController()
         dataset_file = chat_controller.start_chat(session['logger'], dataset_id)
         session['dataset_file'] = dataset_file
-        return render_template('/applications/pages/mydatasets/chat.html', dataset_id=dataset_id, dataset_file=dataset_file, segment='datasets')
+        return render_template('/applications/pages/mydatasets/chat.html', dataset_id=dataset_id,
+                               dataset_file=dataset_file, segment='datasets', user_input=None)
 
     def chat_reponse(self, dataset_id):
         try:
             user_input = request.form['user_input']
             chat_controller = ChatController()
             chat_response = chat_controller.get_response(session['logger'], dataset_id, user_input)
-            return render_template('/applications/pages/mydatasets/chat.html', dataset_id=dataset_id, dataset_file=session['dataset_file'] , chat_response=chat_response, segment='datasets')
+            chat_response = chat_response if not chat_controller else [
+                'Nothing match with your question, please review your question and submit again.']
+            return render_template('/applications/pages/mydatasets/chat.html', dataset_id=dataset_id,
+                                   dataset_file=session['dataset_file'], chat_response=chat_response,
+                                   segment='datasets', user_input=user_input)
         except Exception as e:
             print(e)
             return render_template("page-500.html", error=e, segment='error')

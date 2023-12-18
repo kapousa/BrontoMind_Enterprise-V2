@@ -49,4 +49,4 @@ class ChatController:
         except Exception as e:
             print(e)
             logging.error(e)
-            abort(500)
+            return []

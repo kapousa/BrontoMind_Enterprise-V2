@@ -16,9 +16,25 @@
                     {{ dataset_file }}
                 </div>
                 <div class="card-body">
-                        <textarea class="form-control lead text-primary" name="ai_response" rows="8" id="ai_response"
-                                  required readonly>{{ chat_response }}</textarea>
-                    <form id='sendrequest' name='sendrequest' action="/datasets/{{ dataset_id }}/reponsechat" method="post">
+                {% if user_input != None %}
+                <div class="row">
+                <div class="col-md-6"></div>
+                    <div class="alert alert-success col-md-6 text-right ali">
+                        :User <br/>{{ user_input }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="alert alert-default col-6">
+                        Data AI bot: <br/>
+                        {% for res in chat_response %}
+                            {{ res }}
+                        {% endfor %}
+                    </div>
+                <div class="col-md-6"></div>
+                </div>
+                {% endif %}
+                    <form id='sendrequest' name='sendrequest' action="/datasets/{{ dataset_id }}/reponsechat"
+                          method="post">
                         <textarea class="form-control lead text-primary" name="user_input" rows="2" id="user_input"
                                   required></textarea>
                         <div class="modal-footer">

@@ -1,3 +1,9 @@
+import numpy as np
+import pandas as pd
+
+from app.src.backend.core.engine.processors.WordProcessor import WordProcessor
+
+
 class ChatControllerHelper:
     #   Common data words dictionary
     _data_exploration_mapping = {
@@ -82,7 +88,7 @@ class ChatControllerHelper:
         "how": "specific data manipulation methods (e.g., .fillna(), .dropna())",
     }
 
-    _data_exploration_mapping = {
+    data_exploration_mapping = {
         # Identifying data
         "what": "pivot_table",
         "where": ".isin()",
@@ -94,7 +100,7 @@ class ChatControllerHelper:
         "contrast": ".boxplot()",
         "difference": ".diff()",
         "predict": ".fit()",
-        "forecast": ".mean()",
+        "average": "_get_averages", #".mean( par )",
         "trend": ".rolling_mean(), .rolling_median(), .diff(), .plot() (time series)",
         "pattern": ".groupby() + pivot_table(), .get_dummies(), .clustermap()",
         "correlation": ".corr(), .cov(), .heatmap()",
@@ -106,6 +112,8 @@ class ChatControllerHelper:
         "how": "specific data manipulation methods (e.g., .fillna(), .dropna())",
     }
 
+    mentioned_columns =[]
+
     @staticmethod
     def connect_to_bot():
         return 0
@@ -116,10 +124,38 @@ class ChatControllerHelper:
 
         # Check each key using a loop and string methods
         found_keys = []
-        for key in self._data_exploration_mapping:
-            if key.lower() in input_text.lower():
+
+        # Get mentioned columns
+        word_processor = WordProcessor()
+        mentioned_columns = []
+        input_text_array = input_text.split(' ')
+        entered_columns = word_processor.get_closest_words(df.columns, input_text_array)
+        entered_keys = word_processor.get_closest_words(self.data_exploration_mapping.keys(), input_text_array)
+        for string_item in input_text_array:
+            if string_item in entered_columns:
+                mentioned_columns.append(string_item)
+
+        # Call required function
+        for key in self.data_exploration_mapping:
+            if key in entered_keys:
                 found_keys.append(key)
-                df_response = getattr(df, self._data_exploration_mapping[key])()
+                df_response = getattr(self, self.data_exploration_mapping[key])(df, mentioned_columns)
                 response_text.append(df_response)
 
-        return response_text
+        response_text = np.array(response_text)
+        return response_text.flatten()
+
+    def _get_averages(self, df, cols_name):
+        ''' Calculates the average of given columns '''
+        try:
+            averages = []
+            for col_name in cols_name:
+                if pd.api.types.is_numeric_dtype(df[col_name]):
+                    averages.append(f"Average of {col_name} : {df[col_name].mean()}")
+                else:
+                    averages.append(f"{col_name} is not a numeric column")
+
+            return averages
+
+        except Exception as e:
+            print(e)
