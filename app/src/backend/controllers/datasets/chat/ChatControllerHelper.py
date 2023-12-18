@@ -132,12 +132,12 @@ class ChatControllerHelper:
         entered_columns = word_processor.get_closest_words(df.columns, input_text_array)
         entered_keys = word_processor.get_closest_words(self.data_exploration_mapping.keys(), input_text_array)
         for string_item in input_text_array:
-            if string_item in entered_columns:
-                mentioned_columns.append(string_item)
+            if string_item.lower() in entered_columns:
+                mentioned_columns.append(string_item.lower())
 
         # Call required function
         for key in self.data_exploration_mapping:
-            if key in entered_keys:
+            if key.lower() in entered_keys:
                 found_keys.append(key)
                 df_response = getattr(self, self.data_exploration_mapping[key])(df, mentioned_columns)
                 response_text.append(df_response)
@@ -152,8 +152,10 @@ class ChatControllerHelper:
             for col_name in cols_name:
                 if pd.api.types.is_numeric_dtype(df[col_name]):
                     averages.append(f"Average of {col_name} : {df[col_name].mean()}")
+                    print(f"==df[col_name].mean()")
                 else:
                     averages.append(f"{col_name} is not a numeric column")
+                    print(f"{col_name}")
 
             return averages
 

@@ -2,6 +2,7 @@ import logging
 import os.path
 
 import numpy
+import numpy as np
 from flask import render_template, session, abort, send_file, redirect, url_for, request
 from app.src.backend.constants.BM_CONSTANTS import progress_icon_path, loading_icon_path, my_datasets, \
     download_my_datasets
@@ -31,7 +32,7 @@ class ChatDirector:
             user_input = request.form['user_input']
             chat_controller = ChatController()
             chat_response = chat_controller.get_response(session['logger'], dataset_id, user_input)
-            chat_response = chat_response if not chat_controller else [
+            chat_response = chat_response if len(chat_response) != 0 else [
                 'Nothing match with your question, please review your question and submit again.']
             return render_template('/applications/pages/mydatasets/chat.html', dataset_id=dataset_id,
                                    dataset_file=session['dataset_file'], chat_response=chat_response,

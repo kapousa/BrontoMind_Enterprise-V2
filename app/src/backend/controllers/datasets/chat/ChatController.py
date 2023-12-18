@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 
 import chardet
+import numpy as np
 import pandas as pd
 from flask import abort
 from werkzeug.utils import secure_filename

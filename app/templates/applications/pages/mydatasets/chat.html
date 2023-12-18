@@ -19,13 +19,13 @@
                 {% if user_input != None %}
                 <div class="row">
                 <div class="col-md-6"></div>
-                    <div class="alert alert-success col-md-6 text-right ali">
-                        :User <br/>{{ user_input }}
+                    <div class="alert alert-primary col-md-6 text-right ali">
+                        : User <br/>{{ user_input }}
                     </div>
                 </div>
                 <div class="row">
-                    <div class="alert alert-default col-6">
-                        Data AI bot: <br/>
+                    <div class="alert alert-success col-6">
+                        Data AI bot : <br/>
                         {% for res in chat_response %}
                             {{ res }}
                         {% endfor %}
