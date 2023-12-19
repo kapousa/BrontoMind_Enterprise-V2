@@ -392,3 +392,21 @@ class Helper:
             print(e)
             logging.error(e)
             return False
+
+    @staticmethod
+    def string_to_list(input_string):
+        # Removing curly braces and splitting the string by commas
+        split_string = input_string.strip('{}').split(', ')
+
+        # Creating a list of key-value pairs
+        key_value_pairs = [pair.split(': ') for pair in split_string]
+
+        # Creating a dictionary from the key-value pairs
+        result_dict = {key.strip("'"): value.strip("'") for key, value in key_value_pairs}
+
+        # Converting the dictionary to a list
+        result_list = list(result_dict.items())
+
+        # Displaying the result
+        return result_list
+

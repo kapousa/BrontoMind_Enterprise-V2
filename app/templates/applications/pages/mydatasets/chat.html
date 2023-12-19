@@ -7,36 +7,42 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header card-header-primary">
                     <h3 class="card-title">
                         <i class="ni ni-chat-round text-default"></i>
                         Ask your data</h3>
-                    {{ dataset_file }}
+                    <p class="text-primary text-lg">Dataset: {{ dataset_file }}</p>
                 </div>
                 <div class="card-body">
-                {% if user_input != None %}
-                <div class="row">
-                <div class="col-md-6"></div>
-                    <div class="alert alert-primary col-md-6 text-right ali">
-                        : User <br/>{{ user_input }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="alert alert-success col-6">
-                        Data AI bot : <br/>
-                        {% for res in chat_response %}
-                            {{ res }}
+                    {% if user_input != None %}
+                        {% for  i in range(q_chat_history|length) %}
+                            <div class="row">
+                                <div class="col-md-6"></div>
+                                <div class="col-md-4 alert alert-primary">
+                                    {{ q_chat_history[i] }}
+                                </div>
+                                <pre class="text-right"> <i class="fa fa-user text-primary"></i> </pre>
+                            </div>
+                            <div class="row">
+                                <pre>   <i class="fa fa-robot text-success"></i> </pre>
+                                <div class="alert alert-success col-6">
+                                    {% for response_point in r_chat_history[i] %}
+                                        <li>{{ response_point }}</li>
+                                    {% endfor %}
+                                </div>
+                                <div class="col-md-6"></div>
+                            </div>
                         {% endfor %}
-                    </div>
-                <div class="col-md-6"></div>
-                </div>
-                {% endif %}
+                    {% endif %}
                     <form id='sendrequest' name='sendrequest' action="/datasets/{{ dataset_id }}/reponsechat"
                           method="post">
                         <textarea class="form-control lead text-primary" name="user_input" rows="2" id="user_input"
                                   required></textarea>
+                        <input type="hidden" name="q_chat_history" id="q_chat_history" value="{{ q_chat_history }}">
+                        <input type="hidden" name="r_chat_history" id="r_chat_history" value="{{ r_chat_history }}">
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-default">Send</button>
                         </div>
@@ -44,6 +50,7 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-1"></div>
     </div>
 {% endblock content %}
 
