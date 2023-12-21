@@ -1,13 +1,11 @@
 import os
-
-import numpy as np
 import pandas as pd
-import seaborn as sns
 import matplotlib.pyplot as plt
 from app.src.backend.utiles.Helper import Helper
 from app.src.backend.constants.BM_CONSTANTS import temp_image_path, temp_html_image_path
 from app.src.backend.core.engine.processors.WordProcessor import WordProcessor
-
+import plotly.express as px
+import plotly.io as pio
 
 class ChatControllerHelper:
     #   Common data words dictionary
@@ -172,8 +170,13 @@ class ChatControllerHelper:
             img_html_folder = os.path.join(temp_html_image_path, "temp")
             img_path = os.path.join(img_folder, f"{image_id}_plot.png")
             img_html_path = os.path.join(img_html_folder, f"{image_id}_plot.png")
-            plt.plot(df[cols_name[0]], df[cols_name[1]])
-            plt.savefig(img_path, dpi=300, bbox_inches='tight')
+
+            df.sort_values(by=cols_name[0], ascending=True, inplace=True)
+            #plt.plot(df[cols_name[0]], df[cols_name[1]], color='green', linestyle='dashed', marker='o', linewidth=2, label='My Line')
+            fig = px.scatter(df[cols_name[0]], df[cols_name[1]], labels={"x": cols_name[0], "y": cols_name[1]}, title="Relationship Graph")
+            fig.show()
+            pio.write_image(fig, img_path)
+            #plt.savefig(img_path, dpi=300, bbox_inches='tight')
 
             return f"Here is the relation between {cols_name[0]} and {cols_name[1]}.", img_html_path
         except Exception as e:
