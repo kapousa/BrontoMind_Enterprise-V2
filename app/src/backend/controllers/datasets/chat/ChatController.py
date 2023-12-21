@@ -50,4 +50,4 @@ class ChatController:
         except Exception as e:
             print(e)
             logging.error(e)
-            return []
+            return '', 'None'

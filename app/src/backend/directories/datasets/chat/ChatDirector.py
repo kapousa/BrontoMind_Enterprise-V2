@@ -29,7 +29,8 @@ class ChatDirector:
         dataset_file = chat_controller.start_chat(session['logger'], dataset_id)
         session['dataset_file'] = dataset_file
         return render_template('/applications/pages/mydatasets/chat.html', dataset_id=dataset_id,
-                               dataset_file=dataset_file, segment='datasets', user_input=None, q_chat_history=[], r_chat_history=[])
+                               dataset_file=dataset_file, segment='datasets', user_input=None, q_chat_history=[],
+                               r_chat_history=[], a_chat_history=[])
 
     def chat_reponse(self, dataset_id):
         try:
@@ -39,8 +40,8 @@ class ChatDirector:
             a_chat_history = ast.literal_eval(request.form.get('a_chat_history'))
             chat_controller = ChatController()
             chat_response, img_path = chat_controller.get_response(session['logger'], dataset_id, user_input)
-            chat_response = chat_response if len(chat_response) != 0 else [
-                'Nothing match with your question please review your question and submit again.']
+            chat_response = chat_response if len(
+                chat_response) != 0 else 'Nothing match with your question please review your question and submit again.'
 
             q_chat_history.append(user_input)
             r_chat_history.append(chat_response)
@@ -48,7 +49,8 @@ class ChatDirector:
 
             return render_template('/applications/pages/mydatasets/chat.html', dataset_id=dataset_id,
                                    dataset_file=session['dataset_file'],
-                                   q_chat_history=q_chat_history, r_chat_history=r_chat_history, a_chat_history=a_chat_history,
+                                   q_chat_history=q_chat_history, r_chat_history=r_chat_history,
+                                   a_chat_history=a_chat_history,
                                    segment='datasets', user_input=user_input, img_file=img_path)
         except Exception as e:
             print(e)

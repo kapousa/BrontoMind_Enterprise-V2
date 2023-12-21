@@ -99,7 +99,8 @@ class ChatControllerHelper:
         "who": ".query()",
         "describe": "_get_description",
         "summarize": "_get_description",
-        "relationship": "_get_relationship"
+        "relationship": "_get_relationship",
+        "average": "_get_averages"
     }
 
     mentioned_columns = []
@@ -110,7 +111,8 @@ class ChatControllerHelper:
 
     def generate_response(self, df, input_text):
         ''' Generates AI data analysis response to user input regarding his input data '''
-        response_text = []
+        response_text = ''  #[]
+        img_path = ''
 
         # Check each key using a loop and string methods
         found_keys = []
@@ -130,10 +132,12 @@ class ChatControllerHelper:
             if key.lower() in entered_keys:
                 found_keys.append(key)
                 df_response, img_path = getattr(self, self.data_exploration_mapping[key])(df, mentioned_columns)
-                response_text.append(df_response)
+                # response_text.append(df_response)
+                response_text = df_response
+                break
 
-        response_text = np.array(response_text)
-        return response_text.flatten(), img_path
+        #response_text = np.array(response_text)
+        return response_text, img_path
 
     def _get_averages(self, df, cols_name):
         ''' Calculates the average of given columns '''
@@ -145,7 +149,7 @@ class ChatControllerHelper:
                 else:
                     averages.append(f"{col_name} is not a numeric column")
 
-            return averages, None
+            return averages[0], "None"
 
         except Exception as e:
             print(e)
@@ -153,7 +157,7 @@ class ChatControllerHelper:
     def _get_description(self, df, cols_name):
         ''' Calculates the average of given columns '''
         try:
-            return str(df.describe()), None
+            return str(df.describe()), "None"
 
         except Exception as e:
             print(e)
@@ -174,4 +178,4 @@ class ChatControllerHelper:
             return f"Here is the relation between {cols_name[0]} and {cols_name[1]}.", img_html_path
         except Exception as e:
             print(e)
-            return f"Failed to generate the plot image.", None
+            return f"Failed to generate the plot image.", "None"
