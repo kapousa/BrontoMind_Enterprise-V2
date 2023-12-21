@@ -1,6 +1,11 @@
+import os
+
 import numpy as np
 import pandas as pd
-
+import seaborn as sns
+import matplotlib.pyplot as plt
+from app.src.backend.utiles.Helper import Helper
+from app.src.backend.constants.BM_CONSTANTS import temp_image_path, temp_html_image_path
 from app.src.backend.core.engine.processors.WordProcessor import WordProcessor
 
 
@@ -90,29 +95,14 @@ class ChatControllerHelper:
 
     data_exploration_mapping = {
         # Identifying data
-        "what": "pivot_table",
         "where": ".isin()",
         "who": ".query()",
         "describe": "_get_description",
         "summarize": "_get_description",
-        "analyze": ".corr()",
-        "compare": ".diff()",
-        "contrast": ".boxplot()",
-        "difference": ".diff()",
-        "predict": ".fit()",
-        "average": "_get_averages", #".mean( par )",
-        "trend": ".rolling_mean(), .rolling_median(), .diff(), .plot() (time series)",
-        "pattern": ".groupby() + pivot_table(), .get_dummies(), .clustermap()",
-        "correlation": ".corr(), .cov(), .heatmap()",
-        "relationship": ".groupby() + corr(), .scatter_plot(), .plot() (regression)",
-        "filter": ".loc, .iloc, .query(), .isin()",
-        "sort": ".sort_values(), .rank(), .nlargest(), .nsmallest()",
-        "group by": ".groupby(), .pivot_table()",
-        "why": "hypothesis testing, statistical analysis",
-        "how": "specific data manipulation methods (e.g., .fillna(), .dropna())",
+        "relationship": "_get_relationship"
     }
 
-    mentioned_columns =[]
+    mentioned_columns = []
 
     @staticmethod
     def connect_to_bot():
@@ -129,7 +119,7 @@ class ChatControllerHelper:
         word_processor = WordProcessor()
         mentioned_columns = []
         input_text_array = input_text.split(' ')
-        entered_columns = word_processor.get_closest_words(df.columns, input_text_array)
+        entered_columns = word_processor.get_closest_words_list(df.columns, input_text_array)
         entered_keys = word_processor.get_closest_words(self.data_exploration_mapping.keys(), input_text_array)
         for string_item in input_text_array:
             if string_item.lower() in entered_columns:
@@ -139,11 +129,11 @@ class ChatControllerHelper:
         for key in self.data_exploration_mapping:
             if key.lower() in entered_keys:
                 found_keys.append(key)
-                df_response = getattr(self, self.data_exploration_mapping[key])(df, mentioned_columns)
+                df_response, img_path = getattr(self, self.data_exploration_mapping[key])(df, mentioned_columns)
                 response_text.append(df_response)
 
         response_text = np.array(response_text)
-        return response_text.flatten()
+        return response_text.flatten(), img_path
 
     def _get_averages(self, df, cols_name):
         ''' Calculates the average of given columns '''
@@ -155,7 +145,7 @@ class ChatControllerHelper:
                 else:
                     averages.append(f"{col_name} is not a numeric column")
 
-            return averages
+            return averages, None
 
         except Exception as e:
             print(e)
@@ -163,7 +153,25 @@ class ChatControllerHelper:
     def _get_description(self, df, cols_name):
         ''' Calculates the average of given columns '''
         try:
-            return str(df.describe())
+            return str(df.describe()), None
 
         except Exception as e:
             print(e)
+
+    def _get_relationship(self, df, cols_name):
+        try:
+            if len(cols_name) < 2:
+                return "At least two columns are required to show the relationship between the data"
+
+            image_id = Helper.generate_id()
+            img_folder = os.path.join(temp_image_path, "temp")
+            img_html_folder = os.path.join(temp_html_image_path, "temp")
+            img_path = os.path.join(img_folder, f"{image_id}_plot.png")
+            img_html_path = os.path.join(img_html_folder, f"{image_id}_plot.png")
+            plt.plot(df[cols_name[0]], df[cols_name[1]])
+            plt.savefig(img_path, dpi=300, bbox_inches='tight')
+
+            return f"Here is the relation between {cols_name[0]} and {cols_name[1]}.", img_html_path
+        except Exception as e:
+            print(e)
+            return f"Failed to generate the plot image.", None

@@ -29,7 +29,7 @@ from app.src.backend.directories.LocalDatasetsDirector import LocalDatasetsDirec
 from app.src.backend.directories.ForecastingDirector import ForecastingDirector
 from app.src.backend.directories.PredictionDirector import PredictionDirector
 from app.src.backend.constants.BM_CONSTANTS import plot_zip_download_location, progress_icon_path, loading_icon_path, \
-    tempfiles_loaction
+    tempfiles_loaction, temp_html_image_path
 from app.src.backend.models.ModelProfile import ModelProfile
 from app.src.backend.controllers.BaseController import BaseController
 from app.src.backend.core.DocumentProcessor import DocumentProcessor
@@ -733,6 +733,14 @@ def datasets():
 def downlaoddataset(id):
     path = LocalDatasetsDirector.downlaod_datasets(id)
     return send_file(path, as_attachment=True)
+
+@blueprint.route('/<image_name>')
+def get_image(image_name):
+    # Generate dynamic image path
+    image_path = os.path.join(temp_html_image_path, image_name)
+
+    # Display the image using send_file
+    return send_file(image_path, mimetype='image/png')
 
 ## Errors
 @login_manager.unauthorized_handler

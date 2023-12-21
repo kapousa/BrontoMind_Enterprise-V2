@@ -8,7 +8,7 @@ from flask import render_template, request, send_file, session
 from flask_login import login_required
 
 from app import login_manager
-from app.src.backend.constants.BM_CONSTANTS import download_my_datasets
+from app.src.backend.constants.BM_CONSTANTS import download_my_datasets, temp_html_image_path
 from app.src.backend.directories.datasets.DatasetsDirector import DatasetsDirector
 from app.src.backend.directories.datasets.chat.ChatDirector import ChatDirector
 from app.src.backend.models.ModelMyDatasets import ModelMyDatasets
@@ -62,6 +62,14 @@ def response_chat(dataset_id):
     chat_director = ChatDirector()
     return chat_director.chat_reponse(dataset_id)
 
+@blueprint.route('/get_image/<image_name>')
+@login_required
+def get_image(image_name):
+    # Generate dynamic image path
+    image_path = os.path.join(temp_html_image_path, image_name)
+
+    # Display the image using send_file
+    return send_file(image_path, mimetype='image/png')
 
 
 # Errors

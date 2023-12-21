@@ -96,11 +96,27 @@ class WordProcessor:
         for i in range(len(words)):
             # Get the closest spelling match from the word list
             closest_match = difflib.get_close_matches(words[i], compare_list, n=1, cutoff=0.6)
+            print(f"{closest_match} are close to {words[i]}")
 
             # Print the closest spelling match
             if len(closest_match) != 0 and closest_match[0] not in closet_words:
                 closet_words.append(closest_match[0])
                 return closet_words
+
+        return closet_words
+
+    def get_closest_words_list(self, compare_list, words: array):
+
+        closet_words = []
+
+        for i in range(len(words)):
+            # Get the closest spelling match from the word list
+            closest_match = difflib.get_close_matches(words[i], compare_list, n=1, cutoff=0.6)
+            print(f"{closest_match} are close to {words[i]}")
+
+            # Print the closest spelling match
+            if len(closest_match) != 0 and closest_match[0] not in closet_words:
+                closet_words.append(closest_match[0])
 
         return closet_words
 

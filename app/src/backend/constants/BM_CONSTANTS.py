@@ -116,3 +116,7 @@ time_series_report= 3
 compare_dataset_report = 4
 
 export_to_pdf_report = 5
+
+temp_html_image_path = 'static/'
+
+temp_image_path = 'app/static/'
