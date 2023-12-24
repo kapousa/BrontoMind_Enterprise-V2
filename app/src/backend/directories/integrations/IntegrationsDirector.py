@@ -40,8 +40,10 @@ class IntegrationsDirector:
             done = integration_controller.create_integration(integration_type, **form_inputs)
             message = 'Integration connection saved successfully' if done else ('Creating the integration connection '
                                                                                 'failed, please try again.')
+            integrations = integration_controller.get_integrations(session['logger'])
 
             return render_template('/applications/pages/integrations/view.html', ds_id=integration_type,
+                                   integrations=integrations,
                                    segment='integrations', message=message)
         except Exception as e:
             print(e)

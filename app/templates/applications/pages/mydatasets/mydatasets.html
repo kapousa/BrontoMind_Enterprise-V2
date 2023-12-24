@@ -30,12 +30,15 @@
                             {% if dataset.type == 1 %}
                                 <i class="fa fa-circle fa-table text-green"></i>
                             {% endif %}
+                            {% if dataset.type == 12 %}
+                                <i class="fa fa-circle fa-network-wired text-gray"></i>
+                            {% endif %}
                         </span>
                         </div>
                         <h5 class="text-primary">
                             {{ dataset.name }}</h5>
-                        <h6>Size:
-                            {{ dataset.size }} MB</h6>
+                        <h6>Type:
+                            {{ dataset.type_name }}</h6>
                         <h6 class="text-danger">Number of cols:
                             {{ dataset.num_columns }}</h6>
                         <h6 class="text-green">Number of rows:

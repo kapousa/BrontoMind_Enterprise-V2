@@ -62,15 +62,17 @@ class IntegrationsController:
             # Fetch data
             df = IntegrationsControllerHelper.fetch_api_results(**connection_info)
 
-            if df == None:
+            if df is None:
                 return False
 
             # Save information of the integration
-            save_integration = IntegrationsControllerHelper.save_integration(connection_type, **connection_info)
+            saved_integration_id = IntegrationsControllerHelper.save_integration(connection_type, **connection_info)
 
             # Export data to my datasets
-            export_to_mydataset = IntegrationsControllerHelper.export_to_mydataset(
-                connection_info.get('integration_name'), df, connection_type, session['logger'])
+            export_to_mydataset = IntegrationsControllerHelper.export_to_mydataset(saved_integration_id,
+                                                                                   connection_info.get(
+                                                                                       'integration_name'), df,
+                                                                                   connection_type, session['logger'])
 
             return True
 

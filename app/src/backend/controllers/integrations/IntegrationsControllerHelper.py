@@ -66,14 +66,14 @@ class IntegrationsControllerHelper:
                 db.session.add(integration_details_model)
                 db.session.commit()
 
-            return True
+            return integration_id
 
         except Exception as e:
             logging.error(e)
             print(e)
             db.session.rollback()
             db.session.close()
-            return False
+            return None
 
     @staticmethod
     def fetch_api_results(**connection_info):
@@ -107,10 +107,10 @@ class IntegrationsControllerHelper:
             return None
 
     @staticmethod
-    def export_to_mydataset(integration_name, df, dataframe_source, user_id):
+    def export_to_mydataset(integration_id, integration_name, df, dataframe_source, user_id):
         ''' Export data fetched by integration connection to MyDataset'''
         try:
-            fname = {integration_name}.csv
+            fname = f"{integration_name}.csv"
             filePath = os.path.join(f"{my_datasets}{user_id}/", fname)
             df.to_csv(filePath)
 
@@ -142,7 +142,8 @@ class IntegrationsControllerHelper:
                           'file_size_mb': file_size_mb,
                           'num_rows': num_rows,
                           'num_columns': num_columns,
-                          'user_id': user_id}
+                          'user_id': user_id,
+                          'integration_id': integration_id}
 
             model_model = ModelMyDatasets(**modelmodel)
             db.session.commit()

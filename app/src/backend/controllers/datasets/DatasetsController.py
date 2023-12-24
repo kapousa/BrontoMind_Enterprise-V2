@@ -95,6 +95,7 @@ class DatasetsController:
                     "id": user_dataset.id,
                     "name": user_dataset.name,
                     "type": user_dataset.type,
+                    "type_name":  Helper.get_lookup_value(user_dataset.type),
                     "num_columns": user_dataset.num_columns,
                     "num_rows": user_dataset.num_rows,
                     "size": user_dataset.file_size_mb
