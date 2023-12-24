@@ -2,6 +2,7 @@
 import csv
 import datetime
 import ftplib
+import inspect
 import itertools
 import logging
 import os
@@ -331,7 +332,7 @@ class Helper:
     @staticmethod
     def get_lookup_value(lookup_id):
         lookup_value = ModelLookupTable.query.with_entities(ModelLookupTable.value).filter_by(key=lookup_id).first()
-        return lookup_value['value']
+        return lookup_value.value
 
     @staticmethod
     def get_lookup_key(lookup_key):
@@ -409,4 +410,3 @@ class Helper:
 
         # Displaying the result
         return result_list
-

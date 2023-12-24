@@ -21,8 +21,30 @@ class IntegrationsDirector:
 
     def view_integrations(self):
         integration_controller = IntegrationsController()
-        integratios = integration_controller.get_integrations(session['logger'])
-        return render_template('/applications/pages/integrations/view.html', integratios=integratios, segment='integrations')
+        integrations = integration_controller.get_integrations(session['logger'])
+        return render_template('/applications/pages/integrations/view.html', integrations=integrations,
+                               segment='integrations', message=None)
 
     def select_integrator(self):
         return render_template('/applications/pages/integrations/selectintegrator.html', segment='integrations')
+
+    def setup(self, integration_type):
+        return render_template('/applications/pages/integrations/setup.html', integration_type=integration_type,
+                               segment='integrations')
+
+    def save(self, request, integration_type):
+        try:
+            form_inputs = request.form
+
+            integration_controller = IntegrationsController()
+            done = integration_controller.create_integration(integration_type, **form_inputs)
+            message = 'Integration connection saved successfully' if done else ('Creating the integration connection '
+                                                                                'failed, please try again.')
+
+            return render_template('/applications/pages/integrations/view.html', ds_id=integration_type,
+                                   segment='integrations', message=message)
+        except Exception as e:
+            print(e)
+            logging.log(e, 'Error saving')
+            return render_template('/applications/pages/integrations/view.html', ds_id=integration_type,
+                                   segment='integrations', message='Integration connection failed')

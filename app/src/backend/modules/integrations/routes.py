@@ -21,11 +21,23 @@ def view():
     integrations_director = IntegrationsDirector()
     return integrations_director.view_integrations()
 
-@blueprint.route('/add')
+@blueprint.route('/selectintegrator', methods=['GET', 'POST'])
 @login_required
-def add():
+def select_integrator():
     integrations_director = IntegrationsDirector()
-    return redirect(url_for('datasets_blueprint.select_datasource'))
+    return integrations_director.select_integrator()
+
+@blueprint.route('<integration_type>/setup')
+@login_required
+def setup(integration_type):
+    integrations_director = IntegrationsDirector()
+    return integrations_director.setup(integration_type)
+
+@blueprint.route('<integration_type>/save', methods=['GET', 'POST'])
+@login_required
+def save(integration_type):
+    integrations_director = IntegrationsDirector()
+    return integrations_director.save(request, integration_type)
 
 
 # Errors

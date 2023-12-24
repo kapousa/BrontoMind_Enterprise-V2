@@ -16,7 +16,6 @@
                             <a href="/datasets/view">
                                 <h5 class="card-title text-uppercase text-primary mb-0">Uploaded Datasets</h5>
                             </a>
-                            <span class="h2 font-weight-bold mb-0">{{ dashboard_info.datasets }}</span>
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-primary text-white rounded-circle shadow">
@@ -25,8 +24,7 @@
                         </div>
                     </div>
                     <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 0%</span>
-                        <span class="text-nowrap">Since last month</span>
+                        <span class="h1 font-weight-bold mb-0 text-primary">{{ dashboard_info.datasets }}</span>
                     </p>
                 </div>
             </div>
@@ -39,7 +37,6 @@
                             <a href="/integrations/view">
                                 <h5 class="card-title text-uppercase text-orange mb-0">Active Integrations</h5>
                             </a>
-                            <span class="h2 font-weight-bold mb-0">TBD</span>
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-orange text-white rounded-circle shadow">
@@ -48,8 +45,7 @@
                         </div>
                     </div>
                     <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 0%</span>
-                        <span class="text-nowrap">Since last month</span>
+                        <span class="h1 font-weight-bold text-orange mb-0">{{ dashboard_info.integrations }}</span>
                     </p>
                 </div>
             </div>
@@ -62,7 +58,6 @@
                             <a href="/showmodels">
                                 <h5 class="card-title text-uppercase text-danger mb-0">Active AI Models</h5>
                             </a>
-                            <span class="h2 font-weight-bold mb-0">{{ dashboard_info.models }}</span>
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -71,8 +66,7 @@
                         </div>
                     </div>
                     <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 0%</span>
-                        <span class="text-nowrap">Since last month</span>
+                        <span class="h1 font-weight-bold mb-0 text-danger">{{ dashboard_info.models }}</span>
                     </p>
                 </div>
             </div>
@@ -85,7 +79,6 @@
                             <a href="/projects">
                                 <h5 class="card-title text-uppercase text-info mb-0">Number of Projects</h5>
                             </a>
-                            <span class="h2 font-weight-bold mb-0">{{ dashboard_info.projects }}</span>
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-info text-white rounded-circle shadow">
@@ -94,8 +87,7 @@
                         </div>
                     </div>
                     <p class="mt-3 mb-0 text-sm">
-                        <span class="text-green mr-2"><i class="fa fa-arrow-up"></i> 0%</span>
-                        <span class="text-nowrap">Since last month</span>
+                            <span class="h1 font-weight-bold text-info mb-0">{{ dashboard_info.projects }}</span>
                     </p>
                 </div>
             </div>

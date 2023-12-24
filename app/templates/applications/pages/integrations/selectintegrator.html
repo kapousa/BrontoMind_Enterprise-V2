@@ -6,46 +6,18 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header card-header-info">
-                    <h2 class="card-title">Data source</h2>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h2 class="card-title">Select Integration Type</h2>
     <div class="row">
         <div class="col-md-4">
-            <div class="card">
+            <div class="card text-center">
                 <div class="card-header card-header-success">
-                    <h3>Tables</h3>
-                    <div class="icon icon-shape bg-success text-white rounded-circle shadow float-right">
-                        <i class="fas fa-table"></i>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="form-group">CSV, Excel, JSON, PARQUET.</div>
-                    <div class="row">
-                        <div class="col-md-12">
-                        </div>
-                    </div>
-                    <form action="/selectcsvds" name="selectcsvds" id="selectcsvds" method="post">
-                        <input type="hidden" id="ds_source" name="ds_source" value="1"/>
-                        <button type="submit" class="btn btn-white btn-outline-darker pull-right btn-lg">Upload data file</button>
-                    </form>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header card-header-success">
-                    <!--img src="https://icons8.com/icon/21896/api" style="float:right !important;"/-->
                     <h3>APIs</h3>
-                    <div class="icon icon-shape bg-default text-white rounded-circle shadow float-right">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
+                    <a href="#">
+                    <span class="fa-stack text-center fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-black-50"></i>
+                        <i class="fa fa-network-wired fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
                 </div>
                 <div class="card-body">
                     <div class="form-group">Collect the data by calling API.</div>
@@ -53,42 +25,25 @@
                         <div class="col-md-12">
                         </div>
                     </div>
-                    <form action="/callapi" name="callapi" id="callapi" method="post">
-                        <input type="hidden" id="ds_source" name="ds_source" value="12"/>
-                        <button type="submit" class="btn btn-lg btn-outline-darker btn-white pull-right">Call public API</button>
-                    </form>
+                    <a href="12/setup">
+                        <button type="button" class="btn btn-lg btn-outline-darker btn-white pull-right">Call public
+                            API
+                        </button>
+                    </a>
                     <div class="clearfix"></div>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
-                <div class="card-header card-header-info">
-                    <h3>Physical Files</h3>
-                    <div class="icon icon-shape bg-primary text-white rounded-circle shadow float-right">
-                        <i class="fas fa-file"></i>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="form-group">Connect to data files FTP server.</div>
-                    <form action="/selectphysicalfiles" name="selectphysicalfiles" id="selectphysicalfiles"
-                          method="post">
-                        <input type="hidden" id="ds_source" name="ds_source" value="11"/>
-                        <button type="submit" class="btn btn-lg btn-outline-darker btn-white pull-right">Upload files</button>
-                    </form>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
+            <div class="card text-center">
                 <div class="card-header card-header-warning">
                     <h3>MySQL Database</h3>
-                    <div class="icon icon-shape bg-warning text-white rounded-circle shadow float-right">
-                        <i class="fas fa-database"></i>
-                    </div>
+                    <a href="#">
+                    <span class="fa-stack text-center fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-warning"></i>
+                        <i class="fa fa-database fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
                 </div>
                 <div class="card-body">
                     <div class="form-group">Collect data from local Database.</div>
@@ -96,21 +51,47 @@
                         <div class="col-md-12">
                         </div>
                     </div>
-                    <form action="/selectmysqlds" name="selectmysqlds" id="selectmysqlds" method="post">
-                        <input type="hidden" id="ds_source" name="ds_source" value="2"/>
-                        <button type="submit" class="btn btn-lg btn-outline-darker btn-white pull-right">Connect to DB</button>
-                    </form>
+                    <a href="2/setup">
+                        <button type="button" class="btn btn-lg btn-outline-darker btn-white pull-right">Connect to DB
+                        </button>
+                    </a>
                     <div class="clearfix"></div>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
+            <div class="card text-center">
+                <div class="card-header card-header-info">
+                    <h3>Physical Files</h3>
+                    <a href="#">
+                    <span class="fa-stack text-center fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-file fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">Connect to data files FTP server.</div>
+                    <a href="11/setup">
+                        <button type="button" class="btn btn-lg btn-outline-darker btn-white pull-right">Upload files
+                        </button>
+                    </a>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-center">
                 <div class="card-header card-header-success">
                     <h3>Goolge Sheets <span class="badge badge-danger">Coming Soon</span></h3>
-                    <div class="icon icon-shape bg-success text-white rounded-circle shadow float-right">
-                        <i class="fas fa-cloud"></i>
-                    </div>
+                    <a href="#">
+                    <span class="fa-stack text-center fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-success"></i>
+                        <i class="fa fa-cloud fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
                 </div>
                 <div class="card-body">
                     <div class="form-group">Get data from cloud storage.</div>
@@ -118,21 +99,25 @@
                         <div class="col-md-12">
                         </div>
                     </div>
-                    <form action="/selectgsds" name="selectgsds" id="selectgsds" method="post">
-                        <input type="hidden" id="ds_source" name="ds_source" value="3"/>
-                        <button type="submit" class="btn btn-white btn-outline-darker btn-lg pull-right" disabled>Link to sheet</button>
-                    </form>
+                    <a href="3/setup">
+                        <button type="button" class="btn btn-white btn-outline-darker btn-lg pull-right" disabled>Link
+                            to sheet
+                        </button>
+                    </a>
                     <div class="clearfix"></div>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
+            <div class="card text-center">
                 <div class="card-header card-header-info">
                     <h3>Salesforce <span class="badge badge-danger">Coming Soon</span></h3>
-                    <div class="icon icon-shape bg-info text-white rounded-circle shadow float-right">
-                        <i class="fas fa-building"></i>
-                    </div>
+                    <a href="#">
+                    <span class="fa-stack text-center fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-info"></i>
+                        <i class="fa fa-building fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
                 </div>
                 <div class="card-body">
                     <div class="form-group">Collect ERP cloud software Saleforce.</div>
@@ -140,10 +125,11 @@
                         <div class="col-md-12">
                         </div>
                     </div>
-                    <form action="/selectsfds" name="selectsfds" id="selectsfds" method="post">
-                        <input type="hidden" id="ds_source" name="ds_source" value="4"/>
-                        <button type="submit" class="btn btn-white btn-outline-darker btn-lg pull-right" disabled>Connect to data</button>
-                    </form>
+                    <a href="4/setup">
+                        <button type="button" class="btn btn-white btn-outline-darker btn-lg pull-right" disabled>
+                            Connect to data
+                        </button>
+                    </a>
                     <div class="clearfix"></div>
                 </div>
             </div>

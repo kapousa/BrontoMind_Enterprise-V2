@@ -16,6 +16,7 @@ class ModelDashboardInfoView(db.Model):
     datasets = Column(String)
     projects = Column(String)
     models = Column(String)
+    integrations = Column(String)
 
     def __init__(self, **kwargs):
         for property, value in kwargs.items():

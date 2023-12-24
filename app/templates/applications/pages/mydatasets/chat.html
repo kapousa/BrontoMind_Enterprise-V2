@@ -29,12 +29,18 @@
                             <div class="row">
                                 <pre>   <i class="fa fa-robot text-success"></i> </pre>
                                 <div class="alert alert-success col-6">
+                                    {% if a_chat_history[i] != "None" and a_chat_history[i] == "table" %}
+                                        <li>Take overview about numbers columns in your data</li>
+                                        {{ r_chat_history[i]|safe }}
+                                    {% else %}
                                         <li>{{ r_chat_history[i] }}</li>
-                                        {% if a_chat_history[i] != "None" %}
-                                            <div class="text-right">
-                                            <img src="{{ url_for('base_blueprint.get_image', image_name=a_chat_history[i]) }}" style="padding-top: 10px; width: 100%; height: 100%">
-                                            </div>
-                                        {% endif %}
+                                    {% endif %}
+                                    {% if a_chat_history[i] != "None" and a_chat_history[i] != "table" %}
+                                        <div class="text-right">
+                                            <img src="{{ url_for('base_blueprint.get_image', image_name=a_chat_history[i]) }}"
+                                                 style="padding-top: 10px; width: 100%; height: 100%">
+                                        </div>
+                                    {% endif %}
                                 </div>
                                 <div class="col-md-6"></div>
                             </div>

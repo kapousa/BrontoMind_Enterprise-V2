@@ -143,7 +143,7 @@ class ChatControllerHelper:
             averages = []
             for col_name in cols_name:
                 if pd.api.types.is_numeric_dtype(df[col_name]):
-                    averages.append(f"Average of {col_name} : {df[col_name].mean()}")
+                    averages.append(f"Average of {col_name} : {round(df[col_name].mean(), 3)}")
                 else:
                     averages.append(f"{col_name} is not a numeric column")
 
@@ -155,7 +155,8 @@ class ChatControllerHelper:
     def _get_description(self, df, cols_name):
         ''' Calculates the average of given columns '''
         try:
-            return str(df.describe()), "None"
+            ds_description = df.describe()
+            return df.describe().to_html(), "table"
 
         except Exception as e:
             print(e)
@@ -174,7 +175,7 @@ class ChatControllerHelper:
             df.sort_values(by=cols_name[0], ascending=True, inplace=True)
             #plt.plot(df[cols_name[0]], df[cols_name[1]], color='green', linestyle='dashed', marker='o', linewidth=2, label='My Line')
             fig = px.scatter(df[cols_name[0]], df[cols_name[1]], labels={"x": cols_name[0], "y": cols_name[1]}, title="Relationship Graph")
-            fig.show()
+            #fig.show()
             pio.write_image(fig, img_path)
             #plt.savefig(img_path, dpi=300, bbox_inches='tight')
 
