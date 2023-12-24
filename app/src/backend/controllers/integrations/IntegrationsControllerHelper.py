@@ -2,6 +2,8 @@ import itertools
 import json
 import logging
 import inspect
+import os
+from pathlib import Path
 
 import chardet
 import pandas as pd
@@ -86,20 +88,76 @@ class IntegrationsControllerHelper:
 
             if (api_response.status_code != 200):
                 raise Exception("Error calling the API.")
-                return False
+                return None
 
             # Create json file
             json_response = json.loads(api_response.text)
             df = pd.json_normalize(json_response) if root_node == None else pd.json_normalize(json_response[root_node])
             df = pd.DataFrame(df)
 
-            return True
+            return df
 
         except Exception as e:
             frame = inspect.currentframe()
             method_name = frame.f_code.co_name
-            err_msg = f"Error when call { method_name} method: {e}"
+            err_msg = f"Error when call {method_name} method: {e}"
             print(err_msg)
             logging.error(err_msg)
 
-            return False
+            return None
+
+    @staticmethod
+    def export_to_mydataset(integration_name, df, dataframe_source, user_id):
+        ''' Export data fetched by integration connection to MyDataset'''
+        try:
+            fname = {integration_name}.csv
+            filePath = os.path.join(f"{my_datasets}{user_id}/", fname)
+            df.to_csv(filePath)
+
+            # Get dataset file information
+            try:
+                detected = chardet.detect(Path(filePath).read_bytes())
+                encoding = detected.get("encoding")
+                assert encoding, "Unable to detect encoding, is it a binary file?"
+                file_size_bytes = os.path.getsize(filePath)
+                file_size_kb = round(file_size_bytes / 1024.0, 2)
+                file_size_mb = round(file_size_kb / 1024.0, 2)
+                df = pd.read_csv(filePath, encoding=encoding)
+                num_rows, num_columns = df.shape
+            except UnicodeDecodeError as ude:
+                print(f"Unable to detect encoding {fname}, is it a binary file?")
+                logging.error(ude)
+                num_rows = 'Unable to read'
+                num_columns = 'Unable to read'
+
+            # Add file record to the DB
+            now = datetime.now()
+            modelmodel = {'id': Helper.generate_id(),
+                          'name': fname,
+                          'type': dataframe_source,
+                          'created_on': now.strftime("%d/%m/%Y %H:%M:%S"),
+                          'created_by': user_id,
+                          'updated_on': now.strftime("%d/%m/%Y %H:%M:%S"),
+                          'updated_by': user_id,
+                          'file_size_mb': file_size_mb,
+                          'num_rows': num_rows,
+                          'num_columns': num_columns,
+                          'user_id': user_id}
+
+            model_model = ModelMyDatasets(**modelmodel)
+            db.session.commit()
+            # Add new profile
+            db.session.add(model_model)
+            db.session.commit()
+
+            return modelmodel
+
+        except Exception as e:
+            db.session.rollback()
+            frame = inspect.currentframe()
+            method_name = frame.f_code.co_name
+            err_msg = f"Error when call {method_name} method: {e}"
+            print(err_msg)
+            logging.error(err_msg)
+
+            return None

@@ -1,3 +1,4 @@
+import inspect
 import itertools
 import logging
 import os
@@ -58,20 +59,26 @@ class IntegrationsController:
     def create_integration(self, connection_type, **connection_info):
         ''' Create the integration '''
         try:
-            check_connection = IntegrationsControllerHelper.fetch_api_results(**connection_info)
+            # Fetch data
+            df = IntegrationsControllerHelper.fetch_api_results(**connection_info)
 
-            if not check_connection:
+            if df == None:
                 return False
 
             # Save information of the integration
             save_integration = IntegrationsControllerHelper.save_integration(connection_type, **connection_info)
 
+            # Export data to my datasets
+            export_to_mydataset = IntegrationsControllerHelper.export_to_mydataset(
+                connection_info.get('integration_name'), df, connection_type, session['logger'])
+
             return True
 
         except Exception as e:
-            logging.error(e)
-            print(e)
-            db.session.rollback()
-            db.session.close()
-            return False
+            frame = inspect.currentframe()
+            method_name = frame.f_code.co_name
+            err_msg = f"Error when call {method_name} method: {e}"
+            print(err_msg)
+            logging.error(err_msg)
 
+            return False

@@ -23,6 +23,7 @@ class ModelMyDatasets(db.Model):
     file_size_mb = Column(String)
     num_rows = Column(Integer)
     num_columns = Column(Integer)
+    integration_id = Column(Integer)
 
     def __init__(self, **kwargs):
         for property, value in kwargs.items():
