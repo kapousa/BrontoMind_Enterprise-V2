@@ -39,6 +39,11 @@ def save(integration_type):
     integrations_director = IntegrationsDirector()
     return integrations_director.save(request, integration_type)
 
+@blueprint.route('<integration_type>/<integration_id>/refresh', methods=['GET', 'POST'])
+@login_required
+def refresh(integration_type, integration_id):
+    integrations_director = IntegrationsDirector()
+    return integrations_director.refresh(integration_id, integration_type)
 
 # Errors
 

@@ -120,3 +120,7 @@ export_to_pdf_report = 5
 temp_html_image_path = 'static/'
 
 temp_image_path = 'app/static/'
+
+DATA_SOURCE_TYPE_CSV = '1'
+
+DATA_SOURCE_TYPE_API = '12'

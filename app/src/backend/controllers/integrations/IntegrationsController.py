@@ -11,7 +11,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from werkzeug.utils import secure_filename
 
 from app import db
-from app.src.backend.constants.BM_CONSTANTS import DEVELOPMENT_PROJECT, my_datasets
+from app.src.backend.constants.BM_CONSTANTS import DEVELOPMENT_PROJECT, my_datasets, DATA_SOURCE_TYPE_API
 from app.src.backend.controllers.BaseController import BaseController
 from app.src.backend.controllers.integrations.IntegrationsControllerHelper import IntegrationsControllerHelper
 from app.src.backend.models.ModelDatasets import ModelDatasets
@@ -60,7 +60,8 @@ class IntegrationsController:
         ''' Create the integration '''
         try:
             # Fetch data
-            df = IntegrationsControllerHelper.fetch_api_results(**connection_info)
+            if connection_type == DATA_SOURCE_TYPE_API:
+                df = IntegrationsControllerHelper.fetch_api_results(**connection_info)
 
             if df is None:
                 return False
@@ -84,3 +85,28 @@ class IntegrationsController:
             logging.error(err_msg)
 
             return False
+
+    def refresh_integration_data(self, connection_type, **connection_info):
+        ''' Refresh the data from the integration source '''
+        try:
+            # Fetch data
+            if connection_type == DATA_SOURCE_TYPE_API:
+                df = IntegrationsControllerHelper.fetch_api_results(**connection_info)
+
+            if df is None:
+                return False
+
+            # Export data to my datasets
+            export_to_mydataset = IntegrationsControllerHelper.export_to_mydataset(connection_info['integration_id'],
+                                                                                   connection_info.get(
+                                                                                       'integration_name'), df,
+                                                                                   connection_type, session['logger'], False)
+
+            return True
+
+        except Exception as e:
+            frame = inspect.currentframe()
+            method_name = frame.f_code.co_name
+            err_msg = f"Error when call {method_name} method: {e}"
+            print(err_msg)
+            logging.error(err_msg)

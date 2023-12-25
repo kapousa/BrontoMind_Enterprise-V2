@@ -9,6 +9,8 @@ from app.src.backend.controllers.datasets.DatasetsController import DatasetsCont
 from app.src.backend.controllers.integrations.IntegrationsController import IntegrationsController
 from app.src.backend.controllers.projects.ProjectsController import ProjectsController
 from app.src.backend.directories.BaseDirector import BaseDirector
+from app.src.backend.models.ModelIntegrationDetails import ModelIntegrationDetails
+from app.src.backend.models.ModelIntegrations import ModelIntegrations
 from app.src.backend.models.ModelMyDatasets import ModelMyDatasets
 
 
@@ -50,3 +52,33 @@ class IntegrationsDirector:
             logging.log(e, 'Error saving')
             return render_template('/applications/pages/integrations/view.html', ds_id=integration_type,
                                    segment='integrations', message='Integration connection failed')
+
+    def refresh(self, integration_id, integration_type):
+        try:
+            intgeration_details = {}
+
+            # Extracting connection parameters
+            connection_info = ModelIntegrations.query.filter_by(id=integration_id).first()
+            connection_params = ModelIntegrationDetails.query.filter_by(integration_id=integration_id).all()
+            for connection_param in connection_params:
+                intgeration_details[
+                    connection_param.param_name] = connection_param.param_value if connection_param.param_value != '' else None
+            intgeration_details['integration_name'] = connection_info.name
+            intgeration_details['integration_id'] = integration_id
+            integration_controller = IntegrationsController()
+            done = integration_controller.refresh_integration_data(integration_type, **intgeration_details)
+            message = 'Data form the integration connection refreshed successfully' if done else (
+                'Refreshing the data from integration connection '
+                'failed, please try again.')
+
+            integrations = integration_controller.get_integrations(session['logger'])
+
+            return render_template('/applications/pages/integrations/view.html', ds_id=integration_type,
+                                   integrations=integrations,
+                                   segment='integrations', message=message)
+        except Exception as e:
+            print(e)
+            return render_template('/applications/pages/integrations/view.html', ds_id=integration_type,
+                                   segment='integrations',
+                                   message='Refreshing the data from integration connection '
+                                           'failed, please try again.')

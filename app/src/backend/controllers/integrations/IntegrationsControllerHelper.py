@@ -107,7 +107,7 @@ class IntegrationsControllerHelper:
             return None
 
     @staticmethod
-    def export_to_mydataset(integration_id, integration_name, df, dataframe_source, user_id):
+    def export_to_mydataset(integration_id, integration_name, df, dataframe_source, user_id, add=True):
         ''' Export data fetched by integration connection to MyDataset'''
         try:
             fname = f"{integration_name}.csv"
@@ -130,28 +130,37 @@ class IntegrationsControllerHelper:
                 num_rows = 'Unable to read'
                 num_columns = 'Unable to read'
 
-            # Add file record to the DB
             now = datetime.now()
-            modelmodel = {'id': Helper.generate_id(),
-                          'name': fname,
-                          'type': dataframe_source,
-                          'created_on': now.strftime("%d/%m/%Y %H:%M:%S"),
-                          'created_by': user_id,
-                          'updated_on': now.strftime("%d/%m/%Y %H:%M:%S"),
-                          'updated_by': user_id,
-                          'file_size_mb': file_size_mb,
-                          'num_rows': num_rows,
-                          'num_columns': num_columns,
-                          'user_id': user_id,
-                          'integration_id': integration_id}
+            if add:
+                # Add file record to the DB
+                modelmodel = {'id': Helper.generate_id(),
+                              'name': fname,
+                              'type': dataframe_source,
+                              'created_on': now.strftime("%d/%m/%Y %H:%M:%S"),
+                              'created_by': user_id,
+                              'updated_on': now.strftime("%d/%m/%Y %H:%M:%S"),
+                              'updated_by': user_id,
+                              'file_size_mb': file_size_mb,
+                              'num_rows': num_rows,
+                              'num_columns': num_columns,
+                              'user_id': user_id,
+                              'integration_id': integration_id}
 
-            model_model = ModelMyDatasets(**modelmodel)
-            db.session.commit()
-            # Add new profile
-            db.session.add(model_model)
-            db.session.commit()
+                model_model = ModelMyDatasets(**modelmodel)
+                db.session.commit()
+                # Add new profile
+                db.session.add(model_model)
+                db.session.commit()
+            else:
+                model_model = ModelMyDatasets.query.filter_by(integration_id=integration_id).first()
+                model_model.updated_by = user_id
+                model_model.updated_on = now.strftime("%d/%m/%Y %H:%M:%S")
+                model_model.file_size_mb = file_size_mb
+                model_model.num_rows = num_rows
+                model_model.num_columns = num_columns
+                db.session.commit()
 
-            return modelmodel
+            return model_model
 
         except Exception as e:
             db.session.rollback()

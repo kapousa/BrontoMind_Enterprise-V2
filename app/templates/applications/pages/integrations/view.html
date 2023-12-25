@@ -45,30 +45,39 @@
                         <h6 class="text-danger">
                             Type: {{ integration.type_name }}</h6>
                         <h6 data-toggle="tooltip" data-placement="bottom" title="{{ integration.description }}">
-                            {{ integration.description[:30] }}...
+                            {% if integration.description|length > 30 %}
+                                {{ integration.description[:30] }}...
+                            {% else %}
+                                {{ integration.description }}...
+                            {% endif %}
                         </h6>
                     </div>
                     <div class="card-footer text-center">
+                        <a href="{{ integration.type }}/{{ integration.id }}/refresh">
+                            <button type="button" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="bottom" title="Update the data from the original source.">
+                                <span class="btn-inner--icon"><i class="ni ni-app"></i></span>
+                            </button>
+                        </a>
                         <a href="/reports/{{ integration.id }}/1/analyze">
-                            <button type="button" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="bottom" title="Quick analysis">
+                            <button type="button" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="bottom" title="Quick analysis.">
                                 <span class="btn-inner--icon"><i class="ni ni-chart-bar-32"></i></span>
                             </button>
                         </a>
                         <a href="/dataprocessing/{{ integration.id }}/previewmydataset?dss={{ integration.type }}">
                             <button type="button" class="btn btn-icon btn-sm btn-success"
-                                    title="Data preparation (Model goal issue)" data-toggle="tooltip" data-placement="bottom">
+                                    title="Data preparation (Model goal issue)." data-toggle="tooltip" data-placement="bottom">
                                 <span class="btn-inner--icon"><i class="ni ni-map-big"></i></span>
                             </button>
                         </a>
                         <a href="{{ integration.id }}/{{ integration.type }}/createmodel">
                             <button type="button" class="btn btn-icon btn-danger btn-sm"
-                                    title="Create machine learning model" data-toggle="tooltip" data-placement="bottom">
+                                    title="Start machine learning model." data-toggle="tooltip" data-placement="bottom">
                                 <span class="btn-inner--icon"><i class="ni ni-chart-pie-35"></i></span>
                             </button>
                         </a>
-                        <a href="{{ integration.id }}/downloaddataset">
-                            <button type="button" class="btn btn-default btn-sm" title="Download dataset" data-toggle="tooltip" data-placement="bottom">
-                                <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
+                        <a href="/datasets/view">
+                            <button type="button" class="btn btn-primary btn-sm" title="View data in my datasets." data-toggle="tooltip" data-placement="bottom">
+                                <span class="btn-inner--icon"><i class="fa fa-table"></i></span>
                             </button>
                         </a>
                     </div>
