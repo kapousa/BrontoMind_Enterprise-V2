@@ -148,28 +148,41 @@
                             <label class="bmd-label-floating">API URL* :</label>
                             <input type="text" value="" class="form-control" name="api_url" required/>
                         </div>
-                        <div class="form-group">
-                            <label class="bmd-label-floating">Request Type *:</label>
-                            <div class="custom-control custom-radio mb-3">
-                                <input name="request_type" class="custom-control-input" id="customRadio5"
-                                       type="radio" value="type_get">
-                                <label class="custom-control-label" for="customRadio5">GET</label>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="bmd-label-floating">Request Type *:</label>
                             </div>
-                            <div class="custom-control custom-radio mb-3">
-                                <input name="request_type" class="custom-control-input" id="customRadio6"
-                                       checked="" type="radio" value="type_post">
-                                <label class="custom-control-label" for="customRadio6">POST</label>
+                            <div class="form-group col-md-4">
+                                <div class="custom-control custom-radio mb-3">
+                                    <input name="request_type" class="custom-control-input" id="customRadio5"
+                                           type="radio" value="type_get">
+                                    <label class="custom-control-label" for="customRadio5">GET</label>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <div class="custom-control custom-radio mb-3">
+                                    <input name="request_type" class="custom-control-input" id="customRadio6"
+                                           checked="" type="radio" value="type_post">
+                                    <label class="custom-control-label" for="customRadio6">POST</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <label class="bmd-label-floating">Headers (JSON) :</label>
+                                <textarea value="" class="form-control" name="headers"
+                                          rows="4"></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="bmd-label-floating">Request Parameters (JSON) :</label>
+                                <textarea value="" class="form-control" name="request_parameters"
+                                          rows="4"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="bmd-label-floating">Root Node (the root node that we will start to
                                 read results under it) :</label>
                             <input type="text" value="" class="form-control" name="root_node"/>
-                        </div>
-                        <div class="form-group">
-                            <label class="bmd-label-floating">Request Parameters (JSON) :</label>
-                            <textarea value="" class="form-control" name="request_parameters"
-                                      rows="8"></textarea>
                         </div>
                         <div class="ripple-container"></div>
                     </div>

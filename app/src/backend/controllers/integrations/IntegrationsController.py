@@ -1,28 +1,13 @@
 import inspect
-import itertools
 import logging
-import os
-from pathlib import Path
 
-import chardet
-import pandas as pd
 from flask import abort, session
-from sqlalchemy.exc import SQLAlchemyError
-from werkzeug.utils import secure_filename
 
-from app import db
-from app.src.backend.constants.BM_CONSTANTS import DEVELOPMENT_PROJECT, my_datasets, DATA_SOURCE_TYPE_API
-from app.src.backend.controllers.BaseController import BaseController
+from app.src.backend.constants.BM_CONSTANTS import DATA_SOURCE_TYPE_API
 from app.src.backend.controllers.integrations.IntegrationsControllerHelper import IntegrationsControllerHelper
-from app.src.backend.models.ModelDatasets import ModelDatasets
-from app.src.backend.models.ModelIntegrationDetails import ModelIntegrationDetails
 from app.src.backend.models.ModelIntegrations import ModelIntegrations
 from app.src.backend.models.ModelMyDatasets import ModelMyDatasets
-from app.src.backend.models.ModelProjects import ModelProjects
-from app.src.backend.modules.base.routes import root_path
 from app.src.backend.utiles.Helper import Helper
-
-from datetime import datetime
 
 
 class IntegrationsController:
@@ -102,7 +87,8 @@ class IntegrationsController:
             export_to_mydataset = IntegrationsControllerHelper.export_to_mydataset(connection_info['integration_id'],
                                                                                    connection_info.get(
                                                                                        'integration_name'), df,
-                                                                                   connection_type, session['logger'], False)
+                                                                                   connection_type, session['logger'],
+                                                                                   False)
 
             return True
 

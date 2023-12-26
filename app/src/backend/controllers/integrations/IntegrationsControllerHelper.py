@@ -80,13 +80,15 @@ class IntegrationsControllerHelper:
         try:
             api_url = connection_info['api_url']
             request_type = connection_info['request_type']
+            headers = connection_info['headers'] if connection_info['headers'] != '' else None
             root_node = connection_info['root_node'] if connection_info['root_node'] != '' else None
             request_parameters = connection_info['request_parameters']
             api_response = requests.get(url=api_url,
-                                        json=request_parameters) if request_type == 'type_get' else requests.post(
-                url=api_url, json=request_parameters)
+                                        json=request_parameters,
+                                        headers=headers) if request_type == 'type_get' else requests.post(
+                url=api_url, json=request_parameters, headers=headers)
 
-            if (api_response.status_code != 200):
+            if api_response.status_code != 200:
                 raise Exception("Error calling the API.")
                 return None
 
@@ -97,7 +99,7 @@ class IntegrationsControllerHelper:
 
             return df
 
-        except Exception as e:
+        except (Exception, JSONDecodeError) as e:
             frame = inspect.currentframe()
             method_name = frame.f_code.co_name
             err_msg = f"Error when call {method_name} method: {e}"

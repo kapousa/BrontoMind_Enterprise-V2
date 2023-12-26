@@ -3,14 +3,10 @@ import logging
 import pandas as pd
 from flask import abort
 
-from app import db
-from app.src.backend.constants.BM_CONSTANTS import DEVELOPMENT_PROJECT, my_datasets
+from app.src.backend.constants.BM_CONSTANTS import my_datasets
 from app.src.backend.controllers.reports.ReportsControllerHelper import ReportsControllerHelper
 from app.src.backend.models.ModelMyDatasets import ModelMyDatasets
-from app.src.backend.models.ModelProjects import ModelProjects
-from app.src.backend.utiles.Helper import Helper
 
-from datetime import datetime
 
 class ReportsController:
 
