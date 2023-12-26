@@ -39,13 +39,15 @@ class IntegrationsController:
             user_integrations = ModelIntegrations.query.filter_by(user_id=user_id).all()
             integrations = []
             for user_integration in user_integrations:
+                user_mydataset = ModelMyDatasets.query.filter_by(integration_id=user_integration.id).first()
                 integration_info = {
                     "id": user_integration.id,
                     "name": user_integration.name,
                     "type": user_integration.type,
                     "type_name": Helper.get_lookup_value(user_integration.type),
                     "description": user_integration.description,
-                    "connection_string": user_integration.connection_string
+                    "connection_string": user_integration.connection_string,
+                    "mydataset_id": user_mydataset.id
                 }
                 integrations.append(integration_info)
 

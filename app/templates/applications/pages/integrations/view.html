@@ -63,13 +63,13 @@
                                 <span class="btn-inner--icon"><i class="ni ni-chart-bar-32"></i></span>
                             </button>
                         </a>
-                        <a href="/dataprocessing/{{ integration.id }}/previewmydataset?dss={{ integration.type }}">
+                        <a href="/dataprocessing/{{ integration.mydataset_id }}/previewmydataset?dss={{ integration.type }}">
                             <button type="button" class="btn btn-icon btn-sm btn-success"
                                     title="Data preparation (Model goal issue)." data-toggle="tooltip" data-placement="bottom">
                                 <span class="btn-inner--icon"><i class="ni ni-map-big"></i></span>
                             </button>
                         </a>
-                        <a href="{{ integration.id }}/{{ integration.type }}/createmodel">
+                        <a href="/datasets/{{ integration.mydataset_id }}/{{ integration.type }}/createmodel">
                             <button type="button" class="btn btn-icon btn-danger btn-sm"
                                     title="Start machine learning model." data-toggle="tooltip" data-placement="bottom">
                                 <span class="btn-inner--icon"><i class="ni ni-chart-pie-35"></i></span>

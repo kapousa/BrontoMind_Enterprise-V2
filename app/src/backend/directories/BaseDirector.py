@@ -74,9 +74,9 @@ class BaseDirector:
                     'd_type') != None:  # here in case we came from datasets page
                 model_id = Helper.generate_id()
                 old_file_path = f"{df_location}{dataset_model.name}"
-                filePath = old_file_path # f"{df_location}{fname}"
-                fname = old_file_path # Redundancy
-                #os.rename(old_file_path, filePath)
+                filePath = old_file_path  # f"{df_location}{fname}"
+                fname = old_file_path  # Redundancy
+                # os.rename(old_file_path, filePath)
                 session['filepath'] = filePath
                 session.pop('d_id')
                 session.pop('d_type')
@@ -152,7 +152,8 @@ class BaseDirector:
         database_name = request.form.get('database_name')
         sql_query = request.form.get('sql_query')
         user_id = session['logger']
-        data, file_location, count_row = export_mysql_query_to_csv(user_id, host_name, username, password, database_name,
+        data, file_location, count_row = export_mysql_query_to_csv(user_id, host_name, username, password,
+                                                                   database_name,
                                                                    sql_query)
 
         if (count_row < 50):
@@ -297,7 +298,8 @@ class BaseDirector:
     def describe_my_dataset(self, mydataset_id):
         try:
             # copy dataset from my_datasets to data folder
-            dataset_model = ModelMyDatasets.query.with_entities(ModelMyDatasets.user_id, ModelMyDatasets.name).filter_by(
+            dataset_model = ModelMyDatasets.query.with_entities(ModelMyDatasets.user_id,
+                                                                ModelMyDatasets.name).filter_by(
                 id=mydataset_id).first()
             source_path = f"{my_datasets}{dataset_model.user_id}/{dataset_model.name}"
             filePath = f"{df_location}{dataset_model.name}"
@@ -313,10 +315,10 @@ class BaseDirector:
             message = 'No'
 
             if (count_row < 5):
-                message = 'Uploaded data document does not have enough data, the document must have minimum 50 records of data for accurate processing.'
-                return render_template('applications/pages/dashboard.html',
+                message = 'Provided data document does not have enough data, the document must have minimum 50 records of data for accurate processing.'
+                return render_template('applications/pages/datapreview.html',
                                        message=message,
-                                       segment='createmodel')
+                                       segment='datasets')
 
             # Get the DS file header
             sample_data = (data.sample(n=10))
@@ -326,7 +328,7 @@ class BaseDirector:
             session['fname'] = fname
 
             return render_template('applications/pages/datapreview.html', required_changes='None',
-                                   message='data_info', filePath=filePath, segment="selectmodelgoal",
+                                   message='data_info', filePath=filePath, segment="datasets",
                                    col_width="{}%".format(round(100 / len(sample_header), 2)),
                                    dataset_info=dataset_info, sample_data=sample_data)
         except Exception as e:
